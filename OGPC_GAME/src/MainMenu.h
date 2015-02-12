@@ -1,14 +1,14 @@
 #pragma once
 #include "ofMain.h"
+#include "src-MenuAPI/MenuInclude.h"
 
 class MainMenu
 {
 public:
-    MainMenu(myMenu);
+    MainMenu();
     void draw();
-    void update();
-    void
+    void update(ofVec2f& mousePos, bool& clicked);
 
 private:
-    Menu myMenu;
+   MenuManager *Manager;
 };

@@ -17,7 +17,7 @@ void MenuBackground::update(ofVec2f& mousePos, bool& clicked)//MenuBackground do
 }
 void MenuBackground::draw()
 {
-    // draws at the top left corner
+    // draws the center at the position
     backTexture->draw(ofVec2f(position.x - (backTexture->getWidth())/2, position.y - (backTexture->getHeight())/2));
 }
 bool MenuBackground::getEventDataBool()//no use

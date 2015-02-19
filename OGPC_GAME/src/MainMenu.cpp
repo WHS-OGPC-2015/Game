@@ -19,7 +19,7 @@ MainMenu::MainMenu()
                                   );
     MenuEntity *orangeBG;
     orangeBG = new MenuBackground(
-                            ofVec2f(1024,768),
+                            ofVec2f(512,384),
                             Manager->getTexturePointer("OrangeBackground")
                                   );
 
@@ -42,9 +42,5 @@ void MainMenu::update(ofVec2f& mousePos, bool& clicked)
      if(optionsMenu->getEntityPointer("ExitButton")->getEventDataBool() == true)
      {
          optionsMenu->setInactive();
-     }
-     else
-     {
-         optionsMenu->setActive();
      }
 }

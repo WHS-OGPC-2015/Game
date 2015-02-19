@@ -43,9 +43,9 @@ void MenuManager::addMenu(Menu m, std::string name)
     menuNames[name] = (menus.size()-1);//add menu name to menuNames map
 }
 
-Menu& MenuManager::getMenuReferenceByName(std::string name)
+Menu* MenuManager::getMenuPointerByName(std::string name)
 {
-    Menu &r = menus[menuNames[name]];
+    Menu *r = &menus[menuNames[name]];
     return r;
 }
 

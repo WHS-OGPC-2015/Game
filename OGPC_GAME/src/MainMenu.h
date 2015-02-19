@@ -8,7 +8,12 @@ public:
     MainMenu();
     void draw();
     void update(ofVec2f& mousePos, bool& clicked);
+    void switchActive();
+    bool getActive();
 
 private:
    MenuManager *Manager;
+   Menu* optionsMenu;
+   Menu* defaultMenu;
+   bool active;
 };

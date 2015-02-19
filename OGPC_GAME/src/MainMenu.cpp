@@ -2,22 +2,34 @@
 
 MainMenu::MainMenu()
 {
-    Manager = new MenuManager;
-    Menu myMenu(ofVec2f(0,0));
-    Manager->addTexture("DefaultQuitButton", "NormalQuitButton.png");
+    Manager = new MenuManager; // creates a new Menumanager
+    Menu opMenu(ofVec2f(0,0)); // creating the options menu
+    Menu normalMenu(ofVec2f(0,0)); // creating the normal menu
+    Manager->addTexture("DefaultQuitButton", "NormalQuitButton.png"); // adding textures
     Manager->addTexture("HoveredQuitButton", "HoveredQuitButton.png");
     Manager->addTexture("PressedQuitButton", "ClickedQuitButton.png");
-    Manager->addFont("NormalFont", "MySimpleFont.ttf", 12);
+     Manager->addTexture("OrangeBackground", "OrangeBackground.png");
+    Manager->addFont("NormalFont", "MySimpleFont.ttf", 12); // adding font
 
-    MenuEntity *exitButton;
+    MenuEntity *exitButton; // the exit button
     exitButton = new SimpleButton(
-                        ofVec2f(900,0),
+                        ofVec2f(900,100),
                         Manager->getTexturePointer("DefaultQuitButton"),
-                        Manager->getTexturePointer("ClickedQuitButton")
+                        Manager->getTexturePointer("PressedQuitButton")
+                                  );
+    MenuEntity *orangeBG;
+    orangeBG = new MenuBackground(
+                            ofVec2f(1024,768),
+                            Manager->getTexturePointer("OrangeBackground")
                                   );
 
-    myMenu.addEntity(*exitButton, "ExitButton");
-    Manager->addMenu(myMenu, "NormalMenu");
+    opMenu.addEntity(*exitButton, "ExitButton");
+    normalMenu.addEntity(*orangeBG, "normalBackground");
+    Manager->addMenu(opMenu, "OptionsMenu");
+    Manager->addMenu(normalMenu, "NormalMenu");
+    optionsMenu = Manager->getMenuPointerByName("OptionsMenu");
+    optionsMenu->setInactive();
+    defaultMenu = Manager->getMenuPointerByName("NormalMenu");
 }
 
 void MainMenu::draw()
@@ -27,4 +39,12 @@ void MainMenu::draw()
 void MainMenu::update(ofVec2f& mousePos, bool& clicked)
 {
      Manager->update(mousePos, clicked);
+     if(optionsMenu->getEntityPointer("ExitButton")->getEventDataBool() == true)
+     {
+         optionsMenu->setInactive();
+     }
+     else
+     {
+         optionsMenu->setActive();
+     }
 }

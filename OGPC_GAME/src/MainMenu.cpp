@@ -30,6 +30,7 @@ MainMenu::MainMenu()
     optionsMenu = Manager->getMenuPointerByName("OptionsMenu");
     optionsMenu->setInactive();
     defaultMenu = Manager->getMenuPointerByName("NormalMenu");
+    defaultMenu->setActive();
 }
 
 void MainMenu::draw()

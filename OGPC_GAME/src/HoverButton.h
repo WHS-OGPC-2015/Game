@@ -8,13 +8,13 @@
 
 
 #pragma once
-#include "MenuEntity.h"
+#include "src-MenuAPI/MenuEntity.h"
 
 class HoverButton : public MenuEntity //child of MenuEntity class
 {
 public:
-    HoverButton(ofVec2f loc, ofTexture& norm, ofTexture& hov, ofTexture& pressed, ofTexture& clicked, ofTrueTypeFont& f, std::string text);//initialize button with position and textures and text
-    HoverButton(ofVec2f loc, ofTexture& norm, ofTexture& hov);//initialize button with position and textures without text
+    HoverButton(ofVec2f loc, ofTexture& norm, ofTexture& hov, ofTexture& fpressed, ofTexture& fclicked, ofTexture& fclickedHovered, ofTexture& fclickedPressed, ofTrueTypeFont& f, std::string text);//initialize button with position and textures and text
+    HoverButton(ofVec2f loc, ofTexture& norm, ofTexture& hov, ofTexture& fpressed, ofTexture& fclicked, ofTexture& fclickedHovered, ofTexture& fclickedPressed);//initialize button with position and textures without text
 
     //!!!!!!functions not declared in MenuEntity but declared here are mostly totally non-usable!!!!!!
     void setPosition(ofVec2f);
@@ -37,6 +37,8 @@ private:
     ofTexture* hovered; // pointer to hovered texture
     ofTexture* pressed; // pointer to pressed texture
     ofTexture* clicked; //pointer to texture used on mouse click
+    ofTexture* clickedHovered;// pointer to clicked and hovered texture
+    ofTexture* clickedPressed;// pointer to clicked and pressed texture
 
     ofTrueTypeFont* font; //pointer to font for button text
     std::string text;//text to draw

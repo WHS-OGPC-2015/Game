@@ -8,9 +8,9 @@
 
 #include "HoverButton.h"
 
-SimpleButton::SimpleButton(ofVec2f loc, ofTexture& norm, ofTexture& click, ofTrueTypeFont& f, std::string t)
+HoverButton::HoverButton(ofVec2f loc, ofTexture& norm, ofTexture& click, ofTrueTypeFont& f, std::string t)
 {
-    
+
     position = loc;
     normal = &norm;
     clicked = &click;
@@ -18,12 +18,12 @@ SimpleButton::SimpleButton(ofVec2f loc, ofTexture& norm, ofTexture& click, ofTru
     requiresMouseData = true;//this class will need data about the mouse to function
     nowClicked = false;
     text = t;
-    
+
 }
 
-SimpleButton::SimpleButton(ofVec2f loc, ofTexture& norm, ofTexture& click)
+HoverButton::HoverButton(ofVec2f loc, ofTexture& norm, ofTexture& click)
 {
-    
+
     position = loc;
     normal = &norm;
     clicked = &click;
@@ -31,27 +31,27 @@ SimpleButton::SimpleButton(ofVec2f loc, ofTexture& norm, ofTexture& click)
     requiresMouseData = true;//this class will need data about the mouse to function
     nowClicked = false;
     text = "";
-    
+
 }
 
-void SimpleButton::setButtonTextString(std::string newString)
+void HoverButton::setButtonTextString(std::string newString)
 {
     text = newString;
 }
 
-std::string SimpleButton::getButtonTextString()
+std::string HoverButton::getButtonTextString()
 {
     return text;
 }
 
-void SimpleButton::update(ofVec2f& mousePos, bool& clicked)
+void HoverButton::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
-    
+
     //test to see if the mouse is clicked
-    if(clicked)
+    if(clicked == true
     {
         //nowClicked = !nowClicked; //toggle clicked status
-        
+
         //if it is...test to see if a point is not inside the button
         if(mousePos.x < textureTLPos.x ||
            mousePos.y < textureTLPos.y ||
@@ -64,12 +64,47 @@ void SimpleButton::update(ofVec2f& mousePos, bool& clicked)
             nowClicked = !nowClicked; //toggle clicked status
         }
     }
-    
+    else if (pressed == true) // same for pressed..
+    {
+        if(mousePos.x < textureTLPos.x ||
+           mousePos.y < textureTLPos.y ||
+           mousePos.x > textureBRPos.x ||
+           mousePos.y > textureBRPos.y   )
+        {
+        }
+        else
+        {
+            nowPressed = !nowPressed; //toggle pressed status
+        }
+    }
+    else if (pressed == false) // if the mouse button is released off of the button, hovered shall be false
+    {
+       nowpressed = false;
+    }
+    else // and same for hovered
+    {
+        if(mousePos.x < textureTLPos.x ||
+           mousePos.y < textureTLPos.y ||
+           mousePos.x > textureBRPos.x ||
+           mousePos.y > textureBRPos.y   )
+        {
+            nowHovered = false; // if the mouse if off of the button, it's not hovering
+        }
+        else//if the points not outside its inside
+        {
+            nowHovered = !nowHovered; //toggle clicked status
+        }
+    }
+    if (nowClicked == true)
+    {
+
+    }
+
 }
 
-void SimpleButton::draw()
+void HoverButton::draw()
 {
-    
+
     //the BR/TL positions are for keeping track of the coordinates for purposes
     //of the mouse collision logic in update()
     if(nowClicked == true)//if the button has been clicked draw that texture
@@ -78,7 +113,7 @@ void SimpleButton::draw()
         textureTLPos = ofVec2f((position.x-(clicked->getWidth()/2)), (position.y-(clicked->getHeight()/2)));
         textureBRPos = ofVec2f((textureTLPos.x+(clicked->getWidth())), (textureTLPos.y+(clicked->getHeight())));
         clicked->draw(textureTLPos);
-        
+
     }
     else//otherwise draw the non-clicked texture
     {
@@ -92,27 +127,30 @@ void SimpleButton::draw()
         //center the text
         font->drawString(text, textureTLPos.x+((normal->getWidth()-(font->stringWidth(text)))/2), textureTLPos.y+((normal->getHeight()-(font->stringHeight(text)))/2));
     }
-    
+
 }
 
-void SimpleButton::update()
+void HoverButton::update()
 {
     //this is just here so the compiler doesn't complain when calling update(void) in menu
 }
 
-bool SimpleButton::getEventDataBool()
+int HoverButton::getEventDataInt()
 {
-    if(nowClicked == true)
+   if(nowClicked == true)
     {
-        return true;
+        return 3;
+    }
+    else if (nowPressed == true)
+    {
+        retun 2;
+    }
+    else if (nowHovered == true)
+    {
+        return 1;
     }
     else
     {
-        return false;
-    }
-}
-
-int SimpleButton::getEventDataInt()
-{
-    //here for abstract parent
+        return 0;
+    } //here for abstract parent
 }

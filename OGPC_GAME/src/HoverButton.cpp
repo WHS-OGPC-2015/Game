@@ -8,7 +8,7 @@
 
 #include "HoverButton.h"
 
-HoverButton::HoverButton(ofVec2f loc, ofTexture& norm, ofTexture& hov, ofTexture& fpressed, ofTexture& fclicked, ofTexture& fclickedHovered, ofTexture& fclickedPressed, ofTrueTypeFont& f, std::string text)
+HoverButton::HoverButton(ofVec2f loc, ofTexture& norm, ofTexture& hov, ofTexture& fpressed, ofTexture& fclicked, ofTexture& fclickedHovered, ofTexture& fclickedPressed, ofTrueTypeFont& f, std::string t)
 {
 
     position = loc;
@@ -56,7 +56,7 @@ void HoverButton::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
 
     //test to see if the mouse is clicked
-    if(clicked == true
+    if(clicked == true)
     {
         //nowClicked = !nowClicked; //toggle clicked status
 
@@ -162,15 +162,26 @@ void HoverButton::update()
     //this is just here so the compiler doesn't complain when calling update(void) in menu
 }
 
-int HoverButton::getEventDataInt()
+int HoverButton::getUseEventDataInt()
 {
    if(nowClicked == true)
     {
-        return 3;
+        if (nowPressed == true)
+        {
+            return 5;
+        }
+        else if (nowHovered == true)
+        {
+            return 4;
+        }
+        else
+        {
+            return 3;
+        }
     }
     else if (nowPressed == true)
     {
-        retun 2;
+        return 2;
     }
     else if (nowHovered == true)
     {
@@ -179,5 +190,15 @@ int HoverButton::getEventDataInt()
     else
     {
         return 0;
-    } //here for abstract parent
+    }
+}
+
+int HoverButton::getEventDataInt()
+{
+
+}
+
+void HoverButton::setClicked(bool b)
+{
+    nowClicked == b;
 }

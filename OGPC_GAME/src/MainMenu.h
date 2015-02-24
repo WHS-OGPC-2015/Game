@@ -17,4 +17,6 @@ private:
    Menu* optionsMenu;
    Menu* defaultMenu;
    bool active;
+   HoverButton* Exit;
+   HoverButton* OptionsBut;
 };

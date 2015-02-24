@@ -51,7 +51,7 @@ MainMenu::MainMenu()
                                     );
 
     MenuEntity *dolphinBG; // options menu background
-    doplhinBG = new MenuBackground(
+    dolphinBG = new MenuBackground(
                             ofVec2f(512,384),
                             Manager->getTexturePointer("DolphinBackground")
                                   );
@@ -66,7 +66,8 @@ MainMenu::MainMenu()
     defaultMenu->setActive();
     optionsMenu = Manager->getMenuPointerByName("OptionsMenu");
     optionsMenu->setInactive();
-
+    Exit = optionsMenu->getPointerToChildByName<HoverButton>("ExitButton");
+    OptionsBut = defaultMenu->getPointerToChildByName<HoverButton>("OptionsButton");
 
 }
 
@@ -77,20 +78,16 @@ void MainMenu::draw()
 void MainMenu::update(ofVec2f& mousePos, bool& clicked)
 {
      Manager->update(mousePos, clicked);
-     if(optionsMenu->getEntityPointer("ExitButton")->getUseEventDataInt() > 2)
+     if(Exit->getEventDataInt() > 2)
      {
          optionsMenu->setInactive();
-         optionsMenu->getEntityPointer("ExitButton")->setClicked(false);
-         defaultMenu->getEntityPointer("OptionsButton")->setClicked(false);
+         Exit->setClicked(false);
+         OptionsBut->setClicked(false);
      }
-     if (defaultMenu->isActive() == true and optionsMenu->isActive() == false and defaultMenu->getEntityPointer("OptionsButton")->getUseEventDataInt() > 2)
+     if (defaultMenu->isActive() == true and optionsMenu->isActive() == false and OptionsBut->getEventDataInt() > 2)
      {
          std::cout<< optionsMenu->isActive();
          optionsMenu->setActive();
-     }
-     else if (optionsMenu->isActive() == false)
-     {
-
      }
 
 }

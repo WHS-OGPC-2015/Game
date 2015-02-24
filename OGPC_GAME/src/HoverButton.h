@@ -16,22 +16,23 @@ public:
     HoverButton(ofVec2f loc, ofTexture& norm, ofTexture& hov, ofTexture& fpressed, ofTexture& fclicked, ofTexture& fclickedHovered, ofTexture& fclickedPressed, ofTrueTypeFont& f, std::string t);//initialize button with position and textures and text
     HoverButton(ofVec2f loc, ofTexture& norm, ofTexture& hov, ofTexture& fpressed, ofTexture& fclicked, ofTexture& fclickedHovered, ofTexture& fclickedPressed);//initialize button with position and textures without text
 
-    //!!!!!!functions not declared in MenuEntity but declared here are mostly totally non-usable!!!!!!
+
     void setPosition(ofVec2f);
     ofVec2f getPosition();
 
     void setButtonTextString(std::string);
     std::string getButtonTextString();
-    //!!!!!!!!
+
 
     void update(ofVec2f& mousePos, bool& clicked, bool& pressed);
     void draw();
     void update();
+    void update(ofVec2f&, bool&);
 
 
     void setClicked(bool b); // set the clicked value manually
-    int getUseEventDataInt();//return 0-3 (0 = nothing, 1 = hovered, 2 = pressed, 3 = clicked, 4 = clicked and hovered, 5 = pressed and hovered) value
-    int getEventDataInt();
+    int getEventDataInt();//return 0-3 (0 = nothing, 1 = hovered, 2 = pressed, 3 = clicked, 4 = clicked and hovered, 5 = pressed and hovered) value
+    bool getEventDataBool();
 
 private:
     ofTexture* normal; //pointer to default texture

@@ -161,8 +161,12 @@ void HoverButton::update()
 {
     //this is just here so the compiler doesn't complain when calling update(void) in menu
 }
+void HoverButton::update(ofVec2f& v, bool& b)
+{
+    //this is just here so the compiler doesn't complain when calling update(void) in menu
+}
 
-int HoverButton::getUseEventDataInt()
+int HoverButton::getEventDataInt()
 {
    if(nowClicked == true)
     {
@@ -193,12 +197,13 @@ int HoverButton::getUseEventDataInt()
     }
 }
 
-int HoverButton::getEventDataInt()
-{
-
-}
 
 void HoverButton::setClicked(bool b)
 {
     nowClicked == b;
+}
+
+bool HoverButton::getEventDataBool()
+{
+
 }

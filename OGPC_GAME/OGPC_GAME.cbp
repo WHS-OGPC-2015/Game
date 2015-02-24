@@ -136,8 +136,6 @@
 		<Unit filename="src/src-Engine/Tile.h" />
 		<Unit filename="src/src-Engine/TileManager.cpp" />
 		<Unit filename="src/src-Engine/TileManager.h" />
-		<Unit filename="src/src-Engine/TileTemplate.cpp" />
-		<Unit filename="src/src-Engine/TileTemplate.h" />
 		<Unit filename="src/src-MenuAPI/Menu.cpp" />
 		<Unit filename="src/src-MenuAPI/Menu.h" />
 		<Unit filename="src/src-MenuAPI/MenuBackground.cpp" />

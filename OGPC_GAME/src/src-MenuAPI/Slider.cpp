@@ -21,7 +21,7 @@ int Slider::getEventDataInt()
 
 void Slider::update(){}//also just here to prevent error
 
-void Slider::update(ofVec2f& mousePos, bool& clicked)
+void Slider::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
         if(clicked)
     {

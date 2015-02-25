@@ -12,7 +12,7 @@ public:
     int getEventDataInt();//returns slider value
 
     void draw();
-    void update(ofVec2f&, bool&);
+    void update(ofVec2f&, bool&, bool&);
     void update();//so that the class is not abstract
 
 private:

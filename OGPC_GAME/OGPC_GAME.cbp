@@ -118,6 +118,8 @@
 		<Unit filename="icon.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
+		<Unit filename="src/HoverButton.cpp" />
+		<Unit filename="src/HoverButton.h" />
 		<Unit filename="src/MainMenu.cpp" />
 		<Unit filename="src/MainMenu.h" />
 		<Unit filename="src/main.cpp">

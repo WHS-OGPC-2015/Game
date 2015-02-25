@@ -75,19 +75,21 @@ void MainMenu::draw()
 {
     Manager->draw();
 }
-void MainMenu::update(ofVec2f& mousePos, bool& clicked)
+void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
-     Manager->update(mousePos, clicked);
+
      if(Exit->getEventDataInt() > 2)
      {
-         optionsMenu->setInactive();
          Exit->setClicked(false);
          OptionsBut->setClicked(false);
+         optionsMenu->setInactive();
+         defaultMenu->setActive();
      }
-     if (defaultMenu->isActive() == true and optionsMenu->isActive() == false and OptionsBut->getEventDataInt() > 2)
+     else if (defaultMenu->isActive() == true and optionsMenu->isActive() == false and OptionsBut->getEventDataInt() > 2)
      {
-         std::cout<< optionsMenu->isActive();
          optionsMenu->setActive();
+         defaultMenu->setInactive();
      }
+     Manager->update(mousePos, clicked, pressed);
 
 }

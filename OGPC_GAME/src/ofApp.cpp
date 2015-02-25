@@ -7,7 +7,7 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-startingMenu.update(mousePos, clicked);
+startingMenu.update(mousePos, clicked, pressed);
 if(pressed != true)
     {
             clicked = false;

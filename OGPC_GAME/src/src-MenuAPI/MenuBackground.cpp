@@ -11,7 +11,7 @@ void MenuBackground::update()//MenuBackground doesn't update
 {
 
 }
-void MenuBackground::update(ofVec2f& mousePos, bool& clicked)//MenuBackground doesn't update
+void MenuBackground::update(ofVec2f& mousePos, bool& clicked, bool& pressed)//MenuBackground doesn't update
 {
 
 }

@@ -21,6 +21,8 @@ HoverButton::HoverButton(ofVec2f loc, ofTexture& norm, ofTexture& hov, ofTexture
     font = &f;
     requiresMouseData = true;//this class will need data about the mouse to function
     nowClicked = false;
+    nowHovered = false;
+    nowPressed = false;
     text = t;
 
 }
@@ -38,6 +40,8 @@ HoverButton::HoverButton(ofVec2f loc, ofTexture& norm, ofTexture& hov, ofTexture
     font = NULL;//set font pointer to NULL if there is no text
     requiresMouseData = true;//this class will need data about the mouse to function
     nowClicked = false;
+    nowHovered = false;
+    nowPressed = false;
     text = "";
 
 }
@@ -55,9 +59,11 @@ std::string HoverButton::getButtonTextString()
 void HoverButton::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
 
+
     //test to see if the mouse is clicked
     if(clicked == true)
     {
+
         //nowClicked = !nowClicked; //toggle clicked status
 
         //if it is...test to see if a point is not inside the button
@@ -69,6 +75,7 @@ void HoverButton::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
         }
         else//if the points not outside its inside
         {
+
             nowClicked = !nowClicked; //toggle clicked status
         }
     }
@@ -83,7 +90,7 @@ void HoverButton::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
         }
         else
         {
-            nowPressed = !nowPressed; //toggle pressed status
+            nowPressed = true; //if it's inside and the mouse is pressed, it's pressed
         }
     }
     else if (pressed == false)
@@ -94,11 +101,11 @@ void HoverButton::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
            mousePos.x > textureBRPos.x ||
            mousePos.y > textureBRPos.y   )
         {
-            nowHovered = false; // if the mouse if off of the button, it's not hovering
+            nowHovered = false; // if the mouse is off of the button, it's not hovering
         }
         else//if the points not outside its inside
         {
-            nowHovered = !nowHovered; //toggle clicked status
+            nowHovered = true; //if it's hovered and inside the button, the button is hovered
         }
     }
 
@@ -200,7 +207,7 @@ int HoverButton::getEventDataInt()
 
 void HoverButton::setClicked(bool b)
 {
-    nowClicked == b;
+    nowClicked = b;
 }
 
 bool HoverButton::getEventDataBool()

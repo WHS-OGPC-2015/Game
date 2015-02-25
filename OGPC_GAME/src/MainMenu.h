@@ -8,7 +8,7 @@ class MainMenu
 public:
     MainMenu();
     void draw();
-    void update(ofVec2f& mousePos, bool& clicked);
+    void update(ofVec2f& mousePos, bool& clicked, bool& pressed);
     void switchActive();
     bool getActive();
 

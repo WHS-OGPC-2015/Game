@@ -15,7 +15,7 @@ public:
     std::string getButtonTextString();
     //!!!!!!!!
 
-    void update(ofVec2f& mousePos, bool& clicked);
+    void update(ofVec2f& mousePos, bool& clicked, bool& pressed);
     void draw();
     void update();
 

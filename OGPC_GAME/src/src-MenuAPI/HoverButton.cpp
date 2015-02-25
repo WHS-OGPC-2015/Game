@@ -23,6 +23,7 @@ HoverButton::HoverButton(ofVec2f loc, ofTexture& norm, ofTexture& hov, ofTexture
     nowClicked = false;
     nowHovered = false;
     nowPressed = false;
+    nowPressedOff = false;
     text = t;
 
 }
@@ -42,6 +43,7 @@ HoverButton::HoverButton(ofVec2f loc, ofTexture& norm, ofTexture& hov, ofTexture
     nowClicked = false;
     nowHovered = false;
     nowPressed = false;
+    nowPressedOff = false;
     text = "";
 
 }
@@ -61,7 +63,7 @@ void HoverButton::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 
 
     //test to see if the mouse is clicked
-    if(clicked == true)
+    if(clicked == true and nowPressedOff == false)
     {
 
         //nowClicked = !nowClicked; //toggle clicked status
@@ -79,7 +81,7 @@ void HoverButton::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
             nowClicked = !nowClicked; //toggle clicked status
         }
     }
-    if (pressed == true) // same for pressed..
+    if (pressed == true and nowPressedOff == false) // same for pressed..
     {
         nowHovered == false; // prevents hovered and pressed from being true at the same time
         if(mousePos.x < textureTLPos.x ||
@@ -87,6 +89,10 @@ void HoverButton::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
            mousePos.x > textureBRPos.x ||
            mousePos.y > textureBRPos.y   )
         {
+            if (nowPressed == false)
+            {
+                nowPressedOff = true;
+            }
         }
         else
         {
@@ -96,6 +102,7 @@ void HoverButton::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
     else if (pressed == false)
     {
         nowPressed = false;// if the mouse button is released off of the button, hovered shall be false
+        nowPressedOff = false;
         if(mousePos.x < textureTLPos.x ||
            mousePos.y < textureTLPos.y ||
            mousePos.x > textureBRPos.x ||
@@ -122,7 +129,9 @@ void HoverButton::draw()
 
         if (nowPressed == true)
         {
-
+            textureTLPos = ofVec2f((position.x-(clickedPressed->getWidth()/2)), (position.y-(clickedPressed->getHeight()/2)));
+            textureBRPos = ofVec2f((textureTLPos.x+(clickedPressed->getWidth())), (textureTLPos.y+(clickedPressed->getHeight())));
+            clickedPressed->draw(textureTLPos);
         }
         else if (nowHovered == true)
         {

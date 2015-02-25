@@ -12,6 +12,7 @@
 #include "SimpleButton.h"
 #include "Slider.h"
 #include "MenuBackground.h"
+#include "HoverButton.h"
 
 
 

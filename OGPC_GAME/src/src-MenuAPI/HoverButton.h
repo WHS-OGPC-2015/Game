@@ -8,7 +8,7 @@
 
 
 #pragma once
-#include "src-MenuAPI/MenuEntity.h"
+#include "MenuEntity.h"
 
 class HoverButton : public MenuEntity //child of MenuEntity class
 {
@@ -51,6 +51,7 @@ private:
     bool nowClicked;//true if the button is currently in its clicked state
     bool nowHovered;// true if button is hovered
     bool nowPressed;// true if button is pressed
+    bool nowPressedOff; // true if the mouse is pressed and off of the button
 
 
 };

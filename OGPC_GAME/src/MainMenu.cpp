@@ -16,9 +16,10 @@ MainMenu::MainMenu()
     Manager->addTexture("HoveredBlueButton", "HoveredBlueButton.png");
     Manager->addTexture("PressedClickedBlueButton", "PressedClickedBlueButton.png");
     Manager->addTexture("DolphinBackground", "DolphinBackground.png");
+   // Manager->addTexture("StartGameButton", "PlayButton.cpp")
 
 
-    Manager->addFont("NormalFont", "MySimpleFont.ttf", 12); // adding font
+    Manager->addFont("NormalFont", "MySimpleFont.ttf", 16); // adding font
 
     MenuEntity *exitButton; // the exit button
     exitButton = new HoverButton(
@@ -31,15 +32,15 @@ MainMenu::MainMenu()
                             Manager->getTexturePointer("ClickedQuitButton")
                                   );
 
-    MenuEntity *orangeBG; // background
+    MenuEntity *orangeBG; // backgrounddefaultMenu->getPointerToChildByName<HoverButton>("OptionsButton");
     orangeBG = new MenuBackground(
-                            ofVec2f(512,384),
+                            ofVec2f(ofGetWindowWidth()/2,ofGetWindowHeight()/2),
                             Manager->getTexturePointer("OrangeBackground")
                                   );
 
     MenuEntity *optionsButton; // options button
     optionsButton = new HoverButton(
-                            ofVec2f(400, 200),
+                            ofVec2f(ofGetWindowWidth()/2, 400),
                             Manager->getTexturePointer("BlueButton"),
                             Manager->getTexturePointer("HoveredBlueButton"),
                             Manager->getTexturePointer("PressedBlueButton"),
@@ -47,18 +48,32 @@ MainMenu::MainMenu()
                             Manager->getTexturePointer("ClickedBlueButton"),
                             Manager->getTexturePointer("PressedClickedBlueButton"),
                             Manager->getFontPointer("NormalFont"),
-                            "OPTIONS"
+                            "Options"
+                                    );
+
+    MenuEntity *SGButton;
+    SGButton = new HoverButton(
+                            ofVec2f(ofGetWindowWidth()/2, 200),
+                            Manager->getTexturePointer("BlueButton"),
+                            Manager->getTexturePointer("HoveredBlueButton"),
+                            Manager->getTexturePointer("PressedBlueButton"),
+                            Manager->getTexturePointer("ClickedBlueButton"),
+                            Manager->getTexturePointer("ClickedBlueButton"),
+                            Manager->getTexturePointer("PressedClickedBlueButton"),
+                            Manager->getFontPointer("NormalFont"),
+                            "Start Game"
                                     );
 
     MenuEntity *dolphinBG; // options menu background
     dolphinBG = new MenuBackground(
-                            ofVec2f(512,384),
+                            ofVec2f(ofGetWindowWidth()/2,ofGetWindowHeight()/2),
                             Manager->getTexturePointer("DolphinBackground")
                                   );
 
     opMenu.addEntity(*dolphinBG, "DolphinBackground");
     opMenu.addEntity(*exitButton, "ExitButton");
     normalMenu.addEntity(*orangeBG, "normalBackground");
+    normalMenu.addEntity(*SGButton, "StartGameButton");
     normalMenu.addEntity(*optionsButton, "OptionsButton");
     Manager->addMenu(normalMenu, "NormalMenu");
     Manager->addMenu(opMenu, "OptionsMenu");
@@ -68,6 +83,8 @@ MainMenu::MainMenu()
     optionsMenu->setInactive();
     Exit = optionsMenu->getPointerToChildByName<HoverButton>("ExitButton");
     OptionsBut = defaultMenu->getPointerToChildByName<HoverButton>("OptionsButton");
+    StartGameButton = defaultMenu->getPointerToChildByName<HoverButton>("StartGameButton");
+
 
 }
 

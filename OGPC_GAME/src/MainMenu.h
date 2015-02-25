@@ -1,7 +1,7 @@
 #pragma once
 #include "ofMain.h"
 #include "src-MenuAPI/MenuInclude.h"
-#include "HoverButton.h"
+
 
 class MainMenu
 {
@@ -19,4 +19,5 @@ private:
    bool active;
    HoverButton* Exit;
    HoverButton* OptionsBut;
+   HoverButton* StartGameButton;
 };

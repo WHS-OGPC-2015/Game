@@ -2,7 +2,7 @@
 
 Tile::Tile(TileTemplate& temp)
 {
-    attributes = temp.attributes;
+    attributes = temp.getAttributes();//assigns templates variable array to tile instance
 }
 
 void Tile::update()

@@ -129,6 +129,15 @@
 		<Unit filename="src/ofApp.h">
 			<Option virtualFolder="src" />
 		</Unit>
+		<Unit filename="src/src-Engine/EngineInclude.h" />
+		<Unit filename="src/src-Engine/EngineMain.cpp" />
+		<Unit filename="src/src-Engine/EngineMain.h" />
+		<Unit filename="src/src-Engine/Tile.cpp" />
+		<Unit filename="src/src-Engine/Tile.h" />
+		<Unit filename="src/src-Engine/TileManager.cpp" />
+		<Unit filename="src/src-Engine/TileManager.h" />
+		<Unit filename="src/src-Engine/TileTemplate.cpp" />
+		<Unit filename="src/src-Engine/TileTemplate.h" />
 		<Unit filename="src/src-MenuAPI/Menu.cpp" />
 		<Unit filename="src/src-MenuAPI/Menu.h" />
 		<Unit filename="src/src-MenuAPI/MenuBackground.cpp" />

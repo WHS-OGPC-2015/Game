@@ -7,18 +7,18 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-startingMenu.update(mousePos, clicked);
-if(pressed != true)
-    {
-            clicked = false;
-
-    }
+//startingMenu.update(mousePos, clicked);
+//if(pressed != true)
+//    {
+//            clicked = false;
+//
+//    }
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 
-startingMenu.draw();
+//startingMenu.draw();
 
 }
 

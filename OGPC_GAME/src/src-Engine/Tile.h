@@ -9,8 +9,14 @@ public:
     void update();
     void draw();
 
+    template<class T>
+    void setAttribute(T val, int indice)
+    {
+        attributes[indice] = val;
+    }
+
 private:
-    std::vector<tileAttribute> attributes;
+    std::vector<tileAttribute> attributes;//TEXTURE IS ALWAYS THE FIRST ATTRIBUTE
 
 };
 

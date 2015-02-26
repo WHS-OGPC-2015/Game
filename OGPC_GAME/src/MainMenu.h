@@ -16,8 +16,11 @@ private:
    MenuManager *Manager;
    Menu* optionsMenu;
    Menu* defaultMenu;
+   Menu* creditsMenu;
    bool active;
    HoverButton* Exit;
    HoverButton* OptionsBut;
    HoverButton* StartGameButton;
+   HoverButton* Credits;
+   HoverButton* CancelBut;
 };

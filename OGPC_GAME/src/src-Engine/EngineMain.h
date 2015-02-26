@@ -10,5 +10,7 @@ public:
     update();
     draw();
 private:
-    TileManager* tileManager;
+    TileManager* tiles;
+    ResourceManager* resources;
+    ObjectManager* objects;
 };

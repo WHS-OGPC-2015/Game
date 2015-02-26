@@ -2,7 +2,7 @@
 
 TileManager::TileManager(std::string file)
 {
-
+    loadFromFile(file);
 }
 
 

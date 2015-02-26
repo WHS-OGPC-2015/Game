@@ -1,8 +1,8 @@
 #include "Tile.h"
 
-Tile::Tile(TileTemplate& temp)
+Tile::Tile()
 {
-    attributes = temp.getAttributes();//assigns templates variable array to tile instance
+
 }
 
 void Tile::update()
@@ -12,7 +12,12 @@ void Tile::update()
 
 void Tile::draw()
 {
-    //draw tile
+    //draw tile?
+}
+
+void setTexture(ofTexture& tex)
+{
+    texture = tex;
 }
 
 

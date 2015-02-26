@@ -5,12 +5,14 @@
 class Tile
 {
 public:
-    Tile(ofTexture& texture);
+    Tile();         //constructor
     void update();
     void draw();
 
+    void setTexture(ofTexture&);    //sets tile texture
+
 private:
-    ofTexture* texture
+    ofTexture* texture;
 
 };
 

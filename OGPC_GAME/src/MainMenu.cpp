@@ -16,7 +16,9 @@ MainMenu::MainMenu()
     Manager->addTexture("HoveredBlueButton", "HoveredBlueButton.png");
     Manager->addTexture("PressedClickedBlueButton", "PressedClickedBlueButton.png");
     Manager->addTexture("DolphinBackground", "DolphinBackground.png");
-   // Manager->addTexture("StartGameButton", "PlayButton.cpp")
+    Manager->addTexture("StartGameButtonNormal", "PlayButtonNormal.png");
+    Manager->addTexture("StartGameButtonPressed", "PlayButtonPressed.png");
+    Manager->addTexture("StartGameButtonHovered", "PlayButtonHovered.png");
 
 
     Manager->addFont("NormalFont", "MySimpleFont.ttf", 16); // adding font
@@ -54,14 +56,12 @@ MainMenu::MainMenu()
     MenuEntity *SGButton;
     SGButton = new HoverButton(
                             ofVec2f(ofGetWindowWidth()/2, 200),
-                            Manager->getTexturePointer("BlueButton"),
-                            Manager->getTexturePointer("HoveredBlueButton"),
-                            Manager->getTexturePointer("PressedBlueButton"),
-                            Manager->getTexturePointer("ClickedBlueButton"),
-                            Manager->getTexturePointer("ClickedBlueButton"),
-                            Manager->getTexturePointer("PressedClickedBlueButton"),
-                            Manager->getFontPointer("NormalFont"),
-                            "Start Game"
+                            Manager->getTexturePointer("StartGameButtonNormal"),
+                            Manager->getTexturePointer("StartGameButtonHovered"),
+                            Manager->getTexturePointer("StartGameButtonPressed"),
+                            Manager->getTexturePointer("StartGameButtonPressed"),
+                            Manager->getTexturePointer("StartGameButtonPressed"),
+                            Manager->getTexturePointer("StartGameButtonPressed")
                                     );
 
     MenuEntity *dolphinBG; // options menu background

@@ -31,27 +31,31 @@ loadFilesFromDirectory(std::string folder)
         std::string extension = "";  //parsed file extension
         for(int ii = 0; 0<names[indice].size(); ii++)
         {
-            if(names[indice][ii] == '.')
+            if(names[indice][ii] == '.')    //if the character is a period
             {
-                dotLoc = ii;
+                dotLoc = ii;                //store that indice
             }
-            else if(ii > dotLoc)
+            else if(ii > dotLoc)            //if the indice is after the period
             {
-                extension+= names[indice][ii];
+                extension+= names[indice][ii];   //store the character
+            }
+        }
+        if(extension != "")
+        {
+            if(extension == "jpg" &&        //Checking for all texture file extensions
+               extension == "jpeg" &&
+               extension == "png" &&
+               extension == "bmp")
+            {
+                addTexture(names[indice]);  //if so load texture from that path
+            }
+            else if(extension == "ttf")
+            {
+                addFont(names[indice]);
             }
 
-        if(extension == "jpg" &&        //Checking for all texture file extensions
-           extension == "jpeg" &&
-           extension == "png" &&
-           extension == "bmp")
-        {
-            addTexture(names[indice]);
         }
-        else if(extension == "ttf")
-        {
-            addFont(names[indice]);
-        }
-        addResource()
+
     }
 
 }

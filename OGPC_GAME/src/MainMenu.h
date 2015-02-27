@@ -21,6 +21,6 @@ private:
    HoverButton* Exit;
    HoverButton* OptionsBut;
    HoverButton* StartGameButton;
-   HoverButton* Credits;
+   HoverButton* CreditsBut;
    HoverButton* CancelBut;
 };

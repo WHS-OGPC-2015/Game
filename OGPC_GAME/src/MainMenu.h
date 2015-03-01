@@ -6,6 +6,7 @@
 class MainMenu
 {
 public:
+    // in public, we have simple functions
     MainMenu();
     void draw();
     void update(ofVec2f& mousePos, bool& clicked, bool& pressed);
@@ -13,14 +14,17 @@ public:
     bool getActive();
 
 private:
-   MenuManager *Manager;
-   Menu* optionsMenu;
-   Menu* defaultMenu;
-   Menu* creditsMenu;
-   bool active;
-   HoverButton* Exit;
-   HoverButton* OptionsBut;
+   MenuManager *Manager; // this is the menumanager for the main menu
+   Menu* optionsMenu; // pointer to options menu
+   Menu* defaultMenu; // pointer to default menu
+   Menu* creditsMenu; // pointer to credits menu
+   bool active; // is the main menu active or not
+
+   // make pointers to every button
+   HoverButton* Exit; // pointer to exit button
+   HoverButton* OptionsBut; // pointer to options button, etc...
    HoverButton* StartGameButton;
    HoverButton* CreditsBut;
    HoverButton* CancelBut;
+   HoverButton* QuitGameBut;
 };

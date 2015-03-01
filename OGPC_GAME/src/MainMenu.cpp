@@ -6,7 +6,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     /*-------------------------------------------------------------
     First, We Set the Foundation for the MainMenu
     -------------------------------------------------------------*/
-
+    active = true;
     // We define the menu manager pointer and the menu pointers
 
     Manager = new MenuManager; // creates a new Menu manager
@@ -29,16 +29,17 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     Manager->addTexture("StartGameButtonNormal", "PlayButtonNormal.png");
     Manager->addTexture("StartGameButtonPressed", "PlayButtonPressed.png");
     Manager->addTexture("StartGameButtonHovered", "PlayButtonHovered.png");
-    Manager->addTexture("CreditsBackground", "DolphinBackground.png");
+    Manager->addTexture("CreditsBackground", "Credits.png");
     Manager->addTexture("StandardNormal", "StandardNormal.png");
     Manager->addTexture("StandardPressed", "StandardPressed.png");
     Manager->addTexture("StandardHovered", "StandardHovered.png");
 
 
+
     //Here we add ALL of the fonts
     Manager->addFont("NormalFont", "MySimpleFont.ttf", 16); // adding fonts
-    Manager->addFont("Baqacents", "Baqacents  Semibold.ttf", 16);
-    Manager->addFont("Fancy", "Champagne & Limousines.ttf", 16);
+    Manager->addFont("Baqacents", "Baqacents-Semibold.ttf", 16);
+    Manager->addFont("Fancy", "Champagne-and-Limousines.ttf", 16);
     Manager->addFont("Obelisk", "Obelisk-MMXV.ttf", 16);
 
 
@@ -68,7 +69,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
 
     MenuEntity *orangeBG; // Orange Background
     orangeBG = new MenuBackground(
-                            ofVec2f(ofGetWindowWidth()/2,ofGetWindowHeight()/2), // in the middle of the window
+                            ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/2), // in the middle of the window
                             Manager->getTexturePointer("OrangeBackground")
                                   );
 
@@ -78,7 +79,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     // example for adding text
     MenuEntity *optionsButton; // options button
     optionsButton = new HoverButton(
-                            ofVec2f(ofGetWindowWidth()/2, 350),
+                            ofVec2f(ofGetWindowWidth()/2, 2*ofGetWindowHeight()/5),
                             Manager->getTexturePointer("BlueButton"),           // adding textures, we've done this before...
                             Manager->getTexturePointer("HoveredBlueButton"),
                             Manager->getTexturePointer("PressedBlueButton"),
@@ -93,7 +94,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
 
     MenuEntity *creditsButton; // Credits Button
     creditsButton = new HoverButton(
-                            ofVec2f(ofGetWindowWidth()/2, 100),
+                            ofVec2f(ofGetWindowWidth()/2, 3*ofGetWindowHeight()/5),
                             Manager->getTexturePointer("BlueButton"),
                             Manager->getTexturePointer("HoveredBlueButton"),
                             Manager->getTexturePointer("PressedBlueButton"),
@@ -105,11 +106,25 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
                                     );
 
 
+    MenuEntity *quitGameButton; // Quit Game Button
+    quitGameButton = new HoverButton(
+                            ofVec2f(ofGetWindowWidth()/2, 4*ofGetWindowHeight()/5),
+                            Manager->getTexturePointer("BlueButton"),
+                            Manager->getTexturePointer("HoveredBlueButton"),
+                            Manager->getTexturePointer("PressedBlueButton"),
+                            Manager->getTexturePointer("ClickedBlueButton"),
+                            Manager->getTexturePointer("ClickedBlueButton"),
+                            Manager->getTexturePointer("PressedClickedBlueButton"),
+                            Manager->getFontPointer("Fancy"),
+                            "QUIT GAME"
+                                    );
+
+
 
 
     MenuEntity *SGButton; // Start Game Button
     SGButton = new HoverButton(
-                            ofVec2f(ofGetWindowWidth()/2, 200),
+                            ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/5),
                             Manager->getTexturePointer("StartGameButtonNormal"),
                             Manager->getTexturePointer("StartGameButtonHovered"),
                             Manager->getTexturePointer("StartGameButtonPressed"),
@@ -160,6 +175,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     normalMenu.addEntity(*SGButton, "StartGameButton");
     normalMenu.addEntity(*optionsButton, "OptionsButton");
     normalMenu.addEntity(*creditsButton, "CreditsButton");
+    normalMenu.addEntity(*quitGameButton, "QuitGameButton");
     credMenu.addEntity(*creditsBG, "CreditsBackground");
     credMenu.addEntity(*cancelButton, "CancelButton");
 
@@ -187,7 +203,8 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     OptionsBut = defaultMenu->getPointerToChildByName<HoverButton>("OptionsButton");
     StartGameButton = defaultMenu->getPointerToChildByName<HoverButton>("StartGameButton");
     CreditsBut = defaultMenu->getPointerToChildByName<HoverButton>("CreditsButton");
-    CancelBut = defaultMenu->getPointerToChildByName<HoverButton>("CancelButton");
+    CancelBut = creditsMenu->getPointerToChildByName<HoverButton>("CancelButton");
+    QuitGameBut = defaultMenu->getPointerToChildByName<HoverButton>("QuitGameButton");
 
 
 }
@@ -197,7 +214,10 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
 
 void MainMenu::draw() // in the draw function, all we do is call the manager's draw function
 {
-    Manager->draw();
+    if (active == true)
+    {
+        Manager->draw();
+    }
 }
 
 
@@ -205,46 +225,78 @@ void MainMenu::draw() // in the draw function, all we do is call the manager's d
 
 void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Update, we have all of the functionality, like clicking and swapping between menus
 {
-     // this (if) -- (else if) statement is a good example of swapping between menus:
-     //Start:
-     // This if statement says that if you click the x button in the options menu, it goes back to the default menu
-     if(Exit->getEventDataInt() > 2) // "Exit->getEventDataInt() > 2" essentially means that if the exit button (inside the options menu) is clicked, it passes the if test
-     {                               //   ( >2 means it's clicked. 0 = nothing, 1 = hovered, 2 = pressed, 3 = clicked, 4 = hovered and clicked, 5 = pressed and clicked)
-         Exit->setClicked(false);    // once the button is clicked, we immediately unclick it manually
-         OptionsBut->setClicked(false); // we unclick the options button, which is in the default Menu
-         optionsMenu->setInactive();    // we set the options menu to inactive (we pressed the x button)
-         defaultMenu->setActive();      // we re-set the default menu to active
-     }
-     // This else if statement is more common than the previous if statement
-     else if (defaultMenu->isActive() == true and optionsMenu->isActive() == false and OptionsBut->getEventDataInt() > 2) // translation: if you are in the default menu,
-     {                                                                                                                    // and you hit the options button, the following happens:
-         optionsMenu->setActive(); // the options menu pops up
-         defaultMenu->setInactive();// the default menu is turned inactive
-     }
-     //End.
+    if (active == true)
+    {
+         // this (if) -- (else if) statement is a good example of swapping between menus:
+         //Start:
+         // This if statement says that if you click the x button in the options menu, it goes back to the default menu
+         if(Exit->getEventDataInt() > 2) // "Exit->getEventDataInt() > 2" essentially means that if the exit button (inside the options menu) is clicked, it passes the if test
+         {                               //   ( >2 means it's clicked. 0 = nothing, 1 = hovered, 2 = pressed, 3 = clicked, 4 = hovered and clicked, 5 = pressed and clicked)
+             Exit->setClicked(false);    // once the button is clicked, we immediately unclick it manually
+             OptionsBut->setClicked(false); // we unclick the options button, which is in the default Menu
+             optionsMenu->setInactive();    // we set the options menu to inactive (we pressed the x button)
+             defaultMenu->setActive();      // we re-set the default menu to active
+         }
+         // This else if statement is more common than the previous if statement
+         else if (defaultMenu->isActive() == true and optionsMenu->isActive() == false and OptionsBut->getEventDataInt() > 2) // translation: if you are in the default menu,
+         {                                                                                                                    // and you hit the options button, the following happens:
+             optionsMenu->setActive(); // the options menu pops up
+             defaultMenu->setInactive();// the default menu is turned inactive
+         }
+         //End.
 
 
-     // this if deals with the start game button -- NOT FINISHED
-     if (StartGameButton->getEventDataInt() > 2)
-     {
-         StartGameButton->setClicked(false);
-         defaultMenu->setInactive();
-     }
+         // this if deals with the start game button -- NOT FINISHED
+         if (StartGameButton->getEventDataInt() > 2)
+         {
+             StartGameButton->setClicked(false);
+             defaultMenu->setInactive();
+             active = false;
+         }
 
-    // the following two are grouped, hopefully
-     if (CancelBut->getEventDataInt() >2) // deals with the cancel button in the credits menu
-     {
-         CancelBut->setClicked(false);
-         CreditsBut->setClicked(false);
-         creditsMenu->setInactive();
-         defaultMenu->setActive();
-     }
-     else if (defaultMenu->isActive() == true and creditsMenu->isActive() == false and CreditsBut->getEventDataInt() > 2)
-     {
-         creditsMenu->setActive();
-         defaultMenu->setInactive();
-     }
+        // the following two are grouped, hopefully
+         if (CancelBut->getEventDataInt() >2) // deals with the cancel button in the credits menu
+         {
 
-     Manager->update(mousePos, clicked, pressed); // and finally, and most importantly, we update the manager
+             CancelBut->setClicked(false);
+             CreditsBut->setClicked(false);
+             creditsMenu->setInactive();
+             defaultMenu->setActive();
+         }
+         else if (defaultMenu->isActive() == true and creditsMenu->isActive() == false and CreditsBut->getEventDataInt() > 2)
+         {
 
+             creditsMenu->setActive();
+             defaultMenu->setInactive();
+         }
+
+
+         if (QuitGameBut->getEventDataInt() >2) // deals with the cancel button in the credits menu
+         {
+
+             QuitGameBut->setClicked(false);
+             defaultMenu->setInactive();
+             active = false;
+         }
+
+
+
+
+         Manager->update(mousePos, clicked, pressed); // and finally, and most importantly, we update the manager
+
+
+
+
+    }
+
+}
+
+void MainMenu::switchActive()
+{
+    active = !active;
+}
+
+bool MainMenu::getActive()
+{
+    return active;
 }

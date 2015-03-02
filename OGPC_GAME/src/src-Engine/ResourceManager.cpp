@@ -8,12 +8,12 @@ ResourceManager()
 loadFilesFromDirectory(std::string folder)
 {
 
-    vector<string> names;
-    ///NOT REALLY SURE HOW THIS BLOCK OF CODE WORKS
-    char search_path[200];
-    sprintf(search_path, "%s*.*", folder.c_str());
+    std::vector<std::string> names;
+
+    folder += "\\*.*";
+
     WIN32_FIND_DATA fd;
-    HANDLE hFind = ::FindFirstFile(search_path, &fd);
+    HANDLE hFind = FindFirstFile(folder.c_str(), &fd);
     if(hFind != INVALID_HANDLE_VALUE) {
         do {
             // read all (real) files in current folder
@@ -21,8 +21,11 @@ loadFilesFromDirectory(std::string folder)
             if(! (fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) ) {
                 names.push_back(fd.cFileName);
             }
-        }while(::FindNextFile(hFind, &fd));
-        ::FindClose(hFind);
+        }while(FindNextFile(hFind, &fd));
+
+        FindClose(hFind);
+
+    }
     //at this point "names" vector has all file names in directory
 
     for(int indice = 0; indice < names.size(); indice++)
@@ -57,5 +60,4 @@ loadFilesFromDirectory(std::string folder)
         }
 
     }
-
 }

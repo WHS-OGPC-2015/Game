@@ -2,23 +2,27 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-
+    viewPos = ofVec2f(0, 0);
+    gameEngine  = new Engine("tiles.xml", "game.xml", "objects.xml")
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-//startingMenu.update(mousePos, clicked);
-//if(pressed != true)
-//    {
-//            clicked = false;
-//
-//    }
+    if(dragging == true)
+    {
+        ofVec2f dif = mousePos - lastMousePos;
+        viewPos += dif;
+    }
+    gameEngine.update();
+    lastMousePos = mousePos;
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
-//startingMenu.draw();
+    ofPopMatrix();
+    ofTranslate(viewPos.x, viewPos.y);
+    gameEngine.draw();
+    ofPushMatrix():
 
 }
 
@@ -34,29 +38,34 @@ void ofApp::keyReleased(int key){
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){
-    mousePos = ofVec2f(x, y);
+  mousePos.x = x;
+  mousePos.y = y;
+  dragging = false;
+
 
 
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-    mousePos = ofVec2f(x, y);
+    dragging = true;
+    mousePos.x = x;
+    mousePos.y = y;
 }
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-            pressed =true;
+    dragging = false;
+    mousePos.x = x;
+    mousePos.y = y;
 
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-            if(pressed == true)
-            {
-                pressed = false;
-                clicked = true;
-            }
+    dragging = false;
+    mousePos.x = x;
+    mousePos.y = y;
 
 
 }

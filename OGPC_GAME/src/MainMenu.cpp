@@ -54,7 +54,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     //Start:
     MenuEntity *exitButton; // create the exit button
     exitButton = new HoverButton(
-                            ofVec2f(900,300),                                   // position
+                            ofVec2f(ofGetWindowWidth()-100, 100),                                   // position
                             Manager->getTexturePointer("DefaultQuitButton"),    // Normal Texture
                             Manager->getTexturePointer("HoveredQuitButton"),    // Hovered Texture
                             Manager->getTexturePointer("PressedQuitButton"),    // Pressed texture
@@ -138,7 +138,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
 
     MenuEntity *cancelButton; // cancel Button
     cancelButton = new HoverButton(
-                            ofVec2f(ofGetWindowWidth()/2, 600),
+                            ofVec2f(ofGetWindowWidth()/2, 4*ofGetWindowHeight()/5),
                             Manager->getTexturePointer("BlueButton"),
                             Manager->getTexturePointer("HoveredBlueButton"),
                             Manager->getTexturePointer("PressedBlueButton"),
@@ -210,8 +210,6 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
 }
 
 
-
-
 void MainMenu::draw() // in the draw function, all we do is call the manager's draw function
 {
     if (active == true)
@@ -254,7 +252,7 @@ void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Upd
              active = false;
          }
 
-        // the following two are grouped, hopefully
+        // the following two are grouped, hopefullyStartGameButtonBut->setPosition(ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/5));
          if (CancelBut->getEventDataInt() >2) // deals with the cancel button in the credits menu
          {
 
@@ -280,6 +278,12 @@ void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Upd
          }
 
 
+        Exit->setPosition(ofVec2f(ofGetWindowWidth()-100, 100));
+        OptionsBut->setPosition(ofVec2f(ofGetWindowWidth()/2, 2*ofGetWindowHeight()/5));
+        CreditsBut->setPosition(ofVec2f(ofGetWindowWidth()/2, 3*ofGetWindowHeight()/5));
+        StartGameButton->setPosition(ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/5));
+        CancelBut->setPosition(ofVec2f(ofGetWindowWidth()/2, 4*ofGetWindowHeight()/5));
+        QuitGameBut->setPosition(ofVec2f(ofGetWindowWidth()/2, 4*ofGetWindowHeight()/5));
 
 
          Manager->update(mousePos, clicked, pressed); // and finally, and most importantly, we update the manager

@@ -223,3 +223,8 @@ bool HoverButton::getEventDataBool()
 {
 
 }
+
+void HoverButton::setPosition(ofVec2f v)
+{
+    position = v;
+}

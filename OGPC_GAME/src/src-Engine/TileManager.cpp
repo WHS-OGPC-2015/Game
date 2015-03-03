@@ -1,8 +1,9 @@
 #include "TileManager.h"
 
-TileManager::TileManager(std::string file)
+TileManager::TileManager(std::string file, ofVec2f& trans)
 {
     loadFromFile(file);
+    tFactor = &trans
 }
 
 void TileManager::loadFromFile(std::string file)
@@ -47,14 +48,16 @@ void TileManager::loadFromFile(std::string file)
 
 void TileManager::update()
 {
-    ofVec2f maxDisplayDim = ofVec2f((ofGetScreenWidth()/tileSize.x), (ofGetWindowHeight()/tileSize.y));
+    maxDisplayDim = ofVec2f((ofGetScreenWidth()/tileSize.x), (ofGetWindowHeight()/tileSize.y));
+
     for(int ii = 0; ii<tiles.size(); ii++)
     {
+        if(tiles[ii].location <)
             tiles[ii].update();
     }
 }
 
-void TileManager::draw(ofVec2f tFactor)
+void TileManager::draw()
 {
     for(int ii = 0; ii<tiles.size(); ii++)
     {

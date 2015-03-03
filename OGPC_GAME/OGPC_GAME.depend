@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
-1423773173 source:c:\openframeworks\apps\game\ogpc_game\icon.rc
+1425417212 source:c:\openframeworks\apps\game\ogpc_game\icon.rc
 
-1423773173 source:c:\openframeworks\apps\game\ogpc_game\src\main.cpp
+1425417212 source:c:\openframeworks\apps\game\ogpc_game\src\main.cpp
 	"ofMain.h"
 	"ofApp.h"
 
@@ -1478,15 +1478,15 @@
 	"ofCamera.h"
 	"ofEvents.h"
 
-1423776474 c:\openframeworks\apps\game\ogpc_game\src\ofapp.h
+1425417212 c:\openframeworks\apps\game\ogpc_game\src\ofapp.h
 	"ofMain.h"
 	"MainMenu.h"
 
-1423776474 c:\openframeworks\apps\game\ogpc_game\src\mainmenu.h
+1425417212 c:\openframeworks\apps\game\ogpc_game\src\mainmenu.h
 	"ofMain.h"
 	"src-MenuAPI/MenuInclude.h"
 
-1423773174 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuinclude.h
+1425417212 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuinclude.h
 	"MenuManager.h"
 	"Menu.h"
 	"MenuEntity.h"
@@ -1494,28 +1494,49 @@
 	"Slider.h"
 	"MenuBackground.h"
 
-1423773174 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menumanager.h
+1425417212 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menumanager.h
 	"ofMain.h"
 	"Menu.h"
 	<Map>
 
-1423773173 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menu.h
+1425417212 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menu.h
 	"ofMain.h"
 	"MenuEntity.h"
 
-1423773174 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuentity.h
+1425417212 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuentity.h
 	"ofMain.h"
 
-1423773174 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\simplebutton.h
+1425417212 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\simplebutton.h
 	"MenuEntity.h"
 
-1423773174 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\slider.h
+1425417212 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\slider.h
 	"ofMain.h"
 	"MenuEntity.h"
 
-1423773173 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menubackground.h
+1425417212 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menubackground.h
 	"MenuEntity.h"
 
-1423776651 source:c:\openframeworks\apps\game\ogpc_game\src\mainmenu.cpp
+1425417212 source:c:\openframeworks\apps\game\ogpc_game\src\mainmenu.cpp
 	"MainMenu.h"
+
+1425417212 source:c:\openframeworks\apps\game\ogpc_game\src\ofapp.cpp
+	"ofApp.h"
+
+1425417212 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menu.cpp
+	"Menu.h"
+
+1425417212 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menubackground.cpp
+	"MenuBackground.h"
+
+1425417212 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuentity.cpp
+
+1425417212 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menumanager.cpp
+	"MenuManager.h"
+	<string>
+
+1425417212 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\simplebutton.cpp
+	"SimpleButton.h"
+
+1425417212 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\slider.cpp
+	"Slider.h"
 

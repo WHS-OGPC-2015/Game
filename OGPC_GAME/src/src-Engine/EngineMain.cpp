@@ -26,3 +26,11 @@ void draw()
 {
     tiles->draw();
 }
+
+Engine::~Engine()
+{
+    delete resources;
+    delete tiles;
+    //delete objects;
+}
+

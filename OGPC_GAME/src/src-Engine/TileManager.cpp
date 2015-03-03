@@ -28,7 +28,11 @@ void TileManager::loadFromFile(std::string file)
             Tile tmp(); //create temporary tile
 
             //set texture of tile by getting string from xml doc
-            tmp.setTexture(resources.getTextureRef(theMap.getValue("Texture", "")));;
+            tmp.setTexture(resources.getTextureReference(theMap.getValue("texture", "")));
+
+            ofVec2f location = ofVec2f(((tiles.size()/mapSize.y)+1)*tileSize.y,
+                                        ((tiles.size()/mapSize.x)+1)*tileSize.x);
+            tmp.setLocation(location);
 
             tiles.push_back(tmp);
         }
@@ -45,15 +49,17 @@ void TileManager::loadFromFile(std::string file)
 
 void TileManager::update()
 {
-
+    for(int ii = 0; ii<tiles.size(); ii++)
+    {
+        tiles[ii].update();
+    }
 }
 
 void TileManager::draw(ofVec2f tFactor)
 {
-    ofPushMatrix();
-    ofTranslate(tFactor.x, tFactor.y);
-
-        //tileSet.draw();
-    ofPopMatrix();
+    for(int ii = 0; ii<tiles.size(); ii++)
+    {
+        tiles[ii].draw();
+    }
 }
 

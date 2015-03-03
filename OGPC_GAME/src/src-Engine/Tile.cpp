@@ -2,7 +2,7 @@
 
 Tile::Tile()
 {
-
+    //??
 }
 
 void Tile::update()
@@ -12,10 +12,20 @@ void Tile::update()
 
 void Tile::draw()
 {
-    //draw tile?
+    texture.draw(location);
 }
 
-void setTexture(ofTexture& tex)
+ofVec2f Tile::getLocation()
+{
+    return location;
+}
+
+void Tile::setLocation(ofVec2f newLocation)
+{
+    location = newLocation;
+}
+
+void Tile::setTexture(ofTexture& tex)
 {
     texture = tex;
 }

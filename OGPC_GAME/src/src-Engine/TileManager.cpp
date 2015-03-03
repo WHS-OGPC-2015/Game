@@ -49,10 +49,12 @@ void TileManager::loadFromFile(std::string file)
 void TileManager::update()
 {
     maxDisplayDim = ofVec2f((ofGetScreenWidth()/tileSize.x), (ofGetWindowHeight()/tileSize.y));
-
+    offsetDisplayDim = ofVec2f((tFactor->x/tileSize.x), (tFactor->y/tileSize.y));
+    currentDisplayDim = ofVec2f((maxDisplayDim.x+offsetDisplaydim.x), maxDisplayDim.y+offsetCurrentDisplayDim.y);
+    currentDimScalar = tileIndiceByArrayCoords(currentDisplayDim);
     for(int ii = 0; ii<tiles.size(); ii++)
     {
-        if(tiles[ii].location <)
+        if()
             tiles[ii].update();
     }
 }
@@ -68,3 +70,14 @@ void TileManager::draw()
     }
 }
 
+ofVec2f tileArrayCoordsByIndice(int indice)
+{
+    int row = (indice/mapSize.y)+1;
+    int column = indice%mapSize.x;
+    return ofVec2f(column, row);
+}
+
+int tileIndiceByArrayCoords(ofVec2f coords)
+{
+    return (coords.y*mapSize.y)+coords.x;
+}

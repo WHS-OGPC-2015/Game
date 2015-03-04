@@ -23,8 +23,10 @@ void Slider::update(){}//also just here to prevent error
 
 void Slider::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
-        if(clicked)
+    std::cout<<"here3";
+    if(clicked)
     {
+        std::cout<<"here2";
         //nowClicked = !nowClicked; //toggle clicked status
 
             //if it is...test to see if a point is not inside the button
@@ -33,10 +35,11 @@ void Slider::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
            mousePos.x > bgBRPos.x ||
            mousePos.y > bgBRPos.y   )
         {
-
+            std::cout<<"here1";
         }
         else
         {
+            std::cout<<"here";
             std::cout << currentValue << std::endl;
             currentValue = ((mousePos.x - bgTLPos.x)+minValue)*cordScale;
         }

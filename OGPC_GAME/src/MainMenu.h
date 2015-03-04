@@ -30,4 +30,5 @@ private:
    HoverButton* QuitGameBut;
    HoverButton* YesQuitBut;
    HoverButton* NoQuitBut;
+    Slider* BrightnessSlider;
 };

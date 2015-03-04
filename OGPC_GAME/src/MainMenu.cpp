@@ -40,7 +40,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     Manager->addTexture("NoExitNormal", "NormalNoButton.png");
     Manager->addTexture("NoExitPressed", "NormalNoButton.png");
     Manager->addTexture("NoExitHovered", "NormalNoButton.png");
-
+    Manager->addTexture("ReallyQuitBackground", "ReallyQuitBackground.png");
 
 
     //Here we add ALL of the fonts
@@ -59,6 +59,15 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
 
     // Please use the following format for consistency and legibility:
     //Start:
+    MenuEntity *brightnessSlider;
+    brightnessSlider = new Slider(
+                            ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/4),
+                            Manager->getTexturePointer("BlueButton"),
+                            Manager->getTexturePointer("NormalQuitButton"),
+                            100,
+                            0,
+                            0
+                                );
     MenuEntity *exitButton; // create the exit button
     exitButton = new HoverButton(
                             ofVec2f(ofGetWindowWidth()-100, 100),                                   // position
@@ -79,8 +88,11 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
                             ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/2), // in the middle of the window
                             Manager->getTexturePointer("OrangeBackground")
                                   );
-
-
+    MenuEntity *reallyQuitBG;//quitMenu background
+    reallyQuitBG = new MenuBackground(
+                            ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/4),
+                            Manager->getTexturePointer("ReallyQuitBackground")
+                                    );
 
 
     // example for adding text
@@ -173,7 +185,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
 
     MenuEntity *yesExitButton; //exit game button
     yesExitButton = new HoverButton(
-                            ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()*2/3),
+                            ofVec2f(ofGetWindowWidth()/4, ofGetWindowHeight()*2/3),
                             Manager->getTexturePointer("YesExitNormal"),
                             Manager->getTexturePointer("YesExitHovered"),
                             Manager->getTexturePointer("YesExitPressed"),
@@ -184,7 +196,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
 
     MenuEntity *noExitButton; //return to main menu button
     noExitButton = new HoverButton(
-                            ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/5),
+                            ofVec2f(ofGetWindowWidth()*3/4, ofGetWindowHeight()*2/3),
                             Manager->getTexturePointer("NoExitNormal"),
                             Manager->getTexturePointer("NoExitHovered"),
                             Manager->getTexturePointer("NoExitPressed"),
@@ -207,8 +219,10 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     normalMenu.addEntity(*quitGameButton, "QuitGameButton");
     credMenu.addEntity(*creditsBG, "CreditsBackground");
     credMenu.addEntity(*cancelButton, "CancelButton");
+    quitMenu.addEntity(*reallyQuitBG, "QuitBackground");
     quitMenu.addEntity(*yesExitButton, "YesExitButton");
     quitMenu.addEntity(*noExitButton, "NoExitButton");
+    opMenu.addEntity(*brightnessSlider, "setBrightness");
 
 
 
@@ -241,6 +255,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     QuitGameBut = defaultMenu->getPointerToChildByName<HoverButton>("QuitGameButton");
     YesQuitBut = quitGameMenu->getPointerToChildByName<HoverButton>("YesExitButton");
     NoQuitBut = quitGameMenu->getPointerToChildByName<HoverButton>("NoExitButton");
+    BrightnessSlider = optionsMenu->getPointerToChildByName<Slider>("setBrightness");
 
 
 
@@ -336,9 +351,10 @@ void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Upd
         StartGameButton->setPosition(ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/5));
         CancelBut->setPosition(ofVec2f(ofGetWindowWidth()/2, 4*ofGetWindowHeight()/5));
         QuitGameBut->setPosition(ofVec2f(ofGetWindowWidth()/2, 4*ofGetWindowHeight()/5));
-
+        
 
         Manager->update(mousePos, clicked, pressed); // and finally, and most importantly, we update the manager
+        
 
 
 

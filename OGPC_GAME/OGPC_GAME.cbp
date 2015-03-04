@@ -120,6 +120,12 @@
 		</Unit>
 		<Unit filename="src/MainMenu.cpp" />
 		<Unit filename="src/MainMenu.h" />
+		<Unit filename="src/XML/libs/tinyxml.cpp" />
+		<Unit filename="src/XML/libs/tinyxml.h" />
+		<Unit filename="src/XML/libs/tinyxmlerror.cpp" />
+		<Unit filename="src/XML/libs/tinyxmlparser.cpp" />
+		<Unit filename="src/XML/src/ofxXmlSettings.cpp" />
+		<Unit filename="src/XML/src/ofxXmlSettings.h" />
 		<Unit filename="src/main.cpp">
 			<Option virtualFolder="src" />
 		</Unit>

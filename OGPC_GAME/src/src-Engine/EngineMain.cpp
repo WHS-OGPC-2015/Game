@@ -1,5 +1,5 @@
 #include "EngineMain.h"
-
+#include "../XML/src/ofxXmlSettings.h"
 Engine::Engine(std::string tileData, std::string objectData, std::string GameData, ofVec2f& trans)
 {
     tFactor = &trans;
@@ -10,6 +10,10 @@ Engine::Engine(std::string tileData, std::string objectData, std::string GameDat
     tiles = new TileManager(tileData, trans);
     //objects = new ObjectManager(objectData, trans);
 
+
+    resources->addTexture("dumbWater", "water");
+    resources->addTexture("dumbGrass", "grass");
+    resources->addTexture("dumbSnow", "snow");
 }
 
 void Engine::setup()

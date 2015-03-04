@@ -19,8 +19,8 @@ private:
     ofVec2f tileSize; //width and height of tiles (should be equal)
     ResourceManager* resources;//local pointer to engine resource manager
 
-    ofVec2f maxDisplayDim, topLeftTile, bottomLeftTile;
-    int topLeftScalar;
+    ofVec2f maxDisplayDim, topLeftTile, bottomRightTile;
+    int topLeftScalar, bottomRightScalar;
     ofVec2f* tFactor;
 
     std::vector<bool> toDraw;

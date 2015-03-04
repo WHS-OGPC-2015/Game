@@ -1,0 +1,37 @@
+<mapSizeX>5</mapSizeX>
+<mapSizeY>3</mapSizeY>
+<tileSizeX>50</tileSizeX>
+<tileSizeY>50</tileSizeY>
+<TILES>
+    <tile>
+        <texture>grass</texture>
+        <texture>grass</texture>
+        <texture>grass</texture>
+        <texture>grass</texture>
+        <texture>grass</texture>
+        <texture>grass</texture>
+        <texture>water</texture>
+        <texture>water</texture>
+        <texture>water</texture>
+        <texture>water</texture>
+        <texture>water</texture>
+        <texture>water</texture>
+        <texture>water</texture>
+        <texture>water</texture>
+        <texture>water</texture>
+    </tile>
+    <tile></tile>
+    <tile></tile>
+    <tile></tile>
+    <tile></tile>
+    <tile></tile>
+    <tile></tile>
+    <tile></tile>
+    <tile></tile>
+    <tile></tile>
+    <tile></tile>
+    <tile></tile>
+    <tile></tile>
+    <tile></tile>
+    <tile></tile>
+</TILES>

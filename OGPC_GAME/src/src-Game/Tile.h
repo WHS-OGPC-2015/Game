@@ -1,14 +1,11 @@
 
 #pragma once
+#include "ofMain.h"
 
 class Tile
 {
     public:
-
-        void setArrrayNum(int i, int j);
-        void setColor(ofColor c);
-
-
-    private:
-        ofColor c;
+    Tile(int alt, std::string text);
+    int altitude;
+    std::string texture;
 };

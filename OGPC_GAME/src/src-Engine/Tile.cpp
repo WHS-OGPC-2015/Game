@@ -12,7 +12,7 @@ void Tile::update()
 
 void Tile::draw()
 {
-    texture.draw(location);
+    texture.draw(location.x, location.y);
 }
 
 ofVec2f Tile::getLocation()

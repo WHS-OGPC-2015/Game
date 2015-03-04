@@ -6,6 +6,7 @@ class Tile
 {
 public:
     Tile();         //constructor
+
     void update();
     void draw();
 

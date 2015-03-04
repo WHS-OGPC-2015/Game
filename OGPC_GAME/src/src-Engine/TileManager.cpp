@@ -5,8 +5,6 @@ TileManager::TileManager(std::string file)
     loadFromFile(file);
 }
 
-
-
 void TileManager::loadFromFile(std::string file)
 {
     ofxXmlSettings theMap;      //create new XML object for loading the tileset
@@ -49,9 +47,10 @@ void TileManager::loadFromFile(std::string file)
 
 void TileManager::update()
 {
+    ofVec2f maxDisplayDim = ofVec2f((ofGetScreenWidth()/tileSize.x), (ofGetWindowHeight()/tileSize.y));
     for(int ii = 0; ii<tiles.size(); ii++)
     {
-        tiles[ii].update();
+            tiles[ii].update();
     }
 }
 
@@ -59,7 +58,10 @@ void TileManager::draw(ofVec2f tFactor)
 {
     for(int ii = 0; ii<tiles.size(); ii++)
     {
-        tiles[ii].draw();
+        if(toDraw[ii] == true)
+        {
+            tiles[ii].draw();
+        }
     }
 }
 

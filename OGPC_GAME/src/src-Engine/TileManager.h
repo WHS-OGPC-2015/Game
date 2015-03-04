@@ -5,7 +5,9 @@ class TileManager
 {
 public:
     TileManager(std::string);
+
     void loadFromFile(std::string);
+
     void update(ofVec2f);
     void draw();
 private:

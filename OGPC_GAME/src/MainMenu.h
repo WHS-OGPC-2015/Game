@@ -18,6 +18,7 @@ private:
    Menu* optionsMenu; // pointer to options menu
    Menu* defaultMenu; // pointer to default menu
    Menu* creditsMenu; // pointer to credits menu
+   Menu* quitMenu; //pointer to quit menu
    bool active; // is the main menu active or not
 
    // make pointers to every button
@@ -27,4 +28,6 @@ private:
    HoverButton* CreditsBut;
    HoverButton* CancelBut;
    HoverButton* QuitGameBut;
+   HoverButton* YesQuitBut;
+   HoverButton* NoQuitBut;
 };

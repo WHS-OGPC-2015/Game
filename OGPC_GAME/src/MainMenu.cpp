@@ -13,6 +13,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     Menu opMenu(ofVec2f(0,0)); // creating the options menu
     Menu normalMenu(ofVec2f(0,0)); // creating the normal menu
     Menu credMenu(ofVec2f(0,0)); // creating credits menu
+    Menu quitMenu(ofVec2f(0,0));//creating quit y/n? menu
 
     //Here we add ALL of the Textures
     Manager->addTexture("DefaultQuitButton", "NormalQuitButton.png"); // adding textures in the format Manager->addTexture("Name you will refer to the texture with", "File_Name")
@@ -33,6 +34,12 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     Manager->addTexture("StandardNormal", "StandardNormal.png");
     Manager->addTexture("StandardPressed", "StandardPressed.png");
     Manager->addTexture("StandardHovered", "StandardHovered.png");
+    Manager->addTexture("YesExitNormal", ".png");
+    Manager->addTexture("YesExitPressed", ".png");
+    Manager->addTexture("YesExitHovered", ".png");
+    Manager->addTexture("NoExitNormal", ".png");
+    Manager->addTexture("NoExitPressed", ".png");
+    Manager->addTexture("NoExitHovered", ".png");
 
 
 
@@ -164,6 +171,28 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
                             Manager->getTexturePointer("CreditsBackground")
                                   );
 
+    MenuEntity *yesExitButton; //exit game button
+    yesExitButton = new HoverButton(
+                            ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/5),
+                            Manager->getTexturePointer("YesExitNormal"),
+                            Manager->getTexturePointer("YesExitHovered"),
+                            Manager->getTexturePointer("YesExitPressed"),
+                            Manager->getTexturePointer("YesExitPressed"),
+                            Manager->getTexturePointer("YesExitPressed"),
+                            Manager->getTexturePointer("YesExitPressed")
+                                    );
+
+    MenuEntity *noExitButton; //return to main menu button
+    noExitButton = new HoverButton(
+                            ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/5),
+                            Manager->getTexturePointer("NoExitNormal"),
+                            Manager->getTexturePointer("NoExitHovered"),
+                            Manager->getTexturePointer("NoExitPressed"),
+                            Manager->getTexturePointer("NoExitPressed"),
+                            Manager->getTexturePointer("NoExitPressed"),
+                            Manager->getTexturePointer("NoExitPressed")
+                                    );
+
     /*------------------------------------------------------------------------------
     Done Making Buttons.
     Now we add the buttons to menus and the menus to Menu manager.
@@ -178,6 +207,8 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     normalMenu.addEntity(*quitGameButton, "QuitGameButton");
     credMenu.addEntity(*creditsBG, "CreditsBackground");
     credMenu.addEntity(*cancelButton, "CancelButton");
+    quitMenu.addEntity(*yesExitButton, "YesExitButton");
+    quitMenu.addEntity(*noExitButton, "NoExitButton");
 
 
 
@@ -185,6 +216,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     Manager->addMenu(normalMenu, "NormalMenu");
     Manager->addMenu(opMenu, "OptionsMenu");
     Manager->addMenu(credMenu, "CreditsMenu");
+    Manager->addMenu(quitMenu, "QuitGameMenu");
 
 
 
@@ -195,6 +227,8 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     optionsMenu->setInactive();
     creditsMenu = Manager->getMenuPointerByName("CreditsMenu");
     creditsMenu->setInactive();
+    quitMenu = Manager->getMenuPointerByName("QuitGameMenu");
+    quitMenu->setInactive();
 
 
 
@@ -205,6 +239,9 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     CreditsBut = defaultMenu->getPointerToChildByName<HoverButton>("CreditsButton");
     CancelBut = creditsMenu->getPointerToChildByName<HoverButton>("CancelButton");
     QuitGameBut = defaultMenu->getPointerToChildByName<HoverButton>("QuitGameButton");
+    YesQuitBut = quitMenu->getPointerToChildByName<HoverButton>("YesExitButton");
+    NoQuitBut = quitMenu->getPointerToChildByName<HoverButton>("NoExitButton");
+
 
 
 }
@@ -261,6 +298,7 @@ void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Upd
              creditsMenu->setInactive();
              defaultMenu->setActive();
          }
+
          else if (defaultMenu->isActive() == true and creditsMenu->isActive() == false and CreditsBut->getEventDataInt() > 2)
          {
 
@@ -268,13 +306,12 @@ void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Upd
              defaultMenu->setInactive();
          }
 
-
-         if (QuitGameBut->getEventDataInt() >2) // deals with the cancel button in the credits menu
+         if (QuitGameBut->getEventDataInt() >2) // deals with the quit game button
          {
-
-             QuitGameBut->setClicked(false);
+             quitMenu->setActive();
+             //QuitGameBut->setClicked(false);
              defaultMenu->setInactive();
-             active = false;
+             //active = false;
          }
 
 
@@ -286,7 +323,7 @@ void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Upd
         QuitGameBut->setPosition(ofVec2f(ofGetWindowWidth()/2, 4*ofGetWindowHeight()/5));
 
 
-         Manager->update(mousePos, clicked, pressed); // and finally, and most importantly, we update the manager
+        Manager->update(mousePos, clicked, pressed); // and finally, and most importantly, we update the manager
 
 
 

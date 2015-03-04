@@ -227,7 +227,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     optionsMenu->setInactive();
     creditsMenu = Manager->getMenuPointerByName("CreditsMenu");
     creditsMenu->setInactive();
-    quitGameMenu = Manager->getMenuPointerByName("quitMenu");
+    quitGameMenu = Manager->getMenuPointerByName("QuitGameMenu");
     quitGameMenu->setInactive();
 
 
@@ -311,7 +311,22 @@ void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Upd
              quitGameMenu->setActive();
              QuitGameBut->setClicked(false);
              defaultMenu->setInactive();
-             active = false;
+         }
+
+         if(quitGameMenu->isActive() == true)
+         {
+             if (YesQuitBut->getEventDataInt() > 2)
+             {
+                 quitGameMenu->setInactive();
+                 YesQuitBut->setClicked(false);
+                 active = false;
+             }
+             else if (NoQuitBut->getEventDataInt() > 2)
+             {
+                 quitGameMenu->setInactive();
+                 NoQuitBut->setClicked(false);
+                 defaultMenu->setActive();
+             }
          }
 
 

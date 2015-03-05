@@ -1,9 +1,41 @@
 # depslib dependency file v1.0
-1424625046 source:c:\openframeworks\apps\game\ogpc_game\icon.rc
+1420913788 source:c:\openframeworks\addons\ofxxmlsettings\libs\tinyxml.cpp
+	<ctype.h>
+	<sstream>
+	<iostream>
+	"tinyxml.h"
 
-1424625046 source:c:\openframeworks\apps\game\ogpc_game\src\main.cpp
+1420913788 c:\openframeworks\addons\ofxxmlsettings\libs\tinyxml.h
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<string>
+	<iostream>
+	<sstream>
+	"tinystr.h"
+
+1420913788 source:c:\openframeworks\addons\ofxxmlsettings\libs\tinyxmlerror.cpp
+	"tinyxml.h"
+
+1420913788 source:c:\openframeworks\addons\ofxxmlsettings\libs\tinyxmlparser.cpp
+	<ctype.h>
+	<stddef.h>
+	"tinyxml.h"
+	<windows.h>
+
+1420913788 source:c:\openframeworks\addons\ofxxmlsettings\src\ofxxmlsettings.cpp
+	"ofxXmlSettings.h"
+	<vector>
+	<string>
+	<iostream>
+
+1420913788 c:\openframeworks\addons\ofxxmlsettings\src\ofxxmlsettings.h
 	"ofMain.h"
-	"ofApp.h"
+	<string.h>
+	"../libs/tinyxml.h"
+	"tinyxml.h"
 
 1420913786 c:\openframeworks\libs\openframeworks\ofmain.h
 	"ofConstants.h"
@@ -1478,15 +1510,48 @@
 	"ofCamera.h"
 	"ofEvents.h"
 
-1425517075 c:\openframeworks\apps\game\ogpc_game\src\ofapp.h
+1420913780 source:c:\openframeworks\apps\myapps\game\icon.rc
+
+1424625046 source:c:\openframeworks\apps\myapps\game\src\main.cpp
+	"ofMain.h"
+	"ofApp.h"
+
+1425517075 c:\openframeworks\apps\myapps\game\src\ofapp.h
 	"ofMain.h"
 	"src-Engine/EngineInclude.h"
 
-1425338192 c:\openframeworks\apps\game\ogpc_game\src\mainmenu.h
+1425517112 c:\openframeworks\apps\myapps\game\src\src-engine\engineinclude.h
+	"ResourceManager.h"
+	"TileManager.h"
+	"EngineMain.h"
+
+1425517725 c:\openframeworks\apps\myapps\game\src\src-engine\resourcemanager.h
+	"ofMain.h"
+	<windows.h>
+	<stdio.h>
+
+1425518740 c:\openframeworks\apps\myapps\game\src\src-engine\tilemanager.h
+	"Tile.h"
+	"ResourceManager.h"
+
+1425441570 c:\openframeworks\apps\myapps\game\src\src-engine\tile.h
+	"ofMain.h"
+
+1425517157 c:\openframeworks\apps\myapps\game\src\src-engine\enginemain.h
+	"ofMain.h"
+	"EngineInclude.h"
+
+1425517253 source:c:\openframeworks\apps\myapps\game\src\ofapp.cpp
+	"ofApp.h"
+
+1425338192 source:c:\openframeworks\apps\myapps\game\src\mainmenu.cpp
+	"MainMenu.h"
+
+1425338192 c:\openframeworks\apps\myapps\game\src\mainmenu.h
 	"ofMain.h"
 	"src-MenuAPI/MenuInclude.h"
 
-1425338192 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuinclude.h
+1425338192 c:\openframeworks\apps\myapps\game\src\src-menuapi\menuinclude.h
 	"MenuManager.h"
 	"Menu.h"
 	"MenuEntity.h"
@@ -1494,63 +1559,34 @@
 	"Slider.h"
 	"MenuBackground.h"
 
-1425338192 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menumanager.h
+1425338192 c:\openframeworks\apps\myapps\game\src\src-menuapi\menumanager.h
 	"ofMain.h"
 	"Menu.h"
 	<Map>
 
-1425338192 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menu.h
+1425338192 c:\openframeworks\apps\myapps\game\src\src-menuapi\menu.h
 	"ofMain.h"
 	"MenuEntity.h"
 
-1425338192 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuentity.h
+1425338192 c:\openframeworks\apps\myapps\game\src\src-menuapi\menuentity.h
 	"ofMain.h"
 
-1425338192 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\simplebutton.h
+1425338192 c:\openframeworks\apps\myapps\game\src\src-menuapi\simplebutton.h
 	"MenuEntity.h"
 
-1425338192 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\slider.h
+1425338192 c:\openframeworks\apps\myapps\game\src\src-menuapi\slider.h
 	"ofMain.h"
 	"MenuEntity.h"
 
-1425338192 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menubackground.h
+1425338192 c:\openframeworks\apps\myapps\game\src\src-menuapi\menubackground.h
 	"MenuEntity.h"
 
-1425338192 source:c:\openframeworks\apps\game\ogpc_game\src\mainmenu.cpp
-	"MainMenu.h"
-
-1424625046 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuentity.cpp
-
-1425517253 source:c:\openframeworks\apps\game\ogpc_game\src\ofapp.cpp
-	"ofApp.h"
-
-1425517324 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\enginemain.cpp
+1425517324 source:c:\openframeworks\apps\myapps\game\src\src-engine\enginemain.cpp
 	"EngineMain.h"
 
-1425517157 c:\openframeworks\apps\game\ogpc_game\src\src-engine\enginemain.h
-	"ofMain.h"
-	"EngineInclude.h"
-
-1425517112 c:\openframeworks\apps\game\ogpc_game\src\src-engine\engineinclude.h
-	"ResourceManager.h"
-	"TileManager.h"
-	"EngineMain.h"
-
-1425517725 c:\openframeworks\apps\game\ogpc_game\src\src-engine\resourcemanager.h
-	"ofMain.h"
-	<windows.h>
-	<stdio.h>
-
-1425517816 c:\openframeworks\apps\game\ogpc_game\src\src-engine\tilemanager.h
-	"Tile.h"
+1425517775 source:c:\openframeworks\apps\myapps\game\src\src-engine\resourcemanager.cpp
 	"ResourceManager.h"
 
-1425441570 c:\openframeworks\apps\game\ogpc_game\src\src-engine\tile.h
-	"ofMain.h"
-
-1425517775 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\resourcemanager.cpp
-	"ResourceManager.h"
-
-1425517791 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\tile.cpp
+1425517791 source:c:\openframeworks\apps\myapps\game\src\src-engine\tile.cpp
 	"Tile.h"
 

@@ -1,5 +1,5 @@
 #include "TileManager.h"
-
+#include "ofxXmlSettings.h"
 TileManager::TileManager(std::string file, ofVec2f& trans)
 {
     loadFromFile(file);
@@ -18,16 +18,16 @@ void TileManager::loadFromFile(std::string file)
 
         theMap.pushTag("TILES");    //go into tile tag section
 
-        int numOfTiles = mapSizeX*mapSizeY; //#of tiles = product of map dimensions
+        int numOfTiles = mapSize.x*mapSize.y; //#of tiles = product of map dimensions
 
         for(int ii = 0; ii < numOfTiles; ii++)
         {
             theMap.pushTag("tile"); //enter individual tile tag
 
-            Tile tmp(); //create temporary tile
+            Tile tmp; //create temporary tile
 
             //set texture of tile by getting string from xml doc
-            tmp.setTexture(resources.getTextureReference(theMap.getValue("texture", "")));
+            tmp.setTexture(resources->getTextureReference(theMap.getValue("texture", "")));
 
             ofVec2f location = ofVec2f(((tiles.size()/mapSize.y)+1)*tileSize.y,
                                         ((tiles.size()/mapSize.x)+1)*tileSize.x);
@@ -52,7 +52,7 @@ void TileManager::update()
     topLeftTile = ofVec2f((tFactor->x/tileSize.x), (tFactor->y/tileSize.y));               //number of tiles the map has been translated
     bottomRightTile = ofVec2f(topLeftTile.x+maxDisplayDim.x, topLeftTile.y+maxDisplayDim.y);
     topLeftScalar = tileIndiceByArrayCoords(topLeftTile);
-    bottomRightScalar = tileIndiceByArrayCoords(bottomLeftTile);
+    bottomRightScalar = tileIndiceByArrayCoords(bottomRightTile);
 
 
     for(int ii = 0; ii<tiles.size(); ii++)//initialize all members of array to false
@@ -60,9 +60,9 @@ void TileManager::update()
         toDraw.push_back(false);
     }
 
-    for(int ii = topLeftScalar; ii<bottomLeftTile; ii+=mapSize.x)//increment by row
+    for(int ii = topLeftScalar; ii < bottomRightScalar; ii+=mapSize.x)//increment by row
     {
-        for(int bb = ii; bb< bottomLeftTile.x; bb++)//increment by number of tile to draw per row
+        for(int bb = ii; bb< bottomRightTile.x; bb++)//increment by number of tile to draw per row
         {
             toDraw[bb] = true;
         }
@@ -81,14 +81,15 @@ void TileManager::draw()
     }
 }
 
-ofVec2f tileArrayCoordsByIndice(int indice)
+ofVec2f TileManager::tileArrayCoordsByIndice(int indice)
 {
     int row = (indice/mapSize.y)+1;
-    int column = indice%mapSize.x;
-    return ofVec2f(column, row);
+    float fcolumn = indice%int(mapSize.x);
+    int icolumn = fcolumn;
+    return ofVec2f(icolumn, row);
 }
 
-int tileIndiceByArrayCoords(ofVec2f coords)
+int TileManager::tileIndiceByArrayCoords(ofVec2f coords)
 {
     return (coords.y*mapSize.y)+coords.x;
 }

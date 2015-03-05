@@ -2,8 +2,16 @@
 #include "../XML/src/ofxXmlSettings.h"
 TileManager::TileManager(std::string file, ofVec2f& trans)
 {
+    resources = new ResourceManager;
+    resources->addTexture("dumbWater.png", "water");
+    resources->addTexture("dumbGrass.png", "grass");
+    resources->addTexture("dumbSnow.png", "snow");
+        tFactor = &trans;
+           std::cout << resources->textures.size() << std::endl;
     loadFromFile(file);
-    tFactor = &trans;
+
+
+
 }
 
 void TileManager::loadFromFile(std::string file)
@@ -28,12 +36,11 @@ void TileManager::loadFromFile(std::string file)
             Tile tmp; //create temporary tile
 
             //set texture of tile by getting string from xml doc
-                std::cout << theMap.getValue("texture", "") << std::endl;
-                std::string temp = theMap.getValue("texture", "");
-            tmp.setTexture(resources->getTextureReference(temp));
+            tmp.setTexture(resources->getTextureReference(theMap.getValue("texture", "")));
                 std::cout << "here5" << std::endl;
-            ofVec2f location = ofVec2f(((tiles.size()/mapSize.y)+1)*tileSize.y,
-                                        ((tiles.size()/mapSize.x)+1)*tileSize.x);
+            ofVec2f pos = tileArrayCoordsByIndice(ii);
+            ofVec2f location = ofVec2f(pos.x*tileSize.x,
+                                        pos.y*tileSize.y);
             tmp.setLocation(location);
 
             tiles.push_back(tmp);
@@ -53,6 +60,7 @@ void TileManager::loadFromFile(std::string file)
 
 void TileManager::update()
 {
+    std::cout << tiles.size() << std::endl;
     maxDisplayDim = ofVec2f((ofGetScreenWidth()/tileSize.x), (ofGetWindowHeight()/tileSize.y));//max number of tiles that can be displayed on the screen
     topLeftTile = ofVec2f((tFactor->x/tileSize.x), (tFactor->y/tileSize.y));               //number of tiles the map has been translated
     bottomRightTile = ofVec2f(topLeftTile.x+maxDisplayDim.x, topLeftTile.y+maxDisplayDim.y);
@@ -79,18 +87,18 @@ void TileManager::draw()
 {
     for(int ii = 0; ii<tiles.size(); ii++)
     {
-        if(toDraw[ii] == true)
-        {
+        //if(toDraw[ii] == true)
+        //{
             tiles[ii].draw();
-        }
+        //}
     }
 }
 
 ofVec2f TileManager::tileArrayCoordsByIndice(int indice)
 {
     int row = (indice/mapSize.y)+1;
-    float fcolumn = indice%int(mapSize.x);
-    int icolumn = fcolumn;
+    float fcolumn = indice%(int)mapSize.x;
+    int icolumn = fcolumn+1;
     return ofVec2f(icolumn, row);
 }
 

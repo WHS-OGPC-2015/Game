@@ -5,10 +5,7 @@ Engine::Engine(std::string tileData, std::string objectData, std::string GameDat
 
     tFactor = &trans;
 
-    resources = new ResourceManager;
-    resources->addTexture("dumbWater.png", "water");
-    resources->addTexture("dumbGrass.png", "grass");
-    resources->addTexture("dumbSnow.png", "snow");
+
     //resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tileTextures");
     std::cout << "here3" << std::endl;
     tiles = new TileManager(tileData, trans);

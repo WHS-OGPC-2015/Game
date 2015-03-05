@@ -90,9 +90,7 @@ void ResourceManager::addTexture(std::string path, std::string name)
 
 ofTexture& ResourceManager::getTextureReference(std::string name)
 {
-   // std::cout << textureNames["grass"] << std::endl;
-
-    return textures[1];
+    return textures[textureNames[name]];
 }
 
 void ResourceManager::addFont(std::string path, std::string name, int loadSize)

@@ -66,7 +66,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
                             Manager->getTexturePointer("NormalQuitButton"),
                             100,
                             0,
-                            0
+                            100
                                 );
     MenuEntity *exitButton; // create the exit button
     exitButton = new HoverButton(
@@ -344,6 +344,9 @@ void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Upd
              }
          }
 
+         std::cout << BrightnessSlider->getEventDataInt() << endl;//slider troubleshooting
+
+
 
         Exit->setPosition(ofVec2f(ofGetWindowWidth()-100, 100));
         OptionsBut->setPosition(ofVec2f(ofGetWindowWidth()/2, 2*ofGetWindowHeight()/5));
@@ -351,10 +354,10 @@ void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Upd
         StartGameButton->setPosition(ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/5));
         CancelBut->setPosition(ofVec2f(ofGetWindowWidth()/2, 4*ofGetWindowHeight()/5));
         QuitGameBut->setPosition(ofVec2f(ofGetWindowWidth()/2, 4*ofGetWindowHeight()/5));
-        
+
 
         Manager->update(mousePos, clicked, pressed); // and finally, and most importantly, we update the manager
-        
+
 
 
 

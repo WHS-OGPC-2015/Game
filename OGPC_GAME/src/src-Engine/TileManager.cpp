@@ -8,6 +8,7 @@ TileManager::TileManager(std::string file, ofVec2f& trans)
 
 void TileManager::loadFromFile(std::string file)
 {
+
     ofxXmlSettings theMap;      //create new XML object for loading the tileset
     if(theMap.loadFile(file))   //if the xml document successfully loads
     {
@@ -27,14 +28,18 @@ void TileManager::loadFromFile(std::string file)
             Tile tmp; //create temporary tile
 
             //set texture of tile by getting string from xml doc
-            tmp.setTexture(resources->getTextureReference(theMap.getValue("texture", "")));
-
+                std::cout << theMap.getValue("texture", "") << std::endl;
+                std::string temp = theMap.getValue("texture", "");
+            tmp.setTexture(resources->getTextureReference(temp));
+                std::cout << "here5" << std::endl;
             ofVec2f location = ofVec2f(((tiles.size()/mapSize.y)+1)*tileSize.y,
                                         ((tiles.size()/mapSize.x)+1)*tileSize.x);
             tmp.setLocation(location);
 
             tiles.push_back(tmp);
+            theMap.popTag();
         }
+        theMap.popTag();
 
 
     }

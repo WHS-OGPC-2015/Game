@@ -2,18 +2,22 @@
 #include "../XML/src/ofxXmlSettings.h"
 Engine::Engine(std::string tileData, std::string objectData, std::string GameData, ofVec2f& trans)
 {
+
     tFactor = &trans;
 
     resources = new ResourceManager;
-    resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tileTextures");
-
+    resources->addTexture("dumbWater.png", "water");
+    resources->addTexture("dumbGrass.png", "grass");
+    resources->addTexture("dumbSnow.png", "snow");
+    //resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tileTextures");
+    std::cout << "here3" << std::endl;
     tiles = new TileManager(tileData, trans);
     //objects = new ObjectManager(objectData, trans);
 
 
-    resources->addTexture("dumbWater", "water");
-    resources->addTexture("dumbGrass", "grass");
-    resources->addTexture("dumbSnow", "snow");
+
+
+
 }
 
 void Engine::setup()

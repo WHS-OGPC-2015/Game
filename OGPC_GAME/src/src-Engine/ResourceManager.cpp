@@ -2,7 +2,7 @@
 
 ResourceManager::ResourceManager()
 {
-
+    std::cout << textures.size();
 }
 
 void ResourceManager::loadFilesFromDirectory(std::string folder)
@@ -83,14 +83,16 @@ void ResourceManager::addTexture(std::string path, std::string name)
     ofTexture tmp;
     ofLoadImage(tmp, path);
     textures.push_back(tmp);
-    textureNames[name] = textures.size()-1;
+    textureNames[name] = (textures.size()-1);
+    std::cout << name << ", " << textures.size() << std::endl;
 
 }
 
 ofTexture& ResourceManager::getTextureReference(std::string name)
 {
-    ofTexture& tmp = textures[textureNames[name]];
-    return tmp;
+   // std::cout << textureNames["grass"] << std::endl;
+
+    return textures[1];
 }
 
 void ResourceManager::addFont(std::string path, std::string name, int loadSize)

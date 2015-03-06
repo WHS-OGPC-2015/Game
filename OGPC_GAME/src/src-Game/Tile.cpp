@@ -1,7 +1,13 @@
-#include "Tile.h""
+#include "Tile.h"
 
-Tile::Tile(int alt, std::string text)
+//Tile::Tile(int alt, std::string text)
+//{
+//    altitude = alt;
+//    texture = text;
+//    aset = true;
+//}
+void Tile::setAltitude(int a)
 {
-    altitude = alt;
-    texture = text;
+    altitude = a;
+    aset = true;
 }

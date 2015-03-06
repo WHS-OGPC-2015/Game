@@ -66,7 +66,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
                             Manager->getTexturePointer("NormalQuitButton"),
                             100,
                             0,
-                            100
+                            50
                                 );
     MenuEntity *exitButton; // create the exit button
     exitButton = new HoverButton(
@@ -210,6 +210,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     Now we add the buttons to menus and the menus to Menu manager.
     ----------------------------------------------------------------------------------*/
 
+    opMenu.addEntity(*brightnessSlider, "setBrightness");
     opMenu.addEntity(*dolphinBG, "DolphinBackground"); // adding Entities to menus...
     opMenu.addEntity(*exitButton, "ExitButton");
     normalMenu.addEntity(*orangeBG, "NormalBackground");
@@ -222,7 +223,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     quitMenu.addEntity(*reallyQuitBG, "QuitBackground");
     quitMenu.addEntity(*yesExitButton, "YesExitButton");
     quitMenu.addEntity(*noExitButton, "NoExitButton");
-    opMenu.addEntity(*brightnessSlider, "setBrightness");
+
 
 
 

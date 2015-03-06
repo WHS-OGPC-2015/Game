@@ -2,24 +2,25 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    GameMap g;
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-startingMenu.update(mousePos, clicked, pressed);
-if(pressed != true)
-    {
-            clicked = false;
-
-    }
+//startingMenu.update(mousePos, clicked, pressed);
+//if(pressed != true)
+//    {
+//            clicked = false;
+//
+//    }
 
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
 
-startingMenu.draw();
+//startingMenu.draw();
 
 }
 

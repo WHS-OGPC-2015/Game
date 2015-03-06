@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "MainMenu.h"
+#include "src-Game/GameMap.h"
 
 class ofApp : public ofBaseApp{
 
@@ -19,7 +20,7 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
-		MainMenu startingMenu;
+//		MainMenu startingMenu;
 		ofVec2f mousePos;
         bool pressed;//true if mouse button has been pressed down
         bool clicked;//true if mouse button has been pushed down then released

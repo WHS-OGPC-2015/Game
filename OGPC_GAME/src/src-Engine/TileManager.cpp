@@ -64,12 +64,12 @@ void TileManager::loadFromFile(std::string file)
 void TileManager::update()
 {
 
-    maxDisplayDim = ofVec2f((ofGetWindowWidth()/tileSize.x), (ofGetWindowHeight()/tileSize.y));//max number of tiles that can be displayed on the screen
-    topLeftTile = ofVec2f(tFactor->x/tileSize.x, tFactor->y/tileSize.y);               //number of tiles the map has been translated
+    maxDisplayDim = ofVec2f(trunc(ofGetWindowWidth()/tileSize.x), trunc(ofGetWindowHeight()/tileSize.y));//max number of tiles that can be displayed on the screen
+    topLeftTile = ofVec2f(fabs(trunc(tFactor->x/tileSize.x)), fabs(trunc(tFactor->y/tileSize.y)));               //number of tiles the map has been translated
     bottomRightTile = ofVec2f(topLeftTile.x+maxDisplayDim.x, topLeftTile.y+maxDisplayDim.y);
     topLeftScalar = tileIndiceByArrayCoords(topLeftTile);
     bottomRightScalar = tileIndiceByArrayCoords(bottomRightTile);
-    std::cout << bottomRightTile.x << ",! " << bottomRightTile.y << std::endl;
+    //std::cout << topLeftScalar << ",! " << bottomRightScalar << std::endl;
     //std::cout <<topLeftScalar << std::endl;
 
 
@@ -80,13 +80,15 @@ void TileManager::update()
 
     for(int ii = abs(topLeftScalar); ii < bottomRightScalar; ii+=mapSize.x)//increment by row
     {
-        for(int bb = ii; bb< bottomRightTile.x; bb++)//increment by number of tile to draw per row
+        for(int bb = ii; bb< ii+maxDisplayDim.x+1; bb++)//increment by number of tile to draw per row
         {
+            std::cout << bb << std::endl;
             //std::cout << bb << std::endl;
             toDraw[bb] = true;
         }
 
     }
+    ofCircle(0, 0, 100);
 }
 
 void TileManager::draw()
@@ -111,5 +113,6 @@ ofVec2f TileManager::tileArrayCoordsByIndice(int indice)
 
 int TileManager::tileIndiceByArrayCoords(ofVec2f coords)
 {
+    coords = ofVec2f(trunc(coords.x), trunc(coords.y));
     return (coords.y*mapSize.y)+coords.x;
 }

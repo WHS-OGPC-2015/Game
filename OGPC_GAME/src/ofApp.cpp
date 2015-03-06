@@ -5,17 +5,17 @@ void ofApp::setup(){
     viewPos = ofVec2f(0, 0);
 
     ofxXmlSettings tileSave;
-    tileSave.addValue("mapSizeX", 10);
-    tileSave.addValue("mapSizeY", 10);
+    tileSave.addValue("mapSizeX", 100);
+    tileSave.addValue("mapSizeY", 100);
     tileSave.addValue("tileSizeX", 50);
     tileSave.addValue("tileSizeY", 50);
     tileSave.addTag("tileArray");
     tileSave.pushTag("tileArray");
-        for(int bb = 0; bb < 100; bb++)
+        for(int bb = 0; bb < 10000; bb++)
         {
             tileSave.addTag("tile");
             tileSave.pushTag("tile", bb);
-            if(bb<10)
+            if(bb%2 == 0)
             {
                 tileSave.addValue("texture", "grass");
             }
@@ -42,7 +42,18 @@ void ofApp::update(){
     if(dragging)
     {
         dif = mousePos - lastMousePos;
+
         viewPos+=dif;
+        if(viewPos.x>0)
+        {
+            viewPos.x-=dif.x;
+            dif.x = 0;
+        }
+        if(viewPos.y>0)
+        {
+            viewPos.y-=dif.y;
+            dif.y = 0;
+        }
     }
     else
     {

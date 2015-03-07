@@ -25,5 +25,6 @@ public:
 private:
 
     ofVec2i mapSize;
+    int seednum;
     std::vector <Tile> mapTiles;
 };

@@ -27,9 +27,7 @@ void Tile::setLocation(ofVec2f newLocation)
 
 void Tile::setTexture(ofTexture& tex)
 {
-    std::cout << "here2" << std::endl;
     texture = &tex;
-    std::cout << "here1" << std::endl;
 }
 
 

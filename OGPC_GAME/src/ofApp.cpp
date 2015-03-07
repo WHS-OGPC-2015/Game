@@ -3,49 +3,63 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     viewPos = ofVec2f(0, 0);
-    ofVec2f& v = viewPos;
-    ofxXmlSettings tiles;
-    tiles.addValue("mapSizeX", 5);
-    tiles.addValue("mapSizeY", 3);
-    tiles.addValue("tileSizeX", 50);
-    tiles.addValue("tileSizeY", 50);
-    tiles.addTag("TILES");
-    tiles.pushTag("TILES");
-    for(int ii = 0; ii<15; ii++)
-    {
-        tiles.addTag("tile");
-        tiles.pushTag("tile");
 
-        if(ii>5)
+    ofxXmlSettings tileSave;
+    tileSave.addValue("mapSizeX", 10);
+    tileSave.addValue("mapSizeY", 10);
+    tileSave.addValue("tileSizeX", 50);
+    tileSave.addValue("tileSizeY", 50);
+    tileSave.addTag("tileArray");
+    tileSave.pushTag("tileArray");
+        for(int bb = 0; bb < 100; bb++)
         {
-            tiles.addValue("texture", "water");
+            tileSave.addTag("tile");
+            tileSave.pushTag("tile", bb);
+            if(bb<10)
+            {
+                tileSave.addValue("texture", "grass");
+            }
+            else if(bb%3 == 0)
+            {
+                tileSave.addValue("texture", "snow");
+            }
+            else
+            {
+                tileSave.addValue("texture", "water");
+            }
+
+            tileSave.popTag();
         }
-        else{ tiles.addValue("texture", "grass");}
-
-        tiles.popTag();
 
 
-    }
-    tiles.popTag();
-    tiles.saveFile("tiles.xml");
-    gameEngine  = new Engine("tiles.xml", "game.xml", "objects.xml", v);
+    tileSave.popTag();
+    tileSave.saveFile("tiles.xml");
+    gameEngine  = new Engine("tiles.xml", "game.xml", "objects.xml", dif);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    if(dragging == true)
+    if(dragging)
     {
         dif = mousePos - lastMousePos;
-        viewPos += dif;
     }
+    else
+    {
+        dif = ofVec2f(0, 0);
+
+    }
+
+
+
     gameEngine->update();
     lastMousePos = mousePos;
+    dragging = false;
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofPopMatrix();
-    ofTranslate(viewPos.x, viewPos.y);
+    ofTranslate(dif.x, dif.y);
     gameEngine->draw();
     ofPushMatrix();
 

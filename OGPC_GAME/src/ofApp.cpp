@@ -34,7 +34,7 @@ void ofApp::setup(){
 
     tileSave.popTag();
     tileSave.saveFile("tiles.xml");
-    gameEngine  = new Engine("tiles.xml", "game.xml", "objects.xml", dif);
+    gameEngine  = new Engine("tiles.xml", "game.xml", "objects.xml", viewPos);
 }
 
 //--------------------------------------------------------------
@@ -42,6 +42,7 @@ void ofApp::update(){
     if(dragging)
     {
         dif = mousePos - lastMousePos;
+        viewPos+=dif;
     }
     else
     {

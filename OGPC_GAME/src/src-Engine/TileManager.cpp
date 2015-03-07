@@ -8,10 +8,11 @@ TileManager::TileManager(std::string file, ofVec2f& trans)
     resources->addTexture("dumbSnow.png", "snow");
     tFactor = &trans;
     loadFromFile(file);
-    ofVec2f test = tileArrayCoordsByIndice(8);
-    std::cout << test.x << ", " << test.y << std::endl;
-    int test2 = tileIndiceByArrayCoords(test);
-    std::cout << test2 << "!";
+
+    for(int ii = 0; ii<tiles.size(); ii++)//initialize all members of array to false
+    {
+        toDraw.push_back(false);
+    }
 
 
 }
@@ -63,36 +64,39 @@ void TileManager::loadFromFile(std::string file)
 void TileManager::update()
 {
 
-    maxDisplayDim = ofVec2f((ofGetScreenWidth()/tileSize.x), (ofGetWindowHeight()/tileSize.y));//max number of tiles that can be displayed on the screen
-    topLeftTile = ofVec2f((tFactor->x/tileSize.x), (tFactor->y/tileSize.y));               //number of tiles the map has been translated
+    maxDisplayDim = ofVec2f((ofGetWindowWidth()/tileSize.x), (ofGetWindowHeight()/tileSize.y));//max number of tiles that can be displayed on the screen
+    topLeftTile = ofVec2f(tFactor->x/tileSize.x, tFactor->y/tileSize.y);               //number of tiles the map has been translated
     bottomRightTile = ofVec2f(topLeftTile.x+maxDisplayDim.x, topLeftTile.y+maxDisplayDim.y);
     topLeftScalar = tileIndiceByArrayCoords(topLeftTile);
     bottomRightScalar = tileIndiceByArrayCoords(bottomRightTile);
+    std::cout << bottomRightTile.x << ",! " << bottomRightTile.y << std::endl;
+    //std::cout <<topLeftScalar << std::endl;
 
 
-    for(int ii = 0; ii<tiles.size(); ii++)//initialize all members of array to false
+    for(int ii = 0; ii<tiles.size(); ii++)//reset all values
     {
-        toDraw.push_back(false);
+        toDraw[ii] = false;
     }
 
-//    for(int ii = topLeftScalar; ii < bottomRightScalar; ii+=mapSize.x)//increment by row
-//    {
-//        for(int bb = ii; bb< bottomRightTile.x; bb++)//increment by number of tile to draw per row
-//        {
-//            toDraw[bb] = true;
-//        }
-//
-//    }
+    for(int ii = abs(topLeftScalar); ii < bottomRightScalar; ii+=mapSize.x)//increment by row
+    {
+        for(int bb = ii; bb< bottomRightTile.x; bb++)//increment by number of tile to draw per row
+        {
+            //std::cout << bb << std::endl;
+            toDraw[bb] = true;
+        }
+
+    }
 }
 
 void TileManager::draw()
 {
     for(int ii = 0; ii<tiles.size(); ii++)
     {
-        //if(toDraw[ii] == true)
-        //{
+        if(toDraw[ii] == true)
+        {
             tiles[ii].draw();
-        //}
+        }
     }
 }
 
@@ -100,13 +104,12 @@ ofVec2f TileManager::tileArrayCoordsByIndice(int indice)
 {
     float row = (indice/mapSize.x);
     row = trunc(row);
-    row++;
     float fcolumn = indice%(int)mapSize.x;
-    int icolumn = fcolumn+1;
+    int icolumn = fcolumn;
     return ofVec2f(icolumn, row);
 }
 
 int TileManager::tileIndiceByArrayCoords(ofVec2f coords)
 {
-    return (coords.y*mapSize.y)+coords.x-2;
+    return (coords.y*mapSize.y)+coords.x;
 }

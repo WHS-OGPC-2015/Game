@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "src-Engine/EngineInclude.h"
+#include "src-Game/GameMap.h"
 
 class ofApp : public ofBaseApp{
 
@@ -26,7 +27,7 @@ class ofApp : public ofBaseApp{
         bool dragging;//true if mouse button is pressed and is being moved
 
         Engine* gameEngine;
-
+        GameMap* mapGenerator;
         ofVec2f viewPos;
 
 

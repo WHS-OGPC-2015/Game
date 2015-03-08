@@ -1,39 +1,42 @@
 #include "ofApp.h"
 #include "XML/src/ofxXmlSettings.h"
+
 //--------------------------------------------------------------
 void ofApp::setup(){
     viewPos = ofVec2f(0, 0);
+    mapGenerator = new GameMap;
+//
+//    ofxXmlSettings tileSave;
+//    tileSave.addValue("mapSizeX", 100);
+//    tileSave.addValue("mapSizeY", 100);
+//    tileSave.addValue("tileSizeX", 50);
+//    tileSave.addValue("tileSizeY", 50);
+//    tileSave.addTag("tileArray");
+//    tileSave.pushTag("tileArray");
+//        for(int bb = 0; bb < 10000; bb++)
+//        {
+//            tileSave.addTag("tile");
+//            tileSave.pushTag("tile", bb);
+//            if(bb%2 == 0)
+//            {
+//                tileSave.addValue("texture", "dumbGrass");
+//            }
+//            else if(bb%3 == 0)
+//            {
+//                tileSave.addValue("texture", "dumbSnow");
+//            }
+//            else
+//            {
+//                tileSave.addValue("texture", "dumbWater");
+//            }
+//
+//            tileSave.popTag();
+//        }
+//
+//
+//    tileSave.popTag();
+//    tileSave.saveFile("tiles.xml");
 
-    ofxXmlSettings tileSave;
-    tileSave.addValue("mapSizeX", 100);
-    tileSave.addValue("mapSizeY", 100);
-    tileSave.addValue("tileSizeX", 50);
-    tileSave.addValue("tileSizeY", 50);
-    tileSave.addTag("tileArray");
-    tileSave.pushTag("tileArray");
-        for(int bb = 0; bb < 10000; bb++)
-        {
-            tileSave.addTag("tile");
-            tileSave.pushTag("tile", bb);
-            if(bb%2 == 0)
-            {
-                tileSave.addValue("texture", "dumbGrass");
-            }
-            else if(bb%3 == 0)
-            {
-                tileSave.addValue("texture", "dumbSnow");
-            }
-            else
-            {
-                tileSave.addValue("texture", "dumbWater");
-            }
-
-            tileSave.popTag();
-        }
-
-
-    tileSave.popTag();
-    tileSave.saveFile("tiles.xml");
     gameEngine  = new Engine("tiles.xml", "game.xml", "objects.xml", viewPos);
 }
 

@@ -87,7 +87,7 @@ void TileManager::update()
         }
 
     }
-    ofCircle(0, 0, 100);
+
 }
 
 void TileManager::draw()

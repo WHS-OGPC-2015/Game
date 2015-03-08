@@ -3,9 +3,8 @@
 TileManager::TileManager(std::string file, ofVec2f& trans)
 {
     resources = new ResourceManager;
-    resources->addTexture("dumbWater.png", "water");
-    resources->addTexture("dumbGrass.png", "grass");
-    resources->addTexture("dumbSnow.png", "snow");
+    resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
+
     tFactor = &trans;
     loadFromFile(file);
 
@@ -45,7 +44,7 @@ void TileManager::loadFromFile(std::string file)
             ofVec2f location = ofVec2f(pos.x*tileSize.x,
                                         pos.y*tileSize.y);
             tmp.setLocation(location);
-            std::cout << location.x << ", " << location.y << std::endl;
+            //std::cout << location.x << ", " << location.y << std::endl;
             tiles.push_back(tmp);
             theMap.popTag();
         }
@@ -80,9 +79,9 @@ void TileManager::update()
 
     for(int ii = abs(topLeftScalar); ii < bottomRightScalar; ii+=mapSize.x)//increment by row
     {
-        for(int bb = ii; bb< ii+maxDisplayDim.x+1; bb++)//increment by number of tile to draw per row
+        for(int bb = ii; bb< ii+maxDisplayDim.x+2; bb++)//increment by number of tile to draw per row
         {
-            std::cout << bb << std::endl;
+
             //std::cout << bb << std::endl;
             toDraw[bb] = true;
         }

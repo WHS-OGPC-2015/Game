@@ -17,15 +17,15 @@ void ofApp::setup(){
             tileSave.pushTag("tile", bb);
             if(bb%2 == 0)
             {
-                tileSave.addValue("texture", "grass");
+                tileSave.addValue("texture", "dumbGrass");
             }
             else if(bb%3 == 0)
             {
-                tileSave.addValue("texture", "snow");
+                tileSave.addValue("texture", "dumbSnow");
             }
             else
             {
-                tileSave.addValue("texture", "water");
+                tileSave.addValue("texture", "dumbWater");
             }
 
             tileSave.popTag();
@@ -42,6 +42,7 @@ void ofApp::update(){
     if(dragging)
     {
         dif = mousePos - lastMousePos;
+        dif/=5;
 
         viewPos+=dif;
         if(viewPos.x>0)
@@ -74,6 +75,7 @@ void ofApp::draw(){
     ofTranslate(dif.x, dif.y);
     gameEngine->draw();
     ofPushMatrix();
+    ofCircle(0, 0, 100);
 
 }
 

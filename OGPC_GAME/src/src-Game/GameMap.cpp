@@ -55,12 +55,12 @@ int roundforint(double i)
 GameMap::GameMap()
 {
     mapTextureNames("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
-    genMapTwo();
+    genMap();
 }
 
 void GameMap::genMap()
 {
-    mapSize = ofVec2i(150,150);
+    mapSize = ofVec2i(200,200);
     GenTile mapArray[mapSize.x][mapSize.y];
 
     for (int i = 0; i < mapSize.x; i ++)
@@ -75,7 +75,7 @@ void GameMap::genMap()
 
 
 //    seednum = maximize(sqrt((mapSize.x + mapSize.y)/2) + ofRandom(0,3) - 1, 1);
-    seednum = 50;
+    seednum = 100;
     ofVec2i seed;
 
     ofVec2i focus(seed.x, seed.y);
@@ -214,20 +214,42 @@ void GameMap::saveMap(ofVec2i mapSize, std::vector<int> heights)
     tileSave.addValue("tileSizeY", 20);
     tileSave.addTag("tileArray");
     tileSave.pushTag("tileArray");
-        for(int bb = 0; bb < heights.size(); bb++)//cycle through all of the tags
+
+    int numSame = 1;
+    int currentH = 0;
+    int nextH = 0;
+    int pushedTagCount = 0;
+
+    for(int bb = 0; bb < heights.size(); bb++)//cycle through all of the tags
+    {
+        currentH = heights[bb];
+        nextH = heights[bb+1];
+        if(currentH == nextH)
+        {
+            numSame++;
+        }
+        else
         {
             tileSave.addTag("tile");
-            tileSave.pushTag("tile", bb);
-            std::string tex = textureStrings[heights[bb]];
-            std::string lastTex = ""
-            tileSave.addValue("texture", tex); //set texture based on tile altitude
+            tileSave.pushTag("tile", pushedTagCount);
+            pushedTagCount++;
+
+            tileSave.addValue("texture", textureStrings[currentH]);
+            tileSave.addValue("numSame", numSame);
 
             tileSave.popTag();
+
+            numSame = 1;
+
         }
 
+    }
 
     tileSave.popTag();
-    tileSave.saveFile("tiles.xml");         //finally save file to "tiles.xml"
+
+    tileSave.addValue("pushedTileCount", pushedTagCount);
+
+    tileSave.saveFile("tiles.xml");
 }
 
 void GameMap::mapTextureNames(std::string folder)

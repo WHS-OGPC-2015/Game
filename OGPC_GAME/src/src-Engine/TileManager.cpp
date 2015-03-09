@@ -26,27 +26,40 @@ void TileManager::loadFromFile(std::string file)
         mapSize.y = theMap.getValue("mapSizeY", 0.0);   //retrieve height of tile map
         tileSize.x = theMap.getValue("tileSizeX", 0.0); //retrieve width of individual tile
         tileSize.y = theMap.getValue("tileSizeY", 0.0); //retrieve height of individual tile
+        int tilesPushed = theMap.getValue("pushedTileCount", 0);
 
+        int numSame = 0;
+        int indice = 0;
         theMap.pushTag("tileArray");    //go into tile tag section
 
-        int numOfTiles = mapSize.x*mapSize.y; //#of tiles = product of map dimensions
-
-        for(int ii = 0; ii < numOfTiles; ii++)
+        for(int ii = 0; ii < tilesPushed; ii++)
         {
             theMap.pushTag("tile", ii); //enter individual tile tag
 
-            Tile tmp; //create temporary tile
+            std::string tex = theMap.getValue("texture", "");
+            numSame = theMap.getValue("numSame", 0);
 
-            //set texture of tile by getting string from xml doc
-            tmp.setTexture(resources->getTextureReference(theMap.getValue("texture", "")));
 
-            ofVec2f pos = tileArrayCoordsByIndice(ii);
-            ofVec2f location = ofVec2f(pos.x*tileSize.x,
-                                        pos.y*tileSize.y);
-            tmp.setLocation(location);
-            //std::cout << location.x << ", " << location.y << std::endl;
-            tiles.push_back(tmp);
+
+            for(int bb = 0; bb<numSame; bb++)
+            {
+
+                Tile tmp; //create temporary tile
+
+                //set texture of tile by getting string from xml doc
+                tmp.setTexture(resources->getTextureReference(tex));
+
+
+                ofVec2f pos = tileArrayCoordsByIndice(indice);
+                ofVec2f location = ofVec2f(pos.x*tileSize.x,
+                                            pos.y*tileSize.y);
+                tmp.setLocation(location);
+                //std::cout << location.x << ", " << location.y << std::endl;
+                tiles.push_back(tmp);
+                indice++;
+            }
             theMap.popTag();
+
         }
         theMap.popTag();
 

@@ -60,7 +60,7 @@ GameMap::GameMap()
 
 void GameMap::genMap()
 {
-    mapSize = ofVec2i(200,200);
+    mapSize = ofVec2i(100,100);
     GenTile mapArray[mapSize.x][mapSize.y];
 
     for (int i = 0; i < mapSize.x; i ++)

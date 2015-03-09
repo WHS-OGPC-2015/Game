@@ -22,8 +22,10 @@ public:
     int xwfunc(int x);
     int ywfunc(int x);
 
-    void genMap();
+    std::vector<int> genMap(int, int, int);
     void genMapTwo();
+    void drought(bool, int&, int&, int, int);
+    void floodFill(int, int, int);
     void mapTextureNames(std::string path);
     void saveMap(ofVec2i, std::vector<int>);
 
@@ -33,4 +35,8 @@ private:
     int seednum;
     std::vector <GenTile> mapTiles;
     std::vector <std::string> textureStrings;
+
+    std::vector<int> altitudes;
+    std::vector<int> fillAlts;
+    int numWater;
 };

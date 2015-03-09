@@ -45,7 +45,7 @@ void ofApp::update(){
     if(dragging)
     {
         dif = mousePos - lastMousePos;
-        dif/=5;
+        dif/=2;
 
         viewPos+=dif;
         if(viewPos.x>0)

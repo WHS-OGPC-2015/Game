@@ -55,12 +55,12 @@ int roundforint(double i)
 GameMap::GameMap()
 {
     mapTextureNames("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
-    genMap();
+    genMapTwo();
 }
 
-void GameMap::genMap()
+std::vector<int> GameMap::genMap(int sizeX, int sizeY, int seeds)
 {
-    mapSize = ofVec2i(100,100);
+    mapSize = ofVec2i(sizeX, sizeY);
     GenTile mapArray[mapSize.x][mapSize.y];
 
     for (int i = 0; i < mapSize.x; i ++)
@@ -75,7 +75,7 @@ void GameMap::genMap()
 
 
 //    seednum = maximize(sqrt((mapSize.x + mapSize.y)/2) + ofRandom(0,3) - 1, 1);
-    seednum = 100;
+    seednum = seeds;
     ofVec2i seed;
 
     ofVec2i focus(seed.x, seed.y);
@@ -174,7 +174,8 @@ void GameMap::genMap()
         }
 
     }
-    saveMap(mapSize, mapHeights);
+    return mapHeights;
+    //saveMap(mapSize, mapHeights);
 
 
 
@@ -183,25 +184,91 @@ void GameMap::genMap()
 void GameMap::genMapTwo()
 {
     mapSize = ofVec2i(100, 100);
+    int numSeeds = mapSize.x;
+    int last = 1;
+    float noiseWeight = .25;
+    float seedWeight = .75;
+    int waterThresh = 2;            //first level that is not a water tile
+    int minLakeSize = 20;
 
 
-    std::vector <int> altitudes;
+    std::vector <int> noiseAlts;        //holds perlin random altitudes
     for(int yy = 0; yy < mapSize.y; yy++)
     {
         for(int xx = 0; xx < mapSize.x; xx++)
         {
-            float noise = scaled_octave_noise_2d(2, 1, .03, 0, 6, xx, yy);
+            float noise = scaled_octave_noise_3d(4.f, .5, .05, 0, 8, xx, yy, last); //get perlin for square
 
-            noise = trunc(noise);
-            altitudes.push_back((int)noise);
-            std::cout << noise << "  ";
+            noise = trunc(noise);       //truncate decimals
+            last = noise;               //set z coord for next loop
+            noiseAlts.push_back((int)noise);    //add height to array
+
         }
         std::cout << std::endl << std::endl;
+    }
+    float avg = 0;
+    std::vector<int> seedAlts = genMap(mapSize.x, mapSize.y, numSeeds);     //make a new vector with mountain point from genMap()
+    for(int ii = 0; ii < seedAlts.size(); ii++)
+    {
+        seedAlts[ii]*=2;                                //simple averaging based on weights
+        avg = seedAlts[ii]*seedWeight;
+        avg += noiseAlts[ii]*noiseWeight;
+        avg/=noiseWeight+seedWeight;
+        avg = trunc(avg);
+        if(avg > textureStrings.size())                                     //make sure the height is not bigger than the number of textures
+        {
+            avg = textureStrings.size();                                     //if it is, set the height to the highest texture
+
+        }
+        altitudes.push_back(avg);
+    }
+
+    for(int ii = 1; ii < altitudes.size(); ii++)                //check all of the tiles
+    {
+        if(altitudes[ii] < waterThresh)             //if its a water tile
+        {
+            drought(false, waterThresh, minLakeSize, ii, 31); //check to make sure there are at least >>minLakeSize<< tiles around it
+        }
     }
     saveMap(ofVec2i(mapSize.x, mapSize.y), altitudes);
 
 
+}
 
+void GameMap::drought(bool diag, int& threshold, int& minSize, int start, int desired)
+{
+    fillAlts = altitudes;   //reset spare altitude vector
+    numWater = 0;           //reset the number of water tiles
+    if(!diag)               //call the 4 way fill
+    {
+        floodFill(threshold, desired, start);   //fill all water tiles in that section with other values
+    }
+
+
+    if(numWater < minSize)          //if the water needs to be replaced
+    {
+        for(int ii = 0; ii < fillAlts.size(); ii++)
+        {
+            if(fillAlts[ii] == desired)
+            {
+                altitudes[ii] = threshold;      //set the tile to not be water
+            }
+        }
+    }
+
+}
+
+void GameMap::floodFill(int threshold, int desired, int indice)
+{
+    if(fillAlts[indice] < threshold)
+    {
+        fillAlts[indice] = desired;
+        numWater++;
+        floodFill(threshold, desired, indice+1);
+        floodFill(threshold, desired, indice-1);
+        floodFill(threshold, desired, indice+mapSize.x);
+        floodFill(threshold, desired, indice-mapSize.x);
+    }
 
 }
 void GameMap::saveMap(ofVec2i mapSize, std::vector<int> heights)

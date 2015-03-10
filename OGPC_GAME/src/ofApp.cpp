@@ -78,7 +78,7 @@ void ofApp::draw(){
     ofTranslate(dif.x, dif.y);
     gameEngine->draw();
     ofPushMatrix();
-    ofCircle(0, 0, 100);
+
 
 }
 

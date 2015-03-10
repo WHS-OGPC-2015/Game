@@ -60,7 +60,9 @@ GameMap::GameMap()
 
 std::vector<int> GameMap::genMap(int sizeX, int sizeY, int seeds)
 {
+
     mapSize = ofVec2i(sizeX, sizeY);
+    int highalt = 9;
     GenTile mapArray[mapSize.x][mapSize.y];
 
     for (int i = 0; i < mapSize.x; i ++)
@@ -82,34 +84,61 @@ std::vector<int> GameMap::genMap(int sizeX, int sizeY, int seeds)
 
 
     bool done = false;
-    int rando;
+    int percentmountain = 80;
+    ofVec2i rangeSpread(6, 10);
+    ofVec2i lastSeed;
+
     int highnum;
     bool donecheck;
     ofVec2i pluspattern;
-
+    ofVec2i petal;
+    int rando;
+    //std::vector<ofVec2i> seedVec;
     for (int i = 0; i < seednum; i++)
     {
-        seed = ofVec2i(ofRandom(0, mapSize.x), ofRandom(0, mapSize.y));
-        mapArray[seed.x][seed.y].setAltitude(5);
+        rando = ofRandom (0, 99); //  randomize
+        if (rando > percentmountain or i == 0) // if its the first time, it cant be near a mountain
+        {
+            seed = ofVec2i(ofRandom(0, mapSize.x), ofRandom(0, mapSize.y));
+            //seedVec.push_back(seed);
+            lastSeed = seed;
+            mapArray[seed.x][seed.y].setAltitude(highalt);
+        }
+        else
+        {
+
+
+            ofVec2i spread = ofVec2i(ofRandom(rangeSpread.x, rangeSpread.y), ofRandom(rangeSpread.x, rangeSpread.y));
+            ofVec2i anchor = lastSeed;
+            anchor = ofVec2i(anchor.x+spread.x, anchor.y+spread.y);
+                if(anchor.x > mapSize.x || anchor.y < mapSize.y)
+                {
+                    anchor = seed = ofVec2i(ofRandom(0, mapSize.x), ofRandom(0, mapSize.y));
+                }
+            mapArray[anchor.x][anchor.y].setAltitude(highalt);
+            lastSeed = anchor;
+
+        }
+
     }
 
 
 
 
-    while (done == false)
+    while (done == false) // if all the tiles aren't filled, continue
     {
 
-        donecheck = true;
-        highnum = -1;
-        for (int i = 0; i < mapSize.x; i++)
+        donecheck = true; // reset donecheck
+        highnum = -1;  // highjnum starts below zero to find the next highest altitude
+        for (int i = 0; i < mapSize.x; i++) // check the entire map
         {
             for (int j = 0; j < mapSize.y; j++)
             {
 
-                if (mapArray[i][j].aset == true and mapArray[i][j].altitude > highnum)
+                if (mapArray[i][j].aset == true and mapArray[i][j].altitude > highnum) // if the tile is set and the altitude is greater than the highest altitude so far...
                 {
 
-                    if (        mapArray[xwfunc(i-1)][ywfunc(j)].aset == false
+                    if (        mapArray[xwfunc(i-1)][ywfunc(j)].aset == false // if not all of the surrounding tiles are set...
                                 or mapArray[xwfunc(i+1)][ywfunc(j)].aset == false
                                 or mapArray[xwfunc(i)][ywfunc(j-1)].aset == false
                                 or mapArray[xwfunc(i)][ywfunc(j+1)].aset == false
@@ -117,47 +146,47 @@ std::vector<int> GameMap::genMap(int sizeX, int sizeY, int seeds)
                     {
 
 
-                        highnum = mapArray[i][j].altitude;
-                        focus.x = i;
-                        focus.y = j;
+                        highnum = mapArray[i][j].altitude; // the altitude becomes the highest altitude
+                        focus = ofVec2i(i,j); // swap the focus to this tile
                     }
                 }
-                else if (mapArray[i][j].aset == false)
+                else if (mapArray[i][j].aset == false) // if a tile is unset...
                 {
 
-                    donecheck = false;
+                    donecheck = false; // we will go through the while loop again
                 }
             }
         }
 
-        rando = ofRandom(0,99);
-        for (int i = 0; i < 4; i ++)
+        rando = ofRandom(0,99); // for probability...
+        for (int i = 0; i < 4; i ++) // go through the flower pattern
         {
-            pluspattern.x = roundforint(cos(i * 3.14159265 / 2));
+            pluspattern.x = roundforint(cos(i * 3.14159265 / 2)); // trig to find next "petal"
             pluspattern.y = roundforint(sin(i * 3.14159265 / 2));
+            petal = ofVec2i(xwfunc(focus.x + pluspattern.x), ywfunc(focus.y + pluspattern.y)); // set the petal position
 
 
-            if (mapArray[xwfunc(focus.x + pluspattern.x)][ywfunc(focus.y + pluspattern.y)].aset == false)
+            if (mapArray[petal.x][petal.y].aset == false) // if the petal is unset
             {
-                if (rando >= 0 and rando < 40)
+                if (rando >= 0 and rando < 40) // 40 %
                 {
-                    mapArray[xwfunc(focus.x + pluspattern.x)][ywfunc(focus.y + pluspattern.y)].setAltitude(mapArray[focus.x][focus.y].altitude - 1);
+                    mapArray[petal.x][petal.y].setAltitude(mapArray[focus.x][focus.y].altitude - 1); // the petal is one less than the stem
                 }
-                else if (rando >= 40 and rando < 60)
+                else if (rando >= 40 and rando < 60) // 20 %
                 {
-                    mapArray[xwfunc(focus.x + pluspattern.x)][ywfunc(focus.y + pluspattern.y)].setAltitude(mapArray[focus.x][focus.y].altitude - 2);
+                    mapArray[petal.x][petal.y].setAltitude(mapArray[focus.x][focus.y].altitude - 2); // the petal is two less than the stem
                 }
-                else if (rando >= 60 and rando < 100)
+                else if (rando >= 60 and rando < 100) // 40 %
                 {
-                    mapArray[xwfunc(focus.x + pluspattern.x)][ywfunc(focus.y + pluspattern.y)].setAltitude(mapArray[focus.x][focus.y].altitude);
+                    mapArray[petal.x][petal.y].setAltitude(mapArray[focus.x][focus.y].altitude); // the petal is the same as the stem
                 }
             }
 
         }
-        if (donecheck == true)
+        if (donecheck == true) // if the donecheck has stayed true (i.e., all of the tiles are set...
         {
 
-            done = true;
+            done = true; // this exits the while loop
         }
 
 
@@ -184,12 +213,13 @@ std::vector<int> GameMap::genMap(int sizeX, int sizeY, int seeds)
 void GameMap::genMapTwo()
 {
     mapSize = ofVec2i(100, 100);
-    int numSeeds = mapSize.x;
+    int numSeeds = 10;
     int last = 1;
-    float noiseWeight = .25;
-    float seedWeight = .75;
+    float noiseWeight = 1;
+    float seedWeight = 1;
     int waterThresh = 2;            //first level that is not a water tile
-    int minLakeSize = 20;
+    int minLakeSize = 150;
+    int mountainHeightMultiplier = 2;
 
 
     std::vector <int> noiseAlts;        //holds perlin random altitudes
@@ -197,27 +227,27 @@ void GameMap::genMapTwo()
     {
         for(int xx = 0; xx < mapSize.x; xx++)
         {
-            float noise = scaled_octave_noise_3d(4.f, .5, .05, 0, 8, xx, yy, last); //get perlin for square
+            float noise = scaled_octave_noise_3d(4, .5, .05, 0, 9, xx, yy, last); //get perlin for square
 
             noise = trunc(noise);       //truncate decimals
             last = noise;               //set z coord for next loop
             noiseAlts.push_back((int)noise);    //add height to array
 
         }
-        std::cout << std::endl << std::endl;
+
     }
     float avg = 0;
     std::vector<int> seedAlts = genMap(mapSize.x, mapSize.y, numSeeds);     //make a new vector with mountain point from genMap()
     for(int ii = 0; ii < seedAlts.size(); ii++)
     {
-        seedAlts[ii]*=2;                                //simple averaging based on weights
+        seedAlts[ii] *= 2;                                //simple averaging based on weights
         avg = seedAlts[ii]*seedWeight;
         avg += noiseAlts[ii]*noiseWeight;
         avg/=noiseWeight+seedWeight;
         avg = trunc(avg);
-        if(avg > textureStrings.size())                                     //make sure the height is not bigger than the number of textures
+        if(avg > textureStrings.size()-1)                                     //make sure the height is not bigger than the number of textures
         {
-            avg = textureStrings.size();                                     //if it is, set the height to the highest texture
+            avg = textureStrings.size()-1;                                     //if it is, set the height to the highest texture
 
         }
         altitudes.push_back(avg);

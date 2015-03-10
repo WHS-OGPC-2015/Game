@@ -34,8 +34,8 @@ void Engine::draw()
 
 Engine::~Engine()
 {
-    delete resources;
-    delete tiles;
+    //delete resources;
+    //delete tiles;
     //delete objects;
 }
 

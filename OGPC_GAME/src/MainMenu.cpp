@@ -41,6 +41,9 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     Manager->addTexture("NoExitPressed", "NormalNoButton.png");
     Manager->addTexture("NoExitHovered", "NormalNoButton.png");
     Manager->addTexture("ReallyQuitBackground", "ReallyQuitBackground.png");
+    Manager->addTexture("OptionsNormal", "OptionsButtonNormal.png");
+    Manager->addTexture("OptionsHovered", "OptionsButtonHovered.png");
+    Manager->addTexture("OptionsPressed", "OptionsButtonPressed.png");
 
 
     //Here we add ALL of the fonts
@@ -99,14 +102,14 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     MenuEntity *optionsButton; // options button
     optionsButton = new HoverButton(
                             ofVec2f(ofGetWindowWidth()/2, 2*ofGetWindowHeight()/5),
-                            Manager->getTexturePointer("BlueButton"),           // adding textures, we've done this before...
-                            Manager->getTexturePointer("HoveredBlueButton"),
-                            Manager->getTexturePointer("PressedBlueButton"),
-                            Manager->getTexturePointer("ClickedBlueButton"),
-                            Manager->getTexturePointer("ClickedBlueButton"),
-                            Manager->getTexturePointer("PressedClickedBlueButton"), // adding last texture
+                            Manager->getTexturePointer("OptionsNormal"),           // adding textures, we have done this before...
+                            Manager->getTexturePointer("OptionsHovered"),
+                            Manager->getTexturePointer("OptionsPressed"),
+                            Manager->getTexturePointer("OptionsHovered"),
+                            Manager->getTexturePointer("OptionsHovered"),
+                            Manager->getTexturePointer("OptionsHovered"), // adding last texture
                             Manager->getFontPointer("NormalFont"),                  // Here we go: This is adding the font...
-                            "Options"                                               //and this adds the text, "Options"
+                            ""                                               //don't need any text, its in the texture
                                     );
 
 

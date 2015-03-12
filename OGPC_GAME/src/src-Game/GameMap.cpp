@@ -96,7 +96,7 @@ std::vector<int> GameMap::genMap(int sizeX, int sizeY, int seeds)
     //std::vector<ofVec2i> seedVec;
     for (int i = 0; i < seednum; i++)
     {
-        rando = ofRandom (0, 99); //  randomize
+        rando = ofRandom (0, 99); //  random int to determine if mountain should continue a range
         if (rando > percentmountain or i == 0) // if its the first time, it cant be near a mountain
         {
             seed = ofVec2i(ofRandom(0, mapSize.x), ofRandom(0, mapSize.y));
@@ -111,10 +111,12 @@ std::vector<int> GameMap::genMap(int sizeX, int sizeY, int seeds)
             ofVec2i spread = ofVec2i(ofRandom(rangeSpread.x, rangeSpread.y), ofRandom(rangeSpread.x, rangeSpread.y));
             ofVec2i anchor = lastSeed;
             anchor = ofVec2i(anchor.x+spread.x, anchor.y+spread.y);
-                if(anchor.x > mapSize.x || anchor.y < mapSize.y)
-                {
-                    anchor = seed = ofVec2i(ofRandom(0, mapSize.x), ofRandom(0, mapSize.y));
-                }
+
+            if(anchor.x > mapSize.x || anchor.y < mapSize.y)    //if the point is off the map make a new random one inside the map
+            {
+                anchor = seed = ofVec2i(ofRandom(0, mapSize.x), ofRandom(0, mapSize.y));
+            }
+
             mapArray[anchor.x][anchor.y].setAltitude(highalt);
             lastSeed = anchor;
 
@@ -212,14 +214,15 @@ std::vector<int> GameMap::genMap(int sizeX, int sizeY, int seeds)
 
 void GameMap::genMapTwo()
 {
-    mapSize = ofVec2i(100, 100);
-    int numSeeds = 10;
-    int last = 1;
-    float noiseWeight = 1;
-    float seedWeight = 1;
-    int waterThresh = 2;            //first level that is not a water tile
-    int minLakeSize = 150;
-    int mountainHeightMultiplier = 2;
+    mapSize = ofVec2i(100, 100);        //size of the map in tiles
+    int numSeeds = 10;                  //number of mountains to generate in genMap()
+    int last = 1;                       //last height used(for noise z seed)
+    float noiseWeight = 1;              //value to multiply noise vector by before averaging
+    float seedWeight = 1;               //value to multiply seed vector by before averaging
+    int waterThresh = 2;                //first level that is not a water tile
+    int minLakeSize = 60;               //minimum amount of connected water tiles
+    int mountainHeightMultiplier = 2;   //value to increase height of mountains
+    int heightNorm = 9;                 //normalization factor for height
 
 
     std::vector <int> noiseAlts;        //holds perlin random altitudes
@@ -229,25 +232,26 @@ void GameMap::genMapTwo()
         {
             float noise = scaled_octave_noise_3d(4, .5, .05, 0, 9, xx, yy, last); //get perlin for square
 
-            noise = trunc(noise);       //truncate decimals
-            last = noise;               //set z coord for next loop
+            noise = trunc(noise);               //truncate decimals
+            last = noise;                       //set z coord for next loop
             noiseAlts.push_back((int)noise);    //add height to array
 
         }
 
     }
+
     float avg = 0;
     std::vector<int> seedAlts = genMap(mapSize.x, mapSize.y, numSeeds);     //make a new vector with mountain point from genMap()
     for(int ii = 0; ii < seedAlts.size(); ii++)
     {
-        seedAlts[ii] *= 2;                                //simple averaging based on weights
+        seedAlts[ii] *= mountainHeightMultiplier;//*(heightNorm/(textureStrings.size()-1));                                //simple averaging based on weights
         avg = seedAlts[ii]*seedWeight;
         avg += noiseAlts[ii]*noiseWeight;
         avg/=noiseWeight+seedWeight;
         avg = trunc(avg);
         if(avg > textureStrings.size()-1)                                     //make sure the height is not bigger than the number of textures
         {
-            avg = textureStrings.size()-1;                                     //if it is, set the height to the highest texture
+            avg = textureStrings.size()-1;                                    //if it is, set the height to the highest texture
 
         }
         altitudes.push_back(avg);
@@ -290,7 +294,7 @@ void GameMap::drought(bool diag, int& threshold, int& minSize, int start, int de
 
 void GameMap::floodFill(int threshold, int desired, int indice)
 {
-    if(fillAlts[indice] < threshold)
+    if(fillAlts[indice] < threshold)        //basic flood fill algorithm with counter implemented look it up
     {
         fillAlts[indice] = desired;
         numWater++;
@@ -299,6 +303,40 @@ void GameMap::floodFill(int threshold, int desired, int indice)
         floodFill(threshold, desired, indice+mapSize.x);
         floodFill(threshold, desired, indice-mapSize.x);
     }
+    //        std::vector<int> q;
+//    q.push_back(indice);
+//    int siz = 0;
+//    bool emp = false;
+//    while(emp == false)        //basic flood fill algorithm with counter implemented look it up
+//    {
+//        int currentIndice = q[q.size()-1];
+//        q.pop_back();
+//        fillAlts[currentIndice] = desired;
+//        numWater++;
+//        if(altitudes[indice+1] < threshold)
+//        {
+//            fillAlts[indice+1] = desired;
+//            q.push_back(indice+1);
+//        }
+//        if(altitudes[indice-1] < threshold)
+//        {
+//            fillAlts[indice-1] = desired;
+//            q.push_back(indice-1);
+//        }
+//        if(altitudes[indice+mapSize.x] < threshold)
+//        {
+//            fillAlts[indice+mapSize.x] = desired;
+//            q.push_back(indice+mapSize.x);
+//        }
+//        if(altitudes[indice-mapSize.x] < threshold)
+//        {
+//            fillAlts[indice-mapSize.x] = desired;
+//            q.push_back(indice-mapSize.x);
+//        }
+//        emp = q.empty();
+//        siz = q.size();
+//
+//    }
 
 }
 void GameMap::saveMap(ofVec2i mapSize, std::vector<int> heights)
@@ -356,7 +394,7 @@ void GameMap::mapTextureNames(std::string folder)
     std::string specPath = folder + "\\*.*";
     folder += "\\";
 
-    WIN32_FIND_DATA fd;     //declare variable to hold file data
+    WIN32_FIND_DATA fd;                                     //declare variable to hold file data
     HANDLE hFind = FindFirstFile(specPath.c_str(), &fd);    //find first file and store data
     if(hFind != INVALID_HANDLE_VALUE) {                     //if that data is not corrupt
         do {
@@ -411,9 +449,6 @@ void GameMap::mapTextureNames(std::string folder)
             //std::cout << textureMap[prefixInt] << " SWAG1" << std::endl;
 
         }
-
-
-
 
 
     }

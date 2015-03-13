@@ -71,6 +71,8 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
                             0,
                             50
                                 );
+
+
     MenuEntity *exitButton; // create the exit button
     exitButton = new HoverButton(
                             ofVec2f(ofGetWindowWidth()-100, 100),                                   // position
@@ -213,9 +215,11 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     Now we add the buttons to menus and the menus to Menu manager.
     ----------------------------------------------------------------------------------*/
 
-    opMenu.addEntity(*brightnessSlider, "setBrightness");
+
     opMenu.addEntity(*dolphinBG, "DolphinBackground"); // adding Entities to menus...
     opMenu.addEntity(*exitButton, "ExitButton");
+    opMenu.addEntity(*brightnessSlider, "setBrightness");
+
     normalMenu.addEntity(*orangeBG, "NormalBackground");
     normalMenu.addEntity(*SGButton, "StartGameButton");
     normalMenu.addEntity(*optionsButton, "OptionsButton");
@@ -240,11 +244,14 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
 
     // now we define pointers to menus in the menu entities. These pointers are private elements of MainMenu
     defaultMenu = Manager->getMenuPointerByName("NormalMenu");  // definition of pointer
-    defaultMenu->setActive();                                   // set active or inactive
+    defaultMenu->setActive();
+                                  // set active or inactive
     optionsMenu = Manager->getMenuPointerByName("OptionsMenu");
     optionsMenu->setInactive();
+
     creditsMenu = Manager->getMenuPointerByName("CreditsMenu");
     creditsMenu->setInactive();
+
     quitGameMenu = Manager->getMenuPointerByName("QuitGameMenu");
     quitGameMenu->setInactive();
 
@@ -326,7 +333,6 @@ void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Upd
 
          if (QuitGameBut->getEventDataInt() >2) // deals with the quit game button
          {
-             std::cout<<"here";
              quitGameMenu->setActive();
              QuitGameBut->setClicked(false);
              defaultMenu->setInactive();
@@ -349,7 +355,7 @@ void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Upd
              }
          }
 
-         std::cout << BrightnessSlider->getEventDataInt() << endl;//slider troubleshooting
+         //std::cout << BrightnessSlider->getEventDataInt() << endl;//slider troubleshooting
 
 
 

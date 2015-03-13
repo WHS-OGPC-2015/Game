@@ -6,7 +6,7 @@ class Slider : public MenuEntity
 {
 public:
 
-    Slider(ofVec2f position, ofTexture& bg, ofTexture& slider, int M, int m, int start);
+    Slider(ofVec2f position, ofTexture& bg, ofTexture& slider, double M, double m, double start);
 
     bool getEventDataBool();//so that the class is not abstract
     int getEventDataInt();//returns slider value

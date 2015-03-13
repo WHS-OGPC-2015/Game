@@ -69,7 +69,9 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
                             Manager->getTexturePointer("NormalQuitButton"),
                             100,
                             0,
-                            50
+                            50,
+                            Manager->getFontPointer("NormalFont"),
+                            "Brightness"
                                 );
 
 

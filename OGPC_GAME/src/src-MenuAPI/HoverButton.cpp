@@ -60,7 +60,7 @@ std::string HoverButton::getButtonTextString()
 
 void HoverButton::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
-    
+
 
     //test to see if the mouse is clicked
     if(clicked == true and nowPressedOff == false)

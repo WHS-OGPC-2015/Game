@@ -1,7 +1,9 @@
 #include "Slider.h"
 
-Slider::Slider(ofVec2f p, ofTexture& bg, ofTexture& slider, double M, double m, double start)
+Slider::Slider(ofVec2f p, ofTexture& bg, ofTexture& slider, double M, double m, double start, ofTrueTypeFont& f, std::string t)
 {
+    font = &f;
+    text = t;
     background = &bg;
     sliderThing = &slider;
     currentValue = start;
@@ -18,7 +20,14 @@ int Slider::getEventDataInt()
 {
     return currentValue;
 }
-
+void Slider::setButtonTextString(std::string newString)
+{
+    text = newString;
+}
+std::string Slider::getButtonTextString()
+{
+    return text;
+}
 void Slider::update(){}//also just here to prevent error
 
 void Slider::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
@@ -63,7 +72,9 @@ void Slider::draw()
         bgTLPos = ofVec2f((position.x-(background->getWidth()/2)), (position.y-(background->getHeight()/2)));
         bgBRPos = ofVec2f((bgTLPos.x+(background->getWidth())), (bgTLPos.y+(background->getHeight())));
         background->draw(bgTLPos);
-        sliderThing->draw(ofVec2f(bgTLPos.x+((currentValue-minValue)*cordScale)-sliderThing->getWidth()/2, (bgTLPos.y+((background->getHeight()/2)-(sliderThing->getHeight()/2)))));
+
+        font->drawString(text, position.x - font->stringWidth(text)/2, position.y - sliderThing->getHeight()/2 - font->stringHeight(text)/2 - 10); //sets position of text
+        sliderThing->draw(ofVec2f(bgTLPos.x+((currentValue-minValue)*cordScale)-sliderThing->getWidth()/2, (bgTLPos.y+((background->getHeight()/2)-(sliderThing->getHeight()/2))))); //needs to be centered
 
 //        ofCircle(bgTLPos, 10);
 //        ofCircle(bgBRPos, 10);

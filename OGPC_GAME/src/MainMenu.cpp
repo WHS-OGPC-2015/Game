@@ -339,6 +339,7 @@ void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Upd
                  quitGameMenu->setInactive();
                  YesQuitBut->setClicked(false);
                  active = false;
+                 std::exit(EXIT_SUCCESS);
              }
              else if (NoQuitBut->getEventDataInt() > 2)
              {

@@ -32,8 +32,6 @@ void Slider::update(){}//also just here to prevent error
 
 void Slider::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
-
-
     if(pressed == true)
     {
        // std::cout << "here1" << std::endl;
@@ -69,6 +67,7 @@ void Slider::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 void Slider::draw()
 {
         //reset BR and TL corner positions for collision
+        ofSetColor(currentValue * 2 + 100, currentValue * 2 + 100, currentValue * 2 + 100);
         bgTLPos = ofVec2f((position.x-(background->getWidth()/2)), (position.y-(background->getHeight()/2)));
         bgBRPos = ofVec2f((bgTLPos.x+(background->getWidth())), (bgTLPos.y+(background->getHeight())));
         background->draw(bgTLPos);

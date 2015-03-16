@@ -137,6 +137,8 @@
 		<Unit filename="src/src-Engine/EngineInclude.h" />
 		<Unit filename="src/src-Engine/EngineMain.cpp" />
 		<Unit filename="src/src-Engine/EngineMain.h" />
+		<Unit filename="src/src-Engine/ObjectManager.h" />
+		<Unit filename="src/src-Engine/ObjectVector.h" />
 		<Unit filename="src/src-Engine/ResourceManager.cpp" />
 		<Unit filename="src/src-Engine/ResourceManager.h" />
 		<Unit filename="src/src-Engine/Tile.cpp" />

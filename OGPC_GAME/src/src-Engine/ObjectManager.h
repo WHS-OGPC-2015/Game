@@ -1,5 +1,6 @@
 #include "ofMain.h"
 #include "../XML/src/ofxXmlSettings.h"
+#pragma once
 class ObjectManager
 {
 public:
@@ -17,7 +18,6 @@ public:
         }
         return false;
     }
-
     void addObjectToType(auto object, std::string type);    //add an object of specific type to its array
     auto& getObjectTypePointer(std::string type);           //get pointer to an oVector
 

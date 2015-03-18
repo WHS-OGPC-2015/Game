@@ -51,6 +51,26 @@ void ObjectManager::loadFromFile(std::string filePath)
 
 }
 
+void ObjectManager::saveToFile(std::string path)
+{
+    ofxXmlSettings file;
+    file.addValue("numObjectTypes", objectArrayNames.size())
+    for(int ii = 0; ii < objectArrayNames.size())
+    {
+        objects.addTag("type");
+        objects.pushTag("type", ii);
+        //map<std::string, int>::iterator it = m.begin()+ii;
+        objects.addValue("name", objectArrayNames[ii].first/*it->first*/)
+        objects.addValue("numOf", )
+        objects[ii].saveObjectData(file);
+
+
+
+        objects.popTag();
+
+    }
+}
+
 void ObjectManager::updateAll()
 {
     for(int ii = 0; ii < objects.size())

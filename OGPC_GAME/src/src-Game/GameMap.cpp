@@ -3,15 +3,7 @@
 #include "../XML/src/ofxXmlSettings.h"
 #include "simplexnoise.h"
 
-ofVec2i::ofVec2i(int a, int b)
-{
-        x = a;
-        y = b;
-}
-ofVec2i::ofVec2i()
-{
 
-}
 
 int GameMap::xwfunc(int x)
 {

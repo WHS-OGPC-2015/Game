@@ -2,16 +2,8 @@
 #pragma once
 #include "ofMain.h"
 #include "Tile.h"
+#include "Vec2i.h"
 
-class ofVec2i
-{
-public:
-    ofVec2i(int a, int b);
-    ofVec2i();
-    int x;
-    int y;
-
-};
 
 
 

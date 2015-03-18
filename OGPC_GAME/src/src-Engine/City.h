@@ -1,5 +1,6 @@
 #pragma once
 #include "ofMain.h"
+#include "Tile.h"
 
 class City
 {

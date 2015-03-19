@@ -46,13 +46,11 @@ std::string randomname()
 
 
 
-City::City(Tile& btile)
+City::City(Tile& btile) : boundTile(btile)
 {
-
     population = 1000;
     converted = 0;
     cityName = randomname();
-    boundTile = btile;
 }
 
 void City::Update()
@@ -77,3 +75,10 @@ double City::getPercentConverted()
 {
     return percentconverted;
 }
+
+void City::saveObjectData(ofxXmlSettings& file)
+{
+
+}
+
+

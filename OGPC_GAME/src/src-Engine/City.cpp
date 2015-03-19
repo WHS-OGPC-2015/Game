@@ -46,11 +46,13 @@ std::string randomname()
 
 
 
-City::City()
+City::City(Tile& btile)
 {
 
     population = 1000;
     converted = 0;
+    cityName = randomname();
+    boundTile = btile;
 }
 
 void City::Update()

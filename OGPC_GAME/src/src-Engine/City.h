@@ -1,21 +1,23 @@
 #pragma once
 #include "ofMain.h"
 #include "Tile.h"
+#include "../src-Game/Vec2i.h"
+#include "../src-MenuAPI/MenuInclude.h"
 
 class City
 {
 public:
-    City();
+    City(Tile& btile);
     void Update();
     void Draw();
     double getPercentConverted();
 
 private:
-    Tile* boundTile;
-    //ofVec2i posBoundTile;
+    Tile& boundTile;
+    ofVec2i posBoundTile;
     ofTexture* cityTexture;
     std::string cityName;
-    //Menu* cityPopup;
+    Menu* cityPopup;
     double population;
     double converted;
     double percentconverted;

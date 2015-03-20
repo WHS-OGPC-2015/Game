@@ -67,7 +67,25 @@ void ofApp::update(){
 
 
 
-    gameEngine->update();
+    if(pressed != true)
+    {
+            clicked = false;
+
+    }
+    if(currentState == MAINMENU)
+    {
+        gameEngine->update();
+    }
+    else if(currentState == LOADING)
+    {
+
+    }
+    else if(currentState == GAME)
+    {
+        startingMenu.update(mousePos, clicked, pressed);
+    }
+
+
     lastMousePos = mousePos;
     dragging = false;
 }
@@ -79,6 +97,7 @@ void ofApp::draw(){
     gameEngine->draw();
     ofPushMatrix();
 
+    startingMenu.draw();
 
 }
 
@@ -114,11 +133,17 @@ void ofApp::mousePressed(int x, int y, int button){
     dragging = false;
     mousePos.x = x;
     mousePos.y = y;
+    pressed = true;
 
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
+    if(pressed == true)
+    {
+        pressed = false;
+        clicked = true;
+    }
     dragging = false;
     mousePos.x = x;
     mousePos.y = y;

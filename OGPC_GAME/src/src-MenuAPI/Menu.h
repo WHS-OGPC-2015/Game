@@ -21,7 +21,7 @@ public:
 
 
 
-    void update(ofVec2f& mousePos, bool& clicked);
+    void update(ofVec2f& mousePos, bool& clicked, bool& pressed);
     void draw();
 
     void setActive();//set menu to be drawn

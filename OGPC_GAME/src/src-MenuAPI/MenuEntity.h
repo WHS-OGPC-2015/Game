@@ -7,7 +7,7 @@ public:
 
     virtual void draw() = 0;
     virtual void update() = 0;
-    virtual void update(ofVec2f&, bool&) = 0;
+    virtual void update(ofVec2f&, bool&, bool &) = 0;
     bool requiresMouseData;
 
 

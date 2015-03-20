@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "src-Engine/EngineInclude.h"
 #include "src-Game/GameMap.h"
+#include "MainMenu.h"
 
 class ofApp : public ofBaseApp{
 
@@ -29,6 +30,10 @@ class ofApp : public ofBaseApp{
         Engine* gameEngine;
         GameMap* mapGenerator;
         ofVec2f viewPos;
+        MainMenu startingMenu;
+
+        enum GameStates{MAINMENU, LOADING, GAME};
+        int currentState;
 
 
 

@@ -134,8 +134,6 @@
 		<Unit filename="src/ofApp.h">
 			<Option virtualFolder="src" />
 		</Unit>
-		<Unit filename="src/src-Engine/City.cpp" />
-		<Unit filename="src/src-Engine/City.h" />
 		<Unit filename="src/src-Engine/EngineInclude.h" />
 		<Unit filename="src/src-Engine/EngineMain.cpp" />
 		<Unit filename="src/src-Engine/EngineMain.h" />

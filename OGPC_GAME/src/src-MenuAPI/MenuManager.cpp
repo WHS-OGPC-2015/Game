@@ -49,13 +49,13 @@ Menu* MenuManager::getMenuPointerByName(std::string name)
     return r;
 }
 
-void MenuManager::update(ofVec2f& mousePos, bool& clicked)
+void MenuManager::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
     for(int aa = 0; aa < menus.size(); aa++)//cycle through all menus and call their update functions
     {
         if(menus[aa].isActive())//if the menu is active update it
         {
-            menus[aa].update( mousePos, clicked);
+            menus[aa].update(mousePos, clicked, pressed);
         }
     }
 }

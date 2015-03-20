@@ -12,10 +12,10 @@ public:
 
 private:
     Tile* boundTile;
-    ofVec2i posBoundTile;
-    ofTexture* cityTexture
+    //ofVec2i posBoundTile;
+    ofTexture* cityTexture;
     std::string cityName;
-    Menu* cityPopup;
+    //Menu* cityPopup;
     double population;
     double converted;
     double percentconverted;

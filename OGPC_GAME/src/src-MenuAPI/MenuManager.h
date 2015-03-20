@@ -16,9 +16,9 @@ public:
     ofTrueTypeFont& getFontPointer(int pos);//retrieve font reference by position in array
 
     void addMenu(Menu, std::string name);//add Menu to menu array
-    Menu* getMenuPointerByName(std::string name); //get menu my name
+    Menu* getMenuPointerByName(std::string name); //get menu by name
 
-    void update(ofVec2f&, bool&);//updates menus
+    void update(ofVec2f&, bool&, bool&);//updates menus
     void draw();//draws menus
 private:
     std::vector <ofTexture> textures;//holds textures

@@ -36,7 +36,7 @@ std::string SimpleButton::getButtonTextString()
     return text;
 }
 
-void SimpleButton::update(ofVec2f& mousePos, bool& clicked)
+void SimpleButton::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
 
     //test to see if the mouse is clicked

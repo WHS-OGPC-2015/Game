@@ -25,13 +25,13 @@ void Menu::addEntity(MenuEntity& ent, std::string name)
 }
 
 
-void Menu::update(ofVec2f& mousePos, bool& clicked)
+void Menu::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
     for(int aa = 0; aa<entities.size(); aa++)//updates all of the menus entities
     {
         if(entities[aa]->requiresMouseData)//if the entity needs mouseinput call that update fxn
         {
-            entities[aa]->update(mousePos, clicked);
+            entities[aa]->update(mousePos, clicked, pressed);
         }
         else//otherwise call the other update
         {

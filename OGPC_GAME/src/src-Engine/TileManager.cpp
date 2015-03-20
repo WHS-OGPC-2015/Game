@@ -1,11 +1,10 @@
 #include "TileManager.h"
 #include "../XML/src/ofxXmlSettings.h"
-TileManager::TileManager(std::string file, ofVec2f& trans)
+TileManager::TileManager(std::string file, ofVec2f& trans, ResourceManager& recMan) : tFactor(trans), resources(recMan)
 {
-    resources = new ResourceManager;
-    resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
 
-    tFactor = &trans;
+
+
     loadFromFile(file);
 
     for(int ii = 0; ii<tiles.size(); ii++)//initialize all members of array to false

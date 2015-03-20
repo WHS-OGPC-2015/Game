@@ -20,7 +20,9 @@ public:
 
 private:
     Tile& boundTile;
+    ofVec2i TileIndex;
     ofTexture* cityTexture;
+    std::string TextureName;
     std::string cityName;
     Menu* cityPopup;
     double population;
@@ -28,6 +30,15 @@ private:
     double percentconverted;
     ofVec2f TLpos;
     ofVec2f BRpos;
+    double thresholds[3];
+    double converted;
+    double velocity;
+    double accel;
+    int occupied;
 
+
+    double
+    int difficulty;
+    int maxdif;
 
 };

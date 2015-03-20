@@ -5,10 +5,10 @@ Engine::Engine(std::string tileData, std::string objectData, std::string GameDat
 
     tFactor = &trans;
 
+    resources = new ResourceManager;
+    resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
 
-    //resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tileTextures");
-    std::cout << "here3" << std::endl;
-    tiles = new TileManager(tileData, trans);
+    tiles = new TileManager(tileData, trans, &resources);
     //objects = new ObjectManager(objectData, trans);
 
 

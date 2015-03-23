@@ -20,7 +20,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     Manager->addTexture("HoveredQuitButton", "HoveredQuitButton.png");
     Manager->addTexture("ClickedQuitButton", "ClickedQuitButton.png");
     Manager->addTexture("PressedQuitButton", "PressedQuitButton.png");
-    Manager->addTexture("OrangeBackground", "OrangeBackground.png");
+    Manager->addTexture("OrangeBackground", "MainMenuBG.png");
     Manager->addTexture("BlueButton", "BlueButton.png");
     Manager->addTexture("ClickedBlueButton", "ClickedBlueButton.png");
     Manager->addTexture("PressedBlueButton", "PressedBlueButton.png");

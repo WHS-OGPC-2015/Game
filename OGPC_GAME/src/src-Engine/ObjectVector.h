@@ -9,8 +9,8 @@ public:
     {
         vec.push_back(object);
     }
-    void loadObjectData(ofxXmlSettings& file, int num);//create objects and if necessary tell them to load themselves
-    void getVectorReference()
+    void loadObjectData(ofxXmlSettings& file, int numType);//create objects and if necessary tell them to load themselves
+    std::vector<T> getVector();
 
     void updateAll();
     void drawAll();

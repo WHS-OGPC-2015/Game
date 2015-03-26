@@ -48,7 +48,7 @@
 
 City::City(int dif, Tile& btile) : boundTile(btile)
 {
-    TileIndex = boundTile;
+    //TileIndex = boundTile;
     population = 1000; // default population
     converted = 0; // you don't have any influence
    // cityName = randomname(); // set name to a random combination of prefixes and suffixes
@@ -58,8 +58,8 @@ City::City(int dif, Tile& btile) : boundTile(btile)
     thresholds[0] = .05;     // below this percentage of believers in an entered city, the believers will increase
     thresholds[1] = .5 + difficulty; // above this percentage in an entered city, the converted will increase
     thresholds[2] = .95;  // above this percentage in an entered city, the converted will decline
-    velmin = -(thresholds[1]-thresholdsd[0]) * accelmax / 2; //integral from bottom th to middle th of the acceleration, / (-2) -- the C of the integral
-    velmax = (thresholds[2]-thresholdsd[1]) * accelmax / 2;
+    velmin = -(thresholds[1]-thresholds[0]) * accelmax / 2; //integral from bottom th to middle th of the acceleration, / (-2) -- the C of the integral
+    velmax = (thresholds[2]-thresholds[1]) * accelmax / 2;
     extremeaccel[0] = 10;
     extremeaccel[1] = -10;
     threshnums[0] = 0;
@@ -69,8 +69,8 @@ City::City(int dif, Tile& btile) : boundTile(btile)
 
 int City::getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
  {
-    if (mousepos.x < TLpos.x || mousepos.x > BRpos.x ||
-        mousepos.y < TLpos.y || mouspos.y > BRpos.y)
+    if (mousePos.x < TLpos.x || mousePos.x > BRpos.x ||
+        mousePos.y < TLpos.y || mousePos.y > BRpos.y)
     {
         return 0;
         // its ouside
@@ -144,20 +144,20 @@ void City::turnlyUpdate()
         {
             if (threshnums[1] == 0)
             {
-                vel = velmin;
+                velocity = velmin;
             }
             else if (threshnums[1] == 3)
             {
-                vel = velmax;
+                velocity = velmax;
             }
             else
             {
-                vel = 0;
+                velocity = 0;
             }
         }
 
-        vel += accel;
-        converted += vel;
+        velocity += accel;
+        converted += velocity;
 
 
         if(converted < 0)
@@ -181,12 +181,12 @@ void City::turnlyUpdate()
 
 void City::Draw()
 {
-    if (cityPopup->getActive() == true)
+    if (cityPopup->isActive() == true)
     {
         cityPopup->draw();
     }
-    TLpos = ofVec2f(boundTile->position.x - cityTexture->getWidth() /2, boundTile->position.y - cityTexture->getHeight() /2);
-    BRpos = ofVec2f(boundTile->position.x + cityTexture->getWidth() /2, boundTile->position.y + cityTexture->getHeight() /2);
+    TLpos = ofVec2f(boundTile.getLocation().x - cityTexture->getWidth() /2, boundTile.getLocation().y - cityTexture->getHeight() /2);
+    BRpos = ofVec2f(boundTile.getLocation().x + cityTexture->getWidth() /2, boundTile.getLocation().y + cityTexture->getHeight() /2);
     //cityPopup->draw(boundTile->position);
 
 
@@ -222,10 +222,10 @@ void City::saveObjectData(ofxXmlSettings& file)
 
 }
 
-void City::loadObjectData(ofxXmlSettings& file);
+void City::loadObjectData(ofxXmlSettings& file)
 {
-    TileIndex = boundTile;
-    TextureName = file.getValue("cityName", "")
+    //TileIndex = boundTile;
+    TextureName = file.getValue("cityName", "");
     cityName = file.getValue("cityName", "");
     population = file.getValue("population", 0.0);
     converted = file.getValue("converted", 0.0);
@@ -237,8 +237,8 @@ void City::loadObjectData(ofxXmlSettings& file);
     ofVec2f BRpos = ofVec2f(file.getValue("BRposx", 0.0), file.getValue("BRposy", 0.0));
     thresholds[0] = file.getValue("threshold0", 0.0);
     thresholds[1] = file.getValue("threshold1", 0.0);
-    threshdolds[2] = file.getValue("threshold2", 0.0);
+    thresholds[2] = file.getValue("threshold2", 0.0);
     difficulty = file.getValue("difficulty", 0);
     occupied = file.getValue("occupied", 0);
-    entered = flie.getValue("entered", 0 /*hopefully works for bool?*/)
+    entered = file.getValue("entered", 0 /*hopefully works for bool?*/);
 }

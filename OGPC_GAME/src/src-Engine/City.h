@@ -8,11 +8,11 @@
 class City
 {
 public:
-    City(Tile& btile) : boundTile(btile);
+    City(int, Tile& btile);
 
     void Update(ofVec2f& mousePos, bool& clicked, bool& pressed);
     void turnlyUpdate();
-    int getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
+    int getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed);
     void Draw();
 
 

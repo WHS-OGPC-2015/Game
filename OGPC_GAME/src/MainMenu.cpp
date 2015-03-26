@@ -144,9 +144,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
                             Manager->getTexturePointer("CreditsPressed"),
                             Manager->getTexturePointer("CreditsPressed"),
                             Manager->getTexturePointer("CreditsPressed"),
-                            Manager->getTexturePointer("CreditsPressed"),
-                            Manager->getFontPointer("NormalFont"),
-                            "Credits"
+                            Manager->getTexturePointer("CreditsPressed")
                                     );
 
 
@@ -158,8 +156,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
                             Manager->getTexturePointer("QuitPressed"),
                             Manager->getTexturePointer("QuitPressed"),
                             Manager->getTexturePointer("QuitPressed"),
-                            Manager->getTexturePointer("QuitPressed"),                            Manager->getFontPointer("Fancy"),
-                            "QUIT GAME"
+                            Manager->getTexturePointer("QuitPressed")
                                     );
 
 
@@ -182,14 +179,12 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     MenuEntity *cancelButton; // cancel Button
     cancelButton = new HoverButton(
                             ofVec2f(ofGetWindowWidth()/2, 4*ofGetWindowHeight()/5),
-                            Manager->getTexturePointer("BlueButton"),
-                            Manager->getTexturePointer("HoveredBlueButton"),
-                            Manager->getTexturePointer("PressedBlueButton"),
-                            Manager->getTexturePointer("ClickedBlueButton"),
-                            Manager->getTexturePointer("ClickedBlueButton"),
-                            Manager->getTexturePointer("PressedClickedBlueButton"),
-                            Manager->getFontPointer("NormalFont"),
-                            "Cancel"
+                            Manager->getTexturePointer("QuitNormal"),
+                            Manager->getTexturePointer("QuitHovered"),
+                            Manager->getTexturePointer("QuitPressed"),
+                            Manager->getTexturePointer("QuitPressed"),
+                            Manager->getTexturePointer("QuitPressed"),
+                            Manager->getTexturePointer("QuitPressed")
                                     );
 
 

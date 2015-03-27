@@ -16,34 +16,52 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     Menu quitMenu(ofVec2f(0,0));//creating quit y/n? menu
 
     //Here we add ALL of the Textures
-    Manager->addTexture("DefaultQuitButton", "NormalQuitButton.png"); // adding textures in the format Manager->addTexture("Name you will refer to the texture with", "File_Name")
-    Manager->addTexture("HoveredQuitButton", "HoveredQuitButton.png");
-    Manager->addTexture("ClickedQuitButton", "ClickedQuitButton.png");
-    Manager->addTexture("PressedQuitButton", "PressedQuitButton.png");
+    Manager->addTexture("XNormal", "XButtonNormal.png"); // adding textures in the format Manager->addTexture("Name you will refer to the texture with", "File_Name")
+    Manager->addTexture("XHovered", "XButtonHovered.png");
+    Manager->addTexture("XPressed", "XButtonPressed.png");
+
     Manager->addTexture("OrangeBackground", "OrangeBackground.png");
-    Manager->addTexture("BlueButton", "BlueButton.png");
+
+    Manager->addTexture("BlueButton", "BlueButton.pngDefaultQuitButton");
     Manager->addTexture("ClickedBlueButton", "ClickedBlueButton.png");
     Manager->addTexture("PressedBlueButton", "PressedBlueButton.png");
     Manager->addTexture("HoveredBlueButton", "HoveredBlueButton.png");
     Manager->addTexture("PressedClickedBlueButton", "PressedClickedBlueButton.png");
+
     Manager->addTexture("DolphinBackground", "DolphinBackground.png");
+
     Manager->addTexture("StartGameButtonNormal", "PlayButtonNormal.png");
     Manager->addTexture("StartGameButtonPressed", "PlayButtonPressed.png");
     Manager->addTexture("StartGameButtonHovered", "PlayButtonHovered.png");
+
     Manager->addTexture("CreditsBackground", "Credits.png");
+
     Manager->addTexture("StandardNormal", "StandardNormal.png");
     Manager->addTexture("StandardPressed", "StandardPressed.png");
     Manager->addTexture("StandardHovered", "StandardHovered.png");
+
     Manager->addTexture("YesExitNormal", "YesButton.png");
     Manager->addTexture("YesExitPressed", "YesButton.png");
     Manager->addTexture("YesExitHovered", "YesButton.png");
+
     Manager->addTexture("NoExitNormal", "NormalNoButton.png");
     Manager->addTexture("NoExitPressed", "NormalNoButton.png");
     Manager->addTexture("NoExitHovered", "NormalNoButton.png");
+
     Manager->addTexture("ReallyQuitBackground", "ReallyQuitBackground.png");
+
     Manager->addTexture("OptionsNormal", "OptionsButtonNormal.png");
     Manager->addTexture("OptionsHovered", "OptionsButtonHovered.png");
     Manager->addTexture("OptionsPressed", "OptionsButtonPressed.png");
+
+    Manager->addTexture("CreditsNormal", "CreditsButtonNormal.png");
+    Manager->addTexture("CreditsHovered", "CreditsButtonHovered.png");
+    Manager->addTexture("CreditsPressed", "CreditsButtonPressed.png");
+
+    Manager->addTexture("QuitNormal", "QuitButtonNormal.png");
+    Manager->addTexture("QuitHovered", "QuitButtonHovered.png");
+    Manager->addTexture("QuitPressed", "QuitButtonPressed.png");
+
 
 
     //Here we add ALL of the fonts
@@ -66,7 +84,7 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     brightnessSlider = new Slider(
                             ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/4),
                             Manager->getTexturePointer("BlueButton"),
-                            Manager->getTexturePointer("NormalQuitButton"),
+                            Manager->getTexturePointer("XPressed"),
                             100,
                             0,
                             50,
@@ -78,12 +96,12 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     MenuEntity *exitButton; // create the exit button
     exitButton = new HoverButton(
                             ofVec2f(ofGetWindowWidth()-100, 100),                                   // position
-                            Manager->getTexturePointer("DefaultQuitButton"),    // Normal Texture
-                            Manager->getTexturePointer("HoveredQuitButton"),    // Hovered Texture
-                            Manager->getTexturePointer("PressedQuitButton"),    // Pressed texture
-                            Manager->getTexturePointer("ClickedQuitButton"),    // Clicked Texture
-                            Manager->getTexturePointer("ClickedQuitButton"),    // Clicked and Hovered Texture (highly optional; here, I just repeated  the clicked texture)
-                            Manager->getTexturePointer("ClickedQuitButton")     // Clicked and Pressed Texture
+                            Manager->getTexturePointer("XNormal"),    // Normal Texture
+                            Manager->getTexturePointer("XHovered"),    // Hovered Texture
+                            Manager->getTexturePointer("XPressed"),    // Pressed texture
+                            Manager->getTexturePointer("XPressed"),    // Clicked Texture
+                            Manager->getTexturePointer("XPressed"),    // Clicked and Hovered Texture (highly optional; here, I just repeated  the clicked texture)
+                            Manager->getTexturePointer("XPressed")     // Clicked and Pressed Texture
                                   );
     //End.
     //For adding text, see line 79-92 where we create the options button
@@ -121,12 +139,12 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     MenuEntity *creditsButton; // Credits Button
     creditsButton = new HoverButton(
                             ofVec2f(ofGetWindowWidth()/2, 3*ofGetWindowHeight()/5),
-                            Manager->getTexturePointer("BlueButton"),
-                            Manager->getTexturePointer("HoveredBlueButton"),
-                            Manager->getTexturePointer("PressedBlueButton"),
-                            Manager->getTexturePointer("ClickedBlueButton"),
-                            Manager->getTexturePointer("ClickedBlueButton"),
-                            Manager->getTexturePointer("PressedClickedBlueButton"),
+                            Manager->getTexturePointer("CreditsNormal"),
+                            Manager->getTexturePointer("CreditsHovered"),
+                            Manager->getTexturePointer("CreditsPressed"),
+                            Manager->getTexturePointer("CreditsPressed"),
+                            Manager->getTexturePointer("CreditsPressed"),
+                            Manager->getTexturePointer("CreditsPressed"),
                             Manager->getFontPointer("NormalFont"),
                             "Credits"
                                     );
@@ -135,13 +153,12 @@ MainMenu::MainMenu() // in the constructor, we create EVERYTHING in the main men
     MenuEntity *quitGameButton; // Quit Game Button
     quitGameButton = new HoverButton(
                             ofVec2f(ofGetWindowWidth()/2, 4*ofGetWindowHeight()/5),
-                            Manager->getTexturePointer("BlueButton"),
-                            Manager->getTexturePointer("HoveredBlueButton"),
-                            Manager->getTexturePointer("PressedBlueButton"),
-                            Manager->getTexturePointer("ClickedBlueButton"),
-                            Manager->getTexturePointer("ClickedBlueButton"),
-                            Manager->getTexturePointer("PressedClickedBlueButton"),
-                            Manager->getFontPointer("Fancy"),
+                            Manager->getTexturePointer("QuitNormal"),
+                            Manager->getTexturePointer("QuitHovered"),
+                            Manager->getTexturePointer("QuitPressed"),
+                            Manager->getTexturePointer("QuitPressed"),
+                            Manager->getTexturePointer("QuitPressed"),
+                            Manager->getTexturePointer("QuitPressed"),                            Manager->getFontPointer("Fancy"),
                             "QUIT GAME"
                                     );
 

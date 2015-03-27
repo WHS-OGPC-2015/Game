@@ -46,7 +46,7 @@ void TileManager::loadFromFile(std::string file)
                 Tile tmp; //create temporary tile
 
                 //set texture of tile by getting string from xml doc
-                tmp.setTexture(resources->getTextureReference(tex));
+                tmp.setTexture(resources.getTextureReference(tex));
 
 
                 ofVec2f pos = tileArrayCoordsByIndice(indice);
@@ -76,7 +76,7 @@ void TileManager::update()
 {
 
     maxDisplayDim = ofVec2f(trunc(ofGetWindowWidth()/tileSize.x), trunc(ofGetWindowHeight()/tileSize.y));//max number of tiles that can be displayed on the screen
-    topLeftTile = ofVec2f(fabs(trunc(tFactor->x/tileSize.x)), fabs(trunc(tFactor->y/tileSize.y)));               //number of tiles the map has been translated
+    topLeftTile = ofVec2f(fabs(trunc(tFactor.x/tileSize.x)), fabs(trunc(tFactor.y/tileSize.y)));               //number of tiles the map has been translated
     bottomRightTile = ofVec2f(topLeftTile.x+maxDisplayDim.x, topLeftTile.y+maxDisplayDim.y);
     topLeftScalar = tileIndiceByArrayCoords(topLeftTile);
     bottomRightScalar = tileIndiceByArrayCoords(bottomRightTile);

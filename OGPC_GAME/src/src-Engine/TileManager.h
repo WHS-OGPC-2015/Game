@@ -4,7 +4,7 @@
 class TileManager
 {
 public:
-    TileManager(std::string, ofVec2f&);
+    TileManager(std::string, ofVec2f&, ResourceManager&);
 
     void loadFromFile(std::string);
 

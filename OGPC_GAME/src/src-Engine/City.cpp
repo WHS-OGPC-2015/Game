@@ -93,9 +93,10 @@ int City::getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
 
 
  }
+
 void City::Update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
-    if (getClickedData(mousePos, clicked, pressed) == 1)
+    if (fabs(getClickedData(mousePos, clicked, pressed)-1.5) == .5)
     {
         cityPopup->setActive();
     }

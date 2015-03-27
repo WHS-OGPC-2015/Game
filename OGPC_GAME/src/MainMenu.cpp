@@ -332,6 +332,7 @@ bool MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Upd
              StartGameButton->setClicked(false);
              defaultMenu->setInactive();
              active = false;
+
              return true;
          }
 

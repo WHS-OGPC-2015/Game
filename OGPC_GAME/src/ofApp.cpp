@@ -43,6 +43,40 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
+
+    if(currentState == MAINMENU)
+    {
+        if(first == true)
+        {
+            first = false;
+            startingMenu = new MainMenu;
+        }
+        if(startingMenu->update(mousePos, clicked, pressed))
+        {
+            currentState = GAME;
+            first = true;
+            delete startingMenu;
+        }
+    }
+    else if(currentState == LOADING)
+    {
+
+    }
+    else if(currentState == GAME)
+    {
+        if(first == true)
+        {
+            std::cout << "here1" << std::endl;
+            mapGenerator = new GameMap;
+            std::cout << "here" << std::endl;
+            gameEngine  = new Engine("tiles.xml", "game.xml", "objects.xml", viewPos);
+
+            first = false;
+        }
+        gameEngine->update();
+
+    }
+
     if(dragging)
     {
         dif = mousePos - lastMousePos;
@@ -70,57 +104,29 @@ void ofApp::update(){
 
     if(pressed != true)
     {
-            clicked = false;
-
+        clicked = false;
     }
-    if(currentState == MAINMENU)
-    {
-        if(first = true)
-        {
-            first = false;
-            startingMenu = new MainMenu;
-        }
-        if(startingMenu->update(mousePos, clicked, pressed))
-        {
-            currentState = GAME;
-            first = true;
-            delete startingMenu;
-        }
-    }
-    else if(currentState == LOADING)
-    {
-
-    }
-    else if(currentState == GAME)
-    {
-        if(first == true)
-        {
-            gameEngine  = new Engine("tiles.xml", "game.xml", "objects.xml", viewPos);
-            mapGenerator = new GameMap;
-            first = false;
-        }
-        gameEngine->update();
-
-    }
-
-
     lastMousePos = mousePos;
     dragging = false;
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    if(currentState == GAME)
+    if(first != true)//only update once the object has been initialized
     {
-        ofPopMatrix();
-        ofTranslate(dif.x, dif.y);
-        gameEngine->draw();
-        ofPushMatrix();
-    }
-    else if(currentState == MAINMENU)
-    {
+        if(currentState == GAME)
+        {
+            ofPopMatrix();
+            ofTranslate(dif.x, dif.y);
+            gameEngine->draw();
+            ofPushMatrix();
+        }
+        else if(currentState == MAINMENU)
+        {
             startingMenu->draw();
+        }
     }
+
 
 
 

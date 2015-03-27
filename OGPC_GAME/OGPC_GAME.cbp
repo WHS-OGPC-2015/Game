@@ -153,6 +153,8 @@
 		<Unit filename="src/src-Game/GameMap.h" />
 		<Unit filename="src/src-Game/Tile.cpp" />
 		<Unit filename="src/src-Game/Tile.h" />
+		<Unit filename="src/src-Game/Vec2i.cpp" />
+		<Unit filename="src/src-Game/Vec2i.h" />
 		<Unit filename="src/src-Game/simplexnoise.cpp" />
 		<Unit filename="src/src-Game/simplexnoise.h" />
 		<Unit filename="src/src-MenuAPI/HoverButton.cpp" />

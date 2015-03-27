@@ -2390,7 +2390,7 @@
 	"ofApp.h"
 	"XML/src/ofxXmlSettings.h"
 
-1426729192 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\enginemain.cpp
+1427406180 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\enginemain.cpp
 	"EngineMain.h"
 	"../XML/src/ofxXmlSettings.h"
 
@@ -2409,17 +2409,17 @@
 	<windows.h>
 	<stdio.h>
 
-1427405076 c:\openframeworks\apps\game\ogpc_game\src\src-engine\tilemanager.h
+1427406165 c:\openframeworks\apps\game\ogpc_game\src\src-engine\tilemanager.h
 	"Tile.h"
 	"ResourceManager.h"
 
 1427232882 c:\openframeworks\apps\game\ogpc_game\src\src-engine\tile.h
 	"ofMain.h"
 
-1425772290 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\resourcemanager.cpp
+1427232882 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\resourcemanager.cpp
 	"ResourceManager.h"
 
-1425772290 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\tile.cpp
+1427232882 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\tile.cpp
 	"Tile.h"
 
 1425799894 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\tilemanager.cpp
@@ -4095,4 +4095,11 @@
 	"../XML/src/ofxXmlSettings.h"
 
 1427232882 c:\openframeworks\apps\game\ogpc_game\src\src-game\vec2i.h
+
+1427406055 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\city.cpp
+	"City.h"
+
+1427429263 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\objectmanager.cpp
+
+1427429321 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\objectvector.cpp
 

@@ -8,7 +8,8 @@
 class Band
 {
 public:
-    Band();
+
+    Band(Tile& btile);
 
     void Draw();
     void Update(ofVec2f& mousePos, bool& clicked, bool& pressed);
@@ -16,6 +17,8 @@ public:
     int getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed);
 
     //these are all boring -- just sets, gets, and swaps
+    int convertTo1dindex(ofVec2i v);
+
     void setIncarnation(bool b);
     bool getIncarnation();
 
@@ -43,8 +46,11 @@ public:
 
 private:
 
+
+
     Tile& boundTile;
     ofVec2i boundTileCoords;
+    int boundTileIndex;
 
     ofTexture* BandTextures[4]; // 0 = reg, 1 = incog, 2 = incarn, 3 = incog and incarn
     std::string TextureNames[4];
@@ -63,10 +69,13 @@ private:
 
     ofVec2i extremeTiles[2]; // e.g., [(0,0),(100,100)] -- useful for  finding possible moves
 
+
+    int movement;
+
     ofVec2f TLpos;
     ofVec2f BRpos;
 
     Menu* bandPopup;
 
-    vector<ofVec2i> possibleMoves;
+    vector<int> possibleMoves;
 };

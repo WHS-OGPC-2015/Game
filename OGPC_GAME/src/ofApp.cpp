@@ -4,7 +4,8 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     viewPos = ofVec2f(0, 0);
-    mapGenerator = new GameMap;
+    first = true;
+
 //
 //    ofxXmlSettings tileSave;
 //    tileSave.addValue("mapSizeX", 100);
@@ -37,7 +38,7 @@ void ofApp::setup(){
 //    tileSave.popTag();
 //    tileSave.saveFile("tiles.xml");
 
-    gameEngine  = new Engine("tiles.xml", "game.xml", "objects.xml", viewPos);
+
 }
 
 //--------------------------------------------------------------
@@ -74,7 +75,17 @@ void ofApp::update(){
     }
     if(currentState == MAINMENU)
     {
-        gameEngine->update();
+        if(first = true)
+        {
+            first = false;
+            startingMenu = new MainMenu;
+        }
+        if(startingMenu->update(mousePos, clicked, pressed))
+        {
+            currentState = GAME;
+            first = true;
+            delete startingMenu;
+        }
     }
     else if(currentState == LOADING)
     {
@@ -82,7 +93,14 @@ void ofApp::update(){
     }
     else if(currentState == GAME)
     {
-        startingMenu.update(mousePos, clicked, pressed);
+        if(first == true)
+        {
+            gameEngine  = new Engine("tiles.xml", "game.xml", "objects.xml", viewPos);
+            mapGenerator = new GameMap;
+            first = false;
+        }
+        gameEngine->update();
+
     }
 
 
@@ -92,12 +110,20 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofPopMatrix();
-    ofTranslate(dif.x, dif.y);
-    gameEngine->draw();
-    ofPushMatrix();
+    if(currentState == GAME)
+    {
+        ofPopMatrix();
+        ofTranslate(dif.x, dif.y);
+        gameEngine->draw();
+        ofPushMatrix();
+    }
+    else if(currentState == MAINMENU)
+    {
+            startingMenu->draw();
+    }
 
-    startingMenu.draw();
+
+
 
 }
 

@@ -303,7 +303,7 @@ void MainMenu::draw() // in the draw function, all we do is call the manager's d
 
 
 
-void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Update, we have all of the functionality, like clicking and swapping between menus
+bool MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Update, we have all of the functionality, like clicking and swapping between menus
 {
     if (active == true)
     {
@@ -332,6 +332,7 @@ void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Upd
              StartGameButton->setClicked(false);
              defaultMenu->setInactive();
              active = false;
+             return true;
          }
 
         // the following two are grouped, hopefullyStartGameButtonBut->setPosition(ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/5));
@@ -390,7 +391,7 @@ void MainMenu::update(ofVec2f& mousePos, bool& clicked, bool& pressed) // In Upd
 
 
 
-
+        return false;
 
     }
 

@@ -9,7 +9,7 @@ public:
     // in public, we have simple functions
     MainMenu();
     void draw();
-    void update(ofVec2f& mousePos, bool& clicked, bool& pressed);
+    bool update(ofVec2f& mousePos, bool& clicked, bool& pressed);
     void switchActive();
     bool getActive();
 

@@ -30,10 +30,11 @@ class ofApp : public ofBaseApp{
         Engine* gameEngine;
         GameMap* mapGenerator;
         ofVec2f viewPos;
-        MainMenu startingMenu;
+        MainMenu* startingMenu;
 
         enum GameStates{MAINMENU, LOADING, GAME};
         int currentState;
+        bool first;
 
 
 

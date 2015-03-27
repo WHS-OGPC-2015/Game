@@ -2340,13 +2340,13 @@
 	"ofCamera.h"
 	"ofEvents.h"
 
-1427232882 c:\openframeworks\apps\game\ogpc_game\src\ofapp.h
+1427481136 c:\openframeworks\apps\game\ogpc_game\src\ofapp.h
 	"ofMain.h"
 	"src-Engine/EngineInclude.h"
 	"src-Game/GameMap.h"
 	"MainMenu.h"
 
-1427232882 c:\openframeworks\apps\game\ogpc_game\src\mainmenu.h
+1427481135 c:\openframeworks\apps\game\ogpc_game\src\mainmenu.h
 	"ofMain.h"
 	"src-MenuAPI/MenuInclude.h"
 
@@ -2381,7 +2381,7 @@
 1427232882 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menubackground.h
 	"MenuEntity.h"
 
-1427429821 source:c:\openframeworks\apps\game\ogpc_game\src\mainmenu.cpp
+1427481202 source:c:\openframeworks\apps\game\ogpc_game\src\mainmenu.cpp
 	"MainMenu.h"
 
 1427232806 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuentity.cpp
@@ -4100,4 +4100,7 @@
 1427429263 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\objectmanager.cpp
 
 1427429321 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\objectvector.cpp
+
+1427232882 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\vec2i.cpp
+	"Vec2i.h"
 

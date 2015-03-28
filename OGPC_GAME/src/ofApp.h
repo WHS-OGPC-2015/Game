@@ -5,6 +5,41 @@
 #include "src-Game/GameMap.h"
 #include "MainMenu.h"
 
+class LoadingThread : public ofThread
+{
+public:
+    LoadingThread(Engine* e, GameMap* m) : E(e), M(m) {}
+
+    void threadedFunction()
+    {
+        if(isThreadRunning())
+        {
+            lock();
+                std::cout << "here4" << std::endl;
+                M->generateMap();
+                std::cout << "here5" << std::endl;
+                E->setup("tiles.xml", "game.xml", "objects.xml", viewPos);
+                std::cout << "here6" << std::endl;
+            unlock();
+            stopThread();
+        }
+    }
+
+    void start()
+    {
+        startThread();
+    }
+    void update(ofVec2f v)
+    {
+        viewPos = v;
+    }
+private:
+    Engine* E;
+    GameMap* M;
+    ofVec2f viewPos;
+
+};
+
 class ofApp : public ofBaseApp{
 
 	public:
@@ -31,6 +66,7 @@ class ofApp : public ofBaseApp{
         GameMap* mapGenerator;
         ofVec2f viewPos;
         MainMenu* startingMenu;
+        LoadingThread* loader;
 
         enum GameStates{MAINMENU, LOADING, GAME};
         int currentState;
@@ -39,3 +75,6 @@ class ofApp : public ofBaseApp{
 
 
 };
+
+
+

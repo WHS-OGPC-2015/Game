@@ -5,9 +5,10 @@
 class Engine
 {
 public:
-    Engine(std::string tileData, std::string objectData, std::string gameData, ofVec2f&);
+    Engine();
     ~Engine();
-    void setup();
+
+    void setup(std::string tileData, std::string objectData, std::string gameData, ofVec2f&);
     void update();
     void draw();
 private:

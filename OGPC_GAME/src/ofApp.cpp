@@ -5,7 +5,8 @@
 void ofApp::setup(){
     viewPos = ofVec2f(0, 0);
     first = true;
-
+    gameEngine = new Engine();
+    mapGenerator = new GameMap;
 //
 //    ofxXmlSettings tileSave;
 //    tileSave.addValue("mapSizeX", 100);
@@ -53,26 +54,40 @@ void ofApp::update(){
         }
         if(startingMenu->update(mousePos, clicked, pressed))
         {
-            currentState = GAME;
+            currentState = LOADING;
             first = true;
             delete startingMenu;
         }
     }
     else if(currentState == LOADING)
     {
-
+        if(first == true)
+        {
+            loader = new LoadingThread(gameEngine, mapGenerator);
+            loader->update(viewPos);
+            std::cout << "here" << std::endl;
+            loader->start();
+            std::cout << "here1" << std::endl;
+            first = false;
+        }
+        if(!loader->isThreadRunning())
+        {
+            std::cout << "here2" << std::endl;
+            currentState = GAME;
+        }
     }
     else if(currentState == GAME)
     {
         if(first == true)
         {
-            std::cout << "here1" << std::endl;
-            mapGenerator = new GameMap;
-            std::cout << "here" << std::endl;
-            gameEngine  = new Engine("tiles.xml", "game.xml", "objects.xml", viewPos);
+//            std::cout << "here1" << std::endl;
+//            mapGenerator = new GameMap;
+//            std::cout << "here" << std::endl;
+//            gameEngine  = new Engine("tiles.xml", "game.xml", "objects.xml", viewPos);
 
             first = false;
         }
+            loader->update(viewPos);
         gameEngine->update();
 
     }
@@ -80,7 +95,7 @@ void ofApp::update(){
     if(dragging)
     {
         dif = mousePos - lastMousePos;
-        dif/=2;
+        dif/=2; //scales the drag (2 would be half the distance the mouse was moved"
 
         viewPos+=dif;
         if(viewPos.x>0)
@@ -108,6 +123,7 @@ void ofApp::update(){
     }
     lastMousePos = mousePos;
     dragging = false;
+
 }
 
 //--------------------------------------------------------------
@@ -124,6 +140,10 @@ void ofApp::draw(){
         else if(currentState == MAINMENU)
         {
             startingMenu->draw();
+        }
+        else if(currentState == LOADING)
+        {
+            ofCircle(400, 400, 200);
         }
     }
 
@@ -197,3 +217,11 @@ void ofApp::gotMessage(ofMessage msg){
 void ofApp::dragEvent(ofDragInfo dragInfo){
 
 }
+
+//void ofApp::exit()
+//{
+//    delete gameEngine;
+//    delete mapGenerator;
+//    delete startingMenu;
+//    delete loader;
+//}

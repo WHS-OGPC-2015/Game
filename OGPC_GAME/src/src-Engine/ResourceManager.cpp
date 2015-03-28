@@ -7,7 +7,7 @@ ResourceManager::ResourceManager()
 
 void ResourceManager::loadFilesFromDirectory(std::string folder)
 {
-
+    std::cout << "loading images" << std::endl;
     std::vector<std::string> names;
 
     std::string specPath = folder + "\\*.*";

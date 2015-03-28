@@ -20,6 +20,7 @@ public:
     void floodFill(int, int, int);
     void mapTextureNames(std::string path);
     void saveMap(ofVec2i, std::vector<int>);
+    void generateMap();
 
 private:
 

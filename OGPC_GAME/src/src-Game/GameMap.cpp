@@ -46,6 +46,11 @@ int roundforint(double i)
 
 GameMap::GameMap()
 {
+
+}
+
+void GameMap::generateMap()
+{
     mapTextureNames("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
     genMapTwo();
 }

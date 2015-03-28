@@ -1,15 +1,7 @@
 #include "EngineMain.h"
 #include "../XML/src/ofxXmlSettings.h"
-Engine::Engine(std::string tileData, std::string objectData, std::string GameData, ofVec2f& trans)
+Engine::Engine()
 {
-
-    tFactor = &trans;
-
-    resources = new ResourceManager;
-    resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
-
-    tiles = new TileManager(tileData, trans, *resources);
-    //objects = new ObjectManager(objectData, trans);
 
 
 
@@ -17,9 +9,14 @@ Engine::Engine(std::string tileData, std::string objectData, std::string GameDat
 
 }
 
-void Engine::setup()
+void Engine::setup(std::string tileData, std::string objectData, std::string GameData, ofVec2f& trans)
 {
+    tFactor = &trans;
+    resources = new ResourceManager;
+    resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
 
+    tiles = new TileManager(tileData, trans, *resources);
+    //objects = new ObjectManager(objectData, trans);
 }
 
 void Engine::update()

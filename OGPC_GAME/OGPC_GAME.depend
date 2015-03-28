@@ -2340,7 +2340,7 @@
 	"ofCamera.h"
 	"ofEvents.h"
 
-1427481136 c:\openframeworks\apps\game\ogpc_game\src\ofapp.h
+1427570994 c:\openframeworks\apps\game\ogpc_game\src\ofapp.h
 	"ofMain.h"
 	"src-Engine/EngineInclude.h"
 	"src-Game/GameMap.h"
@@ -2386,15 +2386,15 @@
 
 1427232806 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuentity.cpp
 
-1427499248 source:c:\openframeworks\apps\game\ogpc_game\src\ofapp.cpp
+1427571280 source:c:\openframeworks\apps\game\ogpc_game\src\ofapp.cpp
 	"ofApp.h"
 	"XML/src/ofxXmlSettings.h"
 
-1427406180 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\enginemain.cpp
+1427572729 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\enginemain.cpp
 	"EngineMain.h"
 	"../XML/src/ofxXmlSettings.h"
 
-1427232882 c:\openframeworks\apps\game\ogpc_game\src\src-engine\enginemain.h
+1427570809 c:\openframeworks\apps\game\ogpc_game\src\src-engine\enginemain.h
 	"ofMain.h"
 	"EngineInclude.h"
 
@@ -2420,7 +2420,7 @@
 1427232882 c:\openframeworks\apps\game\ogpc_game\src\src-engine\tile.h
 	"ofMain.h"
 
-1427232882 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\resourcemanager.cpp
+1427572729 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\resourcemanager.cpp
 	"ResourceManager.h"
 
 1427232882 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\tile.cpp
@@ -2500,7 +2500,7 @@
 	<string>
 	<iostream>
 
-1427232882 c:\openframeworks\apps\game\ogpc_game\src\src-game\gamemap.h
+1427568002 c:\openframeworks\apps\game\ogpc_game\src\src-game\gamemap.h
 	"ofMain.h"
 	"Tile.h"
 	"Vec2i.h"
@@ -2508,7 +2508,7 @@
 1427232882 c:\openframeworks\apps\game\ogpc_game\src\src-game\tile.h
 	"ofMain.h"
 
-1427232882 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\gamemap.cpp
+1427568002 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\gamemap.cpp
 	"GameMap.h"
 	<sstream>
 	"../XML/src/ofxXmlSettings.h"
@@ -4103,4 +4103,6 @@
 
 1427232882 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\vec2i.cpp
 	"Vec2i.h"
+
+1427500167 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\loadingthread.cpp
 

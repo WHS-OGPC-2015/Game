@@ -72,7 +72,6 @@ public:
         }
         if(abs(segs[segs.size()-1].height) < randLength && abs(segs[segs.size()-1].width) < randLength)
         {
-
             if(direction == 1)
             {
                 segs[segs.size()-1].width += speed;
@@ -95,10 +94,11 @@ public:
         {
             first = true;
         }
-    if(segs.size() > 20)
-    {
-        segs.erase(segs.begin());
-    }
+
+        if(segs.size() > 20)
+        {
+            segs.erase(segs.begin());
+        }
 
 
     }
@@ -148,5 +148,6 @@ private:
     }
  private:
     std::vector<Chain> chains;
- };
+};
+
 

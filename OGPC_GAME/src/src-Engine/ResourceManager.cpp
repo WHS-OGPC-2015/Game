@@ -2,7 +2,7 @@
 
 ResourceManager::ResourceManager()
 {
-    std::cout << textures.size();
+
 }
 
 void ResourceManager::loadFilesFromDirectory(std::string folder)
@@ -21,7 +21,6 @@ void ResourceManager::loadFilesFromDirectory(std::string folder)
             // , delete '!' read other 2 default folder . and ..
             if(! (fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) ) {
                 names.push_back(fd.cFileName);
-                std::cout << fd.cFileName << std::endl;
             }
         }while(FindNextFile(hFind, &fd));                   //find the next file
 
@@ -82,10 +81,13 @@ void ResourceManager::loadFilesFromDirectory(std::string folder)
 void ResourceManager::addTexture(std::string path, std::string name)
 {
     ofTexture tmp;
-    ofLoadImage(tmp, path);
+    if(ofLoadImage(tmp, path))
+    {
+
+    }
+    else{std::cout << "failed to load image :: " << path << std::endl;}
     textures.push_back(tmp);
     textureNames[name] = (textures.size()-1);
-    std::cout << name << ", " << textures.size() << std::endl;
 
 }
 

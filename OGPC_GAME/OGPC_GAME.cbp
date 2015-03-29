@@ -151,8 +151,7 @@
 		<Unit filename="src/src-Engine/TileManager.h" />
 		<Unit filename="src/src-Game/GameMap.cpp" />
 		<Unit filename="src/src-Game/GameMap.h" />
-		<Unit filename="src/src-Game/LoadingThread.cpp" />
-		<Unit filename="src/src-Game/LoadingThread.h" />
+		<Unit filename="src/src-Game/LoadingScreen.h" />
 		<Unit filename="src/src-Game/Tile.cpp" />
 		<Unit filename="src/src-Game/Tile.h" />
 		<Unit filename="src/src-Game/Vec2i.cpp" />

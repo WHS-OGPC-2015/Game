@@ -7,6 +7,7 @@ void ofApp::setup(){
     first = true;
     gameEngine = new Engine();
     mapGenerator = new GameMap;
+    currentState = MAINMENU;
 //
 //    ofxXmlSettings tileSave;
 //    tileSave.addValue("mapSizeX", 100);
@@ -65,14 +66,16 @@ void ofApp::update(){
         {
             loader = new LoadingThread(gameEngine, mapGenerator);
             loader->update(viewPos);
-            std::cout << "here" << std::endl;
+            loading = new LoadingScreen(ofRandom(5, 25), ofVec2f(512, 512), ofRandom(2, 20), ofRandom(1, 50), ofRandom(10, 250));
+
             loader->start();
-            std::cout << "here1" << std::endl;
+
             first = false;
         }
+        loading->update();
         if(!loader->isThreadRunning())
         {
-            std::cout << "here2" << std::endl;
+
             currentState = GAME;
         }
     }
@@ -87,7 +90,7 @@ void ofApp::update(){
 
             first = false;
         }
-            loader->update(viewPos);
+        loader->update(viewPos);
         gameEngine->update();
 
     }
@@ -143,7 +146,9 @@ void ofApp::draw(){
         }
         else if(currentState == LOADING)
         {
-            ofCircle(400, 400, 200);
+                    ofBackground(79, 67, 44);
+            loading->draw();
+            //ofCircle(400, 400, 200);
         }
     }
 

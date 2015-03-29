@@ -4,6 +4,7 @@
 #include "src-Engine/EngineInclude.h"
 #include "src-Game/GameMap.h"
 #include "MainMenu.h"
+#include "src-Game/LoadingScreen.h"
 
 class LoadingThread : public ofThread
 {
@@ -14,13 +15,8 @@ public:
     {
         if(isThreadRunning())
         {
-            lock();
-                std::cout << "here4" << std::endl;
-                M->generateMap();
-                std::cout << "here5" << std::endl;
-                E->setup("tiles.xml", "game.xml", "objects.xml", viewPos);
-                std::cout << "here6" << std::endl;
-            unlock();
+            M->generateMap();
+            E->setup("tiles.xml", "game.xml", "objects.xml", viewPos);
             stopThread();
         }
     }
@@ -67,6 +63,7 @@ class ofApp : public ofBaseApp{
         ofVec2f viewPos;
         MainMenu* startingMenu;
         LoadingThread* loader;
+        LoadingScreen* loading;
 
         enum GameStates{MAINMENU, LOADING, GAME};
         int currentState;

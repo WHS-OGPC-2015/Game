@@ -1,20 +1,21 @@
 #include "PieChart.h"
 
 
-PieChart::PieChart(double& tot, double& dep, double radi) : total(tot) : depVar(dep)
+PieChart::PieChart(double tot, double dep, double radi) : total(tot), depVar(dep)
 {
     rati = (depVar/total);
     rad = radi;
     pos = ofVec2f(0,0);
     resolution = 50;
     pi = 3.14159265359;
+    endingindeces[0] = 0;
     for (int i = 0; i < resolution; i++)
     {
         vertecies.push_back(ofVec2f(rad * cos(2 * pi / resolution + pi / 2), -rad * sin(2 * pi / resolution + pi / 2)));
     }
 }
 
-PieChart::PieChart(double& tot, double& dep, double radi, ofVec2f posi) : total(tot) : depVar(dep)
+PieChart::PieChart(double tot, double dep, double radi, ofVec2f posi) : total(tot), depVar(dep)
 {
     rati = (depVar/total);
     rad = radi;
@@ -28,8 +29,30 @@ PieChart::PieChart(double& tot, double& dep, double radi, ofVec2f posi) : total(
 
 void PieChart::Update()
 {
-    rati = total/depVar;
+    rati = depVar/total;
+    endingindeces[1] = rati * resolution + .5;
+}
 
+void PieChart::Draw()
+{
+    ofSetPolyMode(OF_POLY_WINDING_NONZERO);
+    ofSetColor(colors[0]);
+
+    ofBeginShape();
+        for (int i = endingindeces[0]; i < resolution; i++)
+        {
+            ofVertex(vertecies[i].x, vertecies[i].y);
+        }
+    ofEndShape();
+
+    ofSetColor(colors[1])
+
+    ofBeginShape();
+        for (int i = endingindeces[0]; i < endingindeces[1]; i++)
+        {
+            ofVertex(vertecies[i].x, vertecies[i].y);
+        }
+    ofEndShape();
 }
 
 void PieChart::setRadius(double radi);
@@ -45,7 +68,13 @@ void PieChart::setRadius(double radi);
 
 void PieChart::setPosition(ofVec2f posi)
 {
+    for (int i = 0; i < resolution; i++)
+    {
+        vertecies[i].x += (posi - pos);
+        vertecies[i].y += (posi - pos);
+    }
     pos = posi;
+
 }
 
 void PieChart::setColor(int i, ofColor col)

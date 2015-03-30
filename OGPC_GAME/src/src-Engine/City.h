@@ -8,7 +8,7 @@
 class City
 {
 public:
-    City(int, Tile& btile);
+    City(int, Tile btile);
 
     void Update(ofVec2f& mousePos, bool& clicked, bool& pressed);
     void turnlyUpdate();

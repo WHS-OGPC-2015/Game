@@ -4,8 +4,8 @@
 class PieChart : public MenuEntity
 {
 public:
-    PieChart(double& tot, double& dep, double radi);
-    PieChart(double& tot, double& dep, double radi, ofVec2f posi);
+    PieChart(double tot, double dep, double radi);
+    PieChart(double tot, double dep, double radi, ofVec2f posi);
 
     void Update();
     void Draw();
@@ -25,6 +25,7 @@ private:
     double rad;
     int resolution;
     ofVec2f pos;
+    int endingindeces[2];
     vector<ofVec2f> vertecies;
     double pi;
 

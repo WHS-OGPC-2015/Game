@@ -46,7 +46,7 @@
 
 
 
-City::City(int dif, Tile& btile) : boundTile(btile)
+City::City(int dif, Tile btile) : boundTile(btile)
 {
     //TileIndex = boundTile;
     population = 1000; // default population

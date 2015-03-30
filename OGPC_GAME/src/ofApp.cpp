@@ -5,42 +5,8 @@
 void ofApp::setup(){
     viewPos = ofVec2f(0, 0);
     first = true;
-    gameEngine = new Engine();
-    mapGenerator = new GameMap;
     currentState = MAINMENU;
-//
-//    ofxXmlSettings tileSave;
-//    tileSave.addValue("mapSizeX", 100);
-//    tileSave.addValue("mapSizeY", 100);
-//    tileSave.addValue("tileSizeX", 50);
-//    tileSave.addValue("tileSizeY", 50);
-//    tileSave.addTag("tileArray");
-//    tileSave.pushTag("tileArray");
-//        for(int bb = 0; bb < 10000; bb++)
-//        {
-//            tileSave.addTag("tile");
-//            tileSave.pushTag("tile", bb);
-//            if(bb%2 == 0)
-//            {
-//                tileSave.addValue("texture", "dumbGrass");
-//            }
-//            else if(bb%3 == 0)
-//            {
-//                tileSave.addValue("texture", "dumbSnow");
-//            }
-//            else
-//            {
-//                tileSave.addValue("texture", "dumbWater");
-//            }
-//
-//            tileSave.popTag();
-//        }
-//
-//
-//    tileSave.popTag();
-//    tileSave.saveFile("tiles.xml");
-
-
+    ofSetFrameRate(60); //set framerate
 }
 
 //--------------------------------------------------------------
@@ -64,9 +30,15 @@ void ofApp::update(){
     {
         if(first == true)
         {
-            loader = new LoadingThread(gameEngine, mapGenerator);
+            resources = new ResourceManager;
+            resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
+
+            gameEngine = new Engine;
+            mapGenerator = new GameMap;
+            loader = new LoadingThread(gameEngine, mapGenerator, resources);
             loader->update(viewPos);
             loading = new LoadingScreen(ofRandom(5, 25), ofVec2f(512, 512), ofRandom(2, 20), ofRandom(1, 50), ofRandom(10, 250));
+            //loading = new LoadingScreen(10, ofVec2f(512, 512), 10, 1, 100);
 
             loader->start();
 
@@ -135,6 +107,7 @@ void ofApp::draw(){
     {
         if(currentState == GAME)
         {
+            ofSetColor(255, 255, 255);
             ofPopMatrix();
             ofTranslate(dif.x, dif.y);
             gameEngine->draw();
@@ -146,7 +119,7 @@ void ofApp::draw(){
         }
         else if(currentState == LOADING)
         {
-                    ofBackground(79, 67, 44);
+            ofBackground(79, 67, 44);
             loading->draw();
             //ofCircle(400, 400, 200);
         }

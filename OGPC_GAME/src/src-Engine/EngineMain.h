@@ -8,7 +8,7 @@ public:
     Engine();
     ~Engine();
 
-    void setup(std::string tileData, std::string objectData, std::string gameData, ofVec2f&);
+    void setup(std::string tileData, std::string objectData, std::string gameData, ofVec2f&, ResourceManager* rec);
     void update();
     void draw();
 private:

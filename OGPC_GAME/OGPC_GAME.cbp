@@ -169,6 +169,8 @@
 		<Unit filename="src/src-MenuAPI/MenuInclude.h" />
 		<Unit filename="src/src-MenuAPI/MenuManager.cpp" />
 		<Unit filename="src/src-MenuAPI/MenuManager.h" />
+		<Unit filename="src/src-MenuAPI/PieChart.cpp" />
+		<Unit filename="src/src-MenuAPI/PieChart.h" />
 		<Unit filename="src/src-MenuAPI/SimpleButton.cpp" />
 		<Unit filename="src/src-MenuAPI/SimpleButton.h" />
 		<Unit filename="src/src-MenuAPI/Slider.cpp" />

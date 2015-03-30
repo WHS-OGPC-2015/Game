@@ -9,14 +9,14 @@
 class LoadingThread : public ofThread
 {
 public:
-    LoadingThread(Engine* e, GameMap* m) : E(e), M(m) {}
+    LoadingThread(Engine* e, GameMap* m, ResourceManager* r) : E(e), M(m), R(r) {}
 
     void threadedFunction()
     {
         if(isThreadRunning())
         {
             M->generateMap();
-            E->setup("tiles.xml", "game.xml", "objects.xml", viewPos);
+            E->setup("tiles.xml", "game.xml", "objects.xml", viewPos, R);
             stopThread();
         }
     }
@@ -33,6 +33,7 @@ private:
     Engine* E;
     GameMap* M;
     ofVec2f viewPos;
+    ResourceManager* R;
 
 };
 
@@ -64,6 +65,7 @@ class ofApp : public ofBaseApp{
         MainMenu* startingMenu;
         LoadingThread* loader;
         LoadingScreen* loading;
+        ResourceManager* resources;
 
         enum GameStates{MAINMENU, LOADING, GAME};
         int currentState;

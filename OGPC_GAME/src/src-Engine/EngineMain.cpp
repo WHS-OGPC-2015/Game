@@ -9,12 +9,12 @@ Engine::Engine()
 
 }
 
-void Engine::setup(std::string tileData, std::string objectData, std::string GameData, ofVec2f& trans)
+void Engine::setup(std::string tileData, std::string objectData, std::string GameData, ofVec2f& trans, ResourceManager* R)
 {
     tFactor = &trans;
-    resources = new ResourceManager;
-    resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
-
+//    resources = new ResourceManager;
+//    resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
+    resources = R;
     tiles = new TileManager(tileData, trans, *resources);
     //objects = new ObjectManager(objectData, trans);
 }

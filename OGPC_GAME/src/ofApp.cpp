@@ -71,36 +71,38 @@ void ofApp::update(){
                 currentState = MAINMENU;
             }
         }
+
         else
         {
             gameEngine->update();
+            if(dragging)
+            {
+                dif = mousePos - lastMousePos;
+                dif/=2; //scales the drag (2 would be half the distance the mouse was moved"
+                viewPos+=dif;
+                if(viewPos.x>0)
+                {
+                    viewPos.x-=dif.x;
+                    dif.x = 0;
+                }
+                if(viewPos.y>0)
+                {
+                    viewPos.y-=dif.y;
+                    dif.y = 0;
+                }
+            }
+            else
+            {
+                dif = ofVec2f(0, 0);
+            }
         }
+
 
 
     }
 
-    if(dragging)
-    {
-        dif = mousePos - lastMousePos;
-        dif/=2; //scales the drag (2 would be half the distance the mouse was moved"
 
-        viewPos+=dif;
-        if(viewPos.x>0)
-        {
-            viewPos.x-=dif.x;
-            dif.x = 0;
-        }
-        if(viewPos.y>0)
-        {
-            viewPos.y-=dif.y;
-            dif.y = 0;
-        }
-    }
-    else
-    {
-        dif = ofVec2f(0, 0);
 
-    }
 
 
 
@@ -119,21 +121,16 @@ void ofApp::draw(){
     {
         if(currentState == GAME)
         {
-
+            ofSetColor(255, 255, 255);
+            ofPopMatrix();
+            ofTranslate(dif.x, dif.y);
+            gameEngine->draw();
+            ofPushMatrix();
             if(pause->isActive())
             {
-                gameEngine->draw();
                 pause->draw();
+            }
 
-            }
-            else
-            {
-                ofSetColor(255, 255, 255);
-                ofPopMatrix();
-                ofTranslate(dif.x, dif.y);
-                gameEngine->draw();
-                ofPushMatrix();
-            }
         }
         else if(currentState == MAINMENU)
         {

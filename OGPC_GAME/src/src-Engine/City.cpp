@@ -181,13 +181,13 @@ void City::turnlyUpdate()
 
 void City::Draw()
 {
-    if (cityPopup->isActive() == true)
-    {
-        cityPopup->draw();
-    }
-    TLpos = ofVec2f(boundTile.getLocation().x - cityTexture->getWidth() /2, boundTile.getLocation().y - cityTexture->getHeight() /2);
-    BRpos = ofVec2f(boundTile.getLocation().x + cityTexture->getWidth() /2, boundTile.getLocation().y + cityTexture->getHeight() /2);
-    //cityPopup->draw(boundTile->position);
+//    if (cityPopup->isActive() == true)
+//    {
+//        cityPopup->draw();
+//    }
+//    TLpos = ofVec2f(boundTile.getLocation().x - cityTexture->getWidth() /2, boundTile.getLocation().y - cityTexture->getHeight() /2);
+//    BRpos = ofVec2f(boundTile.getLocation().x + cityTexture->getWidth() /2, boundTile.getLocation().y + cityTexture->getHeight() /2);
+//    //cityPopup->draw(boundTile->position);
 
 
 }

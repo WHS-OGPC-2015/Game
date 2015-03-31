@@ -134,6 +134,8 @@
 		<Unit filename="src/ofApp.h">
 			<Option virtualFolder="src" />
 		</Unit>
+		<Unit filename="src/src-Engine/Band.cpp" />
+		<Unit filename="src/src-Engine/Band.h" />
 		<Unit filename="src/src-Engine/City.cpp" />
 		<Unit filename="src/src-Engine/City.h" />
 		<Unit filename="src/src-Engine/EngineInclude.h" />
@@ -151,8 +153,6 @@
 		<Unit filename="src/src-Engine/TileManager.h" />
 		<Unit filename="src/src-Game/GameMap.cpp" />
 		<Unit filename="src/src-Game/GameMap.h" />
-		<Unit filename="src/src-Game/PauseMenu.cpp" />
-		<Unit filename="src/src-Game/PauseMenu.h" />
 		<Unit filename="src/src-Game/Tile.cpp" />
 		<Unit filename="src/src-Game/Tile.h" />
 		<Unit filename="src/src-Game/Vec2i.cpp" />
@@ -170,8 +170,6 @@
 		<Unit filename="src/src-MenuAPI/MenuInclude.h" />
 		<Unit filename="src/src-MenuAPI/MenuManager.cpp" />
 		<Unit filename="src/src-MenuAPI/MenuManager.h" />
-		<Unit filename="src/src-MenuAPI/PieChart.cpp" />
-		<Unit filename="src/src-MenuAPI/PieChart.h" />
 		<Unit filename="src/src-MenuAPI/SimpleButton.cpp" />
 		<Unit filename="src/src-MenuAPI/SimpleButton.h" />
 		<Unit filename="src/src-MenuAPI/Slider.cpp" />

@@ -16,6 +16,8 @@ public:
     void Draw();
 
 
+    void fillMenu(Menu& fillme)
+
     void saveObjectData(ofxXmlSettings&);
     void loadObjectData(ofxXmlSettings&);
 
@@ -27,7 +29,6 @@ private:
     ofTexture* cityTexture;
     std::string TextureName;
     std::string cityName;
-    Menu* cityPopup;
 
     double population;
     double converted;
@@ -54,5 +55,10 @@ private:
 
     int difficulty;
     int maxdif;     //same in all cities
+
+
+
+
+
 
 };

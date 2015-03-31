@@ -65,6 +65,8 @@ City::City(int dif, Tile btile) : boundTile(btile)
     threshnums[0] = 0;
 
 
+
+
 }
 
 int City::getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
@@ -96,10 +98,7 @@ int City::getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
 
 void City::Update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
-    if (fabs(getClickedData(mousePos, clicked, pressed)-1.5) == .5)
-    {
-        cityPopup->setActive();
-    }
+
 }
 
 
@@ -190,6 +189,13 @@ void City::Draw()
     BRpos = ofVec2f(boundTile.getLocation().x + cityTexture->getWidth() /2, boundTile.getLocation().y + cityTexture->getHeight() /2);
     //cityPopup->draw(boundTile->position);
 
+
+}
+
+
+
+void City::fillMenu(Menu& fillme)
+{
 
 }
 

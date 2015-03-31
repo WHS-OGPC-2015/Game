@@ -16,7 +16,7 @@ public:
     void Draw();
 
 
-    void fillMenu(Menu& fillme)
+    void fillMenu(Menu& fillme);
 
     void saveObjectData(ofxXmlSettings&);
     void loadObjectData(ofxXmlSettings&);

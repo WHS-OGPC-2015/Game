@@ -13,6 +13,9 @@
 #include "Slider.h"
 #include "MenuBackground.h"
 #include "HoverButton.h"
+#include "PieChart.h"
+#include "TextBox.h"
+
 
 
 

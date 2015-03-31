@@ -5,13 +5,13 @@
 class TextBox : MenuEntity
 {
 public:
-    TextBox(std::string str, ofVec2f posi, ofTrueTypeFont& f)
+    TextBox(std::string str, ofVec2f posi, ofTrueTypeFont& f);
     TextBox();
-    void Update()
+    void Update();
     void Draw();
 
     void setText(std::string str);
-    void setPosition(posi);
+    void setPosition(ofVec2f posi);
     void setFont(ofTrueTypeFont& f);
 
 private:

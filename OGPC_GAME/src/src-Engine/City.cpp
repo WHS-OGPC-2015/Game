@@ -1,4 +1,5 @@
 #include "City.h"
+#include "sstream"
 
 
 //std::string randomname()
@@ -181,6 +182,7 @@ void City::turnlyUpdate()
 
 void City::Draw()
 {
+<<<<<<< HEAD
 //    if (cityPopup->isActive() == true)
 //    {
 //        cityPopup->draw();
@@ -188,6 +190,12 @@ void City::Draw()
 //    TLpos = ofVec2f(boundTile.getLocation().x - cityTexture->getWidth() /2, boundTile.getLocation().y - cityTexture->getHeight() /2);
 //    BRpos = ofVec2f(boundTile.getLocation().x + cityTexture->getWidth() /2, boundTile.getLocation().y + cityTexture->getHeight() /2);
 //    //cityPopup->draw(boundTile->position);
+=======
+
+    TLpos = ofVec2f(boundTile.getLocation().x - cityTexture->getWidth() /2, boundTile.getLocation().y - cityTexture->getHeight() /2);
+    BRpos = ofVec2f(boundTile.getLocation().x + cityTexture->getWidth() /2, boundTile.getLocation().y + cityTexture->getHeight() /2);
+    //cityPopup->draw(boundTile->position);
+>>>>>>> 4726e0feb0ad024e83f72b1899f34067968bac01
 
 
 }
@@ -196,7 +204,20 @@ void City::Draw()
 
 void City::fillMenu(Menu& fillme)
 {
+    TextBox* cName = fillme.getPointerToChildByName<TextBox>("CityName");
+    cName->setText(cityName);
 
+    TextBox* disNumber = fillme.getPointerToChildByName<TextBox>("DiscipleNumber");
+    ostringstream convert;
+    convert << occupied;
+    disNumber->setText(convert.str());
+
+    TextBox* difNumber = fillme.getPointerToChildByName<TextBox>("Difficulty");
+    convert << difficulty;
+    disNumber->setText(convert.str());
+
+    PieChart*  pChart = fillme.getPointerToChildByName<PieChart>("BelieverPie");
+    pChart->setVariables(converted, population);
 }
 
 double City::getPercentConverted()

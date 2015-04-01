@@ -5,6 +5,7 @@
 #include "src-Game/GameMap.h"
 #include "MainMenu.h"
 #include "src-Game/LoadingScreen.h"
+#include "src-Game/PauseMenu.h"
 
 class LoadingThread : public ofThread
 {
@@ -66,6 +67,7 @@ class ofApp : public ofBaseApp{
         LoadingThread* loader;
         LoadingScreen* loading;
         ResourceManager* resources;
+        PauseMenu* pause;
 
         enum GameStates{MAINMENU, LOADING, GAME};
         int currentState;

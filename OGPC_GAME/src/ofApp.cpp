@@ -30,6 +30,7 @@ void ofApp::update(){
     {
         if(first == true)
         {
+
             resources = new ResourceManager;
             resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
 
@@ -39,7 +40,7 @@ void ofApp::update(){
             loader->update(viewPos);
             loading = new LoadingScreen(ofRandom(5, 25), ofVec2f(512, 512), ofRandom(2, 20), ofRandom(1, 50), ofRandom(10, 250));
             //loading = new LoadingScreen(10, ofVec2f(512, 512), 10, 1, 100);
-
+            pause = new PauseMenu();
             loader->start();
 
             first = false;
@@ -63,7 +64,18 @@ void ofApp::update(){
             first = false;
         }
         loader->update(viewPos);
-        gameEngine->update();
+        if(pause->isActive())
+        {
+            if(pause->update(mousePos, clicked, pressed) == 0)
+            {
+                currentState = MAINMENU;
+            }
+        }
+        else
+        {
+            gameEngine->update();
+        }
+
 
     }
 
@@ -107,11 +119,21 @@ void ofApp::draw(){
     {
         if(currentState == GAME)
         {
-            ofSetColor(255, 255, 255);
-            ofPopMatrix();
-            ofTranslate(dif.x, dif.y);
-            gameEngine->draw();
-            ofPushMatrix();
+
+            if(pause->isActive())
+            {
+                gameEngine->draw();
+                pause->draw();
+
+            }
+            else
+            {
+                ofSetColor(255, 255, 255);
+                ofPopMatrix();
+                ofTranslate(dif.x, dif.y);
+                gameEngine->draw();
+                ofPushMatrix();
+            }
         }
         else if(currentState == MAINMENU)
         {
@@ -133,7 +155,10 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+    if(key == OF_KEY_F1)
+    {
+        pause->toggleActive();
+    }
 }
 
 //--------------------------------------------------------------

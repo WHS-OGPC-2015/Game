@@ -3,7 +3,7 @@
 
 PauseMenu::PauseMenu()
 {
-    pauseActive = true; //activating the pause menu
+    pauseActive = false; //activating the pause menu
 
     PauseManager = new MenuManager;
     Menu defaultMenu(ofVec2f(xpos, ypos));
@@ -13,18 +13,19 @@ PauseMenu::PauseMenu()
     PauseManager->addTexture("StandardPressed", "StandardPressed.png");
     PauseManager->addTexture("StandardHovered", "StandardHovered.png");
 
-    PauseManager->addTexture("OrangeBackground" , "OrangeBackground.png");
+    PauseManager->addTexture("PauseBackground" , "PauseBackground.png");
     PauseManager->addFont("NormalFont", "MySimpleFont.ttf", 16);
 
     //making buttons for the menu
     MenuEntity *background; // Orange Background
     background = new MenuBackground(
                             ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/2), // in the middle of the window
-                            PauseManager->getTexturePointer("OrangeBackground")
+                            PauseManager->getTexturePointer("PauseBackground"),
+                            false
                                   );
     MenuEntity *ResumeBut;
     ResumeBut = new HoverButton(
-                            ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/3),
+                            ofVec2f(ofGetWindowWidth()/2, (ofGetScreenHeight()/2)-150),
                             PauseManager->getTexturePointer("StandardNormal.png"),
                             PauseManager->getTexturePointer("StandardHovered.png"),
                             PauseManager->getTexturePointer("StandardPressed.png"),
@@ -36,7 +37,7 @@ PauseMenu::PauseMenu()
                                 );
     MenuEntity *OptionsBut;
     OptionsBut = new HoverButton(
-                            ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/3),
+                            ofVec2f(ofGetWindowWidth()/2, ofGetScreenHeight()/2),
                             PauseManager->getTexturePointer("StandardNormal.png"),
                             PauseManager->getTexturePointer("StandardHovered.png"),
                             PauseManager->getTexturePointer("StandardPressed.png"),
@@ -49,7 +50,7 @@ PauseMenu::PauseMenu()
 
     MenuEntity *QuitBut;
     QuitBut = new HoverButton(
-                            ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/3),
+                            ofVec2f(ofGetWindowWidth()/2, (ofGetScreenHeight()/2)+150),
                             PauseManager->getTexturePointer("StandardNormal.png"),
                             PauseManager->getTexturePointer("StandardHovered.png"),
                             PauseManager->getTexturePointer("StandardPressed.png"),
@@ -78,15 +79,43 @@ PauseMenu::PauseMenu()
 
 
 }
+int PauseMenu::update(ofVec2f& pos, bool c, bool n)
+{
+    if(pauseActive)
+    {
+        PauseManager->update(pos, c, n);
+        if(Quit->getEventDataInt() > 2)        //return 0 to exit to main menu
+        {
+            return 0;
+        }
+        else if(Resume->getEventDataInt() > 2)//return 1 to go back to game
+        {
+            toggleActive();
+        }
+    }
+    return 2;   //return 2 to remain in pause menu
 
+}
 void PauseMenu::draw()
 {
-    std::cout << "CUNT" << std::endl;
-    if(pauseActive == true)
+    if(pauseActive)
     {
-        std::cout << "CUNT" << std::endl;
         PauseManager->draw();
     }
+}
+
+bool PauseMenu::isActive()
+{
+    if(pauseActive)
+    {
+        return true;
+    }
+    return false;
+}
+
+void PauseMenu::toggleActive()
+{
+    pauseActive = !pauseActive;
 }
 
 

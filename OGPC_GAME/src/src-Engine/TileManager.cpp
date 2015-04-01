@@ -127,3 +127,13 @@ int TileManager::tileIndiceByArrayCoords(ofVec2f coords)
     coords = ofVec2f(trunc(coords.x), trunc(coords.y));
     return (coords.y*mapSize.y)+coords.x;
 }
+
+Tile TileManager::getTileByIndice(int indice)
+{
+    return tiles[indice];
+}
+
+Tile TileManager::getTileByCoords(ofVec2f coords)
+{
+    return tiles[tileIndiceByArrayCoords(coords)];
+}

@@ -24,6 +24,16 @@ public:
             vec[ii].loadObjectData(file);
         }
     }
+    void loadOneObject(ofxXmlSettings& file, int which)
+    {
+        T tmp;
+        vec[which].loadObjectdata(file);
+    }
+
+    T getObject(int index)
+    {
+        return vec[index];
+    }
 
     void saveObjectData(ofxXmlSettings& file)
     {

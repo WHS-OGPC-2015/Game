@@ -11,6 +11,8 @@ public:
     void update();
     void draw();
 
+    Tile getTileByIndice(int indice);
+    Tile getTileByCoords(ofVec2f coords);
     ofVec2f tileArrayCoordsByIndice(int indice);
     int tileIndiceByArrayCoords(ofVec2f);
 private:

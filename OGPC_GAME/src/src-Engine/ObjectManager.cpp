@@ -2,6 +2,13 @@
 
 #include "ObjectManager.h"
 
+ObjectManager::ObjectManager(std::string toLoad, ofVec2f translation, TileManager& t)
+{
+    tiles = t;
+    objectMenus = new MenuManager;
+
+    loadFromFile(toLoad);
+}
 void ObjectManager::loadFromFile(std::string filePath)
 {
     ofxXmlSettings objectFile;
@@ -21,18 +28,27 @@ void ObjectManager::loadFromFile(std::string filePath)
             {
                 if(type == "City")
                 {
-                    //addObjectType<City>("City");
-                    //getPointerToChildByName<City>("City")->loadObjectData(objectFile, numType);
+                    addObjectType<City>("City");
+                    oVector<City>* C = getPointerToChildByName<City>("City");
+                    City& tmp;
+                    for(int ii = 0; ii<numType; ii++)
+                    {
+                        tmp = C->getObject(ii);
+                        C->loadObjectData(objectFile, numType);
+                        C->setTile(tiles.getTileByIndice(C->getTileIndex()));
+                        C->setTexture(recMan.getTextureReference(C->getTextureName()));
+                    }
+
                 }
-                else if(type == "Player")
-                {
-                    //addObjectType<Player>("Player");
-                    //getPointerToChildByName<Player>("Player")->loadObjectData(objectFile, numType);
-                }
-                else if(type == "??????")
-                {
-                    //add
-                }
+//                else if(type == "Player")
+//                {
+//                    //addObjectType<Player>("Player");
+//                    //getPointerToChildByName<Player>("Player")->loadObjectData(objectFile, numType);
+//                }
+//                else if(type == "??????")
+//                {
+//                    //add
+//                }
             }
 
 
@@ -59,16 +75,11 @@ void ObjectManager::saveToFile(std::string path)
             std::advance(it, ii);
             typeName = it->first;
             file.addValue("name", typeName);
-            if(typeName == "aType")
+            if(typeName == "City")
             {
-                //aType* C = getPointerToChildByIndice<aType>(ii);
+                City* C = getPointerToChildByIndice<City>(ii);
 
             }
-            else if(typeName == "otherType")
-            {
-                //.....
-            }
-            //file.addValue("numOf", C-> getVector().size();
 
 
 

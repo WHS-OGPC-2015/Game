@@ -2,11 +2,12 @@
 #include "ofMain.h"
 #include "../XML/src/ofxXmlSettings.h"
 #include "ObjectVector.h"
+#include "City.h"
 class ObjectManager
 {
 
 public:
-    ObjectManager();
+    ObjectManager(std::string, ofVec2f, TileManager&);
 
 
     template<class T>
@@ -24,16 +25,16 @@ public:
     }
 
     template<class C>//C is child class
-    C* getPointerToChildByName(std::string name)
+    oVector<C>* getPointerToChildByName(std::string name)
     {
         C* tmpChild = (C *) &(objects[objectArrayNames[name]]);    //cast parent as child
         return tmpChild;
     }
 
     template<class C>//C is child class
-    C* getPointerToChildByIndice(int i)
+    oVector<C>* getPointerToChildByIndice(int i)
     {
-        C* tmpChild = (C *) &(objects[i]);    //cast parent as child
+        oVector<C>* tmpChild = (oVector<C>*) &(objects[i]);    //cast parent as child
         return tmpChild;
     }
 
@@ -53,5 +54,8 @@ public:
 private:
     std::vector<oVectorAbstract> objects;   //array of objects which will hold their own objects
     std::map<std::string, int> objectArrayNames;
+    TileManager& tiles;         //local reference to tile manager
+    ResourceManager& recMan;    //local reference to resources
+    MenuManager* objectMenus;   //manager for popups and stuff
 
 };

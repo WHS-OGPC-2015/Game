@@ -16,7 +16,7 @@ void Engine::setup(std::string tileData, std::string objectData, std::string Gam
 //    resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
     resources = R;
     tiles = new TileManager(tileData, trans, *resources);
-    //objects = new ObjectManager(objectData, trans);
+    objects = new ObjectManager(objectData, trans, TileManager);
 }
 
 void Engine::update()

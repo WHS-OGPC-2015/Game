@@ -15,6 +15,11 @@ public:
     int getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed);
     void Draw();
 
+    void setTexture(ofTexture* Text);
+    void setTile(Tile* T);
+
+    int getTileIndex();
+    std::string getTextureName();
 
     void fillMenu(Menu& fillme);
 
@@ -24,8 +29,8 @@ public:
     double getPercentConverted();
 
 private:
-    Tile& boundTile;
-    ofVec2i TileIndex;
+    Tile* boundTile;
+    int TileIndex;
     ofTexture* cityTexture;
     std::string TextureName;
     std::string cityName;

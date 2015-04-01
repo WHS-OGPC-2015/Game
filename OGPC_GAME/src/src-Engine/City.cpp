@@ -47,14 +47,43 @@
 
 
 
-City::City(int dif, Tile btile) : boundTile(btile)
+City::City()
 {
-    //TileIndex = boundTile;
-    population = 1000; // default population
-    converted = 0; // you don't have any influence
+
+
+
    // cityName = randomname(); // set name to a random combination of prefixes and suffixes
     maxdif = 5;  // set the maximum difficulty for ALL cities
-    accelmax = 50;
+    accelmax = 50; // same in each city
+    difficulty = 0;     // set the difficulty for a city
+    thresholds[0] = .05;     // below this percentage of believers in an entered city, the believers will increase
+    thresholds[1] = .5 + difficulty; // above this percentage in an entered city, the converted will increase
+    thresholds[2] = .95;  // above this percentage in an entered city, the converted will decline
+    velmin = -(thresholds[1]-thresholds[0]) * accelmax / 2; //integral from bottom th to middle th of the acceleration, / (-2) -- the C of the integral
+    velmax = (thresholds[2]-thresholds[1]) * accelmax / 2;
+    extremeaccel[0] = 10;
+    extremeaccel[1] = -10;
+    threshnums[0] = 0;int City::getTileIndex()
+{
+    return TileIndex;
+}
+
+}
+
+
+City::City(int dif, double fpopulation, std::string fcityName, int iTileIndex )
+{
+    TileIndex = iTileIndex
+    population = fpopulation; // default population
+    converted = 0; // you don't have any influence
+    cityName = fcityName;
+    occupied = 0;
+    entered = false;
+    velocity = 0;
+    accel = 0;
+   // cityName = randomname(); // set name to a random combination of prefixes and suffixes
+    maxdif = 5;  // set the maximum difficulty for ALL cities
+    accelmax = 50; // same in each city
     difficulty = dif;     // set the difficulty for a city
     thresholds[0] = .05;     // below this percentage of believers in an entered city, the believers will increase
     thresholds[1] = .5 + difficulty; // above this percentage in an entered city, the converted will increase
@@ -64,11 +93,33 @@ City::City(int dif, Tile btile) : boundTile(btile)
     extremeaccel[0] = 10;
     extremeaccel[1] = -10;
     threshnums[0] = 0;
-
-
-
-
 }
+
+void City::setTile(Tile* T)
+{
+    boundTile = T;
+}
+
+int City::getTileIndex()
+{
+    return TileIndex;
+}
+
+
+void City::setTexture(ofTexture* Text)
+{
+    cityTexture = Text;
+}
+
+std::string City::getTextureName()
+{
+    return TextureName;
+}
+
+
+
+
+
 
 int City::getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
  {
@@ -182,17 +233,11 @@ void City::turnlyUpdate()
 
 void City::Draw()
 {
-//    if (cityPopup->isActive() == true)
-//    {
-//        cityPopup->draw();
-//    }
-//    TLpos = ofVec2f(boundTile.getLocation().x - cityTexture->getWidth() /2, boundTile.getLocation().y - cityTexture->getHeight() /2);
-//    BRpos = ofVec2f(boundTile.getLocation().x + cityTexture->getWidth() /2, boundTile.getLocation().y + cityTexture->getHeight() /2);
-//    //cityPopup->draw(boundTile->position);
 
     TLpos = ofVec2f(boundTile.getLocation().x - cityTexture->getWidth() /2, boundTile.getLocation().y - cityTexture->getHeight() /2);
     BRpos = ofVec2f(boundTile.getLocation().x + cityTexture->getWidth() /2, boundTile.getLocation().y + cityTexture->getHeight() /2);
-    //cityPopup->draw(boundTile->position);
+    cityTexture->draw(boundTile->getLocation());
+
 
 
 }
@@ -230,16 +275,16 @@ void City::saveObjectData(ofxXmlSettings& file)
     file.addValue("population", population);
     file.addValue("converted", converted);
     file.addValue("velocity", velocity);
-    file.addValue("velmin", velmin);
-    file.addValue("velmax", velmax);
+   // file.addValue("velmin", velmin);
+   // file.addValue("velmax", velmax);
     file.addValue("accel", accel);
-    file.addValue("TLposx", TLpos.x);
-    file.addValue("TLposy", TLpos.y);
-    file.addValue("BRposx", BRpos.x);
-    file.addValue("BRposy", BRpos.y);
-    file.addValue("threshold0", thresholds[0]);
-    file.addValue("threshold1", thresholds[1]);
-    file.addValue("threshold2", thresholds[2]);
+ //   file.addValue("TLposx", TLpos.x);
+  //  file.addValue("TLposy", TLpos.y);
+  //  file.addValue("BRposx", BRpos.x);
+   // file.addValue("BRposy", BRpos.y);
+   // file.addValue("threshold0", thresholds[0]);
+    //file.addValue("threshold1", thresholds[1]);
+    //file.addValue("threshold2", thresholds[2]);
     file.addValue("difficulty", difficulty);
     file.addValue("occupied", occupied);
     file.addValue("entered", entered);
@@ -250,19 +295,19 @@ void City::saveObjectData(ofxXmlSettings& file)
 void City::loadObjectData(ofxXmlSettings& file)
 {
     //TileIndex = boundTile;
-    TextureName = file.getValue("cityName", "");
+    TextureName = file.getValue("cityTexture", "");
     cityName = file.getValue("cityName", "");
     population = file.getValue("population", 0.0);
     converted = file.getValue("converted", 0.0);
     velocity = file.getValue("velocity", 0.0);
-    velmin = file.getValue("velmin", 0.0);
-    velmax = file.getValue("velmax", 0.0);
+  //  velmin = file.getValue("velmin", 0.0);
+   // velmax = file.getValue("velmax", 0.0);
     accel = file.getValue("accel", 0.0);
-    ofVec2f TLpos = ofVec2f(file.getValue("TLposx", 0.0), file.getValue("TLposy", 0.0));
-    ofVec2f BRpos = ofVec2f(file.getValue("BRposx", 0.0), file.getValue("BRposy", 0.0));
-    thresholds[0] = file.getValue("threshold0", 0.0);
-    thresholds[1] = file.getValue("threshold1", 0.0);
-    thresholds[2] = file.getValue("threshold2", 0.0);
+    //ofVec2f TLpos = ofVec2f(file.getValue("TLposx", 0.0), file.getValue("TLposy", 0.0));
+   // ofVec2f BRpos = ofVec2f(file.getValue("BRposx", 0.0), file.getValue("BRposy", 0.0));
+   // thresholds[0] = file.getValue("threshold0", 0.0);
+    //thresholds[1] = file.getValue("threshold1", 0.0);
+   // thresholds[2] = file.getValue("threshold2", 0.0);
     difficulty = file.getValue("difficulty", 0);
     occupied = file.getValue("occupied", 0);
     entered = file.getValue("entered", 0 /*hopefully works for bool?*/);

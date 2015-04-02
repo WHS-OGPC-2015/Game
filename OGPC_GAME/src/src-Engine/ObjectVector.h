@@ -21,7 +21,9 @@ public:
     {
         for(int ii = 0; ii < numType; ii++)
         {
+            file.pushTag("object", ii);
             vec[ii].loadObjectData(file);
+            file.popTag();
         }
     }
     void loadOneObject(ofxXmlSettings& file, int which)
@@ -39,7 +41,10 @@ public:
     {
         for(int ii = 0; ii < vec.size(); ii++)
         {
+            file.addTag("object");
+            file.pushTag("object", ii);
             vec[ii].saveObjectData(file);
+            file.popTag();
         }
     }
 

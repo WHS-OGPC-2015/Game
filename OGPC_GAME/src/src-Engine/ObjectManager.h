@@ -11,7 +11,7 @@ public:
 
 
     template<class T>
-    bool addObjectType(std::string name)    //add a new type of object to the array
+    bool addObjectType(std::string name, int startNum)    //add a new type of object to the array
     {
         if(objectArrayNames.find(name) == objectArrayNames.end())
         {
@@ -19,6 +19,11 @@ public:
             oVectorAbstract tmp = temp;
             objects.push_back(temp);
             objectArrayNames[name] = objects.size()-1;
+            T tmpObject;
+            for(int ii = 0; ii < startNum; ii++)
+            {
+                addObjectToType(tmpObject, name);
+            }
             return true;
         }
         return false;
@@ -27,7 +32,7 @@ public:
     template<class C>//C is child class
     oVector<C>* getPointerToChildByName(std::string name)
     {
-        C* tmpChild = (C *) &(objects[objectArrayNames[name]]);    //cast parent as child
+        oVector<C>* tmpChild = (oVector<C>*) &(objects[objectArrayNames[name]]);    //cast parent as child
         return tmpChild;
     }
 

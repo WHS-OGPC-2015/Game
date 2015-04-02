@@ -6,7 +6,6 @@ ObjectManager::ObjectManager(std::string toLoad, ofVec2f translation, TileManage
 {
     tiles = t;
     objectMenus = new MenuManager;
-
     loadFromFile(toLoad);
 }
 void ObjectManager::loadFromFile(std::string filePath)
@@ -28,15 +27,15 @@ void ObjectManager::loadFromFile(std::string filePath)
             {
                 if(type == "City")
                 {
-                    addObjectType<City>("City");
+                    addObjectType<City>("City", numType);
                     oVector<City>* C = getPointerToChildByName<City>("City");
                     City& tmp;
+                    C->loadObjectData(objectFile, numType);
                     for(int ii = 0; ii<numType; ii++)
                     {
                         tmp = C->getObject(ii);
-                        C->loadObjectData(objectFile, numType);
-                        C->setTile(tiles.getTileByIndice(C->getTileIndex()));
-                        C->setTexture(recMan.getTextureReference(C->getTextureName()));
+                        tmp->setTile(tiles.getTileByIndice(C->getTileIndex()));
+                        tmp->setTexture(recMan.getTextureReference(C->getTextureName()));
                     }
 
                 }
@@ -78,6 +77,7 @@ void ObjectManager::saveToFile(std::string path)
             if(typeName == "City")
             {
                 City* C = getPointerToChildByIndice<City>(ii);
+                C->saveObjectData(file);
 
             }
 

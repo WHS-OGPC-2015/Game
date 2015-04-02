@@ -138,6 +138,7 @@
 		<Unit filename="src/src-Engine/Band.h" />
 		<Unit filename="src/src-Engine/City.cpp" />
 		<Unit filename="src/src-Engine/City.h" />
+		<Unit filename="src/src-Engine/CityMenu.h" />
 		<Unit filename="src/src-Engine/EngineInclude.h" />
 		<Unit filename="src/src-Engine/EngineMain.cpp" />
 		<Unit filename="src/src-Engine/EngineMain.h" />

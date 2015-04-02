@@ -53,6 +53,7 @@ void GameMap::generateMap()
 {
     mapTextureNames("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
     genMapTwo();
+    genCities();
 }
 
 std::vector<int> GameMap::genMap(int sizeX, int sizeY, int seeds)
@@ -382,6 +383,8 @@ void GameMap::saveMap(ofVec2i mapSize, std::vector<int> heights)
     tileSave.addValue("pushedTileCount", pushedTagCount);
 
     tileSave.saveFile("tiles.xml");
+
+    objectFile.saveFile("objects.xml");
 }
 
 void GameMap::mapTextureNames(std::string folder)
@@ -450,4 +453,56 @@ void GameMap::mapTextureNames(std::string folder)
 
     }
 }
+
+void GameMap::genCities()
+{
+        std::vector<std::string> objectNames;
+        int numObjectTypes = objectFile.getValue("numObjectTypes", 0);
+
+        std::string type = "City";
+        objectFile.addTag("type");
+        objectFile.pushTag("type", 0);
+        objectFile.addValue("name", "City");
+        objectFile.addValue("numOf", numCities);
+        for(int ii = 0; ii < numCities; ii++)
+        {
+            objectFile.addTag("object");
+            objectFile.pushTag("object", ii);
+            int proposedIndex = ofRandom(altitudes.size());
+            while(altitudes[proposedIndex])
+            City tmp(3, 10000, "WalrusTown", proposedIndex);
+            tmp.saveObjectData(objectFile);
+
+            objectFile.popTag();
+
+
+        }
+        objectFile.popTag();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

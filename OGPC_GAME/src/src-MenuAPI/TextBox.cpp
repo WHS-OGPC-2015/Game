@@ -32,7 +32,11 @@ void TextBox::setPosition(posi)
 {
     position = posi;
 }
-
+void TextBox::addPosition(ofVec2f dpos)
+{
+    position.x += dpos.x;
+    position.y += dpos.y;
+}
 void TextBox::setFont(ofTrueTypeFont& f)
 {
     font = &f;

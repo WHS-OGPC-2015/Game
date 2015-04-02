@@ -11,7 +11,7 @@ PieChart::PieChart()
     }
 }
 
-PieChart::PieChart(double tot, double dep, double radi, ofVec2f posi) : total(tot), depVar(dep)
+PieChart::PieChart(double tot, double dep, double radi, ofVec2f posi, ofColor c1, ofColor c2)
 {
     rati = (depVar/total);
     rad = radi;
@@ -21,6 +21,8 @@ PieChart::PieChart(double tot, double dep, double radi, ofVec2f posi) : total(to
     {
         vertecies.push_back(ofVec2f(rad * cos(2 * pi / resolution + pi / 2) + pos.x, -rad * sin(2 * pi / resolution + pi / 2) + pos.y));
     }
+    colors[0] = c1;
+    colors[1] = c2;
 }
 
 
@@ -48,7 +50,7 @@ void PieChart::Draw()
         }
     ofEndShape();
 
-    ofSetColor(colors[1])
+    ofSetColor(colors[1]);
 
     ofBeginShape();
         for (int i = endingindeces[0]; i < endingindeces[1]; i++)
@@ -73,11 +75,22 @@ void PieChart::setPosition(ofVec2f posi)
 {
     for (int i = 0; i < resolution; i++)
     {
-        vertecies[i].x += (posi - pos);
-        vertecies[i].y += (posi - pos);
+        vertecies[i].x += (posi.x - pos.x);
+        vertecies[i].y += (posi.y - pos.y);
     }
     pos = posi;
 
+}
+
+void PieChart::addPosition(ofVec2f dpos)
+{
+    pos.x += dpos.x;
+    pos.y += dpos.y;
+    for (int i = 0; i < resolution; i++)
+    {
+        vertecies[i].x += dpos.x;
+        vertecies[i].y += dpos.y;
+    }
 }
 
 void PieChart::setColor(int i, ofColor col)

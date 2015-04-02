@@ -10,6 +10,7 @@ public:
     void Update();
     void Draw();
 
+    void addPosition(ofVec2f dpos);
     void setText(std::string str);
     void setPosition(ofVec2f posi);
     void setFont(ofTrueTypeFont& f);

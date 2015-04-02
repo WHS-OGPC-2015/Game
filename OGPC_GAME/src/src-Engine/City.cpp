@@ -234,8 +234,8 @@ void City::turnlyUpdate()
 void City::Draw()
 {
 
-    TLpos = ofVec2f(boundTile.getLocation().x - cityTexture->getWidth() /2, boundTile.getLocation().y - cityTexture->getHeight() /2);
-    BRpos = ofVec2f(boundTile.getLocation().x + cityTexture->getWidth() /2, boundTile.getLocation().y + cityTexture->getHeight() /2);
+    TLpos = ofVec2f(boundTile->getLocation().x - cityTexture->getWidth() /2, boundTile->getLocation().y - cityTexture->getHeight() /2);
+    BRpos = ofVec2f(boundTile->getLocation().x + cityTexture->getWidth() /2, boundTile->getLocation().y + cityTexture->getHeight() /2);
     cityTexture->draw(boundTile->getLocation());
 
 

@@ -10,7 +10,8 @@ public:
 
 	void update();
 	void update(ofVec2f& mousePos, bool& clicked, bool& pressed);
-
+    void setPosition(ofVec2f loc);
+    void addPosition(ofVec2f dpos);
 	void draw();
 
 	bool getEventDataBool();

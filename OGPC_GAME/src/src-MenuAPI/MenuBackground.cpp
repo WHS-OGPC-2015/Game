@@ -23,6 +23,17 @@ void MenuBackground::update(ofVec2f& mousePos, bool& clicked, bool& pressed)//Me
 {
 
 }
+
+void MenuBackground::setPosition(ofVec2f loc)
+{
+    position = loc;
+}
+
+void MenuBackground::addPosition(ofVec2f dpos)
+{
+    position.x += dpos.x;
+    position.y += dpos.y;
+}
 void MenuBackground::draw()
 {
     // draws the center at the position

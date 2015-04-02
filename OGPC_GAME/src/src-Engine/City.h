@@ -4,6 +4,7 @@
 #include "../src-Game/Vec2i.h"
 #include "../src-MenuAPI/MenuInclude.h"
 #include "../XML/src/ofxXmlSettings.h"
+#pragma once
 
 class City
 {

@@ -21,6 +21,7 @@ public:
     void setTile(Tile T);
 
     int getTileIndex();
+
     std::string getTextureName();
 
     void fillMenu(Menu& fillme);

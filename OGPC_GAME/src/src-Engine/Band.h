@@ -9,17 +9,26 @@ class Band
 {
 public:
 
-    Band(Tile& btile);
+    Band(Tile btile);
 
     void Draw();
     void Update(ofVec2f& mousePos, bool& clicked, bool& pressed);
     void turnlyUpdate();
     int getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed);
 
+
+    void setTexture(ofTexture& TN0, ofTexture& TN1, ofTexture& TN2 , ofTexture& TN3);
+    void setTile(Tile T);
+    int getIndex();
+    vector<std::string> getTextureNames();
+
+    void setBandMenu(Menu& fillme);
+
+    void fillMenu();
     //these are all boring -- just sets, gets, and swaps
     int convertTo1dindex(ofVec2i v);
 
-    void setIncarnation(bool b);
+    void setIncarnation(bool b, std::string incarnName);
     bool getIncarnation();
 
     void setDiscipleNum(int i);
@@ -48,7 +57,7 @@ private:
 
 
 
-    Tile& boundTile;
+    Tile* boundTile;
     ofVec2i boundTileCoords;
     int boundTileIndex;
 
@@ -60,6 +69,7 @@ private:
     int begDisNum; // beginning disciple number -- doesn't change as opposed to disciple num
 
     bool incarnation;
+    std::string incarnationName;
 
     bool incognito;
 
@@ -75,7 +85,8 @@ private:
     ofVec2f TLpos;
     ofVec2f BRpos;
 
-    Menu* bandPopup;
+    Menu* bandMenu;
+    bool drawMenu;
 
     vector<int> possibleMoves;
 };

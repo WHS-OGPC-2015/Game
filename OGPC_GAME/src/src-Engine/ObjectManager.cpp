@@ -2,10 +2,12 @@
 
 #include "ObjectManager.h"
 
-ObjectManager::ObjectManager(std::string toLoad, ofVec2f translation, TileManager* t)
+ObjectManager::ObjectManager(std::string toLoad, ofVec2f translation, TileManager* t, ResourceManager* R)
 {
     tiles = t;
     objectMenus = new MenuManager;  //create menu manager for the
+    createCityMenu(objectMenus, ofVec2f(0, 0));
+    recMan = R;
     loadFromFile(toLoad);
 }
 ObjectManager::~ObjectManager()
@@ -41,6 +43,7 @@ void ObjectManager::loadFromFile(std::string filePath)
                         City* tmp = C->getObject(ii);
                         tmp->setTile(tiles->getTileByIndice(tmp->getTileIndex()));
                         tmp->setTexture(recMan->getTextureReference(tmp->getTextureName()));
+                        tmp->setMenu(objectMenus->getMenuPointerByName("CityMenu"));
                     }
 
                 }

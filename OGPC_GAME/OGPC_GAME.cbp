@@ -138,6 +138,7 @@
 		<Unit filename="src/src-Engine/Band.h" />
 		<Unit filename="src/src-Engine/City.cpp" />
 		<Unit filename="src/src-Engine/City.h" />
+		<Unit filename="src/src-Engine/CityMenu.cpp" />
 		<Unit filename="src/src-Engine/CityMenu.h" />
 		<Unit filename="src/src-Engine/EngineInclude.h" />
 		<Unit filename="src/src-Engine/EngineMain.cpp" />
@@ -152,6 +153,7 @@
 		<Unit filename="src/src-Engine/Tile.h" />
 		<Unit filename="src/src-Engine/TileManager.cpp" />
 		<Unit filename="src/src-Engine/TileManager.h" />
+		<Unit filename="src/src-Game/CityMenu.cpp" />
 		<Unit filename="src/src-Game/GameMap.cpp" />
 		<Unit filename="src/src-Game/GameMap.h" />
 		<Unit filename="src/src-Game/PauseMenu.cpp" />

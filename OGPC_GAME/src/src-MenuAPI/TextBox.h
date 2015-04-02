@@ -1,8 +1,7 @@
-
 #pragma once
 #include "MenuEntity.h"
 
-class TextBox : MenuEntity
+class TextBox : public MenuEntity
 {
 public:
     TextBox(std::string str, ofVec2f posi, ofTrueTypeFont& f);
@@ -14,6 +13,20 @@ public:
     void setText(std::string str);
     void setPosition(ofVec2f posi);
     void setFont(ofTrueTypeFont& f);
+
+    //dont use these but they are virtual
+    bool getEventDataBool()
+    {
+
+    }
+    int getEventDataInt()
+    {
+
+    }
+    void update(ofVec2f&, bool&, bool&)
+    {
+
+    }
 
 private:
     std::string text;

@@ -1,3 +1,4 @@
+#pragma once
 #include "ofMain.h"
 #include "../XML/src/ofxXmlSettings.h"
 struct oVectorAbstract
@@ -47,7 +48,10 @@ public:
             file.popTag();
         }
     }
-
+    void setVector(std::vector<T> s)
+    {
+        vec = s;
+    }
     std::vector<T> getVector()
     {
         return vec;
@@ -63,7 +67,7 @@ public:
 
     void drawAll()
     {
-            for(int ii = 0; ii < vec.size(); ii++)
+        for(int ii = 0; ii < vec.size(); ii++)
         {
             vec[ii].draw();
         }

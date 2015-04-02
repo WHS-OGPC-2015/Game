@@ -16,7 +16,26 @@ public:
     void setColor(int i, ofColor col);
     void setColor(ofColor cola, ofColor colb);
 
+    void draw()
+    {
 
+    }
+    void update()
+    {
+
+    }
+    void update(ofVec2f&, bool&, bool&)
+    {
+
+    }
+    bool getEventDataBool()
+    {
+
+    }
+    int getEventDataInt()
+    {
+
+    }
 
 private:
 

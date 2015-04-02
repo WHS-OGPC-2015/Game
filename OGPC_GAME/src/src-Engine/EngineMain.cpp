@@ -16,7 +16,7 @@ void Engine::setup(std::string tileData, std::string objectData, std::string Gam
 //    resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
     resources = R;
     tiles = new TileManager(tileData, trans, *resources);
-    objects = new ObjectManager(objectData, trans, tiles);
+    objects = new ObjectManager(objectData, trans, tiles, resources);
 }
 
 void Engine::update(ofVec2f& mousePos, bool& clicked, bool& pressed)

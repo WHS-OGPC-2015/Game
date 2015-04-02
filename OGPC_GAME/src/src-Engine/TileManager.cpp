@@ -128,12 +128,13 @@ int TileManager::tileIndiceByArrayCoords(ofVec2f coords)
     return (coords.y*mapSize.y)+coords.x;
 }
 
-Tile TileManager::getTileByIndice(int indice)
+Tile* TileManager::getTileByIndice(int indice)
 {
-    return tiles[indice];
+    Tile* tmp = &tiles[indice];
+    return tmp;
 }
 
-Tile TileManager::getTileByCoords(ofVec2f coords)
+Tile* TileManager::getTileByCoords(ofVec2f coords)
 {
-    return tiles[tileIndiceByArrayCoords(coords)];
+    return getTileByIndice(tileIndiceByArrayCoords(coords));
 }

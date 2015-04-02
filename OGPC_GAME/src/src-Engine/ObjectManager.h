@@ -5,11 +5,12 @@
 #include "TileManager.h"
 #include "ResourceManager.h"
 #include "City.h"
+#include "CityMenu.h"
 class ObjectManager
 {
 
 public:
-    ObjectManager(std::string, ofVec2f, TileManager*);
+    ObjectManager(std::string, ofVec2f, TileManager*, ResourceManager*);
     ~ObjectManager();
 
 
@@ -18,8 +19,7 @@ public:
     {
         if(objectArrayNames.find(name) == objectArrayNames.end())
         {
-            oVector<T> temp;
-            oVectorAbstract* tmp = &temp;
+            oVectorAbstract* tmp = new oVector<T>;
             objects.push_back(tmp);
             objectArrayNames[name] = objects.size()-1;
             T tmpObject;
@@ -35,14 +35,14 @@ public:
     template<class C>//C is child class
     oVector<C>* getPointerToChildByName(std::string name)
     {
-        oVector<C>* tmpChild = (oVector<C>*) &(objects[objectArrayNames[name]]);    //cast parent as child
+        oVector<C>* tmpChild = (oVector<C>*) (objects[objectArrayNames[name]]);    //cast parent as child
         return tmpChild;
     }
 
     template<class C>//C is child class
     oVector<C>* getPointerToChildByIndice(int i)
     {
-        oVector<C>* tmpChild = (oVector<C>*) &(objects[i]);    //cast parent as child
+        oVector<C>* tmpChild = (oVector<C>*) (objects[i]);    //cast parent as child
         return tmpChild;
     }
 

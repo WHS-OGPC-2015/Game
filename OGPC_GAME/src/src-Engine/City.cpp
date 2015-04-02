@@ -1,5 +1,5 @@
 #include "City.h"
-#include "sstream"
+#include <sstream>
 
 
 //std::string randomname()
@@ -56,7 +56,7 @@ City::City()
     extremeaccel[0] = 10;
     extremeaccel[1] = -10;
     threshnums[0] = 0;
-
+    drawMenu = false;
 
 }
 
@@ -84,11 +84,12 @@ City::City(int dif, double fpopulation, std::string fcityName, int iTileIndex, s
     extremeaccel[0] = 10;
     extremeaccel[1] = -10;
     threshnums[0] = 0;
+    drawMenu = false;
 }
 
-void City::setTile(Tile T)
+void City::setTile(Tile* T)
 {
-    boundTile = &T;
+    boundTile = T;
 }
 
 int City::getTileIndex()
@@ -141,7 +142,11 @@ int City::getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
 
 void City::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
-
+    if(getClickedData(mousePos, clicked, pressed) == 1)
+    {
+        fillMenu();
+        cityMenu->setActive();
+    }
 }
 
 
@@ -236,22 +241,28 @@ void City::draw()
 
 
 
-void City::fillMenu(Menu& fillme)
+void City::fillMenu()
 {
-    TextBox* cName = fillme.getPointerToChildByName<TextBox>("CityName");
+    TextBox* cName = cityMenu->getPointerToChildByName<TextBox>("CityName");
     cName->setText(cityName);
 
-    TextBox* disNumber = fillme.getPointerToChildByName<TextBox>("DiscipleNumber");
+    TextBox* disNumber = cityMenu->getPointerToChildByName<TextBox>("DiscipleNumber");
     ostringstream convert;
     convert << occupied;
     disNumber->setText(convert.str());
 
-    TextBox* difNumber = fillme.getPointerToChildByName<TextBox>("Difficulty");
+    TextBox* difNumber = cityMenu->getPointerToChildByName<TextBox>("Difficulty");
     convert << difficulty;
     disNumber->setText(convert.str());
 
-    PieChart*  pChart = fillme.getPointerToChildByName<PieChart>("BelieverPie");
+    PieChart*  pChart = cityMenu->getPointerToChildByName<PieChart>("BelieverPie");
     pChart->setVariables(converted, population);
+
+}
+
+void City::setMenu(Menu* CM)
+{
+    cityMenu = CM;
 }
 
 double City::getPercentConverted()
@@ -264,6 +275,7 @@ void City::saveObjectData(ofxXmlSettings& file)
     std::cout << cityName << std::endl;
     file.addValue("cityTexture", textureName);
     file.addValue("cityName", cityName);
+    file.addValue("tileIndex", TileIndex);
     file.addValue("population", population);
     file.addValue("converted", converted);
     file.addValue("velocity", velocity);
@@ -290,6 +302,7 @@ void City::loadObjectData(ofxXmlSettings& file)
     //TileIndex = boundTile;
     textureName = file.getValue("cityTexture", "");
     cityName = file.getValue("cityName", "");
+    TileIndex = file.getValue("tileIndex", 0);
     population = file.getValue("population", 0.0);
     converted = file.getValue("converted", 0.0);
     velocity = file.getValue("velocity", 0.0);

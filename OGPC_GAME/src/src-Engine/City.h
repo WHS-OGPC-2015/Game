@@ -4,7 +4,7 @@
 #include "../src-Game/Vec2i.h"
 #include "../src-MenuAPI/MenuInclude.h"
 #include "../XML/src/ofxXmlSettings.h"
-#pragma once
+
 
 class City
 {
@@ -18,13 +18,14 @@ public:
     void draw();
 
     void setTexture(ofTexture& Text);
-    void setTile(Tile T);
+    void setTile(Tile* T);
 
     int getTileIndex();
 
     std::string getTextureName();
 
-    void fillMenu(Menu& fillme);
+    void fillMenu();
+    void setMenu(Menu* CM);
 
     void saveObjectData(ofxXmlSettings&);
     void loadObjectData(ofxXmlSettings&);
@@ -34,6 +35,7 @@ public:
 private:
     Tile* boundTile;
     int TileIndex;
+    Menu* cityMenu;
     ofTexture* cityTexture;
     std::string textureName;
     std::string cityName;
@@ -48,6 +50,7 @@ private:
     double thresholds[3]; // th 0 and th 2 are same in all cities
 
     // converted could also go here
+
     double velocity;
     double velmin;
     double velmax;
@@ -64,7 +67,7 @@ private:
     int difficulty;
     int maxdif;     //same in all cities
 
-
+    bool drawMenu;
 
 
 

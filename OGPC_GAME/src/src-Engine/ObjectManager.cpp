@@ -1,3 +1,5 @@
+///To add a new supported object type you must add an if statement in the save and load functions
+
 #include "ObjectManager.h"
 
 void ObjectManager::loadFromFile(std::string filePath)
@@ -43,6 +45,7 @@ void ObjectManager::loadFromFile(std::string filePath)
 
 void ObjectManager::saveToFile(std::string path)
 {
+    std::string typeName;
     ofxXmlSettings file;
     if(file.loadFile(path))
     {
@@ -52,10 +55,22 @@ void ObjectManager::saveToFile(std::string path)
         {
             file.addTag("type");
             file.pushTag("type", ii);
-            //map<std::string, int>::iterator it = objectArrayNames.begin()+ii;
-            file.addValue("name", "City");
-            file.addValue("numOf", getPointerToChildByIndice<decltype(objects[ii])>(ii).getVector().size();
-            objects[ii].saveObjectData(file);
+            std::map<std::string, int>::iterator it = objectArrayNames.begin();
+            std::advance(it, ii);
+            typeName = it->first;
+            file.addValue("name", typeName);
+            if(typeName == "aType")
+            {
+                //aType* C = getPointerToChildByIndice<aType>(ii);
+
+            }
+            else if(typeName == "otherType")
+            {
+                //.....
+            }
+            //file.addValue("numOf", C-> getVector().size();
+
+
 
 
 
@@ -68,7 +83,7 @@ void ObjectManager::saveToFile(std::string path)
 
 void ObjectManager::updateAll()
 {
-    for(int ii = 0; ii < objects.size())
+    for(int ii = 0; ii < objects.size(); ii++)
     {
         objects[ii].updateAll();
     }
@@ -76,7 +91,7 @@ void ObjectManager::updateAll()
 
 void ObjectManager::drawAll()
 {
-    for(int ii = 0; ii < objects.size())
+    for(int ii = 0; ii < objects.size(); ii++)
     {
         objects[ii].drawAll();
     }

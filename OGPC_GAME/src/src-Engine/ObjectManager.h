@@ -40,7 +40,7 @@ public:
     template<class oT>
     void addObjectToType(oT object, std::string type)    //add an object of specific type to its array
     {
-        getPointerToChildByName<decltype(objects[objectArrayNames[type]])>(type)->addObject[object];
+        getPointerToChildByName<oVector<oT> >(type)->addObject[object];
     }
     //auto getObjectTypePointer(std::string type) -> decltype(objects[objectArrayNames[type]]);           //get pointer to an oVector
 

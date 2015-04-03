@@ -1,13 +1,13 @@
 #include "CityMenu.h"
 
-void createCityMenu(MenuManager* man, ofVec2f pos)
+void createCityMenu(MenuManager* man, ofVec2f pos, ResourceManager* R)
 {
     int borderwidth = 5;
     double pcrad = 50;
     Menu cityMenu(ofVec2f(0, 0));
 
-    man->addTexture("CMBackground", "CMBackground.png");
-    man->addFont("CMText", "MySimpleFont.ttf", 24);
+    man->addTexture("CMBackground", R->getTexture("CMBackground"));
+    man->addFont("CMText", R->getFont("CMFont"));
 
     double halfmenuHeight = man->getTexturePointer("CMBackground").getHeight()/2;
     double halfmenuWidth = man->getTexturePointer("CMBackground").getWidth()/2;
@@ -73,11 +73,11 @@ void createCityMenu(MenuManager* man, ofVec2f pos)
 
     cityMenu.addEntity(*citBG, "CityBackground");
     cityMenu.addEntity(*nameBox, "CityName");
-//    cityMenu.addEntity(*discNum, "DiscipleNumber");
-//    cityMenu.addEntity(*difNum, "Difficulty");
-    //cityMenu.addEntity(*converted, "BelieverPie");
-//    cityMenu.addEntity(*discBox, "DiscipleBox");
-//    cityMenu.addEntity(*difBox, "DifficultyBox");
+    cityMenu.addEntity(*discNum, "DiscipleNumber");
+    cityMenu.addEntity(*difNum, "Difficulty");
+    cityMenu.addEntity(*converted, "BelieverPie");
+    cityMenu.addEntity(*discBox, "DiscipleBox");
+    cityMenu.addEntity(*difBox, "DifficultyBox");
 //    cityMenu.addEntity(*PCBox, "PieChartText");
 
     man->addMenu(cityMenu, "CityMenu");

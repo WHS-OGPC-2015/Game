@@ -12,9 +12,11 @@ public:
 
     void addTexture(std::string, std::string);
     ofTexture& getTextureReference(std::string);
+    ofTexture getTexture(std::string);
 
     void addFont(std::string, std::string, int);
     ofTrueTypeFont& getFontReference(std::string);
+    ofTrueTypeFont getFont(std::string);
 
     void addSound(std::string, std::string, bool stream=false);        //add sound to vector
     ofSoundPlayer& getSoundReference(std::string);  //returns REFERECE to sound

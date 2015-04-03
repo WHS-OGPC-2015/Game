@@ -5,9 +5,10 @@
 ObjectManager::ObjectManager(std::string toLoad, ofVec2f translation, TileManager* t, ResourceManager* R)
 {
     tiles = t;
-    objectMenus = new MenuManager;  //create menu manager for the
-    createCityMenu(objectMenus, ofVec2f(0, 0));
     recMan = R;
+    objectMenus = new MenuManager;  //create menu manager for the
+    createCityMenu(objectMenus, ofVec2f(400, 400), recMan);
+
     loadFromFile(toLoad);
 }
 ObjectManager::~ObjectManager()

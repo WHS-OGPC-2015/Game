@@ -15,9 +15,10 @@ ObjectManager::~ObjectManager()
 void ObjectManager::loadFromFile(std::string filePath)
 {
     ofxXmlSettings objectFile;
-    if(objectFile.loadFile(filePath))
-    {
 
+    if(objectFile.loadFile("objects.xml"))
+    {
+    std::cout << "file Loadded" << std::endl;
         std::vector<std::string> objectNames;
         int numObjectTypes = objectFile.getValue("numObjectTypes", 0);
 
@@ -54,6 +55,10 @@ void ObjectManager::loadFromFile(std::string filePath)
 
         }
 
+    }
+    else
+    {
+        std::cout << "file NOT Loadded" << std::endl;
     }
 
 }

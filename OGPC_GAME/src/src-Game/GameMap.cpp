@@ -383,8 +383,6 @@ void GameMap::saveMap(ofVec2i mapSize, std::vector<int> heights)
     tileSave.addValue("pushedTileCount", pushedTagCount);
 
     tileSave.saveFile("tiles.xml");
-
-    objectFile.saveFile("objects.xml");
 }
 
 void GameMap::mapTextureNames(std::string folder)
@@ -456,8 +454,7 @@ void GameMap::mapTextureNames(std::string folder)
 
 void GameMap::genCities()
 {
-        std::vector<std::string> objectNames;
-        int numObjectTypes = objectFile.getValue("numObjectTypes", 0);
+        objectFile.addValue("numObjectTypes", 1);
 
         std::string type = "City";
         objectFile.addTag("type");

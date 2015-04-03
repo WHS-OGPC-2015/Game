@@ -1,0 +1,16 @@
+<numObjectTypes>1</numObjectTypes>
+<type>
+    <name>City</name>
+    <numOf>1</numOf>
+    <object>
+        <cityTexture>City</cityTexture>
+        <cityName>WalrusTown</cityName>
+        <population>10000.000000000</population>
+        <converted>0.000000000</converted>
+        <velocity>0.000000000</velocity>
+        <accel>0.000000000</accel>
+        <difficulty>3</difficulty>
+        <occupied>0</occupied>
+        <entered>0</entered>
+    </object>
+</type>

@@ -25,7 +25,7 @@ public:
             T tmpObject;
             for(int ii = 0; ii < startNum; ii++)
             {
-                addObjectToType(tmpObject, name);
+                addObjectToType<T>(tmpObject, name);
             }
             return true;
         }
@@ -49,7 +49,8 @@ public:
     template<class oT>
     void addObjectToType(oT object, std::string type)    //add an object of specific type to its array
     {
-        getPointerToChildByName<oT>(type)->addObject(object);
+        oVector<oT>* S = getPointerToChildByName<oT>(type);
+        S->addObject(object);
     }
     //auto getObjectTypePointer(std::string type) -> decltype(objects[objectArrayNames[type]]);           //get pointer to an oVector
 

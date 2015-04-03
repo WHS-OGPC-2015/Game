@@ -5,8 +5,12 @@
 ObjectManager::ObjectManager(std::string toLoad, ofVec2f translation, TileManager& t)
 {
     tiles = t;
-    objectMenus = new MenuManager;
+    objectMenus = new MenuManager;  //create menu manager for the
     loadFromFile(toLoad);
+}
+ObjectManager::~ObjectManager()
+{
+    delete objectMenus;
 }
 void ObjectManager::loadFromFile(std::string filePath)
 {
@@ -29,8 +33,8 @@ void ObjectManager::loadFromFile(std::string filePath)
                 {
                     addObjectType<City>("City", numType);
                     oVector<City>* C = getPointerToChildByName<City>("City");
-                    City& tmp;
-                    C->loadObjectData(objectFile, numType);
+                    City& tmp;                                                  //create temporary city to add textures n stuff to individual cities
+                    C->loadObjectData(objectFile, numType);                     //load data for (numType) cities in the array
                     for(int ii = 0; ii<numType; ii++)
                     {
                         tmp = C->getObject(ii);
@@ -39,15 +43,11 @@ void ObjectManager::loadFromFile(std::string filePath)
                     }
 
                 }
-//                else if(type == "Player")
-//                {
-//                    //addObjectType<Player>("Player");
-//                    //getPointerToChildByName<Player>("Player")->loadObjectData(objectFile, numType);
-//                }
-//                else if(type == "??????")
-//                {
-//                    //add
-//                }
+                /*
+                -----------------------------------
+                ADD OTHER TYPES HERE
+                -----------------------------------
+                */
             }
 
 
@@ -62,35 +62,33 @@ void ObjectManager::saveToFile(std::string path)
 {
     std::string typeName;
     ofxXmlSettings file;
-    if(file.loadFile(path))
+    int s = objects.size();
+    file.addValue("numObjectTypes", s);
+    for(int ii = 0; ii < objectArrayNames.size(); ii++)
     {
-        int s = objects.size();
-        file.addValue("numObjectTypes", s);
-        for(int ii = 0; ii < objectArrayNames.size(); ii++)
+        file.addTag("type");
+        file.pushTag("type", ii);
+        std::map<std::string, int>::iterator it = objectArrayNames.begin();
+        std::advance(it, ii);
+        typeName = it->first;
+        file.addValue("name", typeName);
+        if(typeName == "City")
         {
-            file.addTag("type");
-            file.pushTag("type", ii);
-            std::map<std::string, int>::iterator it = objectArrayNames.begin();
-            std::advance(it, ii);
-            typeName = it->first;
-            file.addValue("name", typeName);
-            if(typeName == "City")
-            {
-                City* C = getPointerToChildByIndice<City>(ii);
-                C->saveObjectData(file);
-
-            }
-
-
-
-
-
-            file.popTag();
-
+            City* C = getPointerToChildByIndice<City>(ii);
+            C->saveObjectData(file);
         }
-    }
+        /*
+        -----------------------------------
+        ADD OTHER TYPES HERE
+        -----------------------------------
+        */
 
+        file.popTag();
+    }
+    file.saveFile(path);
 }
+
+
 
 void ObjectManager::updateAll()
 {

@@ -3,7 +3,8 @@
 #include "ofMain.h"
 #include "Tile.h"
 #include "Vec2i.h"
-
+#include "../src-Engine/City.h"
+//#include "objects/City.h" include this once objects are moved into game source
 
 
 
@@ -21,6 +22,7 @@ public:
     void mapTextureNames(std::string path);
     void saveMap(ofVec2i, std::vector<int>);
     void generateMap();
+    void genCities();
 
 private:
 
@@ -32,4 +34,6 @@ private:
     std::vector<int> altitudes;
     std::vector<int> fillAlts;
     int numWater;
+
+    ofxXmlSettings objectFile;
 };

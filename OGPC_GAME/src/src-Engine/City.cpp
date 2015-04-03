@@ -39,14 +39,6 @@
 //}
 //
 
-
-
-
-
-
-
-
-
 City::City()
 {
 
@@ -84,7 +76,7 @@ City::City(int dif, double fpopulation, std::string fcityName, int iTileIndex )
    // cityName = randomname(); // set name to a random combination of prefixes and suffixes
     maxdif = 5;  // set the maximum difficulty for ALL cities
     accelmax = 50; // same in each city
-    difficulty = dif;     // set the difficulty for a city
+    difficulty = dif;     // set the difficulty for a city (1-5?)
     thresholds[0] = .05;     // below this percentage of believers in an entered city, the believers will increase
     thresholds[1] = .5 + difficulty; // above this percentage in an entered city, the converted will increase
     thresholds[2] = .95;  // above this percentage in an entered city, the converted will decline

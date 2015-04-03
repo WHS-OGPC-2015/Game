@@ -37,6 +37,11 @@ ofTrueTypeFont& MenuManager::getFontPointer(int pos)
     return fonts[pos];
 }
 
+void MenuManager::addFont(std::string name, ofTrueTypeFont f)
+{
+    fonts.push_back(f);
+    fontNames[name] = fonts.size()-1;
+}
 void MenuManager::addMenu(Menu m, std::string name)
 {
     menus.push_back(m);//copy menu to array
@@ -76,5 +81,11 @@ void MenuManager::reloadTexture(std::string name, std::string fileName)
     ofTexture tmp;
     ofLoadImage(tmp, fileName);
     textures[textureNames[name]] = tmp;
+}
+
+void MenuManager::addTexture(std::string name, ofTexture tex)
+{
+    textures.push_back(tex);
+    textureNames[name] = textures.size()-1;
 }
 

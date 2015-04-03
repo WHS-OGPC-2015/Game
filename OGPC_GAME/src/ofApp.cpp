@@ -34,6 +34,8 @@ void ofApp::update(){
             resources = new ResourceManager;
             resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
             resources->addTexture("City.png", "City");
+            resources->addTexture("CMBackground.png", "CMBackground");
+            resources->addFont("mySimpleFont.ttf", "CMFont", 24);
 
             gameEngine = new Engine;
             mapGenerator = new GameMap;
@@ -58,7 +60,6 @@ void ofApp::update(){
         if(first == true)
         {
             gameEngine->mainThreadFunction();   //loads textures for the menus
-            std::cout << "here" << std::endl;
             first = false;
         }
         loader->update(viewPos);

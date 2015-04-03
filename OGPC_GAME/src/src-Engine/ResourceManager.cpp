@@ -96,18 +96,28 @@ ofTexture& ResourceManager::getTextureReference(std::string name)
     return textures[textureNames[name]];
 }
 
+ofTexture ResourceManager::getTexture(std::string name)
+{
+    return textures[textureNames[name]];
+}
+
 void ResourceManager::addFont(std::string path, std::string name, int loadSize)
 {
     ofTrueTypeFont tmp;
     tmp.loadFont(path, loadSize);
     fonts.push_back(tmp);
-    textureNames[name] = fonts.size()-1;
+    fontNames[name] = fonts.size()-1;
 }
 
 ofTrueTypeFont& ResourceManager::getFontReference(std::string name)
 {
     ofTrueTypeFont& tmp = fonts[fontNames[name]];
     return tmp;
+}
+
+ofTrueTypeFont ResourceManager::getFont(std::string name)
+{
+    return fonts[fontNames[name]];
 }
 
 void ResourceManager::addSound(std::string path, std::string name, bool stream)

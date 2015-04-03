@@ -8,6 +8,7 @@ class MenuManager
 {
 public:
     void addTexture(std::string name, std::string fileName);//add texture to array by filename and mapped name
+    void addTexture(std::string name, ofTexture tex);
     ofTexture& getTexturePointer(std::string tex);//retrieve texture reference by name
     ofTexture& getTexturePointer(int tex);//retrieve texture reference my position in array
     void reloadTexture(std::string, std::string);
@@ -15,6 +16,7 @@ public:
     void addFont(std::string name, std::string fileName, int fontSize);//add TrueTypeFont to array by filename
     ofTrueTypeFont& getFontPointer(std::string name);//retrieve font by reference by name
     ofTrueTypeFont& getFontPointer(int pos);//retrieve font reference by position in array
+    void addFont(std::string name, ofTrueTypeFont);
 
     void addMenu(Menu, std::string name);//add Menu to menu array
     Menu* getMenuPointerByName(std::string name); //get menu by name

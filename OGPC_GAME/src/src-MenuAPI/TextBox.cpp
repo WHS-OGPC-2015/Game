@@ -7,11 +7,11 @@ TextBox::TextBox(std::string str, ofVec2f posi, ofTrueTypeFont& f)
     font = &f;
 }
 
-void TextBox::TextBox()
+TextBox::TextBox()
 {
 }
 
-void TextBox::Update()
+void TextBox::update()
 {
 }
 
@@ -28,7 +28,7 @@ void TextBox::setText(std::string str)
     text = str;
 }
 
-void TextBox::setPosition(posi)
+void TextBox::setPosition(ofVec2f posi)
 {
     position = posi;
 }

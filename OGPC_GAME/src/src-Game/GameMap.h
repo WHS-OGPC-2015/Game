@@ -35,5 +35,7 @@ private:
     std::vector<int> fillAlts;
     int numWater;
 
+    int numCities;
+
     ofxXmlSettings objectFile;
 };

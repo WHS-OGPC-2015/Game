@@ -7,8 +7,8 @@ class TextBox : MenuEntity
 public:
     TextBox(std::string str, ofVec2f posi, ofTrueTypeFont& f);
     TextBox();
-    void Update();
-    void Draw();
+    void update();
+    void draw();
 
     void addPosition(ofVec2f dpos);
     void setText(std::string str);

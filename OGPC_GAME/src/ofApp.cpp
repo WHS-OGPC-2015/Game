@@ -33,6 +33,7 @@ void ofApp::update(){
 
             resources = new ResourceManager;
             resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
+            resources->addTexture("City.png", "City");
 
             gameEngine = new Engine;
             mapGenerator = new GameMap;
@@ -56,11 +57,6 @@ void ofApp::update(){
     {
         if(first == true)
         {
-//            std::cout << "here1" << std::endl;
-//            mapGenerator = new GameMap;
-//            std::cout << "here" << std::endl;
-//            gameEngine  = new Engine("tiles.xml", "game.xml", "objects.xml", viewPos);
-
             first = false;
         }
         loader->update(viewPos);
@@ -70,11 +66,12 @@ void ofApp::update(){
             {
                 currentState = MAINMENU;
             }
+            dif = ofVec2f(0, 0);
         }
 
         else
         {
-            gameEngine->update();
+            gameEngine->update(mousePos, clicked, pressed);
             if(dragging)
             {
                 dif = mousePos - lastMousePos;
@@ -125,12 +122,11 @@ void ofApp::draw(){
             ofPopMatrix();
             ofTranslate(dif.x, dif.y);
             gameEngine->draw();
-            ofPushMatrix();
             if(pause->isActive())
             {
                 pause->draw();
             }
-
+            ofPushMatrix();
         }
         else if(currentState == MAINMENU)
         {

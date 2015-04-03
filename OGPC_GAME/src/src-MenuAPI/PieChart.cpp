@@ -60,7 +60,7 @@ void PieChart::Draw()
     ofEndShape();
 }
 
-void PieChart::setRadius(double radi);
+void PieChart::setRadius(double radi)
 {
     double tempr = radi/rad;
     for (int i = 0; i < resolution; i++)

@@ -9,15 +9,16 @@
 class City
 {
 public:
-    City(int, Tile btile);
+    City(int dif, double fpopulation, std::string fcityName, int iTileIndex, std::string texName);
+    City();
 
-    void Update(ofVec2f& mousePos, bool& clicked, bool& pressed);
+    void update(ofVec2f& mousePos, bool& clicked, bool& pressed);
     void turnlyUpdate();
     int getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed);
-    void Draw();
+    void draw();
 
-    void setTexture(ofTexture* Text);
-    void setTile(Tile* T);
+    void setTexture(ofTexture& Text);
+    void setTile(Tile T);
 
     int getTileIndex();
     std::string getTextureName();
@@ -33,7 +34,7 @@ private:
     Tile* boundTile;
     int TileIndex;
     ofTexture* cityTexture;
-    std::string TextureName;
+    std::string textureName;
     std::string cityName;
 
     double population;

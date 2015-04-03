@@ -55,20 +55,19 @@ City::City()
     velmax = (thresholds[2]-thresholds[1]) * accelmax / 2;
     extremeaccel[0] = 10;
     extremeaccel[1] = -10;
-    threshnums[0] = 0;int City::getTileIndex()
-{
-    return TileIndex;
+    threshnums[0] = 0;
+
+
 }
 
-}
 
-
-City::City(int dif, double fpopulation, std::string fcityName, int iTileIndex )
+City::City(int dif, double fpopulation, std::string fcityName, int iTileIndex, std::string TN )
 {
-    TileIndex = iTileIndex
+    TileIndex = iTileIndex;
     population = fpopulation; // default population
     converted = 0; // you don't have any influence
     cityName = fcityName;
+    textureName = TN;
     occupied = 0;
     entered = false;
     velocity = 0;
@@ -87,9 +86,9 @@ City::City(int dif, double fpopulation, std::string fcityName, int iTileIndex )
     threshnums[0] = 0;
 }
 
-void City::setTile(Tile* T)
+void City::setTile(Tile T)
 {
-    boundTile = T;
+    boundTile = &T;
 }
 
 int City::getTileIndex()
@@ -98,14 +97,14 @@ int City::getTileIndex()
 }
 
 
-void City::setTexture(ofTexture* Text)
+void City::setTexture(ofTexture& Text)
 {
-    cityTexture = Text;
+    cityTexture = &Text;
 }
 
 std::string City::getTextureName()
 {
-    return TextureName;
+    return textureName;
 }
 
 
@@ -140,7 +139,7 @@ int City::getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
 
  }
 
-void City::Update(ofVec2f& mousePos, bool& clicked, bool& pressed)
+void City::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
 
 }
@@ -223,11 +222,12 @@ void City::turnlyUpdate()
 
 }
 
-void City::Draw()
+void City::draw()
 {
 
     TLpos = ofVec2f(boundTile->getLocation().x - cityTexture->getWidth() /2, boundTile->getLocation().y - cityTexture->getHeight() /2);
     BRpos = ofVec2f(boundTile->getLocation().x + cityTexture->getWidth() /2, boundTile->getLocation().y + cityTexture->getHeight() /2);
+    std::cout << "herem8" << std::endl;
     cityTexture->draw(boundTile->getLocation());
 
 
@@ -261,8 +261,8 @@ double City::getPercentConverted()
 
 void City::saveObjectData(ofxXmlSettings& file)
 {
-
-    file.addValue("cityTexture", TextureName);
+    std::cout << cityName << std::endl;
+    file.addValue("cityTexture", textureName);
     file.addValue("cityName", cityName);
     file.addValue("population", population);
     file.addValue("converted", converted);
@@ -286,8 +286,9 @@ void City::saveObjectData(ofxXmlSettings& file)
 
 void City::loadObjectData(ofxXmlSettings& file)
 {
+    std::cout << "imherem8" << std::endl;
     //TileIndex = boundTile;
-    TextureName = file.getValue("cityTexture", "");
+    textureName = file.getValue("cityTexture", "");
     cityName = file.getValue("cityName", "");
     population = file.getValue("population", 0.0);
     converted = file.getValue("converted", 0.0);

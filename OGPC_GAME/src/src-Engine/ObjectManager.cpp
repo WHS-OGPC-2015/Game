@@ -2,7 +2,7 @@
 
 #include "ObjectManager.h"
 
-ObjectManager::ObjectManager(std::string toLoad, ofVec2f translation, TileManager& t)
+ObjectManager::ObjectManager(std::string toLoad, ofVec2f translation, TileManager* t)
 {
     tiles = t;
     objectMenus = new MenuManager;  //create menu manager for the
@@ -33,13 +33,13 @@ void ObjectManager::loadFromFile(std::string filePath)
                 {
                     addObjectType<City>("City", numType);
                     oVector<City>* C = getPointerToChildByName<City>("City");
-                    City& tmp;                                                  //create temporary city to add textures n stuff to individual cities
+                                                                      //create temporary city to add textures n stuff to individual cities
                     C->loadObjectData(objectFile, numType);                     //load data for (numType) cities in the array
                     for(int ii = 0; ii<numType; ii++)
                     {
-                        tmp = C->getObject(ii);
-                        tmp->setTile(tiles.getTileByIndice(C->getTileIndex()));
-                        tmp->setTexture(recMan.getTextureReference(C->getTextureName()));
+                        City* tmp = C->getObject(ii);
+                        tmp->setTile(tiles->getTileByIndice(tmp->getTileIndex()));
+                        tmp->setTexture(recMan->getTextureReference(tmp->getTextureName()));
                     }
 
                 }
@@ -74,7 +74,7 @@ void ObjectManager::saveToFile(std::string path)
         file.addValue("name", typeName);
         if(typeName == "City")
         {
-            City* C = getPointerToChildByIndice<City>(ii);
+            oVector<City>* C = getPointerToChildByIndice<City>(ii);
             C->saveObjectData(file);
         }
         /*
@@ -90,11 +90,11 @@ void ObjectManager::saveToFile(std::string path)
 
 
 
-void ObjectManager::updateAll()
+void ObjectManager::updateAll(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
     for(int ii = 0; ii < objects.size(); ii++)
     {
-        objects[ii].updateAll();
+        objects[ii]->updateAll(mousePos, clicked, pressed);
     }
 }
 
@@ -102,7 +102,7 @@ void ObjectManager::drawAll()
 {
     for(int ii = 0; ii < objects.size(); ii++)
     {
-        objects[ii].drawAll();
+        objects[ii]->drawAll();
     }
 }
 

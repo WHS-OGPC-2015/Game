@@ -2,8 +2,8 @@
 #include "../XML/src/ofxXmlSettings.h"
 struct oVectorAbstract
 {
-    virtual ~oVectorAbstract() = 0;
-    virtual void updateAll() = 0;
+public:
+    virtual void updateAll(ofVec2f& mousePos, bool& clicked, bool& pressed) = 0;
     virtual void drawAll() = 0;
 };
 
@@ -32,9 +32,9 @@ public:
         vec[which].loadObjectdata(file);
     }
 
-    T getObject(int index)
+    T* getObject(int index)
     {
-        return vec[index];
+        return &vec[index];
     }
 
     void saveObjectData(ofxXmlSettings& file)
@@ -53,11 +53,11 @@ public:
         return vec;
     }
 
-    void updateAll()
+    void updateAll(ofVec2f& mousePos, bool& clicked, bool& pressed)
     {
         for(int ii = 0; ii < vec.size(); ii++)
         {
-            vec[ii].update();
+            vec[ii].update(mousePos, clicked, pressed);
         }
     }
 

@@ -60,11 +60,15 @@ public:
     void loadFromFile(std::string filePath);    //load all objects from file
     void updateAll(ofVec2f& mousePos, bool& clicked, bool& pressed);                           //update all objects
     void drawAll();                             //draw all objects
+    void mainThreadFunction();
 private:
     std::vector<oVectorAbstract*> objects;   //array of objects which will hold their own objects
     std::map<std::string, int> objectArrayNames;
+
     TileManager* tiles;         //local reference to tile manager
     ResourceManager* recMan;    //local reference to resources
     MenuManager* objectMenus;   //manager for popups and stuff
+
+    std::string fileString;
 
 };

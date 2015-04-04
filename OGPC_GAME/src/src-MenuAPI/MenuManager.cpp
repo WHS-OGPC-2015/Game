@@ -71,3 +71,10 @@ void MenuManager::draw()
     }
 }
 
+void MenuManager::reloadTexture(std::string name, std::string fileName)
+{
+    ofTexture tmp;
+    ofLoadImage(tmp, fileName);
+    textures[textureNames[name]] = tmp;
+}
+

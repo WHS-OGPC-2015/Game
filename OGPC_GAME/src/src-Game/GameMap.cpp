@@ -212,8 +212,8 @@ std::vector<int> GameMap::genMap(int sizeX, int sizeY, int seeds)
 
 void GameMap::genMapTwo()
 {
-    mapSize = ofVec2i(10, 10);        //size of the map in tiles
-    int numSeeds = 1;                  //number of mountains to generate in genMap()
+    mapSize = ofVec2i(30, 30);        //size of the map in tiles
+    int numSeeds = 3;                  //number of mountains to generate in genMap()
     int last = 1;                       //last height used(for noise z seed)
     float noiseWeight = 1;              //value to multiply noise vector by before averaging
     float seedWeight = 1;               //value to multiply seed vector by before averaging

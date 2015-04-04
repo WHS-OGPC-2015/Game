@@ -9,6 +9,10 @@ Engine::Engine()
 
 }
 
+void Engine::mainThreadFunction()
+{
+    objects->mainThreadFunction();
+}
 void Engine::setup(std::string tileData, std::string objectData, std::string GameData, ofVec2f& trans, ResourceManager* R)
 {
     tFactor = &trans;

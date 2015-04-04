@@ -5,7 +5,7 @@
     <object>
         <cityTexture>City</cityTexture>
         <cityName>WalrusTown</cityName>
-        <tileIndex>20</tileIndex>
+        <tileIndex>355</tileIndex>
         <population>10000.000000000</population>
         <converted>0.000000000</converted>
         <velocity>0.000000000</velocity>

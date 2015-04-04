@@ -9,13 +9,14 @@ void createCityMenu(MenuManager* man, ofVec2f pos)
     man->addTexture("CMBackground", "CMBackground.png");
     man->addFont("CMText", "MySimpleFont.ttf", 24);
 
-    double halfmenuHeight = man->getTexturePointer("CMBackgroud").getHeight()/2;
-    double halfmenuWidth = man->getTexturePointer("CMBackgroud").getWidth()/2;
+    double halfmenuHeight = man->getTexturePointer("CMBackground").getHeight()/2;
+    double halfmenuWidth = man->getTexturePointer("CMBackground").getWidth()/2;
 
     MenuEntity* citBG;
     citBG = new MenuBackground{
                     pos,
-                    man->getTexturePointer("CMBackgroud")
+                    man->getTexturePointer("CMBackground"),
+                    false
                      };
 
     MenuEntity* nameBox;
@@ -72,12 +73,12 @@ void createCityMenu(MenuManager* man, ofVec2f pos)
 
     cityMenu.addEntity(*citBG, "CityBackground");
     cityMenu.addEntity(*nameBox, "CityName");
-    cityMenu.addEntity(*discNum, "DiscipleNumber");
-    cityMenu.addEntity(*difNum, "Difficulty");
-    cityMenu.addEntity(*converted, "BelieverPie");
-    cityMenu.addEntity(*discBox, "DiscipleBox");
-    cityMenu.addEntity(*difBox, "DifficultyBox");
-    cityMenu.addEntity(*PCBox, "PieChartText");
+//    cityMenu.addEntity(*discNum, "DiscipleNumber");
+//    cityMenu.addEntity(*difNum, "Difficulty");
+    //cityMenu.addEntity(*converted, "BelieverPie");
+//    cityMenu.addEntity(*discBox, "DiscipleBox");
+//    cityMenu.addEntity(*difBox, "DifficultyBox");
+//    cityMenu.addEntity(*PCBox, "PieChartText");
 
     man->addMenu(cityMenu, "CityMenu");
 };
@@ -109,5 +110,11 @@ void resetCityMenuPositions(Menu& citymenu, ofVec2f deltaPos)
     PieChart* Pchart = citymenu.getPointerToChildByName<PieChart>("BelieverPie");
     Pchart->addPosition(deltaPos);
 }
+
+void loadTextures(MenuManager& man)
+{
+    man.reloadTexture("CMBackground", "CMBackground.png");
+    //man.reloadTexture()
+};
 
 

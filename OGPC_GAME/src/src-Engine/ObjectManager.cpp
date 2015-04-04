@@ -14,6 +14,10 @@ ObjectManager::~ObjectManager()
 {
     delete objectMenus;
 }
+void ObjectManager::mainThreadFunction()
+{
+
+}
 void ObjectManager::loadFromFile(std::string filePath)
 {
     ofxXmlSettings objectFile;
@@ -104,14 +108,19 @@ void ObjectManager::updateAll(ofVec2f& mousePos, bool& clicked, bool& pressed)
     {
         objects[ii]->updateAll(mousePos, clicked, pressed);
     }
+    objectMenus->update(mousePos, clicked, pressed);
 }
 
 void ObjectManager::drawAll()
 {
+
     for(int ii = 0; ii < objects.size(); ii++)
     {
         objects[ii]->drawAll();
     }
+    objectMenus->draw();
+    objectMenus->getMenuPointerByName("CityMenu")->setInactive();
+
 }
 
 

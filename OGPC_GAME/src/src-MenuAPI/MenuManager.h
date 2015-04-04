@@ -10,6 +10,7 @@ public:
     void addTexture(std::string name, std::string fileName);//add texture to array by filename and mapped name
     ofTexture& getTexturePointer(std::string tex);//retrieve texture reference by name
     ofTexture& getTexturePointer(int tex);//retrieve texture reference my position in array
+    void reloadTexture(std::string, std::string);
 
     void addFont(std::string name, std::string fileName, int fontSize);//add TrueTypeFont to array by filename
     ofTrueTypeFont& getFontPointer(std::string name);//retrieve font by reference by name

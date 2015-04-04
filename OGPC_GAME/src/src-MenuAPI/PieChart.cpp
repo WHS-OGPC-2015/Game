@@ -9,6 +9,7 @@ PieChart::PieChart()
     {
         vertecies.push_back(ofVec2f(rad * cos(2 * pi / resolution + pi / 2), -rad * sin(2 * pi / resolution + pi / 2)));
     }
+    arc.setArcResolution(360);
 }
 
 PieChart::PieChart(double tot, double dep, double radi, ofVec2f posi, ofColor c1, ofColor c2)
@@ -32,32 +33,36 @@ void PieChart::setVariables(double dub, double tot)
     total = tot;
 }
 
-void PieChart::Update()
+void PieChart::update()
 {
     rati = depVar/total;
     endingindeces[1] = rati * resolution + .5;
+    arc.arc(pos.x, pos.y, rad, rad, pi/2, pi/2+(rad*2*pi));
 }
 
-void PieChart::Draw()
+void PieChart::draw()
 {
-    ofSetPolyMode(OF_POLY_WINDING_NONZERO);
-    ofSetColor(colors[0]);
+//    ofSetPolyMode(OF_POLY_WINDING_NONZERO);
+//    ofSetColor(colors[0]);
+//
+//    ofBeginShape();
+//        for (int i = endingindeces[0]; i < resolution; i++)
+//        {
+//            ofVertex(vertecies[i].x, vertecies[i].y);
+//        }
+//    ofEndShape();
+//
+//    ofSetColor(colors[1]);
+//
+//    ofBeginShape();
+//        for (int i = endingindeces[0]; i < endingindeces[1]; i++)
+//        {
+//            ofVertex(vertecies[i].x, vertecies[i].y);
+//        }
+//    ofEndShape();
+    arc.draw();
 
-    ofBeginShape();
-        for (int i = endingindeces[0]; i < resolution; i++)
-        {
-            ofVertex(vertecies[i].x, vertecies[i].y);
-        }
-    ofEndShape();
 
-    ofSetColor(colors[1]);
-
-    ofBeginShape();
-        for (int i = endingindeces[0]; i < endingindeces[1]; i++)
-        {
-            ofVertex(vertecies[i].x, vertecies[i].y);
-        }
-    ofEndShape();
 }
 
 void PieChart::setRadius(double radi)

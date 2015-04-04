@@ -145,6 +145,7 @@ void City::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
     if(getClickedData(mousePos, clicked, pressed) == 1)
     {
         fillMenu();
+        std::cout << "imhere" << std::endl;
         cityMenu->setActive();
     }
 }
@@ -232,7 +233,6 @@ void City::draw()
 
     TLpos = ofVec2f(boundTile->getLocation().x - cityTexture->getWidth() /2, boundTile->getLocation().y - cityTexture->getHeight() /2);
     BRpos = ofVec2f(boundTile->getLocation().x + cityTexture->getWidth() /2, boundTile->getLocation().y + cityTexture->getHeight() /2);
-    std::cout << "herem8" << std::endl;
     cityTexture->draw(boundTile->getLocation());
 
 
@@ -243,20 +243,20 @@ void City::draw()
 
 void City::fillMenu()
 {
-    TextBox* cName = cityMenu->getPointerToChildByName<TextBox>("CityName");
-    cName->setText(cityName);
-
-    TextBox* disNumber = cityMenu->getPointerToChildByName<TextBox>("DiscipleNumber");
-    ostringstream convert;
-    convert << occupied;
-    disNumber->setText(convert.str());
-
-    TextBox* difNumber = cityMenu->getPointerToChildByName<TextBox>("Difficulty");
-    convert << difficulty;
-    disNumber->setText(convert.str());
-
-    PieChart*  pChart = cityMenu->getPointerToChildByName<PieChart>("BelieverPie");
-    pChart->setVariables(converted, population);
+//    TextBox* cName = cityMenu->getPointerToChildByName<TextBox>("CityName");
+//    cName->setText(cityName);
+//
+//    TextBox* disNumber = cityMenu->getPointerToChildByName<TextBox>("DiscipleNumber");
+//    ostringstream convert;
+//    convert << occupied;
+//    disNumber->setText(convert.str());
+//
+//    TextBox* difNumber = cityMenu->getPointerToChildByName<TextBox>("Difficulty");
+//    convert << difficulty;
+//    disNumber->setText(convert.str());
+//
+//    PieChart*  pChart = cityMenu->getPointerToChildByName<PieChart>("BelieverPie");
+//    pChart->setVariables(converted, population);
 
 }
 
@@ -298,7 +298,6 @@ void City::saveObjectData(ofxXmlSettings& file)
 
 void City::loadObjectData(ofxXmlSettings& file)
 {
-    std::cout << "imherem8" << std::endl;
     //TileIndex = boundTile;
     textureName = file.getValue("cityTexture", "");
     cityName = file.getValue("cityName", "");

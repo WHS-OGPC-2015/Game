@@ -57,6 +57,8 @@ void ofApp::update(){
     {
         if(first == true)
         {
+            gameEngine->mainThreadFunction();   //loads textures for the menus
+            std::cout << "here" << std::endl;
             first = false;
         }
         loader->update(viewPos);

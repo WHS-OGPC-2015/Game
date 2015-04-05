@@ -10,7 +10,7 @@ class Band
 public:
 
     Band();
-    Band(bool incog, bool incarn, int startnum, int mov, std::string incarnName /*set as "" if incarn is false*/);
+    Band(bool incog, bool incarn, int startnum, int mov, double tilew, std::string incarnName /*set as "" if incarn is false*/);
 
     void draw();
     int update(ofVec2f& mousePos, bool& clicked, bool& pressed);
@@ -18,7 +18,7 @@ public:
     int getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed);
 
 
-    void setTexture(ofTexture& TN0, ofTexture& TN1, ofTexture& TN2 , ofTexture& TN3);
+    void setTextures(ofTexture& TN0, ofTexture& TN1, ofTexture& TN2 , ofTexture& TN3);
     void setTile(Tile T);
     int getIndex();
     vector<std::string> getTextureNames();

@@ -4,16 +4,16 @@
 
 int Band::convertTo1dindex(ofVec2i v)
 {
-    return (v.y * (fabs(extremeTiles[1].x - extremeTiles[0].x)) + v.x);
+    return (v.y * (fabs(extremeTiles[1].x - extremeTiles[0].x)) + v.x); // converts an ofVec2i to an int based on the amount of tiles in the map
 }
 
-int turnToInt(double d)
+int turnToInt(double d) // returns an int -- probably something built in, but I'm lazy
 {
     int i = d;
     return i;
 }
 
-Band::Band()
+Band::Band() // empty constructor
 {
     incognito = false;
     incarnation = false;
@@ -29,23 +29,24 @@ Band::Band()
 
 }
 
-Band::Band(bool incog, bool incarn, int startnum, int mov, std::string incarnName /*set as "" if incarn is false*/)
+//you can change anything that would be have a possibility of being different at the start, including arbitrary things
+Band::Band(bool incog, bool incarn, int startnum, int mov, double tilew, std::string incarnName /*set as "" if incarn is false*/)
 {
     incognito = incog;
     incarnation = incarn;
     selected = false;
     movable = true;
-    begDisNum = startnum; // arbitrary
-    movement = mov; // arbitrary
+    begDisNum = startnum;
+    movement = mov;
     discipleNum = begDisNum;
     incarnationName = incarnName;
     bandClick = 0;
     actionState = 0;
-    tileWidth = 0;
+    tileWidth = tilew;
 }
 
 
-void Band::resetBandType()
+void Band::resetBandType() // updates if you are normal, in incog, the incarnation, or if you are both
 {
     if (incognito == true)
     {
@@ -74,27 +75,20 @@ int Band::getBandType()
 }
 
 
-void Band::draw()
+void Band::draw() // draws the current texture at the bound tile
 {
-//    BandTextures[bandType]->draw();
-
-    TLpos = ofVec2f(boundTile->getLocation().x - BandTextures[bandType]->getWidth() /2, boundTile->getLocation().y - BandTextures[bandType]->getHeight() /2);
-    BRpos = ofVec2f(boundTile->getLocation().x + BandTextures[bandType]->getWidth() /2, boundTile->getLocation().y + BandTextures[bandType]->getHeight() /2);
-
+    BandTextures[bandType]->draw(boundTile ->getLocation());
 }
 
+
+//returns 0 if not on the city, 1 if hovering, 2 if pressing, and 3 if clicked (for 1 frame)
 int Band::getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
 
     if (mousePos.x < TLpos.x || mousePos.x > BRpos.x ||
         mousePos.y < TLpos.y || mousePos.y > BRpos.y)
     {
-        if (clicked == true)
-        {
-        }
-
         return 0;
-
         // its ouside
     }
     else
@@ -120,42 +114,15 @@ int Band::getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
     }
 }
 
-void Band::setTexture(ofTexture& TN0, ofTexture& TN1, ofTexture& TN2 , ofTexture& TN3)
-{
-    BandTextures[0] = &TN0;
-    BandTextures[1] = &TN1;
-    BandTextures[2] = &TN2;
-    BandTextures[3] = &TN3;
-}
 
-void Band::setTile(Tile T)
-{
-    boundTile = &T;
-}
-
-int Band::getIndex()
-{
-    return boundTileIndex;
-}
-
-vector<std::string> Band::getTextureNames()
-{
-    vector<std::string> names;
-    for (int i = 0; i < 4; i++)
-    {
-        names.push_back(TextureNames[i]);
-    }
-
-    return names;
-}
-
+//give the band a menu to point to
 void Band::setBandMenu(Menu& fillme)
 {
     bandMenu = &fillme;
     alignButtons();
 }
 
-
+// fills the menu
 void Band::fillMenu()
 {
     ostringstream convert;
@@ -168,6 +135,7 @@ void Band::fillMenu()
     disNum->setText(convert.str());
 }
 
+// sets button pointer to menu buttons
 void Band::alignButtons()
 {
     actionButtons[0] = bandMenu->getPointerToChildByName<HoverButton>("MoveButton");
@@ -175,6 +143,7 @@ void Band::alignButtons()
     actionButtons[2] = bandMenu->getPointerToChildByName<HoverButton>("IncognitoButton");
 }
 
+// determine, based on the buttons, which actionState to be in
 void Band::findActions()
 {
     if (selected == true and movable == true)
@@ -203,21 +172,21 @@ void Band::findActions()
 
 void Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
-    bandMenu->setInactive();
-    if (actionState == 0)
+    bandMenu->setInactive(); // start the update with this
+    if (actionState == 0) // normal
     {
 
         if (getClickedData(mousePos, clicked, pressed) == 3)
         {
             selected = true;
         }
-        else if (clicked == false)
+        else if (clicked == true) // if clicked not on the city
         {
            selected = false;
         }
         else if (getClickedData(mousePos, clicked, pressed) == 1 or getClickedData(mousePos, clicked, pressed) == 2)
         {
-
+            // nothing yet
         }
         if (selected == true)
         {
@@ -226,14 +195,15 @@ void Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
         return -1;
     }
 
-    else if (actionState == 1)
+    else if (actionState == 1) // moving
     {
         if (clicked == true)
         {
+            // finds the 2d coord of your mose click, based on the tiles
             ofVec2i temptile = ofVec2i(turnToInt(mousePos.x / tileWidth), turnToInt(mousePos.y / tileWidth));
             for (int i = 0; i < possibleMoves.size(); i++)
             {
-                if (temptile = possibleMoves[i])
+                if (temptile = possibleMoves[i])// check every possible move if there is a match
                 {
                     int t = convertTo1dindex(temptile);
                     return t;
@@ -244,7 +214,7 @@ void Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
         return -2;
     }
 
-    else if (actionState == 2)
+    else if (actionState == 2) // dispatching
     {
        if (clicked == true)
         {
@@ -268,11 +238,16 @@ void Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 
 void Band::turnlyUpdate()
 {
+    //reset the TL and BR positions for collisions
+    TLpos = ofVec2f(boundTile->getLocation().x - BandTextures[bandType]->getWidth() /2, boundTile->getLocation().y - BandTextures[bandType]->getHeight() /2);
+    BRpos = ofVec2f(boundTile->getLocation().x + BandTextures[bandType]->getWidth() /2, boundTile->getLocation().y + BandTextures[bandType]->getHeight() /2);
+
+    // reset every turn
     actionState = 0;
     movable = true;
-    ofVec2i temp;
-
     possibleMoves.clear();
+
+    ofVec2i temp;
     for (int i = -movement; i <= movement; i++)
     {
         for (int j = (fabs(i) - movement); j <= (movement - fabs(i)); j++)
@@ -359,7 +334,23 @@ void Band::setMaxTiles(ofVec2i v)
     extremeTiles[1] = v;
 }
 
+//set ALL of the textures
+void Band::setTextures(ofTexture& TN0, ofTexture& TN1, ofTexture& TN2 , ofTexture& TN3)
+{
+    BandTextures[0] = &TN0;
+    BandTextures[1] = &TN1;
+    BandTextures[2] = &TN2;
+    BandTextures[3] = &TN3;
+}
+void Band::setTile(Tile T)
+{
+    boundTile = &T;
+}
 
+int Band::getIndex()
+{
+    return boundTileIndex;
+}
 
 void Band::switchSelect()
 {
@@ -374,4 +365,15 @@ bool Band::getSelect()
 void Band::setTileWidth(double d)
 {
     tileWidth = d;
+}
+
+vector<std::string> Band::getTextureNames()
+{
+    vector<std::string> names;
+    for (int i = 0; i < 4; i++)
+    {
+        names.push_back(TextureNames[i]);
+    }
+
+    return names;
 }

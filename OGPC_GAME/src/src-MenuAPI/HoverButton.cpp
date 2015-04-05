@@ -224,6 +224,12 @@ bool HoverButton::getEventDataBool()
 
 }
 
+void addPosition(ovVec2f p)
+{
+    position.x += p.x;
+    position.y += p.y;
+}
+
 void HoverButton::setPosition(ofVec2f v)
 {
     position = v;

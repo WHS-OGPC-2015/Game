@@ -2,12 +2,13 @@
 
 void createCityMenu(MenuManager* man, ofVec2f pos, ResourceManager* R)
 {
-    int borderwidth = 5;
+    int borderWidth = 10;
     double pcrad = 50;
     Menu cityMenu(ofVec2f(0, 0));
 
     man->addTexture("CMBackground", R->getTexture("CMBackground"));
     man->addFont("CMText", R->getFont("CMFont"));
+
 
     double halfmenuHeight = man->getTexturePointer("CMBackground").getHeight()/2;
     double halfmenuWidth = man->getTexturePointer("CMBackground").getWidth()/2;
@@ -22,42 +23,48 @@ void createCityMenu(MenuManager* man, ofVec2f pos, ResourceManager* R)
     MenuEntity* nameBox;
     nameBox = new TextBox{
                     "CITY_NAME",
-                    ofVec2f(pos.x, pos.y - halfmenuHeight + borderwidth),
+                    ofVec2f(pos.x,
+                            pos.y - halfmenuHeight + borderWidth),
                     man->getFontPointer("CMText")
                     };
 
     MenuEntity* PCBox;
     PCBox = new TextBox{
                     "Converted Population",
-                    ofVec2f(pos.x + halfmenuWidth - borderwidth, pos.y +  halfmenuHeight - borderwidth - 2 * pcrad),
+                    ofVec2f(pos.x,
+                            pos.y + halfmenuHeight - 2 * borderWidth - 2 * pcrad - man->getFontPointer("CMText").stringHeight("Converted Population")/2),
                     man->getFontPointer("CMText")
                     };
 
     MenuEntity* discBox;
     discBox = new TextBox{
                     "Disciples Inside:",
-                    ofVec2f(pos.x - halfmenuWidth + borderwidth, pos.y +  halfmenuHeight - borderwidth - 2 * pcrad),
+                    ofVec2f(pos.x - halfmenuWidth + borderWidth + man->getFontPointer("CMText").stringWidth("Disciples Inside:")/2,
+                            pos.y - 2*(halfmenuHeight - borderWidth)/3),
                     man->getFontPointer("CMText")
                     };
 
     MenuEntity* difBox;
     difBox = new TextBox{
                     "Difficulty:",
-                    ofVec2f(pos.x - halfmenuWidth + borderwidth, pos.y +  halfmenuHeight - borderwidth - 2 * pcrad + 20 /* some constant?*/),
+                    ofVec2f(pos.x - halfmenuWidth + borderWidth + man->getFontPointer("CMText").stringWidth("Difficulty:")/2,
+                            pos.y - (halfmenuHeight - borderWidth)/3),
                     man->getFontPointer("CMText")
                     };
 
     MenuEntity* discNum;
     discNum = new TextBox{
                     "X",
-                    ofVec2f(pos.x - halfmenuWidth + borderwidth + 30 /*a constant*/, pos.y +  halfmenuHeight - borderwidth - 2 * pcrad),
+                    ofVec2f(pos.x - halfmenuWidth + 2*borderWidth + man->getFontPointer("CMText").stringWidth("Disciples Inside:"),
+                            pos.y - 2*(halfmenuHeight - borderWidth)/3),
                     man->getFontPointer("CMText")
                     };
 
     MenuEntity* difNum;
     difNum = new TextBox{
-                    "Disciples Inside:",
-                    ofVec2f(pos.x - halfmenuWidth + borderwidth + 30, pos.y +  halfmenuHeight - borderwidth - 2 * pcrad + 20),
+                    "Y",
+                    ofVec2f(pos.x - halfmenuWidth + 2*borderWidth + man->getFontPointer("CMText").stringWidth("Difficulty:"),
+                            pos.y - (halfmenuHeight - borderWidth)/3),
                     man->getFontPointer("CMText")
                     };
 
@@ -66,19 +73,20 @@ void createCityMenu(MenuManager* man, ofVec2f pos, ResourceManager* R)
                     3,
                     1,
                     pcrad,
-                    ofVec2f(pos.x + halfmenuWidth - borderwidth - pcrad, pos.y + halfmenuHeight - borderwidth - pcrad),
+                    ofVec2f(pos.x,
+                            pos.y + halfmenuHeight - borderWidth - pcrad),
                     ofColor::blue,
                     ofColor::darkBlue
                     };
 
     cityMenu.addEntity(*citBG, "CityBackground");
     cityMenu.addEntity(*nameBox, "CityName");
-//    cityMenu.addEntity(*discNum, "DiscipleNumber");
-//    cityMenu.addEntity(*difNum, "Difficulty");
+    cityMenu.addEntity(*discNum, "DiscipleNumber");
+    cityMenu.addEntity(*difNum, "Difficulty");
     cityMenu.addEntity(*converted, "BelieverPie");
-//    cityMenu.addEntity(*discBox, "DiscipleBox");
-//    cityMenu.addEntity(*difBox, "DifficultyBox");
-//    cityMenu.addEntity(*PCBox, "PieChartText");
+    cityMenu.addEntity(*discBox, "DiscipleBox");
+    cityMenu.addEntity(*difBox, "DifficultyBox");
+    cityMenu.addEntity(*PCBox, "PieChartText");
 
     man->addMenu(cityMenu, "CityMenu");
 };

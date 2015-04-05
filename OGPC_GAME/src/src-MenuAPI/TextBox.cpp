@@ -20,7 +20,7 @@ void TextBox::draw()
    if(font != NULL)
     {
         //center the text
-        font->drawString(text, position.x - font->stringWidth(text)/2, position.y - font->stringHeight(text)/2);
+        font->drawString(text, position.x - font->stringWidth(text)/2, position.y + font->stringHeight(text)/2 );
     }
 }
 void TextBox::setText(std::string str)

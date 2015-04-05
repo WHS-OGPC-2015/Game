@@ -48,6 +48,7 @@ City::City(int dif, double fpopulation, std::string fcityName, int iTileIndex, s
     extremeaccel[1] = -10;
     threshnums[0] = 0;
     drawMenu = false;
+
 }
 
 void City::setTile(Tile* T)
@@ -99,6 +100,9 @@ int City::getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
 
 void City::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
+    TLpos = ofVec2f(boundTile->getLocation().x, boundTile->getLocation().y);
+    BRpos = ofVec2f(boundTile->getLocation().x + cityTexture->getWidth(), boundTile->getLocation().y + cityTexture->getHeight());
+
     if(getClickedData(mousePos, clicked, pressed) == 1)
     {
         fillMenu();
@@ -179,9 +183,6 @@ void City::turnlyUpdate()
 
 void City::draw()
 {
-
-    TLpos = ofVec2f(boundTile->getLocation().x - cityTexture->getWidth() /2, boundTile->getLocation().y - cityTexture->getHeight() /2);
-    BRpos = ofVec2f(boundTile->getLocation().x + cityTexture->getWidth() /2, boundTile->getLocation().y + cityTexture->getHeight() /2);
     cityTexture->draw(boundTile->getLocation());
 }
 

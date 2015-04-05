@@ -23,6 +23,7 @@ public:
     void saveMap(ofVec2i, std::vector<int>);
     void generateMap();
     void genCities();
+    std::string randomName();
 
 private:
 

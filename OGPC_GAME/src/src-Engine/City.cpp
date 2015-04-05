@@ -2,42 +2,6 @@
 #include <sstream>
 
 
-//std::string randomname()
-//{
-//    std::vector <std::string> prefixes;
-//    std::vector <std::string> suffixes;
-//    std::string line;
-//
-//    int recordpf = 0;
-//
-//    std::ifstream TownNames("CityNames.txt");
-//    if(TownNames.is_open())
-//    {
-//        while(getline(TownNames, line))
-//        {
-//            if (line == "---Prefixes---")
-//            {
-//                recordpf = 1;
-//            }
-//            else if (recordpf == 1)
-//            {
-//                prefixes.push_back(line);
-//            }
-//            if (line == "---Suffixes---")
-//            {
-//                recordpf = 2;
-//            }
-//            else if (recordpf == 2)
-//            {
-//                suffixes.push_back(line);
-//            }
-//        }
-//        TownNames.close();
-//    }
-//    std::string retstr = prefixes[ofRandom(0, prefixes.size())]+suffixes[ofRandom(0,suffixes.size())];
-//    return  retstr;
-//}
-//
 
 City::City()
 {
@@ -60,12 +24,11 @@ City::City()
 
 }
 
-
 City::City(int dif, double fpopulation, std::string fcityName, int iTileIndex, std::string TN )
 {
     TileIndex = iTileIndex;
     population = fpopulation; // default population
-    converted = 0; // you don't have any influence
+    converted = 4000; // you don't have any influence
     cityName = fcityName;
     textureName = TN;
     occupied = 0;
@@ -97,7 +60,6 @@ int City::getTileIndex()
     return TileIndex;
 }
 
-
 void City::setTexture(ofTexture& Text)
 {
     cityTexture = &Text;
@@ -107,11 +69,6 @@ std::string City::getTextureName()
 {
     return textureName;
 }
-
-
-
-
-
 
 int City::getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
  {
@@ -145,7 +102,6 @@ void City::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
     if(getClickedData(mousePos, clicked, pressed) == 1)
     {
         fillMenu();
-        std::cout << "imhere" << std::endl;
         cityMenu->setActive();
     }
 }
@@ -219,13 +175,6 @@ void City::turnlyUpdate()
         }
     }
 
-
-
-
-
-
-
-
 }
 
 void City::draw()
@@ -234,17 +183,12 @@ void City::draw()
     TLpos = ofVec2f(boundTile->getLocation().x - cityTexture->getWidth() /2, boundTile->getLocation().y - cityTexture->getHeight() /2);
     BRpos = ofVec2f(boundTile->getLocation().x + cityTexture->getWidth() /2, boundTile->getLocation().y + cityTexture->getHeight() /2);
     cityTexture->draw(boundTile->getLocation());
-
-
-
 }
-
-
 
 void City::fillMenu()
 {
-//    TextBox* cName = cityMenu->getPointerToChildByName<TextBox>("CityName");
-//    cName->setText(cityName);
+    TextBox* cName = cityMenu->getPointerToChildByName<TextBox>("CityName");
+    cName->setText(cityName);
 //
 //    TextBox* disNumber = cityMenu->getPointerToChildByName<TextBox>("DiscipleNumber");
 //    ostringstream convert;
@@ -255,8 +199,8 @@ void City::fillMenu()
 //    convert << difficulty;
 //    disNumber->setText(convert.str());
 //
-//    PieChart*  pChart = cityMenu->getPointerToChildByName<PieChart>("BelieverPie");
-//    pChart->setVariables(converted, population);
+    PieChart*  pChart = cityMenu->getPointerToChildByName<PieChart>("BelieverPie");
+    pChart->setVariables(converted, population);
 
 }
 

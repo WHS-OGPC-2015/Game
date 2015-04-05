@@ -13,6 +13,8 @@ public:
     void setText(std::string str);
     void setPosition(ofVec2f posi);
     void setFont(ofTrueTypeFont& f);
+    int getHeight();
+    int getWidth();
 
     //dont use these but they are virtual
     bool getEventDataBool()

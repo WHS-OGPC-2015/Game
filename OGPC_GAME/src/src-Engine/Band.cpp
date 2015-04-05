@@ -23,7 +23,6 @@ Band::Band() // empty constructor
     discipleNum = begDisNum;
     incarnationName = "";
     movable = true;
-    bandClick = 0;
     actionState = 0;
     tileWidth = 0;
 
@@ -40,7 +39,6 @@ Band::Band(bool incog, bool incarn, int startnum, int mov, double tilew, std::st
     movement = mov;
     discipleNum = begDisNum;
     incarnationName = incarnName;
-    bandClick = 0;
     actionState = 0;
     tileWidth = tilew;
 }
@@ -170,7 +168,7 @@ void Band::findActions()
     }
 }
 
-void Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
+int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
     bandMenu->setInactive(); // start the update with this
     if (actionState == 0) // normal
@@ -201,9 +199,9 @@ void Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
         {
             // finds the 2d coord of your mose click, based on the tiles
             ofVec2i temptile = ofVec2i(turnToInt(mousePos.x / tileWidth), turnToInt(mousePos.y / tileWidth));
-            for (int i = 0; i < possibleMoves.size(); i++)
+            for (int i = 0; i < possibleMovesCoords.size(); i++)
             {
-                if (temptile = possibleMoves[i])// check every possible move if there is a match
+                if (temptile.x == possibleMovesCoords[i].x and temptile.y == possibleMovesCoords[i].y)// check every possible move if there is a match
                 {
                     int t = convertTo1dindex(temptile);
                     return t;
@@ -220,13 +218,20 @@ void Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
         {
             ofVec2i temptila = ofVec2i(turnToInt(mousePos.x / tileWidth), turnToInt(mousePos.y / tileWidth));
 
-            if (temptile =  ofVec2i(boundTile->getLocation().x / tileWidth - 1, boundTile->getLocation().y / tileWidth) ||
-                temptile =  ofVec2i(boundTile->getLocation().x / tileWidth + 1, boundTile->getLocation().y / tileWidth) ||
-                temptile =  ofVec2i(boundTile->getLocation().x / tileWidth, boundTile->getLocation().y / tileWidth + 1) ||
-                temptile =  ofVec2i(boundTile->getLocation().x / tileWidth, boundTile->getLocation().y / tileWidth - 1))
+            ofVec2i possibleTiles[4];
+
+            possibleTiles[0] = ofVec2i(boundTile->getLocation().x / tileWidth - 1, boundTile->getLocation().y / tileWidth);
+            possibleTiles[1] = ofVec2i(boundTile->getLocation().x / tileWidth + 1, boundTile->getLocation().y / tileWidth);
+            possibleTiles[2] = ofVec2i(boundTile->getLocation().x / tileWidth, boundTile->getLocation().y / tileWidth + 1);
+            possibleTiles[3] = ofVec2i(boundTile->getLocation().x / tileWidth, boundTile->getLocation().y / tileWidth - 1);
+
+            for (int i = 0; i < 4; i++)
             {
-                int q = convertTo1dindex(temptila);
-                return q;
+                if (temptila.x ==  possibleTiles[i].x and temptila.y ==  possibleTiles[i].y)
+                {
+                    int q = convertTo1dindex(temptila);
+                    return q;
+                }
             }
 
 
@@ -245,7 +250,8 @@ void Band::turnlyUpdate()
     // reset every turn
     actionState = 0;
     movable = true;
-    possibleMoves.clear();
+    possibleMovesCoords.clear();
+    possibleMovesIndex.clear();
 
     ofVec2i temp;
     for (int i = -movement; i <= movement; i++)
@@ -261,7 +267,8 @@ void Band::turnlyUpdate()
             }
             else
             {
-                possibleMoves.push_back(convertTo1dindex(temp));
+                possibleMovesCoords.push_back(temp);
+                possibleMovesIndex.push_back(convertTo1dindex(temp));
             }
         }
     }

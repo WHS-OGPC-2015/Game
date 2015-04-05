@@ -96,5 +96,6 @@ private:
     Menu* bandMenu;
     HoverButton* actionButtons[3];
 
-    vector<int> possibleMoves;
+    vector<ofVec2i> possibleMovesCoords;
+    vector<int> possibleMovesIndex;
 };

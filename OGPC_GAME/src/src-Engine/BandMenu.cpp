@@ -109,7 +109,7 @@ void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
     man->addMenu(bandMenu, "BandMenu");
 }
 
-void resetCityMenuPositions(Menu& bandmenu, ofVec2f deltaPos)
+void resetBandMenuPositions(Menu& bandmenu, ofVec2f deltaPos)
 {
     TextBox* texbox[3];
 
@@ -127,7 +127,7 @@ void resetCityMenuPositions(Menu& bandmenu, ofVec2f deltaPos)
 
 //-------------------------------------------------------------------------------------
     MenuBackground* bandlBG = bandmenu.getPointerToChildByName<MenuBackground>("BandMenuBackground");
-    cityBG->addPosition(deltaPos);
+    bandlBG->addPosition(deltaPos);
 //----------------------------------------------------------------------------------------------------------
     HoverButton* buttons[3];
 

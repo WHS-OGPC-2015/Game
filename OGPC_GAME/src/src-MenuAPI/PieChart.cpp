@@ -44,6 +44,7 @@ void PieChart::draw()
     ofSetColor(colors[1]);
     ofCircle(pos.x, pos.y, rad);
     arc.draw();
+    ofSetColor(ofColor::white);
 
 
 

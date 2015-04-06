@@ -60,6 +60,7 @@ public:
     void loadFromFile(std::string filePath);    //load all objects from file
     void updateAll(ofVec2f& mousePos, bool& clicked, bool& pressed);                           //update all objects
     void drawAll();                             //draw all objects
+    void drawNoTranslate();
     void mainThreadFunction();
 private:
     std::vector<oVectorAbstract*> objects;   //array of objects which will hold their own objects

@@ -27,6 +27,8 @@ private:
 
     std::vector<bool> toDraw;
 
+    ofVec2f preLoadDist;
+
 
 
 

@@ -5,7 +5,7 @@
 void ofApp::setup(){
     viewPos = ofVec2f(0, 0);
     first = true;
-    currentState = LOADING;
+    currentState = MAINMENU;
     ofSetFrameRate(60); //set framerate
     ofSeedRandom();
 }
@@ -125,13 +125,18 @@ void ofApp::draw(){
         {
             ofSetColor(255, 255, 255);
             ofPopMatrix();
-            ofTranslate(dif.x, dif.y);
+            ofTranslate(viewPos.x, viewPos.y);
             gameEngine->draw();
+            ofPushMatrix();
+            ofPopMatrix();
+            ofTranslate(-viewPos.x, -viewPos.y);
+            gameEngine->drawNoTranslate();
             if(pause->isActive())
             {
                 pause->draw();
             }
             ofPushMatrix();
+
         }
         else if(currentState == MAINMENU)
         {

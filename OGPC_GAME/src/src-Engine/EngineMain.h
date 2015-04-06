@@ -12,6 +12,7 @@ public:
     void update(ofVec2f& mousePos, bool& clicked, bool& pressed);
     void draw();
     void mainThreadFunction();
+    void drawNoTranslate();
 private:
     TileManager* tiles;
     ResourceManager* resources;

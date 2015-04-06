@@ -35,6 +35,11 @@ void Engine::draw()
     objects->drawAll();
 }
 
+void Engine::drawNoTranslate()
+{
+    objects->drawNoTranslate();
+}
+
 Engine::~Engine()
 {
     //delete resources;

@@ -3,8 +3,6 @@
 TileManager::TileManager(std::string file, ofVec2f& trans, ResourceManager& recMan) : tFactor(trans), resources(recMan)
 {
 
-
-
     loadFromFile(file);
 
     for(int ii = 0; ii<tiles.size(); ii++)//initialize all members of array to false
@@ -75,8 +73,8 @@ void TileManager::loadFromFile(std::string file)
 void TileManager::update()
 {
 
-    maxDisplayDim = ofVec2f(trunc(ofGetWindowWidth()/tileSize.x), trunc(ofGetWindowHeight()/tileSize.y));//max number of tiles that can be displayed on the screen
-    topLeftTile = ofVec2f(fabs(trunc(tFactor.x/tileSize.x)), fabs(trunc(tFactor.y/tileSize.y)));               //number of tiles the map has been translated
+    maxDisplayDim = ofVec2f(trunc(ofGetWindowWidth()/tileSize.x)+1, trunc(ofGetWindowHeight()/tileSize.y)+1);//max number of tiles that can be displayed on the screen
+    topLeftTile = ofVec2f(fabs(trunc(tFactor.x/tileSize.x))m , fabs(trunc(tFactor.y/tileSize.y)));               //number of tiles the map has been translated
     bottomRightTile = ofVec2f(topLeftTile.x+maxDisplayDim.x, topLeftTile.y+maxDisplayDim.y);
     topLeftScalar = tileIndiceByArrayCoords(topLeftTile);
     bottomRightScalar = tileIndiceByArrayCoords(bottomRightTile);
@@ -91,7 +89,7 @@ void TileManager::update()
 
     for(int ii = abs(topLeftScalar); ii < bottomRightScalar; ii+=mapSize.x)//increment by row
     {
-        for(int bb = ii; bb< ii+maxDisplayDim.x+2; bb++)//increment by number of tile to draw per row
+        for(int bb = ii; bb< ii+maxDisplayDim.x+3; bb++)//increment by number of tile to draw per row
         {
 
             //std::cout << bb << std::endl;

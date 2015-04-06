@@ -9,7 +9,7 @@
 class City
 {
 public:
-    City(int dif, double fpopulation, std::string fcityName, int iTileIndex, std::string texName);
+    City(int dif, double fpopulation, std::string fcityName, int iTileIndex, std::string texName, std::string);
     City();
 
     void update(ofVec2f& mousePos, bool& clicked, bool& pressed);
@@ -17,12 +17,12 @@ public:
     int getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed);
     void draw();
 
-    void setTexture(ofTexture& Text);
+    void setTexture(ofTexture& Text, bool);
     void setTile(Tile* T);
 
     int getTileIndex();
 
-    std::string getTextureName();
+    std::string getTextureName(bool);
 
     void fillMenu();
     void setMenu(Menu* CM);
@@ -37,7 +37,9 @@ private:
     int TileIndex;
     Menu* cityMenu;
     ofTexture* cityTexture;
+    ofTexture* cityHoverTexture;
     std::string textureName;
+    std::string textureHoverName;
     std::string cityName;
 
     double population;
@@ -68,6 +70,7 @@ private:
     int maxdif;     //same in all cities
 
     bool drawMenu;
+    int clickedData;
 
 
 

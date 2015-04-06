@@ -5,7 +5,7 @@
 void ofApp::setup(){
     viewPos = ofVec2f(0, 0);
     first = true;
-    currentState = MAINMENU;
+    currentState = LOADING;
     ofSetFrameRate(60); //set framerate
     ofSeedRandom();
 }
@@ -35,6 +35,7 @@ void ofApp::update(){
             resources = new ResourceManager;
             resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
             resources->addTexture("City.png", "City");
+            resources->addTexture("CityHover.png", "CityHover");
             resources->addTexture("CMBackground.png", "CMBackground");
             resources->addFont("monterey/MontereyFLF-Bold.ttf", "CMFont", 24);
 

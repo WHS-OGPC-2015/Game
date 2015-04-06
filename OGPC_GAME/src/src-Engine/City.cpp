@@ -24,13 +24,14 @@ City::City()
 
 }
 
-City::City(int dif, double fpopulation, std::string fcityName, int iTileIndex, std::string TN )
+City::City(int dif, double fpopulation, std::string fcityName, int iTileIndex, std::string TN, std::string HTN)
 {
     TileIndex = iTileIndex;
     population = fpopulation; // default population
     converted = 4000; // you don't have any influence
     cityName = fcityName;
     textureName = TN;
+    textureHoverName = HTN;
     occupied = 0;
     entered = false;
     velocity = 0;
@@ -61,13 +62,25 @@ int City::getTileIndex()
     return TileIndex;
 }
 
-void City::setTexture(ofTexture& Text)
+void City::setTexture(ofTexture& Text, bool hover)
 {
-    cityTexture = &Text;
+    if(hover)
+    {
+        cityHoverTexture = &Text;
+    }
+    else
+    {
+        cityTexture = &Text;
+    }
+
 }
 
-std::string City::getTextureName()
+std::string City::getTextureName(bool hover)
 {
+    if(hover)
+    {
+        return textureHoverName;
+    }
     return textureName;
 }
 
@@ -103,7 +116,8 @@ void City::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
     TLpos = ofVec2f(boundTile->getLocation().x, boundTile->getLocation().y);
     BRpos = ofVec2f(boundTile->getLocation().x + cityTexture->getWidth(), boundTile->getLocation().y + cityTexture->getHeight());
 
-    if(getClickedData(mousePos, clicked, pressed) == 1)
+    clickedData = getClickedData(mousePos, clicked, pressed);
+    if(clickedData == 1)
     {
         fillMenu();
         cityMenu->setActive();
@@ -183,7 +197,16 @@ void City::turnlyUpdate()
 
 void City::draw()
 {
-    cityTexture->draw(boundTile->getLocation());
+    if(clickedData == 1 or
+       clickedData == 2)
+    {
+        cityHoverTexture->draw(boundTile->getLocation());
+    }
+    else
+    {
+        cityTexture->draw(boundTile->getLocation());
+    }
+
 }
 
 void City::fillMenu()
@@ -191,14 +214,14 @@ void City::fillMenu()
     TextBox* cName = cityMenu->getPointerToChildByName<TextBox>("CityName");
     cName->setText(cityName);
 //
-//    TextBox* disNumber = cityMenu->getPointerToChildByName<TextBox>("DiscipleNumber");
-//    ostringstream convert;
-//    convert << occupied;
-//    disNumber->setText(convert.str());
+    TextBox* disNumber = cityMenu->getPointerToChildByName<TextBox>("DiscipleNumber");
+    ostringstream convert;
+    convert << occupied;
+    disNumber->setText(convert.str());
 //
-//    TextBox* difNumber = cityMenu->getPointerToChildByName<TextBox>("Difficulty");
-//    convert << difficulty;
-//    disNumber->setText(convert.str());
+    TextBox* difNumber = cityMenu->getPointerToChildByName<TextBox>("Difficulty");
+    convert << difficulty;
+    disNumber->setText(convert.str());
 //
     PieChart*  pChart = cityMenu->getPointerToChildByName<PieChart>("BelieverPie");
     pChart->setVariables(converted, population);
@@ -219,6 +242,7 @@ void City::saveObjectData(ofxXmlSettings& file)
 {
     std::cout << cityName << std::endl;
     file.addValue("cityTexture", textureName);
+    file.addValue("cityHoverTexture", textureHoverName);
     file.addValue("cityName", cityName);
     file.addValue("tileIndex", TileIndex);
     file.addValue("population", population);
@@ -245,6 +269,7 @@ void City::loadObjectData(ofxXmlSettings& file)
 {
     //TileIndex = boundTile;
     textureName = file.getValue("cityTexture", "");
+    textureHoverName = file.getValue("cityHoverTexture", "");
     cityName = file.getValue("cityName", "");
     TileIndex = file.getValue("tileIndex", 0);
     population = file.getValue("population", 0.0);

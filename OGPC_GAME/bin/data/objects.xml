@@ -4,9 +4,10 @@
     <numOf>20</numOf>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Ashville</cityName>
-        <tileIndex>8208</tileIndex>
-        <population>27471.619140625</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Sylvemouth</cityName>
+        <tileIndex>6046</tileIndex>
+        <population>26200.562500000</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -16,9 +17,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Balleigh</cityName>
-        <tileIndex>277</tileIndex>
-        <population>18645.935546875</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Sylvemouth</cityName>
+        <tileIndex>8262</tileIndex>
+        <population>16010.742187500</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -28,9 +30,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Meadowwick</cityName>
-        <tileIndex>8895</tileIndex>
-        <population>15377.501953125</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Bostburg</cityName>
+        <tileIndex>9762</tileIndex>
+        <population>16742.400390625</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -40,9 +43,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Dowglen</cityName>
-        <tileIndex>9918</tileIndex>
-        <population>16740.875000000</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Dunleigh</cityName>
+        <tileIndex>6252</tileIndex>
+        <population>8407.287109375</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -52,9 +56,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Dowborn</cityName>
-        <tileIndex>6711</tileIndex>
-        <population>14883.117187500</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Aberburgh</cityName>
+        <tileIndex>5649</tileIndex>
+        <population>10635.833984375</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -64,9 +69,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Sylveborn</cityName>
-        <tileIndex>1022</tileIndex>
-        <population>19996.337890625</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Sylvestead</cityName>
+        <tileIndex>2780</tileIndex>
+        <population>24906.617187500</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -76,9 +82,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Portbury</cityName>
-        <tileIndex>9281</tileIndex>
-        <population>20093.994140625</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Balmouth</cityName>
+        <tileIndex>4958</tileIndex>
+        <population>17444.304687500</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -88,9 +95,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Baling</cityName>
-        <tileIndex>7106</tileIndex>
-        <population>10765.533203125</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Aberborn</cityName>
+        <tileIndex>8753</tileIndex>
+        <population>21703.033203125</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -100,9 +108,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Finreach</cityName>
-        <tileIndex>9855</tileIndex>
-        <population>17551.878906250</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Balmouth</cityName>
+        <tileIndex>3263</tileIndex>
+        <population>26834.564453125</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -112,9 +121,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
+        <cityHoverTexture>CityHover</cityHoverTexture>
         <cityName>Balwick</cityName>
-        <tileIndex>2018</tileIndex>
-        <population>21110.230468750</population>
+        <tileIndex>203</tileIndex>
+        <population>6044.463867188</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -124,9 +134,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Ashleigh</cityName>
-        <tileIndex>3277</tileIndex>
-        <population>7812.958007812</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Ockwood</cityName>
+        <tileIndex>6124</tileIndex>
+        <population>26256.255859375</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -136,9 +147,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Meadowleigh</cityName>
-        <tileIndex>4032</tileIndex>
-        <population>5946.807617188</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Sylveglen</cityName>
+        <tileIndex>7073</tileIndex>
+        <population>17969.970703125</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -148,9 +160,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Portreach</cityName>
-        <tileIndex>8217</tileIndex>
-        <population>5159.454101562</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Brushborn</cityName>
+        <tileIndex>1004</tileIndex>
+        <population>21741.179687500</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -160,9 +173,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Meadowreach</cityName>
-        <tileIndex>6208</tileIndex>
-        <population>19316.558593750</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Dunreach</cityName>
+        <tileIndex>8258</tileIndex>
+        <population>15172.271484375</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -172,9 +186,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Moorpool</cityName>
-        <tileIndex>5648</tileIndex>
-        <population>15427.093750000</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Finborn</cityName>
+        <tileIndex>5427</tileIndex>
+        <population>11828.308593750</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -184,9 +199,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Bostpool</cityName>
-        <tileIndex>2987</tileIndex>
-        <population>18780.212890625</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Oakburgh</cityName>
+        <tileIndex>2895</tileIndex>
+        <population>10986.786132812</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -196,9 +212,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Meadowley</cityName>
-        <tileIndex>3566</tileIndex>
-        <population>16967.468750000</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Sylveborough</cityName>
+        <tileIndex>1398</tileIndex>
+        <population>14616.851562500</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -208,9 +225,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Balburgh</cityName>
-        <tileIndex>3043</tileIndex>
-        <population>22934.417968750</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Sylvestead</cityName>
+        <tileIndex>7897</tileIndex>
+        <population>15507.202148438</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -220,9 +238,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Aberwood</cityName>
-        <tileIndex>7976</tileIndex>
-        <population>19723.205078125</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Sylvekirk</cityName>
+        <tileIndex>6067</tileIndex>
+        <population>22938.996093750</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -232,9 +251,10 @@
     </object>
     <object>
         <cityTexture>City</cityTexture>
-        <cityName>Moorkirk</cityName>
-        <tileIndex>8389</tileIndex>
-        <population>22060.089843750</population>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Finwood</cityName>
+        <tileIndex>1748</tileIndex>
+        <population>29817.658203125</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>

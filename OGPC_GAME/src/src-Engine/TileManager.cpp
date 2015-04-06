@@ -74,7 +74,7 @@ void TileManager::update()
 {
 
     maxDisplayDim = ofVec2f(trunc(ofGetWindowWidth()/tileSize.x)+1, trunc(ofGetWindowHeight()/tileSize.y)+1);//max number of tiles that can be displayed on the screen
-    topLeftTile = ofVec2f(fabs(trunc(tFactor.x/tileSize.x))m , fabs(trunc(tFactor.y/tileSize.y)));               //number of tiles the map has been translated
+    topLeftTile = ofVec2f(fabs(trunc(tFactor.x/tileSize.x)) , fabs(trunc(tFactor.y/tileSize.y)));               //number of tiles the map has been translated
     bottomRightTile = ofVec2f(topLeftTile.x+maxDisplayDim.x, topLeftTile.y+maxDisplayDim.y);
     topLeftScalar = tileIndiceByArrayCoords(topLeftTile);
     bottomRightScalar = tileIndiceByArrayCoords(bottomRightTile);

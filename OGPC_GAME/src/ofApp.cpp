@@ -36,7 +36,7 @@ void ofApp::update(){
             resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
             resources->addTexture("City.png", "City");
             resources->addTexture("CMBackground.png", "CMBackground");
-            resources->addFont("monterey/MontereyFLF-Bold.ttf", "CMFont", 24);
+            resources->addFont("monterey/MontereyFLF-Bold.ttf", "CMFont", 12);
 
             gameEngine = new Engine;
             mapGenerator = new GameMap;

@@ -275,14 +275,44 @@ void Band::turnlyUpdate()
 }
 
 
-void Band::saveObjectData(ofxXmlSettings&)
+void Band::saveObjectData(ofxXmlSettings& file)
 {
+    file.addValue("incognito", incognito);
+    file.addValue("selected", selected);
+    file.addValue("incarnation", incarnation);
+    file.addValue("name", incarnationName);
+    file.addValue("movable", movable);
+    file.addValue("actionState", actionState);
+    file.addValue("bandType", bandType);
+    file.addValue("boundTileCoordsx", boundTileCoords.x);
+    file.addValue("boundTileCoordsy", boundTileCoords.y);
+    file.addValue("boundTileIndex", boundTileIndex);
+    file.addValue("discipleNumber", discipleNum);
 
+    file.addvalue("TextureName0", TextureNames[0]);
+    file.addvalue("TextureName1", TextureNames[1]);
+    file.addvalue("TextureName2", TextureNames[2]);
+    file.addvalue("TextureName3", TextureNames[3]);
 }
 
-void Band::loadObjectData(ofxXmlSettings&)
+void Band::loadObjectData(ofxXmlSettings& file)
 {
+    incognito = file.getValue("incognito", 0);
+    selected = file.getValue("selected", 0);
+    incarnation = file.getValue("incarnation", 0);
+    incarnationName = file.getValue("name", "");
+    movable =  file.getValue("movable", 0);
+    actionState =  file.getValue("actionState", 0);
+    bandType =  file.getValue("bandType", 0);
+    boundTileCoords.x =  file.getValue("boundTileCoordsx", 0);
+    boundTileCoords.y =  file.getValue("boundTileCoordsy", 0);
+    boundTileIndex =  file.getValue("boundTileIndex", 0);
+    discipleNum =  file.getValue("discipleNum", 0);
 
+    TextureNames[0] = file.getValue("TextureName0", "");
+    TextureNames[1] = file.getValue("TextureName1", "");
+    TextureNames[2] = file.getValue("TextureName2", "");
+    TextureNames[3] = file.getValue("TextureName3", "");
 }
 
 
@@ -331,27 +361,31 @@ bool Band::getIncognito()
 
 
 
-void Band::setMinTiles(ofVec2i v)
+void Band::setExtremeTiles(ofVec2i v1, ofVec2i v2)
 {
-    extremeTiles[0] = v;
-}
-
-void Band::setMaxTiles(ofVec2i v)
-{
-    extremeTiles[1] = v;
+    extremeTiles[0] = v1;
+    extremeTiles[1] = v2;
+    int temp = fabs(extremeTiles[1].x - extremeTiles[0].x)
+    boundTileCoords = ofVec2i(boundTileIndex % temp, boundTileIndex / temp);
 }
 
 //set ALL of the textures
-void Band::setTextures(ofTexture& TN0, ofTexture& TN1, ofTexture& TN2 , ofTexture& TN3)
+void Band::setTextures(std::string TN0, std::string TN1, std::string TN2 , std::string TN3, ResourceManager& res)
 {
-    BandTextures[0] = &TN0;
-    BandTextures[1] = &TN1;
-    BandTextures[2] = &TN2;
-    BandTextures[3] = &TN3;
+    TextureNames[0] = TN0;
+    TextureNames[0] = TN1;
+    TextureNames[0] = TN2;
+    TextureNames[0] = TN3;
+
+    BandTextures[0] = &res->getTextureReference(TN0);
+    BandTextures[1] = &res->getTextureReference(TN1);
+    BandTextures[2] = &res->getTextureReference(TN2);
+    BandTextures[3] = &res->getTextureReference(TN3);
 }
-void Band::setTile(Tile T)
+void Band::setTile(Tile T, int inde)
 {
     boundTile = &T;
+    boundTileIndex = inde;
 }
 
 int Band::getIndex()

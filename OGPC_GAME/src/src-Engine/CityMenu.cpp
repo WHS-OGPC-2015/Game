@@ -5,6 +5,7 @@ void createCityMenu(MenuManager* man, ofVec2f pos, ResourceManager* R)
     int borderWidth = 10;
     double pcrad = 50;
     Menu cityMenu(ofVec2f(0, 0));
+    double consta = 2;
 
     man->addTexture("CMBackground", R->getTexture("CMBackground"));
     man->addFont("CMText", R->getFont("CMFont"));
@@ -54,17 +55,17 @@ void createCityMenu(MenuManager* man, ofVec2f pos, ResourceManager* R)
 
     MenuEntity* discNum;
     discNum = new TextBox{
-                    "X",
+                    "1",
                     ofVec2f(pos.x - halfmenuWidth + 2*borderWidth + man->getFontPointer("CMText").stringWidth("Disciples Inside:"),
-                            pos.y - 2*(halfmenuHeight - borderWidth)/3),
+                            pos.y - 2*(halfmenuHeight - borderWidth)/3) + consta,
                     man->getFontPointer("CMText")
                     };
 
     MenuEntity* difNum;
     difNum = new TextBox{
-                    "Y",
+                    "0",
                     ofVec2f(pos.x - halfmenuWidth + 2*borderWidth + man->getFontPointer("CMText").stringWidth("Difficulty:"),
-                            pos.y - (halfmenuHeight - borderWidth)/3),
+                            pos.y - (halfmenuHeight - borderWidth)/3) + consta,
                     man->getFontPointer("CMText")
                     };
 

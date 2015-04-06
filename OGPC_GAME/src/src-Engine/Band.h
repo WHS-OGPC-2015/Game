@@ -18,8 +18,8 @@ public:
     int getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed);
 
 
-    void setTextures(ofTexture& TN0, ofTexture& TN1, ofTexture& TN2 , ofTexture& TN3);
-    void setTile(Tile T);
+    void setTextures(std::string TN0, std::string TN1, std::string TN2 , std::string TN3, ResourceManager& res);
+    void setTile(Tile* T, int inde);
     int getIndex();
     vector<std::string> getTextureNames();
 
@@ -44,8 +44,7 @@ public:
     void swapIncognito();
     bool getIncognito();
 
-    void setMinTiles(ofVec2i v);
-    void setMaxTiles(ofVec2i v);
+    void setExtremeTiles(ofVec2i v1, ofVec2i v2);
 
     void resetBandType();
     int getBandType();
@@ -53,6 +52,8 @@ public:
     void switchSelect();
     bool getSelect();
     void setTileWidth(double d);
+
+    int convertTo1dindex(ofVec2i v);
     //until here
 
     void saveObjectData(ofxXmlSettings&);

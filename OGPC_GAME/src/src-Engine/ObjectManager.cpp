@@ -7,7 +7,7 @@ ObjectManager::ObjectManager(std::string toLoad, ofVec2f translation, TileManage
     tiles = t;
     recMan = R;
     objectMenus = new MenuManager;  //create menu manager for the
-    createCityMenu(objectMenus, ofVec2f(ofGetWindowWidth()-100, ofGetWindowHeight()-150), recMan);
+    createCityMenu(objectMenus, ofVec2f(ofGetWindowWidth()-200, ofGetWindowHeight()-150), recMan);
 
     loadFromFile(toLoad);
 }

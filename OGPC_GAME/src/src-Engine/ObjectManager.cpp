@@ -110,13 +110,17 @@ void ObjectManager::updateAll(ofVec2f& mousePos, bool& clicked, bool& pressed)
     {
         objects[ii]->updateAll(mousePos, clicked, pressed);
     }
+
     objectMenus->update(mousePos, clicked, pressed);
+
 }
 
 void ObjectManager::drawNoTranslate()
 {
+
     objectMenus->draw();
     objectMenus->getMenuPointerByName("CityMenu")->setInactive();
+
 }
 
 void ObjectManager::drawAll()

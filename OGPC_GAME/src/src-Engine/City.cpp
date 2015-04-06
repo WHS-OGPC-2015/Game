@@ -21,7 +21,8 @@ City::City()
     extremeaccel[1] = -10;
     threshnums[0] = 0;
     drawMenu = false;
-
+    selected = false;
+    hovered = false;
 }
 
 City::City(int dif, double fpopulation, std::string fcityName, int iTileIndex, std::string TN, std::string HTN)
@@ -49,6 +50,8 @@ City::City(int dif, double fpopulation, std::string fcityName, int iTileIndex, s
     extremeaccel[1] = -10;
     threshnums[0] = 0;
     drawMenu = false;
+    selected = false;
+    hovered = false;
 
 }
 
@@ -116,12 +119,49 @@ void City::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
     TLpos = ofVec2f(boundTile->getLocation().x, boundTile->getLocation().y);
     BRpos = ofVec2f(boundTile->getLocation().x + cityTexture->getWidth(), boundTile->getLocation().y + cityTexture->getHeight());
 
+
     clickedData = getClickedData(mousePos, clicked, pressed);
-    if(clickedData == 1)
+    if(clickedData == 3)
     {
-        fillMenu();
-        cityMenu->setActive();
+        if (selected == true)
+        {
+            selected = false;
+        }
+        else
+        {
+            selected = true;
+        }
+
     }
+    else if (clicked == true)
+    {
+        selected = false;
+    }
+
+    if (clickedData == 1 or clickedData == 2)
+    {
+        hovered = true;
+    }
+
+    if (selected == true)
+    {
+        cityMenu->setActive();
+        fillMenu();
+        hovered = false;
+    }
+
+    if (hovered == true)
+    {
+        cityMenu->setActive();
+        fillMenu();
+    }
+
+    if (clickedData == 0)
+    {
+        hovered = false;
+    }
+
+
 }
 
 
@@ -197,8 +237,7 @@ void City::turnlyUpdate()
 
 void City::draw()
 {
-    if(clickedData == 1 or
-       clickedData == 2)
+    if(selected == true or hovered == true)
     {
         cityHoverTexture->draw(boundTile->getLocation());
     }

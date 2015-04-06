@@ -71,6 +71,8 @@ private:
 
     bool drawMenu;
     int clickedData;
+    bool selected;
+    bool hovered;
 
 
 

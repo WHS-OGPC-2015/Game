@@ -471,7 +471,7 @@ void GameMap::genCities()
 //                proposedIndex = ofRandom(altitudes.size());
 //            }
             std::cout << proposedIndex << std::endl;
-            City tmp(3, ofRandom(5000, 30000), randomName(), proposedIndex, "City");
+            City tmp(3, ofRandom(5000, 30000), randomName(), proposedIndex, "City", "CityHover");
             tmp.saveObjectData(objectFile);
 
             objectFile.popTag();

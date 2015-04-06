@@ -1,6 +1,102 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="debug" />
+<<<<<<< HEAD
+	<File name="src\src-Game\GameMap.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="608" topLine="1" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\ObjectManager.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="428" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-MenuAPI\Slider.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1788" topLine="26" />
+		</Cursor>
+	</File>
+	<File name="src\src-MenuAPI\MenuEntity.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="131" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\City.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5547" topLine="199" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\TileManager.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3193" topLine="54" />
+		</Cursor>
+	</File>
+	<File name="src\src-MenuAPI\PieChart.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1095" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="src\ofApp.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="223" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-MenuAPI\PieChart.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="678" topLine="5" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\EngineMain.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="921" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="src\MainMenu.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="12485" topLine="210" />
+=======
+	<File name="src\src-MenuAPI\HoverButton.cpp" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="6968" topLine="196" />
+		</Cursor>
+	</File>
+	<File name="src\ofApp.h" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="456" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-MenuAPI\Menu.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="347" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\EngineInclude.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="42" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\ObjectManager.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="960" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-MenuAPI\MenuBackground.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="476" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\ResourceManager.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3063" topLine="61" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\Tile.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="51" topLine="0" />
+>>>>>>> 49b39619b2e4d9e10cb97126900b5696c5557066
+		</Cursor>
+	</File>
 	<File name="src\src-Game\GameMap.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="15219" topLine="37" />
@@ -17,39 +113,10 @@
 			<Collapse line="59" />
 		</Folding>
 	</File>
-	<File name="src\src-Game\GameMap.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="608" topLine="1" />
-		</Cursor>
-	</File>
+<<<<<<< HEAD
 	<File name="src\src-Engine\Band.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="8622" topLine="337" />
-		</Cursor>
-	</File>
-	<File name="src\ofApp.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="454" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\src-Engine\City.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="964" topLine="24" />
-		</Cursor>
-	</File>
-	<File name="src\MainMenu.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="192" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\src-Game\simplexnoise.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1072" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\main.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="172" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src\src-MenuAPI\HoverButton.cpp" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -57,34 +124,33 @@
 			<Cursor1 position="6968" topLine="196" />
 		</Cursor>
 	</File>
-	<File name="src\ofApp.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\src-Engine\City.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="223" topLine="0" />
+			<Cursor1 position="1369" topLine="33" />
 		</Cursor>
 	</File>
-	<File name="src\src-Engine\City.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\src-Engine\ObjectVector.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="125" topLine="0" />
+			<Cursor1 position="150" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\src-MenuAPI\HoverButton.h" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\src-MenuAPI\MenuManager.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="703" topLine="17" />
+			<Cursor1 position="852" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\src-Engine\CityMenu.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\src-Engine\CityMenu.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="476" topLine="3" />
 		</Cursor>
 	</File>
-	<File name="src\src-MenuAPI\Menu.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\src-Engine\Tile.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="347" topLine="9" />
-		</Cursor>
-	</File>
-	<File name="src\src-Engine\CityMenu.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+			<Cursor1 position="51" topLine="0" />
+=======
+	<File name="src\src-Engine\TileManager.cpp" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="177" topLine="0" />
+			<Cursor1 position="2537" topLine="63" />
 		</Cursor>
 	</File>
 	<File name="src\src-MenuAPI\Menu.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -92,9 +158,173 @@
 			<Cursor1 position="82" topLine="0" />
 		</Cursor>
 	</File>
+	<File name="src\src-MenuAPI\MenuManager.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1170" topLine="16" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\TileManager.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="858" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-MenuAPI\TextBox.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="855" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\Band.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8622" topLine="337" />
+		</Cursor>
+	</File>
+	<File name="src\src-Game\GameMap.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="608" topLine="1" />
+>>>>>>> 49b39619b2e4d9e10cb97126900b5696c5557066
+		</Cursor>
+	</File>
+	<File name="src\MainMenu.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="192" topLine="0" />
+		</Cursor>
+	</File>
+<<<<<<< HEAD
+	<File name="src\src-Engine\CityMenu.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="177" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\Tile.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="296" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\TileManager.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="858" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-MenuAPI\MenuManager.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1170" topLine="16" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\ObjectVector.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+=======
+	<File name="src\main.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="168" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\City.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5473" topLine="179" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\ObjectVector.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="150" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-Game\CityMenu.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-MenuAPI\MenuManager.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="852" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\EngineMain.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+>>>>>>> 49b39619b2e4d9e10cb97126900b5696c5557066
+		<Cursor>
+			<Cursor1 position="12" topLine="0" />
+		</Cursor>
+	</File>
+<<<<<<< HEAD
+	<File name="src\main.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="172" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-Game\simplexnoise.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1072" topLine="0" />
+=======
+	<File name="src\src-Game\simplexnoise.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1072" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-Game\GameMap.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8706" topLine="235" />
+>>>>>>> 49b39619b2e4d9e10cb97126900b5696c5557066
+		</Cursor>
+		<Folding>
+			<Collapse line="8" />
+			<Collapse line="12" />
+			<Collapse line="16" />
+			<Collapse line="18" />
+			<Collapse line="22" />
+			<Collapse line="28" />
+			<Collapse line="34" />
+			<Collapse line="52" />
+			<Collapse line="59" />
+		</Folding>
+	</File>
+	<File name="src\src-MenuAPI\MenuBackground.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="237" topLine="0" />
+		</Cursor>
+	</File>
+<<<<<<< HEAD
+	<File name="src\ofApp.h" open="1" top="1" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="618" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-MenuAPI\HoverButton.h" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="703" topLine="17" />
+=======
+	<File name="src\src-Engine\City.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1671" topLine="38" />
+		</Cursor>
+	</File>
 	<File name="src\src-MenuAPI\Slider.cpp" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1788" topLine="26" />
+>>>>>>> 49b39619b2e4d9e10cb97126900b5696c5557066
+		</Cursor>
+	</File>
+	<File name="src\src-MenuAPI\TextBox.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="397" topLine="0" />
+		</Cursor>
+	</File>
+<<<<<<< HEAD
+	<File name="src\src-Engine\Band.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2341" topLine="60" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\ResourceManager.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="377" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-MenuAPI\Menu.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="347" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="src\src-MenuAPI\Menu.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="82" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src\src-Engine\EngineInclude.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -112,49 +342,18 @@
 			<Cursor1 position="374" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\src-Engine\EngineMain.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\src-Game\CityMenu.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+=======
+	<File name="src\src-Engine\EngineMain.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="921" topLine="3" />
 		</Cursor>
 	</File>
-	<File name="src\src-MenuAPI\MenuBackground.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\MainMenu.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="237" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\src-Engine\Band.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2341" topLine="60" />
-		</Cursor>
-	</File>
-	<File name="src\src-MenuAPI\TextBox.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="855" topLine="7" />
-		</Cursor>
-	</File>
-	<File name="src\src-Engine\EngineMain.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="385" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\src-MenuAPI\TextBox.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="397" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\src-Engine\ObjectManager.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="428" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\src-MenuAPI\MenuEntity.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="131" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\MainMenu.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="12485" topLine="210" />
+			<Cursor1 position="192" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="src\src-Engine\ObjectManager.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -162,14 +361,9 @@
 			<Cursor1 position="2085" topLine="34" />
 		</Cursor>
 	</File>
-	<File name="src\src-Engine\ObjectVector.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\src-MenuAPI\PieChart.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="150" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\src-MenuAPI\MenuManager.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1170" topLine="16" />
+			<Cursor1 position="678" topLine="5" />
 		</Cursor>
 	</File>
 	<File name="src\src-Engine\ObjectVector.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -177,9 +371,20 @@
 			<Cursor1 position="12" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\src-MenuAPI\MenuManager.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\src-MenuAPI\PieChart.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="852" topLine="0" />
+			<Cursor1 position="1095" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\CityMenu.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="177" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\src-MenuAPI\MenuBackground.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="237" topLine="0" />
+>>>>>>> 49b39619b2e4d9e10cb97126900b5696c5557066
 		</Cursor>
 	</File>
 	<File name="src\src-Engine\ResourceManager.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -187,9 +392,29 @@
 			<Cursor1 position="3063" topLine="61" />
 		</Cursor>
 	</File>
-	<File name="src\src-MenuAPI\PieChart.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+<<<<<<< HEAD
+	<File name="src\src-MenuAPI\TextBox.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1095" topLine="12" />
+			<Cursor1 position="855" topLine="7" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\ObjectManager.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2085" topLine="34" />
+		</Cursor>
+	</File>
+	<File name="src\src-Engine\EngineMain.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="385" topLine="0" />
+=======
+	<File name="src\src-Engine\CityMenu.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="476" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="src\ofApp.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="381" topLine="6" />
 		</Cursor>
 	</File>
 	<File name="src\src-Engine\ResourceManager.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -197,34 +422,15 @@
 			<Cursor1 position="377" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\src-MenuAPI\PieChart.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\MainMenu.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="678" topLine="5" />
+			<Cursor1 position="12485" topLine="210" />
 		</Cursor>
 	</File>
-	<File name="src\src-Engine\Tile.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\src-Engine\Band.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="51" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\src-Engine\Tile.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="296" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\src-Engine\TileManager.cpp" open="1" top="1" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2539" topLine="63" />
-		</Cursor>
-	</File>
-	<File name="src\src-Engine\TileManager.h" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="858" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\src-Game\CityMenu.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
+			<Cursor1 position="2341" topLine="60" />
+>>>>>>> 49b39619b2e4d9e10cb97126900b5696c5557066
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

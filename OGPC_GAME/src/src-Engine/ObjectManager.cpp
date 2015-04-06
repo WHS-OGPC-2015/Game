@@ -47,7 +47,8 @@ void ObjectManager::loadFromFile(std::string filePath)
                     {
                         City* tmp = C->getObject(ii);
                         tmp->setTile(tiles->getTileByIndice(tmp->getTileIndex()));
-                        tmp->setTexture(recMan->getTextureReference(tmp->getTextureName()));
+                        tmp->setTexture(recMan->getTextureReference(tmp->getTextureName(false)), false);
+                        tmp->setTexture(recMan->getTextureReference(tmp->getTextureName(true)), true);
                         tmp->setMenu(objectMenus->getMenuPointerByName("CityMenu"));
                     }
 
@@ -109,13 +110,17 @@ void ObjectManager::updateAll(ofVec2f& mousePos, bool& clicked, bool& pressed)
     {
         objects[ii]->updateAll(mousePos, clicked, pressed);
     }
+
     objectMenus->update(mousePos, clicked, pressed);
+
 }
 
 void ObjectManager::drawNoTranslate()
 {
+
     objectMenus->draw();
     objectMenus->getMenuPointerByName("CityMenu")->setInactive();
+
 }
 
 void ObjectManager::drawAll()

@@ -17,7 +17,11 @@ public:
         ofSeedRandom();
         if(isThreadRunning())
         {
+<<<<<<< HEAD
            // M->generateMap();
+=======
+            //M->generateMap();
+>>>>>>> 7266dfda0f644d11a292a08793d9377e5228d66f
             E->setup("tiles.xml", "game.xml", "objects.xml", viewPos, R);
             stopThread();
         }

@@ -7,6 +7,12 @@
 //    return (v.y * (fabs(extremeTiles[1].x - extremeTiles[0].x)) + v.x);
 //}
 //
+//int turnToInt(double d)
+//{
+//    int i = d;
+//    return i;
+//}
+//
 //Band::Band()
 //{
 //    incognito = false;
@@ -16,6 +22,10 @@
 //    movement = 7; // arbitrary
 //    discipleNum = begDisNum;
 //    incarnationName = "";
+//    movable = true;
+//    bandClick = 0;
+//    actionState = 0;
+//    tileWidth = 0;
 //
 //}
 //
@@ -24,56 +34,65 @@
 //    incognito = incog;
 //    incarnation = incarn;
 //    selected = false;
+//    movable = true;
 //    begDisNum = startnum; // arbitrary
 //    movement = mov; // arbitrary
 //    discipleNum = begDisNum;
 //    incarnationName = incarnName;
+//    bandClick = 0;
+//    actionState = 0;
+//    tileWidth = 0;
 //}
 //
 //
-//void Band::resetBandState()
+//void Band::resetBandType()
 //{
 //    if (incognito == true)
 //    {
 //        if (incarnation == true)
 //        {
-//            bandState = 3;
+//            bandType = 3;
 //        }
 //        else
 //        {
-//            bandState = 1;
+//            bandType = 1;
 //        }
 //    }
 //    else if (incarnation == true)
 //    {
-//       bandState = 2;
+//       bandType = 2;
 //    }
 //    else
 //    {
-//        bandState = 0;
+//        bandType = 0;
 //    }
 //}
 //
-//int Band::getBandState()
+//int Band::getBandType()
 //{
-//    return bandState;
+//    return bandType;
 //}
 //
 //
 //void Band::draw()
 //{
-////    BandTextures[bandState]->draw();
+////    BandTextures[bandType]->draw();
 //
-//    TLpos = ofVec2f(boundTile->getLocation().x - BandTextures[bandState]->getWidth() /2, boundTile->getLocation().y - BandTextures[bandState]->getHeight() /2);
-//    BRpos = ofVec2f(boundTile->getLocation().x + BandTextures[bandState]->getWidth() /2, boundTile->getLocation().y + BandTextures[bandState]->getHeight() /2);
+//    TLpos = ofVec2f(boundTile->getLocation().x - BandTextures[bandType]->getWidth() /2, boundTile->getLocation().y - BandTextures[bandType]->getHeight() /2);
+//    BRpos = ofVec2f(boundTile->getLocation().x + BandTextures[bandType]->getWidth() /2, boundTile->getLocation().y + BandTextures[bandType]->getHeight() /2);
 //
 //}
 //
 //int Band::getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
 //{
+//
 //    if (mousePos.x < TLpos.x || mousePos.x > BRpos.x ||
 //        mousePos.y < TLpos.y || mousePos.y > BRpos.y)
 //    {
+//        if (clicked == true)
+//        {
+//        }
+//
 //        return 0;
 //
 //        // its ouside
@@ -82,16 +101,19 @@
 //    {
 //        if (clicked == true)
 //        {
+//
 //            return 3;
 //
 //        }
 //        else if (pressed == true)
 //        {
+//
 //            return 2;
 //
 //        }
 //        else
 //        {
+//
 //            return 1;
 //
 //        }
@@ -106,7 +128,7 @@
 //    BandTextures[3] = &TN3;
 //}
 //
-//void Band::setTile(Tile T);
+//void Band::setTile(Tile T)
 //{
 //    boundTile = &T;
 //}
@@ -116,7 +138,7 @@
 //    return boundTileIndex;
 //}
 //
-//std::string Band::getTextureNames()
+//vector<std::string> Band::getTextureNames()
 //{
 //    vector<std::string> names;
 //    for (int i = 0; i < 4; i++)
@@ -130,6 +152,7 @@
 //void Band::setBandMenu(Menu& fillme)
 //{
 //    bandMenu = &fillme;
+//    alignButtons();
 //}
 //
 //
@@ -145,25 +168,111 @@
 //    disNum->setText(convert.str());
 //}
 //
+//void Band::alignButtons()
+//{
+//    actionButtons[0] = bandMenu->getPointerToChildByName<HoverButton>("MoveButton");
+//    actionButtons[1] = bandMenu->getPointerToChildByName<HoverButton>("BreakUpButton");
+//    actionButtons[2] = bandMenu->getPointerToChildByName<HoverButton>("IncognitoButton");
+//}
+//
+//void Band::findActions()
+//{
+//    if (selected == true and movable == true)
+//    {
+//        if (actionButtons[0]->getEventDataInt() > 2)
+//        {
+//            actionState = 1;
+//            movable = false;
+//        }
+//        else if (actionButtons[1]->getEventDataInt() > 2)
+//        {
+//            actionState = 2;
+//        }
+//        else if (actionButtons[2]->getEventDataInt() == 3 and incognito == false)
+//        {
+//            swapIncognito();
+//            movable = false;
+//        }
+//        else if (actionButtons[2]->getEventDataInt() == 0 and incognito == true)
+//        {
+//            swapIncognito();
+//            movable = false;
+//        }
+//    }
+//}
+//
 //void Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 //{
 //    bandMenu->setInactive();
-//    if (getClickedData(mousePos, clicked, pressed) == 3)
-//    {
-//        bandPopup->setActive();
-//        selected = true;
-//    }
-//    else if (getClickedData(mousePos, clicked, pressed) == 1 or getClickedData(mousePos, clicked, pressed) == 2)
+//    if (actionState == 0)
 //    {
 //
+//        if (getClickedData(mousePos, clicked, pressed) == 3)
+//        {
+//            selected = true;
+//        }
+//        else if (clicked == false)
+//        {
+//           selected = false;
+//        }
+//        else if (getClickedData(mousePos, clicked, pressed) == 1 or getClickedData(mousePos, clicked, pressed) == 2)
+//        {
+//
+//        }
+//        if (selected == true)
+//        {
+//            bandMenu->setActive();
+//        }
+//        return -1;
 //    }
 //
+//    else if (actionState == 1)
+//    {
+//        if (clicked == true)
+//        {
+//            ofVec2i temptile = ofVec2i(turnToInt(mousePos.x / tileWidth), turnToInt(mousePos.y / tileWidth));
+//            for (int i = 0; i < possibleMoves.size(); i++)
+//            {
+//                if (temptile = possibleMoves[i])
+//                {
+//                    int t = convertTo1dindex(temptile);
+//                    return t;
+//                }
+//            }
+//
+//        }
+//        return -2;
+//    }
+//
+//    else if (actionState == 2)
+//    {
+//       if (clicked == true)
+//        {
+//            ofVec2i temptila = ofVec2i(turnToInt(mousePos.x / tileWidth), turnToInt(mousePos.y / tileWidth));
+//
+//            if (temptile =  ofVec2i(boundTile->getLocation().x / tileWidth - 1, boundTile->getLocation().y / tileWidth) ||
+//                temptile =  ofVec2i(boundTile->getLocation().x / tileWidth + 1, boundTile->getLocation().y / tileWidth) ||
+//                temptile =  ofVec2i(boundTile->getLocation().x / tileWidth, boundTile->getLocation().y / tileWidth + 1) ||
+//                temptile =  ofVec2i(boundTile->getLocation().x / tileWidth, boundTile->getLocation().y / tileWidth - 1))
+//            {
+//                int q = convertTo1dindex(temptila);
+//                return q;
+//            }
+//
+//
+//        }
+//        return -3;
+//    }
 //
 //}
 //
 //void Band::turnlyUpdate()
 //{
+//    actionState = 0;
+//    movable = true;
 //    ofVec2i temp;
+//
+//    possibleMoves.clear();
 //    for (int i = -movement; i <= movement; i++)
 //    {
 //        for (int j = (fabs(i) - movement); j <= (movement - fabs(i)); j++)
@@ -197,11 +306,11 @@
 //
 //
 ////the rest are boring
-//void Band::setIncarnation(bool b, std::string incarnName);
+//void Band::setIncarnation(bool b, std::string incarnName)
 //{
 //    incarnation = b;
-//    inacarnationName = incarnName
-//    resetBandState();
+//    incarnationName = incarnName;
+//    resetBandType();
 //}
 //
 //bool Band::getIncarnation()
@@ -230,7 +339,7 @@
 //void Band::swapIncognito()
 //{
 //    incognito = !incognito;
-//    resetBandState();
+//    resetBandType();
 //}
 //
 //bool Band::getIncognito()
@@ -260,4 +369,9 @@
 //bool Band::getSelect()
 //{
 //    return selected;
+//}
+//
+//void Band::setTileWidth(double d)
+//{
+//    tileWidth = d;
 //}

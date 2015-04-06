@@ -16,7 +16,7 @@ public:
     HoverButton(ofVec2f loc, ofTexture& norm, ofTexture& hov, ofTexture& fpressed, ofTexture& fclicked, ofTexture& fclickedHovered, ofTexture& fclickedPressed, ofTrueTypeFont& f, std::string t);//initialize button with position and textures and text
     HoverButton(ofVec2f loc, ofTexture& norm, ofTexture& hov, ofTexture& fpressed, ofTexture& fclicked, ofTexture& fclickedHovered, ofTexture& fclickedPressed);//initialize button with position and textures without text
 
-
+    void addPosition(ofVec2f p);
     void setPosition(ofVec2f);
     ofVec2f getPosition();
 

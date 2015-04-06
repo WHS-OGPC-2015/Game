@@ -13,7 +13,7 @@
 //    Band(bool incog, bool incarn, int startnum, int mov, std::string incarnName /*set as "" if incarn is false*/);
 //
 //    void draw();
-//    void update(ofVec2f& mousePos, bool& clicked, bool& pressed);
+//    int update(ofVec2f& mousePos, bool& clicked, bool& pressed);
 //    void turnlyUpdate();
 //    int getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed);
 //
@@ -26,6 +26,9 @@
 //    void setBandMenu(Menu& fillme);
 //
 //    void fillMenu();
+//    void alignButtons();
+//
+//    void findActions();
 //    //these are all boring -- just sets, gets, and swaps
 //    int convertTo1dindex(ofVec2i v);
 //
@@ -36,7 +39,7 @@
 //    void changeDiscipleNum(int i);
 //    int getDiscipleNum();
 //
-//    vector<ofVec2i> getMoves();
+//    vector<int> getMoves();
 //
 //    void swapIncognito();
 //    bool getIncognito();
@@ -44,11 +47,12 @@
 //    void setMinTiles(ofVec2i v);
 //    void setMaxTiles(ofVec2i v);
 //
-//    void resetBandState();
-//    int getBandState();
+//    void resetBandType();
+//    int getBandType();
 //
 //    void switchSelect();
 //    bool getSelect();
+//    void setTileWidth(double d);
 //    //until here
 //
 //    void saveObjectData(ofxXmlSettings&);
@@ -74,19 +78,23 @@
 //
 //    bool incognito;
 //
-//    int bandState;
+//    int bandType;
 //
 //    bool selected;
-//
+//    bool movable;
+//    int actionState;
 //    ofVec2i extremeTiles[2]; // e.g., [(0,0),(100,100)] -- useful for  finding possible moves
 //
 //
 //    int movement;
 //
+//    double tileWidth;
+//
 //    ofVec2f TLpos;
 //    ofVec2f BRpos;
 //
 //    Menu* bandMenu;
+//    HoverButton* actionButtons[3];
 //
 //    vector<int> possibleMoves;
 //};

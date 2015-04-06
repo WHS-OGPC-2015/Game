@@ -13,19 +13,24 @@ void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
 
     man->addTexture("BMBackground", res->getTexture("BMBackground"));
 
-    man->addTexture("BMBreakUpButNormal", res->getTexture("BMBreakUpButNormal"));
-    man->addTexture("BMBreakUpButHovered", res->getTexture("BMBreakUpButHovered"));
-    man->addTexture("BMBreakUpButPressed", res->getTexture("BMBreakUpButPressed"));
+    man->addTexture("BMBreakUpButNormal", res->getTexture("BreakUpButNormal"));
+    man->addTexture("BMBreakUpButHovered", res->getTexture("BreakUpButHovered"));
+    man->addTexture("BMBreakUpButPressed", res->getTexture("BreakUpButPressed"));
 
-    man->addTexture("BMIncogUpButNormal", res->getTexture("BMIncogUpButNormal"));
-    man->addTexture("BMIncogUpButHovered", res->getTexture("BMIncogUpButHovered"));
-    man->addTexture("BMIncogUpButPressed", res->getTexture("BMIncogUpButPressed"));
+    man->addTexture("BMIncogUpButNormal", res->getTexture("IncogUpButNormal"));
+    man->addTexture("BMIncogUpButHovered", res->getTexture("IncogUpButHovered"));
+    man->addTexture("BMIncogUpButPressed", res->getTexture("IncogUpButPressed"));
+    man->addTexture("BMUnIncogUpButNormal", res->getTexture("UnIncogUpButNormal"));
+    man->addTexture("BMUnIncogUpButHovered", res->getTexture("UnIncogUpButHovered"));
+    man->addTexture("BMUnIncogUpButPressed", res->getTexture("UnIncogUpButPressed"));
 
-    man->addTexture("BMMoveUpButNormal", res->getTexture("BMMoveUpButNormal"));
-    man->addTexture("BMMoveUpButHovered", res->getTexture("BMMoveUpButHovered"));
-    man->addTexture("BMMoveUpButPressed", res->getTexture("BMMoveUpButPressed"));
 
-    man->addFont("BMText", "MySimpleFont.ttf", 24);
+
+    man->addTexture("BMMoveButNormal", res->getTexture("MoveButNormal"));
+    man->addTexture("BMMoveButHovered", res->getTexture("MoveButHovered"));
+    man->addTexture("BMMoveButPressed", res->getTexture("MoveButPressed"));
+
+    man->addFont("BMText", res->getFont("MySimpleFont"));
 
     double halfmenuHeight = man->getTexturePointer("BMBackground").getHeight()/2;
     double halfmenuWidth = man->getTexturePointer("BMBackground").getWidth()/2;
@@ -40,15 +45,15 @@ void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
 
 
 
-    MenuEntity* incarnName;Move
+    MenuEntity* incarnName;
     incarnName = new TextBox{
-                        "BAND_NAME"
-                        ofVec2f(ofVec2f(pos.x, pos.y - halfmenuHeight + borderWidth),
+                        "BAND_NAME",
+                        ofVec2f(pos.x, pos.y - halfmenuHeight + borderWidth),
                         man->getFontPointer("BMText")
                             };
     MenuEntity* discBox;
     discBox = new TextBox{
-                        "Number of Disciples:"
+                        "Number of Disciples:",
                        ofVec2f(pos.x - constb, pos.y +  halfmenuHeight - borderWidth - consta /*a constant*/),
                         man->getFontPointer("BMText")
                             };
@@ -74,12 +79,12 @@ void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
     MenuEntity* MoveBut;
     MoveBut = new HoverButton{
                         ofVec2f(pos.x + (halfmenuWidth - borderWidth)/2, pos.y - borderWidth - constd),
-                        man->getTexturePointer("BMMoveUpButNormal"),           // adding textures, we have done this before...
-                        man->getTexturePointer("BMMoveUpButHovered"),
-                        man->getTexturePointer("BMMoveUpButPressed"),
-                        man->getTexturePointer("BMMoveUpButPressed"),
-                        man->getTexturePointer("BMMoveUpButPressed"),
-                        man->getTexturePointer("BMMoveUpButPressed")
+                        man->getTexturePointer("BMMoveButNormal"),           // adding textures, we have done this before...
+                        man->getTexturePointer("BMMoveButHovered"),
+                        man->getTexturePointer("BMMoveButPressed"),
+                        man->getTexturePointer("BMMoveButPressed"),
+                        man->getTexturePointer("BMMoveButPressed"),
+                        man->getTexturePointer("BMMoveButPressed")
                                 };
 
     MenuEntity* IncogBut;
@@ -88,9 +93,9 @@ void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
                         man->getTexturePointer("BMIncogUpButNormal"),           // adding textures, we have done this before...
                         man->getTexturePointer("BMIncogUpButHovered"),
                         man->getTexturePointer("BMIncogUpButPressed"),
-                        man->getTexturePointer("BMIncogUpButPressed"),
-                        man->getTexturePointer("BMIncogUpButPressed"),
-                        man->getTexturePointer("BMIncogUpButPressed")
+                        man->getTexturePointer("BMUnIncogUpButPressed"),
+                        man->getTexturePointer("BMUnIncogUpButPressed"),
+                        man->getTexturePointer("BMUnIncogUpButPressed")
                                 } ;
 
     bandMenu.addEntity(*bandBG, "BandMenuBackground");
@@ -103,3 +108,43 @@ void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
 
     man->addMenu(bandMenu, "BandMenu");
 }
+
+void resetCityMenuPositions(Menu& bandmenu, ofVec2f deltaPos)
+{
+    TextBox* texbox[3];
+
+    texbox[0] = bandmenu.getPointerToChildByName<TextBox>("IncarnationName");
+
+    texbox[1] = bandmenu.getPointerToChildByName<TextBox>("DiscipleNumber");
+
+    texbox[2] = bandmenu.getPointerToChildByName<TextBox>("DiscipleBox");
+
+
+    for (int i = 0; i < 3; i++)
+    {
+        texbox[i]->addPosition(deltaPos);
+    }
+
+//-------------------------------------------------------------------------------------
+    MenuBackground* bandlBG = bandmenu.getPointerToChildByName<MenuBackground>("BandMenuBackground");
+    cityBG->addPosition(deltaPos);
+//----------------------------------------------------------------------------------------------------------
+    HoverButton* buttons[3];
+
+    buttons[0] =   bandmenu.getPointerToChildByName<HoverButton>("BreakUpButton");
+
+    buttons[1] =   bandmenu.getPointerToChildByName<HoverButton>("MoveButton");
+
+    buttons[2] =   bandmenu.getPointerToChildByName<HoverButton>("IncognitoButton");
+
+    for (int i = 0; i < 3; i++)
+    {
+        buttons[i]->addPosition(deltaPos);
+    }
+}
+
+//void loadTextures(MenuManager& man)
+//{
+//    man.reloadTexture("CMBackground", "CMBackground.png");
+//    //man.reloadTexture()
+//};

@@ -7,6 +7,7 @@ void ofApp::setup(){
     first = true;
     currentState = MAINMENU;
     ofSetFrameRate(60); //set framerate
+
 }
 
 //--------------------------------------------------------------
@@ -35,7 +36,7 @@ void ofApp::update(){
             resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
             resources->addTexture("City.png", "City");
             resources->addTexture("CMBackground.png", "CMBackground");
-            resources->addFont("mySimpleFont.ttf", "CMFont", 24);
+            resources->addFont("monterey/MontereyFLF-Bold.ttf", "CMFont", 24);
 
             gameEngine = new Engine;
             mapGenerator = new GameMap;
@@ -51,7 +52,6 @@ void ofApp::update(){
         loading->update();
         if(!loader->isThreadRunning())
         {
-
             currentState = GAME;
         }
     }
@@ -95,6 +95,7 @@ void ofApp::update(){
             {
                 dif = ofVec2f(0, 0);
             }
+
         }
 
 

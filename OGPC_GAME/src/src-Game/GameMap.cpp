@@ -46,7 +46,7 @@ int roundforint(double i)
 
 GameMap::GameMap()
 {
-    numCities = 1;
+    numCities = 20;
 }
 
 void GameMap::generateMap()
@@ -212,7 +212,7 @@ std::vector<int> GameMap::genMap(int sizeX, int sizeY, int seeds)
 
 void GameMap::genMapTwo()
 {
-    mapSize = ofVec2i(30, 30);        //size of the map in tiles
+    mapSize = ofVec2i(100, 100);        //size of the map in tiles
     int numSeeds = 3;                  //number of mountains to generate in genMap()
     int last = 1;                       //last height used(for noise z seed)
     float noiseWeight = 1;              //value to multiply noise vector by before averaging
@@ -343,8 +343,8 @@ void GameMap::saveMap(ofVec2i mapSize, std::vector<int> heights)
     ofxXmlSettings tileSave;
     tileSave.addValue("mapSizeX", mapSize.x);
     tileSave.addValue("mapSizeY", mapSize.y);
-    tileSave.addValue("tileSizeX", 20);
-    tileSave.addValue("tileSizeY", 20);
+    tileSave.addValue("tileSizeX", 32);
+    tileSave.addValue("tileSizeY", 32);
     tileSave.addTag("tileArray");
     tileSave.pushTag("tileArray");
 
@@ -471,7 +471,7 @@ void GameMap::genCities()
 //                proposedIndex = ofRandom(altitudes.size());
 //            }
             std::cout << proposedIndex << std::endl;
-            City tmp(3, 10000, "WalrusTown", proposedIndex, "City");
+            City tmp(3, ofRandom(5000, 30000), randomName(), proposedIndex, "City");
             tmp.saveObjectData(objectFile);
 
             objectFile.popTag();
@@ -482,6 +482,45 @@ void GameMap::genCities()
         objectFile.saveFile("objects.xml");
 }
 
+
+std::string GameMap::randomName()
+{
+    std::vector <std::string> prefixes;
+    std::vector <std::string> suffixes;
+    std::string line;
+    bool recordpf = true;
+
+    std::ifstream TownNames("../bin/data/CityNames.txt");
+    if(TownNames.is_open())
+    {
+        while(getline(TownNames, line))
+        {
+            if (line == "---Prefixes---")
+            {
+                recordpf = 1;
+            }
+            else if (recordpf)
+            {
+                prefixes.push_back(line);
+            }
+            if (line == "---Suffixes---")
+            {
+                recordpf = false;
+            }
+            else if (!recordpf)
+            {
+                suffixes.push_back(line);
+            }
+        }
+        TownNames.close();
+    }
+    int preRand = ofRandom(prefixes.size()-1);
+    int sufRand = ofRandom(suffixes.size()-1);
+    std::string preString = prefixes[preRand];
+    std::string sufString = suffixes[sufRand];
+    std::string retstr = preString + sufString;
+    return  retstr;
+}
 
 
 

@@ -73,11 +73,11 @@ void createCityMenu(MenuManager* man, ofVec2f pos, ResourceManager* R)
 
     cityMenu.addEntity(*citBG, "CityBackground");
     cityMenu.addEntity(*nameBox, "CityName");
-    cityMenu.addEntity(*discNum, "DiscipleNumber");
-    cityMenu.addEntity(*difNum, "Difficulty");
+//    cityMenu.addEntity(*discNum, "DiscipleNumber");
+//    cityMenu.addEntity(*difNum, "Difficulty");
     cityMenu.addEntity(*converted, "BelieverPie");
-    cityMenu.addEntity(*discBox, "DiscipleBox");
-    cityMenu.addEntity(*difBox, "DifficultyBox");
+//    cityMenu.addEntity(*discBox, "DiscipleBox");
+//    cityMenu.addEntity(*difBox, "DifficultyBox");
 //    cityMenu.addEntity(*PCBox, "PieChartText");
 
     man->addMenu(cityMenu, "CityMenu");

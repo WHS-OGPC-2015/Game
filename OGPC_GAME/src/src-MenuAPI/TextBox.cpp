@@ -41,3 +41,13 @@ void TextBox::setFont(ofTrueTypeFont& f)
 {
     font = &f;
 }
+
+int TextBox::getWidth()
+{
+    return font->stringWidth(text);
+}
+
+int TextBox::getHeight()
+{
+    return font->stringHeight(text);
+}

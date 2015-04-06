@@ -53,7 +53,6 @@ public:
     bool getSelect();
     void setTileWidth(double d);
 
-    int convertTo1dindex(ofVec2i v);
     //until here
 
     void saveObjectData(ofxXmlSettings&);

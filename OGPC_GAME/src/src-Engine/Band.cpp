@@ -377,10 +377,10 @@ void Band::setTextures(std::string TN0, std::string TN1, std::string TN2 , std::
     TextureNames[0] = TN2;
     TextureNames[0] = TN3;
 
-    BandTextures[0] = &res->getTextureReference(TN0);
-    BandTextures[1] = &res->getTextureReference(TN1);
-    BandTextures[2] = &res->getTextureReference(TN2);
-    BandTextures[3] = &res->getTextureReference(TN3);
+    BandTextures[0] = &res.getTextureReference(TN0);
+    BandTextures[1] = &res.getTextureReference(TN1);
+    BandTextures[2] = &res.getTextureReference(TN2);
+    BandTextures[3] = &res.getTextureReference(TN3);
 }
 void Band::setTile(Tile T, int inde)
 {

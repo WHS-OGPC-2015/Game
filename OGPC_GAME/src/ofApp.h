@@ -14,9 +14,10 @@ public:
 
     void threadedFunction()
     {
+        ofSeedRandom();
         if(isThreadRunning())
         {
-            M->generateMap();
+            //M->generateMap();
             E->setup("tiles.xml", "game.xml", "objects.xml", viewPos, R);
             stopThread();
         }
@@ -55,7 +56,7 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		ofVec2f mousePos, lastMousePos, dif;
+		ofVec2f mousePos, lastMousePos, dif, adjustedMousePos;
         bool pressed;//true if mouse button has been pressed down
         bool clicked;//true if mouse button has been pushed down then released
         bool dragging;//true if mouse button is pressed and is being moved

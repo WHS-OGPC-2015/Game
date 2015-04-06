@@ -5,9 +5,9 @@
 void ofApp::setup(){
     viewPos = ofVec2f(0, 0);
     first = true;
-    currentState = MAINMENU;
+    currentState = LOADING;
     ofSetFrameRate(60); //set framerate
-
+    ofSeedRandom();
 }
 
 //--------------------------------------------------------------
@@ -74,7 +74,8 @@ void ofApp::update(){
 
         else
         {
-            gameEngine->update(mousePos, clicked, pressed);
+            adjustedMousePos = mousePos - viewPos;
+            gameEngine->update(adjustedMousePos, clicked, pressed);
             if(dragging)
             {
                 dif = mousePos - lastMousePos;

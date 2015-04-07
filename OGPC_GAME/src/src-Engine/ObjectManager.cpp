@@ -8,7 +8,7 @@ ObjectManager::ObjectManager(std::string toLoad, ofVec2f translation, TileManage
     recMan = R;
     objectMenus = new MenuManager;  //create menu manager for the
     createCityMenu(objectMenus, ofVec2f(ofGetWindowWidth()-200, ofGetWindowHeight()-150), recMan);
-
+    createBandMenu(objectMenus, ofVec2f(ofGetWindowWidth()-600, ofGetWindowHeight()-150), recMan);
     loadFromFile(toLoad);
 }
 ObjectManager::~ObjectManager()
@@ -52,6 +52,20 @@ void ObjectManager::loadFromFile(std::string filePath)
                         tmp->setMenu(objectMenus->getMenuPointerByName("CityMenu"));
                     }
 
+                }
+                if(type == "Band")
+                {
+                    addObjectType<Band>("Band", numType);
+                    oVector<Band>* C = getPointerToChildByName<Band>("Band");
+                    C->loadObjectData(objectFile, numType);
+                    for(int ii = 0; ii< numType; ii++)
+                    {
+                        Band* tmp = C->getObject(ii);
+
+                        tmp->setTile(tiles->getTileByIndice(tmp->getIndex()));
+                        tmp->setTextures(recMan);
+                        tmp->setBandMenu(objectMenus->getMenuPointerByName("BandMenu"));
+                    }
                 }
                 /*
                 -----------------------------------

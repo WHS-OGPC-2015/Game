@@ -54,6 +54,7 @@ void GameMap::generateMap()
     mapTextureNames("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
     genMapTwo();
     genCities();
+    genBand();
 }
 
 std::vector<int> GameMap::genMap(int sizeX, int sizeY, int seeds)
@@ -479,7 +480,7 @@ void GameMap::genCities()
 
         }
         objectFile.popTag();
-        objectFile.saveFile("objects.xml");
+
 }
 
 
@@ -520,6 +521,35 @@ std::string GameMap::randomName()
     std::string sufString = suffixes[sufRand];
     std::string retstr = preString + sufString;
     return  retstr;
+}
+
+void GameMap::genBand()
+{
+    objectFile.addValue("numObjectTypes", 1);
+
+    std::string type = "Band";
+    objectFile.addTag("type");
+    objectFile.pushTag("type", 0);
+    objectFile.addValue("name", "Band");
+    objectFile.addValue("numOf", numCities);
+    for(int ii = 0; ii < numCities; ii++)
+    {
+        objectFile.addTag("object");
+        objectFile.pushTag("object", ii);
+        int proposedIndex = 10;
+//           while(altitudes[proposedIndex] < 2 || altitudes[proposedIndex] > 5)
+//           {
+//               proposedIndex = ofRandom(altitudes.size());
+//           }
+        std::string name[4] = {"BandNormal", "BandIncog", "BandIncarn", "BandIncarnIncog"};
+        Band tmp(false, false, 10, 6, 32, "", name);
+        tmp.saveObjectData(objectFile);
+        objectFile.popTag();
+
+
+    }
+    objectFile.popTag();
+    objectFile.saveFile("objects.xml");
 }
 
 

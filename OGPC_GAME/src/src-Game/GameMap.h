@@ -4,6 +4,7 @@
 #include "Tile.h"
 #include "Vec2i.h"
 #include "../src-Engine/City.h"
+#include "../src-Engine/Band.h"
 //#include "objects/City.h" include this once objects are moved into game source
 
 
@@ -23,6 +24,7 @@ public:
     void saveMap(ofVec2i, std::vector<int>);
     void generateMap();
     void genCities();
+    void genBand();
     std::string randomName();
 
 private:

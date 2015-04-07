@@ -4,13 +4,14 @@
 #include "../src-Game/Vec2i.h"
 #include "../src-MenuAPI/MenuInclude.h"
 #include "../XML/src/ofxXmlSettings.h"
-
+#include "ResourceManager.h"
+//#include "../Engine/ResourceManager.h"
 class Band
 {
 public:
 
     Band();
-    Band(bool incog, bool incarn, int startnum, int mov, double tilew, std::string incarnName /*set as "" if incarn is false*/);
+    Band(bool incog, bool incarn, int startnum, int mov, double tilew, std::string incarnName, std::string TN[] /*set as "" if incarn is false*/);
 
     void draw();
     int update(ofVec2f& mousePos, bool& clicked, bool& pressed);
@@ -18,12 +19,12 @@ public:
     int getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed);
 
 
-    void setTextures(std::string TN0, std::string TN1, std::string TN2 , std::string TN3, ResourceManager& res);
-    void setTile(Tile* T, int inde);
+    void setTextures(ResourceManager* res);
+    void setTile(Tile* T);
     int getIndex();
     vector<std::string> getTextureNames();
 
-    void setBandMenu(Menu& fillme);
+    void setBandMenu(Menu* fillme);
 
     void fillMenu();
     void alignButtons();

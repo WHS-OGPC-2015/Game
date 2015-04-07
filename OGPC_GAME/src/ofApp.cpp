@@ -38,6 +38,7 @@ void ofApp::update(){
             resources->addTexture("CityHover.png", "CityHover");
             resources->addTexture("CMBackground.png", "CMBackground");
             resources->addFont("monterey/MontereyFLF-Bold.ttf", "CMFont", 12);
+            resources->loadFilesFromDirectory("C:\OpenFrameworks\apps\Game\OGPC_GAME\bin\data\BandTextures");
 
             gameEngine = new Engine;
             mapGenerator = new GameMap;
@@ -97,17 +98,8 @@ void ofApp::update(){
             {
                 dif = ofVec2f(0, 0);
             }
-
         }
-
-
-
     }
-
-
-
-
-
 
     if(pressed != true)
     {
@@ -175,9 +167,6 @@ void ofApp::mouseMoved(int x, int y ){
   mousePos.x = x;
   mousePos.y = y;
   dragging = false;
-
-
-
 }
 
 //--------------------------------------------------------------
@@ -193,7 +182,6 @@ void ofApp::mousePressed(int x, int y, int button){
     mousePos.x = x;
     mousePos.y = y;
     pressed = true;
-
 }
 
 //--------------------------------------------------------------
@@ -206,8 +194,6 @@ void ofApp::mouseReleased(int x, int y, int button){
     dragging = false;
     mousePos.x = x;
     mousePos.y = y;
-
-
 }
 
 //--------------------------------------------------------------

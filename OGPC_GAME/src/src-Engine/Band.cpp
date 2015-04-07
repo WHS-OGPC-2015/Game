@@ -29,7 +29,7 @@ Band::Band() // empty constructor
 }
 
 //you can change anything that would be have a possibility of being different at the start, including arbitrary things
-Band::Band(bool incog, bool incarn, int startnum, int mov, double tilew, std::string incarnName /*set as "" if incarn is false*/)
+Band::Band(bool incog, bool incarn, int startnum, int mov, double tilew, std::string incarnName, std::string TN[] /*set as "" if incarn is false*/)
 {
     incognito = incog;
     incarnation = incarn;
@@ -41,6 +41,11 @@ Band::Band(bool incog, bool incarn, int startnum, int mov, double tilew, std::st
     incarnationName = incarnName;
     actionState = 0;
     tileWidth = tilew;
+
+    for (int i = 0; i < 4; i++)
+    {
+        TextureNames[i] = TN[i];
+    }
 }
 
 
@@ -114,9 +119,9 @@ int Band::getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
 
 
 //give the band a menu to point to
-void Band::setBandMenu(Menu& fillme)
+void Band::setBandMenu(Menu* fillme)
 {
-    bandMenu = &fillme;
+    bandMenu = fillme;
     alignButtons();
 }
 
@@ -289,10 +294,15 @@ void Band::saveObjectData(ofxXmlSettings& file)
     file.addValue("boundTileIndex", boundTileIndex);
     file.addValue("discipleNumber", discipleNum);
 
-    file.addvalue("TextureName0", TextureNames[0]);
-    file.addvalue("TextureName1", TextureNames[1]);
-    file.addvalue("TextureName2", TextureNames[2]);
-    file.addvalue("TextureName3", TextureNames[3]);
+    file.addValue("TextureName0", TextureNames[0]);
+    file.addValue("TextureName1", TextureNames[1]);
+    file.addValue("TextureName2", TextureNames[2]);
+    file.addValue("TextureName3", TextureNames[3]);
+
+    file.addValue("extremeTile0x", extremeTiles[0].x);
+    file.addValue("extremeTile0y", extremeTiles[0].y);
+    file.addValue("extremeTile1x", extremeTiles[1].x);
+    file.addValue("extremeTile1y", extremeTiles[1].y);
 }
 
 void Band::loadObjectData(ofxXmlSettings& file)
@@ -313,6 +323,11 @@ void Band::loadObjectData(ofxXmlSettings& file)
     TextureNames[1] = file.getValue("TextureName1", "");
     TextureNames[2] = file.getValue("TextureName2", "");
     TextureNames[3] = file.getValue("TextureName3", "");
+
+    extremeTiles[0].x = file.getValue("extremeTile0x", 0);
+    extremeTiles[0].y = file.getValue("extremeTile0y", 0);
+    extremeTiles[1].x = file.getValue("extremeTile1x", 0);
+    extremeTiles[1].y = file.getValue("extremeTile1y", 0);
 }
 
 
@@ -365,27 +380,21 @@ void Band::setExtremeTiles(ofVec2i v1, ofVec2i v2)
 {
     extremeTiles[0] = v1;
     extremeTiles[1] = v2;
-    int temp = fabs(extremeTiles[1].x - extremeTiles[0].x)
+    int temp = fabs(extremeTiles[1].x - extremeTiles[0].x);
     boundTileCoords = ofVec2i(boundTileIndex % temp, boundTileIndex / temp);
 }
 
 //set ALL of the textures
-void Band::setTextures(std::string TN0, std::string TN1, std::string TN2 , std::string TN3, ResourceManager& res)
+void Band::setTextures(ResourceManager* res)
 {
-    TextureNames[0] = TN0;
-    TextureNames[0] = TN1;
-    TextureNames[0] = TN2;
-    TextureNames[0] = TN3;
-
-    BandTextures[0] = &res.getTextureReference(TN0);
-    BandTextures[1] = &res.getTextureReference(TN1);
-    BandTextures[2] = &res.getTextureReference(TN2);
-    BandTextures[3] = &res.getTextureReference(TN3);
+    for (int i = 0; i < 4; i++)
+    {
+        BandTextures[i] = &res->getTextureReference(TextureNames[i]);
+    }
 }
-void Band::setTile(Tile T, int inde)
+void Band::setTile(Tile* T)
 {
-    boundTile = &T;
-    boundTileIndex = inde;
+    boundTile = T;
 }
 
 int Band::getIndex()

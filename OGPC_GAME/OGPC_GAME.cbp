@@ -136,6 +136,8 @@
 		</Unit>
 		<Unit filename="src/src-Engine/Band.cpp" />
 		<Unit filename="src/src-Engine/Band.h" />
+		<Unit filename="src/src-Engine/BandMenu.cpp" />
+		<Unit filename="src/src-Engine/BandMenu.h" />
 		<Unit filename="src/src-Engine/City.cpp" />
 		<Unit filename="src/src-Engine/City.h" />
 		<Unit filename="src/src-Engine/CityMenu.cpp" />

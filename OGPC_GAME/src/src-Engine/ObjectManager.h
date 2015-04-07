@@ -6,6 +6,8 @@
 #include "ResourceManager.h"
 #include "City.h"
 #include "CityMenu.h"
+#include "Band.h"
+#include "BandMenu.h"
 class ObjectManager
 {
 

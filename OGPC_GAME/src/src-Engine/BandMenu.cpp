@@ -17,12 +17,12 @@ void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
     man->addTexture("BMBreakUpButHovered", res->getTexture("BreakUpButHovered"));
     man->addTexture("BMBreakUpButPressed", res->getTexture("BreakUpButPressed"));
 
-    man->addTexture("BMIncogUpButNormal", res->getTexture("IncogUpButNormal"));
-    man->addTexture("BMIncogUpButHovered", res->getTexture("IncogUpButHovered"));
-    man->addTexture("BMIncogUpButPressed", res->getTexture("IncogUpButPressed"));
-    man->addTexture("BMUnIncogUpButNormal", res->getTexture("UnIncogUpButNormal"));
-    man->addTexture("BMUnIncogUpButHovered", res->getTexture("UnIncogUpButHovered"));
-    man->addTexture("BMUnIncogUpButPressed", res->getTexture("UnIncogUpButPressed"));
+    man->addTexture("BMIncogButNormal", res->getTexture("IncogButNormal"));
+    man->addTexture("BMIncogButHovered", res->getTexture("IncogButHovered"));
+    man->addTexture("BMIncogButPressed", res->getTexture("IncogButPressed"));
+    man->addTexture("BMUnIncogButNormal", res->getTexture("UnIncogButNormal"));
+    man->addTexture("BMUnIncogButHovered", res->getTexture("UnIncogButHovered"));
+    man->addTexture("BMUnIncogButPressed", res->getTexture("UnIncogButPressed"));
 
 
 
@@ -90,12 +90,12 @@ void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
     MenuEntity* IncogBut;
     IncogBut = new HoverButton{
                         ofVec2f(pos.x + (halfmenuWidth - borderWidth)/2, pos.y - borderWidth + conste),
-                        man->getTexturePointer("BMIncogUpButNormal"),           // adding textures, we have done this before...
-                        man->getTexturePointer("BMIncogUpButHovered"),
-                        man->getTexturePointer("BMIncogUpButPressed"),
-                        man->getTexturePointer("BMUnIncogUpButPressed"),
-                        man->getTexturePointer("BMUnIncogUpButPressed"),
-                        man->getTexturePointer("BMUnIncogUpButPressed")
+                        man->getTexturePointer("BMIncogButNormal"),           // adding textures, we have done this before...
+                        man->getTexturePointer("BMIncogButHovered"),
+                        man->getTexturePointer("BMIncogButPressed"),
+                        man->getTexturePointer("BMUnIncogButPressed"),
+                        man->getTexturePointer("BMUnIncogButPressed"),
+                        man->getTexturePointer("BMUnIncogButPressed")
                                 } ;
 
     bandMenu.addEntity(*bandBG, "BandMenuBackground");

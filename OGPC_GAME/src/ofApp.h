@@ -17,11 +17,7 @@ public:
         ofSeedRandom();
         if(isThreadRunning())
         {
-<<<<<<< HEAD
-           // M->generateMap();
-=======
             //M->generateMap();
->>>>>>> 7266dfda0f644d11a292a08793d9377e5228d66f
             E->setup("tiles.xml", "game.xml", "objects.xml", viewPos, R);
             stopThread();
         }
@@ -61,13 +57,16 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 
 		ofVec2f mousePos, lastMousePos, dif, adjustedMousePos;
+		ofVec2f viewPos;
+
         bool pressed;//true if mouse button has been pressed down
         bool clicked;//true if mouse button has been pushed down then released
         bool dragging;//true if mouse button is pressed and is being moved
+        int currentState;
+        bool first;
 
         Engine* gameEngine;
         GameMap* mapGenerator;
-        ofVec2f viewPos;
         MainMenu* startingMenu;
         LoadingThread* loader;
         LoadingScreen* loading;
@@ -75,8 +74,7 @@ class ofApp : public ofBaseApp{
         PauseMenu* pause;
 
         enum GameStates{MAINMENU, LOADING, GAME};
-        int currentState;
-        bool first;
+
 
 
 

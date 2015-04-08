@@ -6,7 +6,7 @@ int EnemyBand::convertTo1dindex(ofVec2i v)
     return (v.y * fabs(extremeTiles[1].x - extremeTiles[0].x) + v.x); // converts an ofVec2i to an int based on the amount of tiles in the map
 }
 
-EnemyBand::EnemyBand();
+EnemyBand::EnemyBand()
 {
     textureName = "";
     movable = true;
@@ -35,12 +35,11 @@ void EnemyBand::draw()
 
 
 //---------------------------------------------------
-void EnemyBand::setTexture(std::string TexNam, ResourceManager& res)
+void EnemyBand::setTexture(ResourceManager* res)
 {
-    textureName = TexNam;
     enemyTexture = &res->getTexture(TexNam);
-
 }
+
 void EnemyBand::setTile(Tile til, int inde)
 {
     boundTile = &til;
@@ -51,7 +50,7 @@ void EnemyBand::setExtremeTiles(ofVec2i v1, ofVec2i v2)
 {
     extremeTiles[0] = v1;
     extremeTiles[1] = v2;
-    int temp = fabs(extremeTiles[1].x - extremeTiles[0].x)
+    int temp = fabs(extremeTiles[1].x - extremeTiles[0].x);
     boundTileCoords = ofVec2i(boundTileIndex % temp, boundTileIndex / temp);
 }
 
@@ -60,3 +59,32 @@ int EnemyBand::getIndex();
     return boundTileIndex;
 }
 
+
+void EnemyBand::saveObjectData(ofxXmlSettings& file)
+{
+    file.addValue("movable", movable);
+    file.addValue("textureName", textureName);
+    file.addValue("boundTileIndex", boundTileIndex);
+
+    file.addValue("boundTileCoordsx", boundTileCoords.x);
+    file.addValue("boundTileCoordsy", boundTileCoords.y);
+
+    file.addValue("extremeTile0x", extremeTiles[0].x);
+    file.addValue("extremeTile0y", extremeTiles[0].y);
+    file.addValue("extremeTile1x", extremeTiles[1].x);
+    file.addValue("extremeTile1y", extremeTiles[1].y);
+}
+
+void EnemyBand::loadObjectData(ofxXmlSettings& file)
+{
+    movable = file.getValue("movable", 0);
+    textureName = file.getValue("textureName", "");
+    boundTileIndex = file.getValue("boundTileIndex", 0);
+    boundTileCoords.x = file.getValue("boundTileCoordsx", 0);
+    boundTileCoords.y = file.getValue("boundTileCoordsy", 0);
+
+    extremeTiles[0].x = file.getValue("extremeTile0x", 0);
+    extremeTiles[0].y = file.getValue("extremeTile0y", 0);
+    extremeTiles[1].x = file.getValue("extremeTile1x", 0);
+    extremeTiles[1].y = file.getValue("extremeTile1y", 0);
+}

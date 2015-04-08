@@ -4,26 +4,28 @@
 #include "../src-Game/Vec2i.h"
 #include "../src-MenuAPI/MenuInclude.h"
 #include "../XML/src/ofxXmlSettings.h"
+#include "ResourceManager.h"
 
 class EnemyBand
 {
 public:
 
     EnemyBand();
-    EnemyBand();
+    EnemyBand(std::string str);
 
     void draw();
     void update();
     void turnlyUpdate();
 
-    void setTexture(std::string TexNam, ResourceManager& res);
+    void setTexture(ResourceManager* res);
     void setTile(Tile Til, int inde);
     void setExtremeTiles(ofVec2i v1, ofVec2i v2);
     int getIndex();
 
     int convertTo1dindex(ofVec2i v);
 
-
+    void saveObjectData(ofxXmlSettings& file);
+    void loadObjectData(ofxXmlSettings& file);
 private:
 
     Tile* boundTile;

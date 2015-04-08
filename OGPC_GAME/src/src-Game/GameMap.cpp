@@ -53,6 +53,7 @@ void GameMap::generateMap()
 {
     mapTextureNames("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
     genMapTwo();
+    objectFile.addValue("numObjectTypes", 2);
     genCities();
     genBand();
 }
@@ -455,8 +456,6 @@ void GameMap::mapTextureNames(std::string folder)
 
 void GameMap::genCities()
 {
-        objectFile.addValue("numObjectTypes", 1);
-
         std::string type = "City";
         objectFile.addTag("type");
         objectFile.pushTag("type", 0);
@@ -525,14 +524,12 @@ std::string GameMap::randomName()
 
 void GameMap::genBand()
 {
-    objectFile.addValue("numObjectTypes", 1);
-
     std::string type = "Band";
     objectFile.addTag("type");
-    objectFile.pushTag("type", 0);
+    objectFile.pushTag("type", 1);
     objectFile.addValue("name", "Band");
-    objectFile.addValue("numOf", numCities);
-    for(int ii = 0; ii < numCities; ii++)
+    objectFile.addValue("numOf", 1);
+    for(int ii = 0; ii < 1; ii++)
     {
         objectFile.addTag("object");
         objectFile.pushTag("object", ii);

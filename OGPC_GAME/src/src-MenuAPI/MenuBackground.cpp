@@ -6,6 +6,7 @@ MenuBackground::MenuBackground(ofVec2f loc, ofTexture& textu)
     position = loc;
     backTexture = &textu;
     fitToWindow = true;
+    requiresMouseData = false;
 }
 
 MenuBackground::MenuBackground(ofVec2f loc, ofTexture& textu, bool fit)
@@ -13,6 +14,7 @@ MenuBackground::MenuBackground(ofVec2f loc, ofTexture& textu, bool fit)
     position = loc;
     backTexture = &textu;
     fitToWindow = fit;
+    requiresMouseData = false;
 }
 
 void MenuBackground::update()//MenuBackground doesn't update

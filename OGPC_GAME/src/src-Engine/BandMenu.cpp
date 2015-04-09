@@ -39,7 +39,7 @@ void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
     MenuEntity* bandBG;
     bandBG = new MenuBackground{
                     pos,
-                    man->getTexturePointer("BMBackground"),
+                    res->getTextureReference("BMBackground"),
                     false
                      };
 
@@ -98,13 +98,13 @@ void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
                         man->getTexturePointer("BMUnIncogButPressed")
                                 } ;
 
-    bandMenu.addEntity(*bandBG, "BandMenuBackground");
-    bandMenu.addEntity(*incarnName, "IncarnationName");
-    bandMenu.addEntity(*discBox, "DiscipleBox");
-    bandMenu.addEntity(*discNum, "DiscipleNumber");
-    bandMenu.addEntity(*BreakUp, "BreakUpButton");
-    bandMenu.addEntity(*MoveBut, "MoveButton");
-    bandMenu.addEntity(*IncogBut, "IncognitoButton");
+//    bandMenu.addEntity(*bandBG, "BandMenuBackground");
+//    bandMenu.addEntity(*incarnName, "IncarnationName");
+//    bandMenu.addEntity(*discBox, "DiscipleBox");
+//    bandMenu.addEntity(*discNum, "DiscipleNumber");
+//    bandMenu.addEntity(*BreakUp, "BreakUpButton");
+//    bandMenu.addEntity(*MoveBut, "MoveButton");
+//    bandMenu.addEntity(*IncogBut, "IncognitoButton");
 
     man->addMenu(bandMenu, "BandMenu");
 }

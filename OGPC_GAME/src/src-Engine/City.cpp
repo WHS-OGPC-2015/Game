@@ -152,7 +152,6 @@ void City::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 
     if (hovered == true)
     {
-        std::cout << "here" << std::endl;
         cityMenu->setActive();
         fillMenu();
     }

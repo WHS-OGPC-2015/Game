@@ -38,7 +38,7 @@ void ofApp::update(){
             resources->addTexture("CityHover.png", "CityHover");
             resources->addTexture("CMBackground.png", "CMBackground");
             resources->addFont("monterey/MontereyFLF-Bold.ttf", "CMFont", 12);
-            resources->loadFilesFromDirectory("C:\OpenFrameworks\apps\Game\OGPC_GAME\bin\data\BandTextures");
+            resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\BandTextures");
 
             gameEngine = new Engine;
             mapGenerator = new GameMap;
@@ -61,7 +61,7 @@ void ofApp::update(){
     {
         if(first == true)
         {
-            gameEngine->mainThreadFunction();   //loads textures for the menus
+            //gameEngine->mainThreadFunction();   //loads textures for the menus
             first = false;
         }
         loader->update(viewPos);

@@ -80,7 +80,7 @@ int Band::getBandType()
 
 void Band::draw() // draws the current texture at the bound tile
 {
-    BandTextures[bandType]->draw(boundTile ->getLocation());
+    BandTextures[bandType]->draw(boundTile->getLocation());
 }
 
 
@@ -243,7 +243,6 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
         }
         return -3;
     }
-
 }
 
 void Band::turnlyUpdate()

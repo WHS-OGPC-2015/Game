@@ -57,10 +57,12 @@ void ResourceManager::loadFilesFromDirectory(std::string folder)
             extension == "bmp")
         {
             addTexture(fullPath, notExtension);  //if so load texture from that path
+            std::cout << notExtension << std::endl;
         }
         else if(extension == "ttf")
         {
             addFont(fullPath, notExtension, 32);
+
         }
         else if(extension ==  ".wav" ||         //checks for valid sound extensions
                 extension == ".aif" ||

@@ -8,7 +8,7 @@ ObjectManager::ObjectManager(std::string toLoad, ofVec2f translation, TileManage
     recMan = R;
     objectMenus = new MenuManager;  //create menu manager for the
     createCityMenu(objectMenus, ofVec2f(ofGetWindowWidth()-200, ofGetWindowHeight()-150), recMan);
-    //createBandMenu(objectMenus, ofVec2f(ofGetWindowWidth()-600, ofGetWindowHeight()-150), recMan);
+    createBandMenu(objectMenus, ofVec2f(ofGetWindowWidth()-600, ofGetWindowHeight()-150), recMan);
     loadFromFile(toLoad);
 }
 ObjectManager::~ObjectManager()
@@ -35,8 +35,7 @@ void ObjectManager::loadFromFile(std::string filePath)
             objectFile.pushTag("type", ii);
             std::string type = objectFile.getValue("name", "");
             int numType = objectFile.getValue("numOf", 0);
-            if(objectArrayNames.find(type) == objectArrayNames.end())           //if statements deduce type which is then loaded
-            {
+            //if(objectArrayNames.find(type) == objectArrayNames.end())           //if statements deduce type which is then loaded
                 if(type == "City")
                 {
                     addObjectType<City>("City", numType);
@@ -72,9 +71,8 @@ void ObjectManager::loadFromFile(std::string filePath)
                 ADD OTHER TYPES HERE
                 -----------------------------------
                 */
-            }
 
-
+            objectFile.popTag();
 
         }
 

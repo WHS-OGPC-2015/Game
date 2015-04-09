@@ -282,6 +282,7 @@ void Band::turnlyUpdate()
 
 void Band::saveObjectData(ofxXmlSettings& file)
 {
+    std::cout << "saved band" << std::endl;
     file.addValue("incognito", incognito);
     file.addValue("selected", selected);
     file.addValue("incarnation", incarnation);
@@ -323,7 +324,7 @@ void Band::loadObjectData(ofxXmlSettings& file)
     TextureNames[1] = file.getValue("TextureName1", "");
     TextureNames[2] = file.getValue("TextureName2", "");
     TextureNames[3] = file.getValue("TextureName3", "");
-
+    std::cout << TextureNames[3] << std::endl;
     extremeTiles[0].x = file.getValue("extremeTile0x", 0);
     extremeTiles[0].y = file.getValue("extremeTile0y", 0);
     extremeTiles[1].x = file.getValue("extremeTile1x", 0);

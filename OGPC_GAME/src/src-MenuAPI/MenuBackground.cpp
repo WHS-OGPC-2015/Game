@@ -37,6 +37,8 @@ void MenuBackground::addPosition(ofVec2f dpos)
 void MenuBackground::draw()
 {
     // draws the center at the position
+    std::cout << "here" << std::endl;
+    std::cout << backTexture->getWidth() << std::endl;
     if(fitToWindow)
     {
         backTexture->draw(0,0,ofGetWindowWidth(), ofGetWindowHeight()) ;

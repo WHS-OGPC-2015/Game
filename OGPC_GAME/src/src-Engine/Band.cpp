@@ -170,32 +170,50 @@ void Band::findActions()
             swapIncognito();
             movable = false;
         }
+        else
+        {
+            actionState = 0;
+        }
+
+    }
+    else
+    {
+        actionState = 0;
     }
 }
 
 int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
-    bandMenu->setInactive(); // start the update with this
-    if(getClickedData(mousePos, clicked, pressed) != 0)
-    {
-        selected = true;
-        clicked = true;
-    }
-    else
-    {
-        selected = false;
-        clicked = false;
-    }
+ //   bandMenu->setInactive(); // start the update with this
+    clickedData = getClickedData(mousePos, clicked, pressed);
+
+
     if (actionState == 0) // normal
     {
-//        else if (getClickedData(mousePos, clicked, pressed) == 1 or getClickedData(mousePos, clicked, pressed) == 2)
-//        {
-//            // nothing yet
-//        }
+       if(clickedData == 1 or clickedData == 2)
+        {
+            hovered = true;
+        }
+
+        if (clickedData == 3)
+        {
+            selected = true;
+        }
+
+        if (clickedData == 0)
+        {
+            hovered = false;
+            if (clicked == true)
+            {
+                selected = false;
+            }
+        }
+
         if (selected == true)
         {
             std::cout << "here";
             bandMenu->setActive();
+            fillMenu();
         }
         return -1;
     }

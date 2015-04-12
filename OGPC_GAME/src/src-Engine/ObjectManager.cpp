@@ -133,6 +133,7 @@ void ObjectManager::drawNoTranslate()
     objectMenus->draw();
     //objectMenus->getMenuPointerByName("CityMenu")->draw();
     objectMenus->getMenuPointerByName("CityMenu")->setInactive();
+    objectMenus->getMenuPointerByName("BandMenu")->setInactive();
 
 }
 

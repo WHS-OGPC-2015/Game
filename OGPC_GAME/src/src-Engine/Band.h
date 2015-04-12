@@ -82,6 +82,9 @@ private:
     int bandType;
 
     bool selected;
+    int clickedData;
+    bool hovered;
+
     bool movable;
     int actionState;
     ofVec2i extremeTiles[2]; // e.g., [(0,0),(100,100)] -- useful for  finding possible moves
@@ -93,6 +96,7 @@ private:
 
     ofVec2f TLpos;
     ofVec2f BRpos;
+
 
     Menu* bandMenu;
     HoverButton* actionButtons[3];

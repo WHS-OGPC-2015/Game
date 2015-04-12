@@ -142,6 +142,8 @@
 		<Unit filename="src/src-Engine/City.h" />
 		<Unit filename="src/src-Engine/CityMenu.cpp" />
 		<Unit filename="src/src-Engine/CityMenu.h" />
+		<Unit filename="src/src-Engine/EnemyBand.cpp" />
+		<Unit filename="src/src-Engine/EnemyBand.h" />
 		<Unit filename="src/src-Engine/EngineInclude.h" />
 		<Unit filename="src/src-Engine/EngineMain.cpp" />
 		<Unit filename="src/src-Engine/EngineMain.h" />

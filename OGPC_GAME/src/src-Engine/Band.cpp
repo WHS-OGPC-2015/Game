@@ -195,12 +195,12 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
             hovered = true;
         }
 
-        if (clickedData == 3)
+        else if (clickedData == 3)
         {
             selected = true;
         }
 
-        if (clickedData == 0)
+        else if (clickedData == 0)
         {
             hovered = false;
             if (clicked == true)
@@ -211,7 +211,7 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 
         if (selected == true)
         {
-            bandMenu->setActive();
+            //bandMenu->setActive();
             fillMenu();
         }
         return -1;

@@ -402,7 +402,7 @@ void GameMap::mapTextureNames(std::string folder)
             // , delete '!' read other 2 default folder . and ..
             if(! (fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) ) {
                 names.push_back(fd.cFileName);
-                std::cout << fd.cFileName << std::endl;
+                std::cout << fd.cFileName << " swag" << std::endl;
             }
         }while(FindNextFile(hFind, &fd));                   //find the next file
 

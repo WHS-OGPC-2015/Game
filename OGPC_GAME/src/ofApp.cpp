@@ -32,7 +32,7 @@ void ofApp::update(){
         if(first == true)
         {
             resources = new ResourceManager;
-            resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Gam2qc fve\\OGPC_GAME\\bin\\data\\tiles");
+            resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\tiles");
             resources->addTexture("City.png", "City");
             resources->addTexture("CityHover.png", "CityHover");
             resources->addTexture("CMBackground.png", "CMBackground");

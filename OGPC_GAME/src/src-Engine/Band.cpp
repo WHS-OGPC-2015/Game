@@ -422,6 +422,11 @@ int Band::getIndex()
     return boundTileIndex;
 }
 
+ofVec2i Band::getCoords()
+{
+    return boundTileCoords;
+}
+
 void Band::switchSelect()
 {
     selected = !selected;

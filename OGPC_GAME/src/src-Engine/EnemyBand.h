@@ -15,7 +15,7 @@ public:
 
     void draw();
     void update();
-    void turnlyUpdate();
+    void turnlyUpdate(vector<Band> bands);
 
     void setTexture(ResourceManager* res);
     void setTile(Tile Til, int inde);
@@ -26,6 +26,7 @@ public:
 
     void saveObjectData(ofxXmlSettings& file);
     void loadObjectData(ofxXmlSettings& file);
+
 private:
 
     Tile* boundTile;
@@ -39,6 +40,5 @@ private:
 
     bool movable;
 
-    vector<ofVec2i> possibleMoveCoords;
-    vector<int> possibleMoveIndecies;
+    int nextMoveIndex;
 };

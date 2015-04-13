@@ -14,6 +14,27 @@ void createCityMenu(MenuManager* man, ofVec2f pos, ResourceManager* R)
     double halfmenuHeight = man->getTexturePointer("CMBackground").getHeight()/2;
     double halfmenuWidth = man->getTexturePointer("CMBackground").getWidth()/2;
 
+    man->addTexture("BMBackground", R->getTexture("BMBackground"));
+
+    man->addTexture("BMBreakUpButNormal", R->getTexture("BreakUpButNormal"));
+    man->addTexture("BMBreakUpButHovered", R->getTexture("BreakUpButHovered"));
+    man->addTexture("BMBreakUpButPressed", R->getTexture("BreakUpButPressed"));
+
+    man->addTexture("BMIncogButNormal", R->getTexture("IncogButNormal"));
+    man->addTexture("BMIncogButHovered", R->getTexture("IncogButHovered"));
+    man->addTexture("BMIncogButPressed", R->getTexture("IncogButPressed"));
+    man->addTexture("BMUnIncogButNormal", R->getTexture("UnIncogButNormal"));
+    man->addTexture("BMUnIncogButHovered", R->getTexture("UnIncogButHovered"));
+    man->addTexture("BMUnIncogButPressed", R->getTexture("UnIncogButPressed"));
+
+
+
+    man->addTexture("BMMoveButNormal", R->getTexture("MoveButNormal"));
+    man->addTexture("BMMoveButHovered", R->getTexture("MoveButHovered"));
+    man->addTexture("BMMoveButPressed", R->getTexture("MoveButPressed"));
+
+    man->addFont("BMText", R->getFont("MySimpleFont"));
+
     MenuEntity* citBG;
     citBG = new MenuBackground{
                     pos,

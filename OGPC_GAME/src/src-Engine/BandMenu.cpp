@@ -11,62 +11,62 @@ void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
     int borderWidth = 5;
     Menu bandMenu(ofVec2f(0, 0));
 
-    man->addTexture("BMBackground", res->getTexture("BMBackground"));
-
-    man->addTexture("BMBreakUpButNormal", res->getTexture("BreakUpButNormal"));
-    man->addTexture("BMBreakUpButHovered", res->getTexture("BreakUpButHovered"));
-    man->addTexture("BMBreakUpButPressed", res->getTexture("BreakUpButPressed"));
-
-    man->addTexture("BMIncogButNormal", res->getTexture("IncogButNormal"));
-    man->addTexture("BMIncogButHovered", res->getTexture("IncogButHovered"));
-    man->addTexture("BMIncogButPressed", res->getTexture("IncogButPressed"));
-    man->addTexture("BMUnIncogButNormal", res->getTexture("UnIncogButNormal"));
-    man->addTexture("BMUnIncogButHovered", res->getTexture("UnIncogButHovered"));
-    man->addTexture("BMUnIncogButPressed", res->getTexture("UnIncogButPressed"));
-
-
-
-    man->addTexture("BMMoveButNormal", res->getTexture("MoveButNormal"));
-    man->addTexture("BMMoveButHovered", res->getTexture("MoveButHovered"));
-    man->addTexture("BMMoveButPressed", res->getTexture("MoveButPressed"));
-
-    man->addFont("BMText", res->getFont("MySimpleFont"));
-
+//    man->addTexture("BMBackground", res->getTexture("BMBackground"));
+//
+//    man->addTexture("BMBreakUpButNormal", res->getTexture("BreakUpButNormal"));
+//    man->addTexture("BMBreakUpButHovered", res->getTexture("BreakUpButHovered"));
+//    man->addTexture("BMBreakUpButPressed", res->getTexture("BreakUpButPressed"));
+//
+//    man->addTexture("BMIncogButNormal", res->getTexture("IncogButNormal"));
+//    man->addTexture("BMIncogButHovered", res->getTexture("IncogButHovered"));
+//    man->addTexture("BMIncogButPressed", res->getTexture("IncogButPressed"));
+//    man->addTexture("BMUnIncogButNormal", res->getTexture("UnIncogButNormal"));
+//    man->addTexture("BMUnIncogButHovered", res->getTexture("UnIncogButHovered"));
+//    man->addTexture("BMUnIncogButPressed", res->getTexture("UnIncogButPressed"));
+//
+//
+//
+//    man->addTexture("BMMoveButNormal", res->getTexture("MoveButNormal"));
+//    man->addTexture("BMMoveButHovered", res->getTexture("MoveButHovered"));
+//    man->addTexture("BMMoveButPressed", res->getTexture("MoveButPressed"));
+//
+//    man->addFont("BMText", res->getFont("MySimpleFont"));
+//
     double halfmenuHeight = man->getTexturePointer("BMBackground").getHeight()/2;
     double halfmenuWidth = man->getTexturePointer("BMBackground").getWidth()/2;
     //---------------------------------------------------------------------------
 
     MenuEntity* bandBG;
-    bandBG = new MenuBackground{
+    bandBG = new MenuBackground(
                     pos,
                     res->getTextureReference("BMBackground"),
                     false
-                     };
+                     );
 
 
 
     MenuEntity* incarnName;
-    incarnName = new TextBox{
+    incarnName = new TextBox(
                         "BAND_NAME",
                         ofVec2f(pos.x, pos.y - halfmenuHeight + borderWidth),
                         man->getFontPointer("BMText")
-                            };
+                            );
     MenuEntity* discBox;
-    discBox = new TextBox{
+    discBox = new TextBox(
                         "Number of Disciples:",
                        ofVec2f(pos.x - constb, pos.y +  halfmenuHeight - borderWidth - consta /*a constant*/),
                         man->getFontPointer("BMText")
-                            };
+                            );
 
     MenuEntity* discNum;
-    discNum = new TextBox{
+    discNum = new TextBox(
                     "X",
                     ofVec2f(pos.x + constc, pos.y +  halfmenuHeight - borderWidth - consta),
                     man->getFontPointer("BMText")
-                    };
+                    );
 
     MenuEntity* BreakUp;
-    BreakUp = new HoverButton{
+    BreakUp = new HoverButton(
                         ofVec2f(pos.x - (halfmenuWidth - borderWidth)/2, pos.y - borderWidth - constd),
                         man->getTexturePointer("BMBreakUpButNormal"),           // adding textures, we have done this before...
                         man->getTexturePointer("BMBreakUpButHovered"),
@@ -74,10 +74,10 @@ void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
                         man->getTexturePointer("BMBreakUpButPressed"),
                         man->getTexturePointer("BMBreakUpButPressed"),
                         man->getTexturePointer("BMBreakUpButPressed")
-                                };
+                                );
 
     MenuEntity* MoveBut;
-    MoveBut = new HoverButton{
+    MoveBut = new HoverButton(
                         ofVec2f(pos.x + (halfmenuWidth - borderWidth)/2, pos.y - borderWidth - constd),
                         man->getTexturePointer("BMMoveButNormal"),           // adding textures, we have done this before...
                         man->getTexturePointer("BMMoveButHovered"),
@@ -85,10 +85,10 @@ void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
                         man->getTexturePointer("BMMoveButPressed"),
                         man->getTexturePointer("BMMoveButPressed"),
                         man->getTexturePointer("BMMoveButPressed")
-                                };
+                                );
 
     MenuEntity* IncogBut;
-    IncogBut = new HoverButton{
+    IncogBut = new HoverButton(
                         ofVec2f(pos.x + (halfmenuWidth - borderWidth)/2, pos.y - borderWidth + conste),
                         man->getTexturePointer("BMIncogButNormal"),           // adding textures, we have done this before...
                         man->getTexturePointer("BMIncogButHovered"),
@@ -96,17 +96,17 @@ void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
                         man->getTexturePointer("BMUnIncogButPressed"),
                         man->getTexturePointer("BMUnIncogButPressed"),
                         man->getTexturePointer("BMUnIncogButPressed")
-                                } ;
+                                );
 
-//    bandMenu.addEntity(*bandBG, "BandMenuBackground");
-//    bandMenu.addEntity(*incarnName, "IncarnationName");
-//    bandMenu.addEntity(*discBox, "DiscipleBox");
-//    bandMenu.addEntity(*discNum, "DiscipleNumber");
-//    bandMenu.addEntity(*BreakUp, "BreakUpButton");
-//    bandMenu.addEntity(*MoveBut, "MoveButton");
-//    bandMenu.addEntity(*IncogBut, "IncognitoButton");
+    bandMenu.addEntity(*bandBG, "BandMenuBackground");
+    bandMenu.addEntity(*incarnName, "IncarnationName");
+    bandMenu.addEntity(*discBox, "DiscipleBox");
+    bandMenu.addEntity(*discNum, "DiscipleNumber");
+    bandMenu.addEntity(*BreakUp, "BreakUpButton");
+    bandMenu.addEntity(*MoveBut, "MoveButton");
+    bandMenu.addEntity(*IncogBut, "IncognitoButton");
 
-    man->addMenu(bandMenu, "BandMenu");
+   man->addMenu(bandMenu, "BandMenu");
 }
 
 void resetBandMenuPositions(Menu& bandmenu, ofVec2f deltaPos)

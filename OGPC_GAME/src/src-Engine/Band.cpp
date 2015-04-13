@@ -122,7 +122,7 @@ int Band::getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
 void Band::setBandMenu(Menu* fillme)
 {
     bandMenu = fillme;
-    //alignButtons();
+    alignButtons();
 }
 
 // fills the menu
@@ -176,23 +176,25 @@ void Band::findActions()
 int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
     bandMenu->setInactive(); // start the update with this
+    if(getClickedData(mousePos, clicked, pressed) != 0)
+    {
+        selected = true;
+        clicked = true;
+    }
+    else
+    {
+        selected = false;
+        clicked = false;
+    }
     if (actionState == 0) // normal
     {
-
-        if (getClickedData(mousePos, clicked, pressed) == 3)
-        {
-            selected = true;
-        }
-        else if (clicked == true) // if clicked not on the city
-        {
-           selected = false;
-        }
-        else if (getClickedData(mousePos, clicked, pressed) == 1 or getClickedData(mousePos, clicked, pressed) == 2)
-        {
-            // nothing yet
-        }
+//        else if (getClickedData(mousePos, clicked, pressed) == 1 or getClickedData(mousePos, clicked, pressed) == 2)
+//        {
+//            // nothing yet
+//        }
         if (selected == true)
         {
+            std::cout << "here";
             bandMenu->setActive();
         }
         return -1;
@@ -390,6 +392,8 @@ void Band::setTextures(ResourceManager* res)
     {
         BandTextures[i] = &res->getTextureReference(TextureNames[i]);
     }
+    TLpos = ofVec2f(boundTile->getLocation().x - BandTextures[bandType]->getWidth() /2, boundTile->getLocation().y - BandTextures[bandType]->getHeight() /2);
+    BRpos = ofVec2f(boundTile->getLocation().x + BandTextures[bandType]->getWidth() /2, boundTile->getLocation().y + BandTextures[bandType]->getHeight() /2);
 }
 void Band::setTile(Tile* T)
 {

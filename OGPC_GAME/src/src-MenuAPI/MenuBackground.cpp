@@ -42,11 +42,11 @@ void MenuBackground::draw()
     //std::cout << backTexture->getWidth() << std::endl;
     if(fitToWindow)
     {
-        backTexture->draw(0,0,ofGetWindowWidth(), ofGetWindowHeight()) ;
+       backTexture->draw(0,0,ofGetWindowWidth(), ofGetWindowHeight()) ;
     }
     else
     {
-        backTexture->draw(position.x-backTexture->getWidth()/2, position.y-backTexture->getHeight()/2);
+       backTexture->draw(position.x-backTexture->getWidth()/2, position.y-backTexture->getHeight()/2);
     }
 
 }

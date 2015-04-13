@@ -22,6 +22,7 @@ public:
     void setTextures(ResourceManager* res);
     void setTile(Tile* T);
     int getIndex();
+    ofVec2i getCoords();
     vector<std::string> getTextureNames();
 
     void setBandMenu(Menu* fillme);

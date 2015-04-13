@@ -78,6 +78,7 @@ void ofApp::update(){
         {
             adjustedMousePos = mousePos - viewPos;
             gameEngine->update(adjustedMousePos, clicked, pressed);
+            gameEngine->updateNoTranslate(mousePos, clicked, pressed);
             if(dragging)
             {
                 dif = mousePos - lastMousePos;

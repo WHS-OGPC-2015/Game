@@ -5,9 +5,6 @@
 
 City::City()
 {
-
-
-
    // cityName = randomname(); // set name to a random combination of prefixes and suffixes
     maxdif = 5;  // set the maximum difficulty for ALL cities
     accelmax = 50; // same in each city
@@ -52,7 +49,6 @@ City::City(int dif, double fpopulation, std::string fcityName, int iTileIndex, s
     drawMenu = false;
     selected = false;
     hovered = false;
-
 }
 
 void City::setTile(Tile* T)

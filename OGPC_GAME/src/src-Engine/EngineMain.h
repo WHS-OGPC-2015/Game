@@ -13,6 +13,7 @@ public:
     void draw();
     void mainThreadFunction();
     void drawNoTranslate();
+    void updateNoTranslate(ofVec2f& mousePos, bool& clicked, bool& pressed);
 private:
     TileManager* tiles;
     ResourceManager* resources;

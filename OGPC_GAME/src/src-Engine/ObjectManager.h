@@ -62,7 +62,8 @@ public:
     void saveToFile(std::string);
     void loadFromFile(std::string filePath);    //load all objects from file
     void updateAll(ofVec2f& mousePos, bool& clicked, bool& pressed);                           //update all objects
-    void drawAll();                             //draw all objects
+    void drawAll();
+    void updateNoTranslate(ofVec2f& mousePos, bool& clicked, bool& pressed);                             //draw all objects
     void drawNoTranslate();
     void mainThreadFunction();
 private:

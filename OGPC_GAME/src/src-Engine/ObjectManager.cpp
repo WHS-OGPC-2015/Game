@@ -120,6 +120,7 @@ void ObjectManager::saveToFile(std::string path)
 
 void ObjectManager::updateAll(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
+    std::cout << mousePos.x << ", " << mousePos.y << std::endl;
     for(int ii = 0; ii < objects.size(); ii++)
     {
         objects[ii]->updateAll(mousePos, clicked, pressed);
@@ -128,10 +129,6 @@ void ObjectManager::updateAll(ofVec2f& mousePos, bool& clicked, bool& pressed)
             objects[ii]->turnlyUpdateAll();
         }
     }
-
-    objectMenus->update(mousePos, clicked, pressed);
-
-
 }
 
 void ObjectManager::drawNoTranslate()
@@ -140,6 +137,11 @@ void ObjectManager::drawNoTranslate()
     //objectMenus->getMenuPointerByName("CityMenu")->setInactive();
     //objectMenus->getMenuPointerByName("BandMenu")->setInactive();
 
+}
+
+void ObjectManager::updateNoTranslate(ofVec2f& mousePos, bool& clicked, bool& pressed)
+{
+    objectMenus->update(mousePos, clicked, pressed);
 }
 
 void ObjectManager::drawAll()

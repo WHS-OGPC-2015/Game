@@ -250,8 +250,8 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 void Band::turnlyUpdate()
 {
     //reset the TL and BR positions for collisions
-    TLpos = ofVec2f(boundTile->getLocation().x - BandTextures[bandType]->getWidth() /2, boundTile->getLocation().y - BandTextures[bandType]->getHeight() /2);
-    BRpos = ofVec2f(boundTile->getLocation().x + BandTextures[bandType]->getWidth() /2, boundTile->getLocation().y + BandTextures[bandType]->getHeight() /2);
+    TLpos = ofVec2f(boundTile->getLocation().x, boundTile->getLocation().y);
+    BRpos = ofVec2f(boundTile->getLocation().x + BandTextures[bandType]->getWidth(), boundTile->getLocation().y + BandTextures[bandType]->getHeight());
 
     // reset every turn
     actionState = 0;
@@ -392,8 +392,8 @@ void Band::setTextures(ResourceManager* res)
     {
         BandTextures[i] = &res->getTextureReference(TextureNames[i]);
     }
-    TLpos = ofVec2f(boundTile->getLocation().x - BandTextures[bandType]->getWidth() /2, boundTile->getLocation().y - BandTextures[bandType]->getHeight() /2);
-    BRpos = ofVec2f(boundTile->getLocation().x + BandTextures[bandType]->getWidth() /2, boundTile->getLocation().y + BandTextures[bandType]->getHeight() /2);
+    TLpos = ofVec2f(boundTile->getLocation().x, boundTile->getLocation().y);
+    BRpos = ofVec2f(boundTile->getLocation().x + BandTextures[bandType]->getWidth(), boundTile->getLocation().y + BandTextures[bandType]->getHeight());
 }
 void Band::setTile(Tile* T)
 {

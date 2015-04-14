@@ -125,6 +125,10 @@ void Band::setBandMenu(Menu* fillme)
     alignButtons();
 }
 
+void Band::setTileManager(TileManager* tilm)
+{
+
+}
 // fills the menu
 void Band::fillMenu()
 {
@@ -155,7 +159,7 @@ void Band::findActions()
         if (actionButtons[0]->getEventDataInt() > 2)
         {
             actionState = 1;
-            movable = false;
+            //movable = false;
         }
         else if (actionButtons[1]->getEventDataInt() > 2)
         {
@@ -164,12 +168,12 @@ void Band::findActions()
         else if (actionButtons[2]->getEventDataInt() == 3 and incognito == false)
         {
             swapIncognito();
-            movable = false;
+           // movable = false;
         }
         else if (actionButtons[2]->getEventDataInt() == 0 and incognito == true)
         {
             swapIncognito();
-            movable = false;
+           // movable = false;
         }
         else
         {
@@ -186,8 +190,13 @@ void Band::findActions()
 int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
  //   bandMenu->setInactive(); // start the update with this
+
     clickedData = getClickedData(mousePos, clicked, pressed);
     findActions();
+<<<<<<< HEAD
+=======
+
+>>>>>>> b13983ec7d8f4abffdcc5cdeb5af29f1d7f7659f
     if (actionState == 0) // normal
     {
        if(clickedData == 1 or clickedData == 2)
@@ -221,17 +230,18 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
     {
         if (clicked == true)
         {
-            // finds the 2d coord of your mose click, based on the tiles
+//            // finds the 2d coord of your mose click, based on the tiles
             ofVec2i temptile = ofVec2i(turnToInt(mousePos.x / tileWidth), turnToInt(mousePos.y / tileWidth));
-            for (int i = 0; i < possibleMovesCoords.size(); i++)
-            {
-                if (temptile.x == possibleMovesCoords[i].x and temptile.y == possibleMovesCoords[i].y)// check every possible move if there is a match
-                {
-                    int t = convertTo1dindex(temptile);
-                    return t;
-                }
-            }
-
+//            for (int i = 0; i < possibleMovesCoords.size(); i++)
+//            {
+//                if (temptile.x == possibleMovesCoords[i].x and temptile.y == possibleMovesCoords[i].y)// check every possible move if there is a match
+//                {
+//                    int t = convertTo1dindex(temptile);
+//                    return t;
+//                }
+//            }
+            int t = convertTo1dindex(temptile);
+            return t;
         }
         return -2;
     }

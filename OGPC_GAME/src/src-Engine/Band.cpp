@@ -127,7 +127,7 @@ void Band::setBandMenu(Menu* fillme)
 
 void Band::setTileManager(TileManager* tilm)
 {
-
+    allTiles = tilm;
 }
 // fills the menu
 void Band::fillMenu()
@@ -193,10 +193,6 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 
     clickedData = getClickedData(mousePos, clicked, pressed);
     findActions();
-<<<<<<< HEAD
-=======
-
->>>>>>> b13983ec7d8f4abffdcc5cdeb5af29f1d7f7659f
     if (actionState == 0) // normal
     {
        if(clickedData == 1 or clickedData == 2)
@@ -240,8 +236,10 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 //                    return t;
 //                }
 //            }
-            int t = convertTo1dindex(temptile);
-            return t;
+            ofVec2f tm = ofVec2f(temptile.x, temptile.y);
+            boundTile = allTiles->getTileByCoords(tm);
+            boundTileCoords = temptile;
+            boundTileIndex = allTiles->tileIndiceByArrayCoords(tm);
         }
         return -2;
     }

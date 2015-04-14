@@ -66,6 +66,7 @@ void ObjectManager::loadFromFile(std::string filePath)
                         tmp->setTile(tiles->getTileByIndice(tmp->getIndex()));
                         tmp->setTextures(recMan);
                         tmp->setBandMenu(objectMenus->getMenuPointerByName("BandMenu"));
+                        tmp->setTileManager(tiles);
                     }
                 }
                 /*

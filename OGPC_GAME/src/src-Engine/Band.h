@@ -5,6 +5,7 @@
 #include "../src-MenuAPI/MenuInclude.h"
 #include "../XML/src/ofxXmlSettings.h"
 #include "ResourceManager.h"
+#include "EngineInclude.h"
 //#include "../Engine/ResourceManager.h"
 class Band
 {
@@ -28,12 +29,11 @@ public:
     void setBandMenu(Menu* fillme);
 
     void fillMenu();
-    void alignButtons();int t = convertTo1dindex(temptile);
-//                    return t;
+    void alignButtons();
 
     void findActions();
 
-    void setTileManager(TileManager tilm;)
+    void setTileManager(TileManager* tilm);
     //these are all boring -- just sets, gets, and swaps
     int convertTo1dindex(ofVec2i v);
 
@@ -107,5 +107,5 @@ private:
 
     vector<ofVec2i> possibleMovesCoords;
     vector<int> possibleMovesIndex;
-    TileManager allTiles;
+    TileManager* allTiles;
 };

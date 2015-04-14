@@ -6,6 +6,7 @@ struct oVectorAbstract
 public:
     virtual void updateAll(ofVec2f& mousePos, bool& clicked, bool& pressed) = 0;
     virtual void drawAll() = 0;
+    virtual void turnlyUpdateAll() = 0;
 };
 
 
@@ -62,6 +63,14 @@ public:
         for(int ii = 0; ii < vec.size(); ii++)
         {
             vec[ii].update(mousePos, clicked, pressed);
+        }
+    }
+
+    void turnlyUpdateAll()
+    {
+        for(int ii = 0; ii < vec.size(); ii++)
+        {
+            vec[ii].turnlyUpdate();
         }
     }
 

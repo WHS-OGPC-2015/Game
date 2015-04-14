@@ -155,6 +155,8 @@
 		<Unit filename="src/src-Engine/Tile.h" />
 		<Unit filename="src/src-Engine/TileManager.cpp" />
 		<Unit filename="src/src-Engine/TileManager.h" />
+		<Unit filename="src/src-Engine/UtilMenus.cpp" />
+		<Unit filename="src/src-Engine/UtilMenus.h" />
 		<Unit filename="src/src-Game/CityMenu.cpp" />
 		<Unit filename="src/src-Game/GameMap.cpp" />
 		<Unit filename="src/src-Game/GameMap.h" />

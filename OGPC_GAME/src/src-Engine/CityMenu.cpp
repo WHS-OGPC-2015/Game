@@ -14,6 +14,7 @@ void createCityMenu(MenuManager* man, ofVec2f pos, ResourceManager* R)
     double halfmenuHeight = man->getTexturePointer("CMBackground").getHeight()/2;
     double halfmenuWidth = man->getTexturePointer("CMBackground").getWidth()/2;
 
+    //textures for band menu
     man->addTexture("BMBackground", R->getTexture("BMBackground"));
 
     man->addTexture("BMBreakUpButNormal", R->getTexture("BreakUpButNormal"));
@@ -34,6 +35,12 @@ void createCityMenu(MenuManager* man, ofVec2f pos, ResourceManager* R)
     man->addTexture("BMMoveButPressed", R->getTexture("MoveButPressed"));
 
     man->addFont("BMText", R->getFont("MySimpleFont"));
+
+    //textures for next menu
+    man->addTexture("BMBackground", R->getTexture("BMBackground"));
+    man->addTexture("turnButNormal", R->getTexture("turnButNormal"));
+    man->addTexture("turnButHovered", R->getTexture("turnButHovered"));
+    man->addTexture("turnButHovered", R->getTexture("turnButHovered"));
 
     MenuEntity* citBG;
     citBG = new MenuBackground{

@@ -8,6 +8,7 @@
 #include "CityMenu.h"
 #include "Band.h"
 #include "BandMenu.h"
+#include "UtilMenus.h"
 class ObjectManager
 {
 
@@ -73,5 +74,7 @@ private:
     MenuManager* objectMenus;   //manager for popups and stuff
 
     std::string fileString;
+
+    bool turn;
 
 };

@@ -1,6 +1,6 @@
 #include "BandMenu.h"
 
-void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
+void createBandMenu(MenuManager* man, ofVec2f pos)
 {
     double consta = 100;
     double constb = 5;
@@ -11,27 +11,6 @@ void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
     int borderWidth = 5;
     Menu bandMenu(ofVec2f(0, 0));
 
-//    man->addTexture("BMBackground", res->getTexture("BMBackground"));
-//
-//    man->addTexture("BMBreakUpButNormal", res->getTexture("BreakUpButNormal"));
-//    man->addTexture("BMBreakUpButHovered", res->getTexture("BreakUpButHovered"));
-//    man->addTexture("BMBreakUpButPressed", res->getTexture("BreakUpButPressed"));
-//
-//    man->addTexture("BMIncogButNormal", res->getTexture("IncogButNormal"));
-//    man->addTexture("BMIncogButHovered", res->getTexture("IncogButHovered"));
-//    man->addTexture("BMIncogButPressed", res->getTexture("IncogButPressed"));
-//    man->addTexture("BMUnIncogButNormal", res->getTexture("UnIncogButNormal"));
-//    man->addTexture("BMUnIncogButHovered", res->getTexture("UnIncogButHovered"));
-//    man->addTexture("BMUnIncogButPressed", res->getTexture("UnIncogButPressed"));
-//
-//
-//
-//    man->addTexture("BMMoveButNormal", res->getTexture("MoveButNormal"));
-//    man->addTexture("BMMoveButHovered", res->getTexture("MoveButHovered"));
-//    man->addTexture("BMMoveButPressed", res->getTexture("MoveButPressed"));
-//
-//    man->addFont("BMText", res->getFont("MySimpleFont"));
-//
     double halfmenuHeight = man->getTexturePointer("BMBackground").getHeight()/2;
     double halfmenuWidth = man->getTexturePointer("BMBackground").getWidth()/2;
     //---------------------------------------------------------------------------
@@ -39,7 +18,7 @@ void createBandMenu(MenuManager* man, ofVec2f pos, ResourceManager* res)
     MenuEntity* bandBG;
     bandBG = new MenuBackground(
                     pos,
-                    res->getTextureReference("BMBackground"),
+                    man->getTexturePointer("BMBackground"),
                     false
                      );
 

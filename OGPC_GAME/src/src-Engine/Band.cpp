@@ -194,7 +194,6 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 //        }
         if (selected == true)
         {
-            std::cout << "here";
             bandMenu->setActive();
         }
         return -1;

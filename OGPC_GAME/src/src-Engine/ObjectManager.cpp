@@ -8,7 +8,8 @@ ObjectManager::ObjectManager(std::string toLoad, ofVec2f translation, TileManage
     recMan = R;
     objectMenus = new MenuManager;  //create menu manager for the
     createCityMenu(objectMenus, ofVec2f(ofGetWindowWidth()-200, ofGetWindowHeight()-150), recMan);
-    createBandMenu(objectMenus, ofVec2f(ofGetWindowWidth()-600, ofGetWindowHeight()-150), recMan);
+    createBandMenu(objectMenus, ofVec2f(ofGetWindowWidth()-600, ofGetWindowHeight()-150));
+    createNextTurnMenu(objectMenus, ofVec2f(ofGetWindowWidth()-1000, ofGetWindowHeight()-150));
     loadFromFile(toLoad);
 }
 ObjectManager::~ObjectManager()
@@ -121,17 +122,20 @@ void ObjectManager::updateAll(ofVec2f& mousePos, bool& clicked, bool& pressed)
     for(int ii = 0; ii < objects.size(); ii++)
     {
         objects[ii]->updateAll(mousePos, clicked, pressed);
+        if(turn)
+        {
+            objects[ii]->turnlyUpdateAll();
+        }
     }
 
     objectMenus->update(mousePos, clicked, pressed);
+
 
 }
 
 void ObjectManager::drawNoTranslate()
 {
-
     objectMenus->draw();
-    //objectMenus->getMenuPointerByName("CityMenu")->draw();
     objectMenus->getMenuPointerByName("CityMenu")->setInactive();
 
 }

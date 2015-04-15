@@ -10,7 +10,7 @@ void createNextTurnMenu(MenuManager* man, ofVec2f pos)
 
     MenuEntity* menuBG;
     menuBG = new MenuBackground(
-                    ofVec2f(0, ofGetScreenHeight()),
+                    ofVec2f(ofGetScreenWidth()/2, ofGetScreenHeight()-150),
                      man->getTexturePointer("TMBackground"),
                     false
                      );
@@ -26,7 +26,7 @@ void createNextTurnMenu(MenuManager* man, ofVec2f pos)
                         man->getTexturePointer("turnButPressed")
                                 );
 
-    turnMenu.addEntity(*menuBG, "TMBackground");
+    //turnMenu.addEntity(*menuBG, "TMBackground");
     turnMenu.addEntity(*nextTurnBut, "NextTurnButton");
 
    man->addMenu(turnMenu, "TurnMenu");

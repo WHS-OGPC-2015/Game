@@ -5,7 +5,7 @@
 #include "../src-MenuAPI/MenuInclude.h"
 #include "../XML/src/ofxXmlSettings.h"
 #include "ResourceManager.h"
-#include "EngineInclude.h"
+#include "TileManager.h"
 //#include "../Engine/ResourceManager.h"
 class Band
 {

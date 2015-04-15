@@ -86,13 +86,13 @@ void ofApp::update(){
                 dif = mousePos - lastMousePos;
                 dif/=2; //scales the drag (2 would be half the distance the mouse was moved"
                 viewPos+=dif;
-                std::cout << viewPos.x << ", " << viewPos.y << std::endl;
+
                 if(viewPos.x>0 || viewPos.x-ofGetWindowWidth() < (-1*mapDim.x*tileDim.x))
                 {
                     viewPos.x-=dif.x;
                     dif.x = 0;
                 }
-                if(viewPos.y>0 || viewPos.y-ofGetWindowHeight() < (-1*mapDim.y*tileDim.y))
+                if(viewPos.y>0 || viewPos.y-ofGetWindowHeight()+150 < (-1*mapDim.y*tileDim.y))
                 {
                     viewPos.y-=dif.y;
                     dif.y = 0;

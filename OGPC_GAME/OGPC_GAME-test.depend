@@ -7,7 +7,7 @@
 
 1428962793 D
 
-1429124265 source:c:\openframeworks\apps\game\ogpc_game\src\main.cpp
+1428958865 source:c:\openframeworks\apps\game\ogpc_game\src\main.cpp
 	"ofMain.h"
 	"ofApp.h"
 
@@ -5224,7 +5224,7 @@
 	"ofCamera.h"
 	"ofEvents.h"
 
-1429121185 c:\openframeworks\apps\game\ogpc_game\src\ofapp.h
+1429041709 c:\openframeworks\apps\game\ogpc_game\src\ofapp.h
 	"ofMain.h"
 	"src-Engine/EngineInclude.h"
 	"src-Game/GameMap.h"
@@ -5319,7 +5319,7 @@
 
 1426616877 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuentity.cpp
 
-1429122017 source:c:\openframeworks\apps\game\ogpc_game\src\ofapp.cpp
+1429041709 source:c:\openframeworks\apps\game\ogpc_game\src\ofapp.cpp
 	"ofApp.h"
 	"XML/src/ofxXmlSettings.h"
 
@@ -5327,9 +5327,11 @@
 	"EngineMain.h"
 	"../XML/src/ofxXmlSettings.h"
 
-1429120308 c:\openframeworks\apps\game\ogpc_game\src\src-engine\enginemain.h
+1429045311 c:\openframeworks\apps\game\ogpc_game\src\src-engine\enginemain.h
 	"ofMain.h"
 	"ObjectManager.h"
+	"TileManager.h"
+	"ResourceManager.h"
 
 1429044650 c:\openframeworks\apps\game\ogpc_game\src\src-engine\engineinclude.h
 	"ObjectManager.h"
@@ -7040,7 +7042,7 @@
 	"City.h"
 	<sstream>
 
-1429120308 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\objectmanager.cpp
+1429039936 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\objectmanager.cpp
 	"ObjectManager.h"
 
 1427910945 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\objectvector.cpp
@@ -7054,18 +7056,18 @@
 
 1427500167 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\loadingthread.cpp
 
-1429120998 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\band.cpp
+1429043068 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\band.cpp
 	"Band.h"
 	"sstream"
 
-1429121015 c:\openframeworks\apps\game\ogpc_game\src\src-engine\band.h
+1429042959 c:\openframeworks\apps\game\ogpc_game\src\src-engine\band.h
 	"ofMain.h"
 	"Tile.h"
 	"../src-Game/Vec2i.h"
 	"../src-MenuAPI/MenuInclude.h"
 	"../XML/src/ofxXmlSettings.h"
 	"ResourceManager.h"
-	"TileManager.h"
+	"EngineInclude.h"
 
 1427737954 c:\openframeworks\apps\game\ogpc_game\src\src-game\loadingscreen.h
 	"ofMain.h"
@@ -7126,7 +7128,7 @@
 	"ofMain.h"
 	"../src-MenuAPI/MenuInclude.h"
 
-1429124131 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\utilmenus.cpp
+1428947368 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\utilmenus.cpp
 	"UtilMenus.h"
 
 1428962793 .h"

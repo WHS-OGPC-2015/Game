@@ -24,12 +24,12 @@ Band::Band() // empty constructor
     incarnationName = "";
     movable = true;
     actionState = 0;
-    tileWidth = 0;
+    startup = true;
 
 }
 
 //you can change anything that would be have a possibility of being different at the start, including arbitrary things
-Band::Band(bool incog, bool incarn, int startnum, int mov, double tilew, std::string incarnName, std::string TN[] /*set as "" if incarn is false*/)
+Band::Band(bool incog, bool incarn, int startnum, int mov, std::string incarnName, std::string TN[] /*set as "" if incarn is false*/)
 {
     incognito = incog;
     incarnation = incarn;
@@ -40,7 +40,7 @@ Band::Band(bool incog, bool incarn, int startnum, int mov, double tilew, std::st
     discipleNum = begDisNum;
     incarnationName = incarnName;
     actionState = 0;
-    tileWidth = tilew;
+    startup = true;
 
     for (int i = 0; i < 4; i++)
     {
@@ -128,6 +128,7 @@ void Band::setBandMenu(Menu* fillme)
 void Band::setTileManager(TileManager* tilm)
 {
     allTiles = tilm;
+    tileWidth = allTiles->getTileDim().x;
 }
 // fills the menu
 void Band::fillMenu()
@@ -156,10 +157,12 @@ void Band::findActions()
 {
     if (selected == true and movable == true)
     {
+     //   std::cout << "here1" << std::endl;
         if (actionButtons[0]->getEventDataInt() > 2)
         {
+          //  std::cout << "here2" << std::endl;
             actionState = 1;
-            //movable = false;
+            movable = false;
         }
         else if (actionButtons[1]->getEventDataInt() > 2)
         {
@@ -187,12 +190,24 @@ void Band::findActions()
     }
 }
 
+
+
+/*--------------------------------------------------------------------------------
+-------------------UPDATE---------------------------------------------------------------
+--------------------------------------------------------------------------------*/
+
 int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
  //   bandMenu->setInactive(); // start the update with this
 
     clickedData = getClickedData(mousePos, clicked, pressed);
     findActions();
+    if (movable == false or startup == true)
+    {
+        turnlyUpdate();
+        startup = false;
+    }
+    //actionState = 0;
     if (actionState == 0) // normal
     {
        if(clickedData == 1 or clickedData == 2)
@@ -205,7 +220,7 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
             selected = true;
         }
 
-        else if (clickedData == 0)
+        else if (clickedData == 0 and mousePos.y < 724)
         {
             hovered = false;
             if (clicked == true)
@@ -222,29 +237,40 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
         return -1;
     }
 
-    else if (actionState == 1) // moving
+
+
+//-------------------MOVING-----------------------------------------------------
+    else if (actionState == 1)
     {
+
         if (clicked == true)
         {
 //            // finds the 2d coord of your mose click, based on the tiles
             ofVec2i temptile = ofVec2i(turnToInt(mousePos.x / tileWidth), turnToInt(mousePos.y / tileWidth));
-//            for (int i = 0; i < possibleMovesCoords.size(); i++)
-//            {
-//                if (temptile.x == possibleMovesCoords[i].x and temptile.y == possibleMovesCoords[i].y)// check every possible move if there is a match
-//                {
-//                    int t = convertTo1dindex(temptile);
-//                    return t;
-//                }
-//            }
-            ofVec2f tm = ofVec2f(temptile.x, temptile.y);
-            boundTile = allTiles->getTileByCoords(tm);
-            boundTileCoords = temptile;
-            boundTileIndex = allTiles->tileIndiceByArrayCoords(tm);
+            std::cout << tileWidth << std::endl;
+            std::cout << mousePos.x << std::endl;
+            for (int i = 0; i < possibleMovesCoords.size(); i++)
+            {
+                if (temptile.x == possibleMovesCoords[i].x and temptile.y == possibleMovesCoords[i].y)// check every possible move if there is a match
+                {
+                    ofVec2f tm = ofVec2f(temptile.x, temptile.y);
+                    boundTile = allTiles->getTileByCoords(tm);
+
+                    boundTileCoords = temptile;
+                    boundTileIndex = allTiles->tileIndiceByArrayCoords(tm);
+                    actionState  = 1;
+                    actionButtons[0]->setClicked(false);
+                }
+            }
+
         }
         return -2;
     }
 
-    else if (actionState == 2) // dispatching
+
+
+//------------------DISPATCHING----------------------------------------------------------
+    else if (actionState == 2)
     {
        if (clicked == true)
         {
@@ -271,6 +297,13 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
         return -3;
     }
 }
+
+
+
+/*--------------------------------------------------------------------------------
+-------------------TURNLY__UPDATE---------------------------------------------------------------
+--------------------------------------------------------------------------------*/
+
 
 void Band::turnlyUpdate()
 {

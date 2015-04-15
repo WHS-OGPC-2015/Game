@@ -3,11 +3,11 @@
 
 2 <<<<< HEAD
 
-1426616877 source:c:\openframeworks\apps\game\ogpc_game\icon.rc
+1427749170 source:c:\openframeworks\apps\game\ogpc_game\icon.rc
 
 1428962793 D
 
-1428958865 source:c:\openframeworks\apps\game\ogpc_game\src\main.cpp
+1428959046 source:c:\openframeworks\apps\game\ogpc_game\src\main.cpp
 	"ofMain.h"
 	"ofApp.h"
 
@@ -5224,7 +5224,7 @@
 	"ofCamera.h"
 	"ofEvents.h"
 
-1429041709 c:\openframeworks\apps\game\ogpc_game\src\ofapp.h
+1429123917 c:\openframeworks\apps\game\ogpc_game\src\ofapp.h
 	"ofMain.h"
 	"src-Engine/EngineInclude.h"
 	"src-Game/GameMap.h"
@@ -5277,11 +5277,11 @@
 	"../XML/src/ofxXmlSettings.h"
 	"simplexnoise.h"
 
-1427737954 c:\openframeworks\apps\game\ogpc_game\src\mainmenu.h
+1427749186 c:\openframeworks\apps\game\ogpc_game\src\mainmenu.h
 	"ofMain.h"
 	"src-MenuAPI/MenuInclude.h"
 
-1427836996 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuinclude.h
+1427910866 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuinclude.h
 	"MenuManager.h"
 	"Menu.h"
 	"MenuEntity.h"
@@ -5292,58 +5292,58 @@
 	"PieChart.h"
 	"TextBox.h"
 
-1428087426 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menumanager.h
+1428088937 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menumanager.h
 	"ofMain.h"
 	"Menu.h"
 	<Map>
 
-1426797004 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menu.h
+1427749186 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menu.h
 	"ofMain.h"
 	"MenuEntity.h"
 
-1426797004 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuentity.h
+1427749186 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuentity.h
 	"ofMain.h"
 
-1426797004 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\simplebutton.h
+1427749186 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\simplebutton.h
 	"MenuEntity.h"
 
-1426797004 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\slider.h
+1427749186 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\slider.h
 	"ofMain.h"
 	"MenuEntity.h"
 
-1427996337 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menubackground.h
+1427996343 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menubackground.h
 	"MenuEntity.h"
 
-1427737954 source:c:\openframeworks\apps\game\ogpc_game\src\mainmenu.cpp
+1427749186 source:c:\openframeworks\apps\game\ogpc_game\src\mainmenu.cpp
 	"MainMenu.h"
 
-1426616877 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuentity.cpp
+1427749170 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menuentity.cpp
 
-1429041709 source:c:\openframeworks\apps\game\ogpc_game\src\ofapp.cpp
+1429120764 source:c:\openframeworks\apps\game\ogpc_game\src\ofapp.cpp
 	"ofApp.h"
 	"XML/src/ofxXmlSettings.h"
 
-1428959370 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\enginemain.cpp
+1429039761 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\enginemain.cpp
 	"EngineMain.h"
 	"../XML/src/ofxXmlSettings.h"
 
-1429044809 c:\openframeworks\apps\game\ogpc_game\src\src-engine\enginemain.h
+1429120309 c:\openframeworks\apps\game\ogpc_game\src\src-engine\enginemain.h
 	"ofMain.h"
 	"ObjectManager.h"
 
-1429044650 c:\openframeworks\apps\game\ogpc_game\src\src-engine\engineinclude.h
+1427996343 c:\openframeworks\apps\game\ogpc_game\src\src-engine\engineinclude.h
 	"ObjectManager.h"
 	"ResourceManager.h"
 	"TileManager.h"
 	"EngineMain.h"
 	"City.h"
 
-1428087426 c:\openframeworks\apps\game\ogpc_game\src\src-engine\resourcemanager.h
+1428088937 c:\openframeworks\apps\game\ogpc_game\src\src-engine\resourcemanager.h
 	"ofMain.h"
 	<windows.h>
 	<stdio.h>
 
-1428342770 c:\openframeworks\apps\game\ogpc_game\src\src-engine\tilemanager.h
+1429124561 c:\openframeworks\apps\game\ogpc_game\src\src-engine\tilemanager.h
 	"Tile.h"
 	"ResourceManager.h"
 
@@ -5351,16 +5351,16 @@
 	"Tile.h"
 	"ResourceManager.h"
 
-1426617143 c:\openframeworks\apps\game\ogpc_game\src\src-engine\tile.h
+1427749186 c:\openframeworks\apps\game\ogpc_game\src\src-engine\tile.h
 	"ofMain.h"
 
-1428948289 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\resourcemanager.cpp
+1428516724 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\resourcemanager.cpp
 	"ResourceManager.h"
 
-1426617143 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\tile.cpp
+1427749186 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\tile.cpp
 	"Tile.h"
 
-1428342810 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\tilemanager.cpp
+1429124561 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\tilemanager.cpp
 	"TileManager.h"
 	"../XML/src/ofxXmlSettings.h"
 
@@ -5380,29 +5380,29 @@
 	<sstream>
 	"tinystr.h"
 
-1426797004 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menu.cpp
+1427749186 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menu.cpp
 	"Menu.h"
 
-1428947368 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menubackground.cpp
+1428958507 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menubackground.cpp
 	"MenuBackground.h"
 
-1428087426 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menumanager.cpp
+1428088937 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\menumanager.cpp
 	"MenuManager.h"
 	<string>
 
-1426797004 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\simplebutton.cpp
+1427749186 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\simplebutton.cpp
 	"SimpleButton.h"
 
-1426797004 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\slider.cpp
+1427749186 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\slider.cpp
 	"Slider.h"
 
-1426617143 source:c:\openframeworks\apps\game\ogpc_game\src\xml\libs\tinyxml.cpp
+1427749186 source:c:\openframeworks\apps\game\ogpc_game\src\xml\libs\tinyxml.cpp
 	<ctype.h>
 	<sstream>
 	<iostream>
 	"tinyxml.h"
 
-1426617143 c:\openframeworks\apps\game\ogpc_game\src\xml\libs\tinyxml.h
+1427749186 c:\openframeworks\apps\game\ogpc_game\src\xml\libs\tinyxml.h
 	<ctype.h>
 	<stdio.h>
 	<stdlib.h>
@@ -5413,28 +5413,28 @@
 	<sstream>
 	"tinystr.h"
 
-1426617143 source:c:\openframeworks\apps\game\ogpc_game\src\xml\libs\tinyxmlerror.cpp
+1427749186 source:c:\openframeworks\apps\game\ogpc_game\src\xml\libs\tinyxmlerror.cpp
 	"tinyxml.h"
 
-1426617143 source:c:\openframeworks\apps\game\ogpc_game\src\xml\libs\tinyxmlparser.cpp
+1427749186 source:c:\openframeworks\apps\game\ogpc_game\src\xml\libs\tinyxmlparser.cpp
 	<ctype.h>
 	<stddef.h>
 	"tinyxml.h"
 	<windows.h>
 
-1426617143 c:\openframeworks\apps\game\ogpc_game\src\xml\src\ofxxmlsettings.h
+1427749186 c:\openframeworks\apps\game\ogpc_game\src\xml\src\ofxxmlsettings.h
 	"ofMain.h"
 	<string.h>
 	"../libs/tinyxml.h"
 	"../libs/tinyxml.h"
 
-1426617143 source:c:\openframeworks\apps\game\ogpc_game\src\xml\src\ofxxmlsettings.cpp
+1427749186 source:c:\openframeworks\apps\game\ogpc_game\src\xml\src\ofxxmlsettings.cpp
 	"ofxXmlSettings.h"
 	<vector>
 	<string>
 	<iostream>
 
-1428441989 c:\openframeworks\apps\game\ogpc_game\src\src-game\gamemap.h
+1428515646 c:\openframeworks\apps\game\ogpc_game\src\src-game\gamemap.h
 	"ofMain.h"
 	"Tile.h"
 	"Vec2i.h"
@@ -5447,21 +5447,21 @@
 	"Vec2i.h"
 	"../src-Engine/City.h"
 
-1426617143 c:\openframeworks\apps\game\ogpc_game\src\src-game\tile.h
+1427749186 c:\openframeworks\apps\game\ogpc_game\src\src-game\tile.h
 	"ofMain.h"
 
-1429040820 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\gamemap.cpp
+1429124561 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\gamemap.cpp
 	"GameMap.h"
 	<sstream>
 	"../XML/src/ofxXmlSettings.h"
 	"simplexnoise.h"
 
-1426617143 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\tile.cpp
+1427749186 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\tile.cpp
 	"Tile.h"
 
-1426617143 c:\openframeworks\apps\game\ogpc_game\src\src-game\simplexnoise.h
+1427749186 c:\openframeworks\apps\game\ogpc_game\src\src-game\simplexnoise.h
 
-1426617143 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\simplexnoise.cpp
+1427749186 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\simplexnoise.cpp
 	<math.h>
 	"simplexnoise.h"
 
@@ -5473,10 +5473,10 @@
 1424812074 source:c:\openframeworks\apps\game\ogpc_game\src\hoverbutton.cpp
 	"HoverButton.h"
 
-1428342770 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\hoverbutton.h
+1428353976 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\hoverbutton.h
 	"MenuEntity.h"
 
-1428342770 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\hoverbutton.cpp
+1428353976 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\hoverbutton.cpp
 	"HoverButton.h"
 
 1424751738 source:c:\users\riley\downloads\openframeworks\apps\game\ogpc_game\icon.rc
@@ -7027,25 +7027,25 @@
 1425243784 source:c:\users\riley\downloads\openframeworks\apps\game\ogpc_game\src\src-menuapi\slider.cpp
 	"Slider.h"
 
-1428435818 c:\openframeworks\apps\game\ogpc_game\src\src-engine\city.h
+1428355699 c:\openframeworks\apps\game\ogpc_game\src\src-engine\city.h
 	"ofMain.h"
 	"Tile.h"
 	"../src-Game/Vec2i.h"
 	"../src-MenuAPI/MenuInclude.h"
 	"../XML/src/ofxXmlSettings.h"
 
-1426709707 c:\openframeworks\apps\game\ogpc_game\src\src-game\vec2i.h
+1427749186 c:\openframeworks\apps\game\ogpc_game\src\src-game\vec2i.h
 
-1428959751 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\city.cpp
+1429039761 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\city.cpp
 	"City.h"
 	<sstream>
 
-1429039936 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\objectmanager.cpp
+1429120309 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\objectmanager.cpp
 	"ObjectManager.h"
 
-1427910945 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\objectvector.cpp
+1427910866 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\objectvector.cpp
 
-1426709707 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\vec2i.cpp
+1427749186 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\vec2i.cpp
 	"Vec2i.h"
 
 1428344972 39619b2e4d9e10cb97126900b5696c5557066
@@ -7054,38 +7054,38 @@
 
 1427500167 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\loadingthread.cpp
 
-1429043068 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\band.cpp
+1429124890 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\band.cpp
 	"Band.h"
 	"sstream"
 
-1429042959 c:\openframeworks\apps\game\ogpc_game\src\src-engine\band.h
+1429125136 c:\openframeworks\apps\game\ogpc_game\src\src-engine\band.h
 	"ofMain.h"
 	"Tile.h"
 	"../src-Game/Vec2i.h"
 	"../src-MenuAPI/MenuInclude.h"
 	"../XML/src/ofxXmlSettings.h"
 	"ResourceManager.h"
-	"EngineInclude.h"
+	"TileManager.h"
 
-1427737954 c:\openframeworks\apps\game\ogpc_game\src\src-game\loadingscreen.h
+1427749186 c:\openframeworks\apps\game\ogpc_game\src\src-game\loadingscreen.h
 	"ofMain.h"
 
-1427831397 c:\openframeworks\apps\game\ogpc_game\src\src-game\pausemenu.h
+1427910866 c:\openframeworks\apps\game\ogpc_game\src\src-game\pausemenu.h
 	"../src-MenuAPI/MenuInclude.h"
 
-1428342770 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\piechart.cpp
+1428353976 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\piechart.cpp
 	"PieChart.h"
 
-1427831397 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\pausemenu.cpp
+1427910866 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\pausemenu.cpp
 	"PauseMenu.h"
 
-1428083674 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\piechart.h
+1428083596 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\piechart.h
 	"MenuEntity.h"
 
-1428342770 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\textbox.h
+1428353976 c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\textbox.h
 	"MenuEntity.h"
 
-1429044650 c:\openframeworks\apps\game\ogpc_game\src\src-engine\objectmanager.h
+1429039761 c:\openframeworks\apps\game\ogpc_game\src\src-engine\objectmanager.h
 	"ofMain.h"
 	"../XML/src/ofxXmlSettings.h"
 	"ObjectVector.h"
@@ -7097,39 +7097,39 @@
 	"BandMenu.h"
 	"UtilMenus.h"
 
-1428947368 c:\openframeworks\apps\game\ogpc_game\src\src-engine\objectvector.h
+1428958507 c:\openframeworks\apps\game\ogpc_game\src\src-engine\objectvector.h
 	"ofMain.h"
 	"../XML/src/ofxXmlSettings.h"
 
-1428342770 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\textbox.cpp
+1428353976 source:c:\openframeworks\apps\game\ogpc_game\src\src-menuapi\textbox.cpp
 	"TextBox.h"
 
-1428085932 c:\openframeworks\apps\game\ogpc_game\src\src-engine\citymenu.h
+1428088937 c:\openframeworks\apps\game\ogpc_game\src\src-engine\citymenu.h
 	"ofMain.h"
 	"../src-MenuAPI/MenuInclude.h"
 	"ResourceManager.h"
 
-1428947368 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\citymenu.cpp
+1428958507 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\citymenu.cpp
 	"CityMenu.h"
 
-1428011244 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\citymenu.cpp
+1428083596 source:c:\openframeworks\apps\game\ogpc_game\src\src-game\citymenu.cpp
 
-1428947368 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\bandmenu.cpp
+1428958507 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\bandmenu.cpp
 	"BandMenu.h"
 
-1428947368 c:\openframeworks\apps\game\ogpc_game\src\src-engine\bandmenu.h
+1428958507 c:\openframeworks\apps\game\ogpc_game\src\src-engine\bandmenu.h
 	"ofMain.h"
 	"../src-MenuAPI/MenuInclude.h"
 	"ResourceManager.h"
 
-1428947368 c:\openframeworks\apps\game\ogpc_game\src\src-engine\utilmenus.h
+1428958507 c:\openframeworks\apps\game\ogpc_game\src\src-engine\utilmenus.h
 	"ofMain.h"
 	"../src-MenuAPI/MenuInclude.h"
 
-1428947368 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\utilmenus.cpp
+1428958507 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\utilmenus.cpp
 	"UtilMenus.h"
 
 1428962793 .h"
 
-1429039936 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\enemyband.cpp
+1429122862 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\enemyband.cpp
 

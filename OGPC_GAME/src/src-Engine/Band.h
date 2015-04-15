@@ -5,14 +5,14 @@
 #include "../src-MenuAPI/MenuInclude.h"
 #include "../XML/src/ofxXmlSettings.h"
 #include "ResourceManager.h"
-#include "EngineInclude.h"
+#include "TileManager.h"
 //#include "../Engine/ResourceManager.h"
 class Band
 {
 public:
 
     Band();
-    Band(bool incog, bool incarn, int startnum, int mov, double tilew, std::string incarnName, std::string TN[] /*set as "" if incarn is false*/);
+    Band(bool incog, bool incarn, int startnum, int mov, std::string incarnName, std::string TN[] /*set as "" if incarn is false*/);
 
     void draw();
     int update(ofVec2f& mousePos, bool& clicked, bool& pressed);
@@ -108,4 +108,6 @@ private:
     vector<ofVec2i> possibleMovesCoords;
     vector<int> possibleMovesIndex;
     TileManager* allTiles;
+
+    bool startup;
 };

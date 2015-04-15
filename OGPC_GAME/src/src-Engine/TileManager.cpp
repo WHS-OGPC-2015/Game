@@ -126,6 +126,10 @@ int TileManager::tileIndiceByArrayCoords(ofVec2f coords)
     return (coords.y*mapSize.y)+coords.x;
 }
 
+ofVec2f TileManager::getTileDim()
+{
+    return tileSize;
+}
 Tile* TileManager::getTileByIndice(int indice)
 {
     Tile* tmp = &tiles[indice];

@@ -15,6 +15,7 @@ public:
     Tile* getTileByCoords(ofVec2f coords);
     ofVec2f tileArrayCoordsByIndice(int indice);
     int tileIndiceByArrayCoords(ofVec2f);
+    ofVec2f getTileDim();
 private:
     std::vector<Tile> tiles;    //list of Tiles
     ofVec2f mapSize;   //width and height of tile array

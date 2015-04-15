@@ -214,8 +214,8 @@ std::vector<int> GameMap::genMap(int sizeX, int sizeY, int seeds)
 
 void GameMap::genMapTwo()
 {
-    mapSize = ofVec2i(100, 100);        //size of the map in tiles
-    int numSeeds = 50;                  //number of mountains to generate in genMap()
+  /*this*/  mapSize = ofVec2i(20, 20);        //size of the map in tiles
+ /*this*/   int numSeeds = 4;                  //number of mountains to generate in genMap()
     int last = 1;                       //last height used(for noise z seed)
     float noiseWeight = 1;              //value to multiply noise vector by before averaging
     float seedWeight = 1;               //value to multiply seed vector by before averaging
@@ -538,7 +538,7 @@ void GameMap::genBand()
 //               proposedIndex = ofRandom(altitudes.size());
 //           }
         std::string name[4] = {"BandNormal", "BandIncog", "BandIncarn", "BandIncarnIncog"};
-        Band tmp(false, false, 10, 6, 32, "", name);
+        Band tmp(false, false, 10, 6, "", name);
         tmp.saveObjectData(objectFile);
         objectFile.popTag();
 

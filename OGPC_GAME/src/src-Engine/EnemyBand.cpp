@@ -47,8 +47,25 @@
 //
 //    if (found == true)
 //    {
-//        double slope = (boundTileCoords.y - coords.y) / (boundTileCoords.x - coords.x);
-//
+//        double rise = (boundTileCoords.y - coords.y);
+//        double run =  (boundTileCoords.x - coords.x);
+//        if (rise + run != 0)
+//        {
+//            double nrise = (rise * movement)/(rise + run);
+//            double nrun = (run * movement)/(rise + run);
+//            if (nrise > nrun)
+//            {
+//                newCoord = ofVec2i(nrise, nrun + .5);
+//            }
+//            else
+//            {
+//                newCoord = ofVec2i(nrise + .5, nrun);
+//            }
+//        }
+//        else
+//        {
+//            newCoord = boundTileCoords;
+//        }
 //    }
 //
 //

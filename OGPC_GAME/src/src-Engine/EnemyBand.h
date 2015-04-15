@@ -39,6 +39,7 @@
 //    ofVec2i extremeTiles[2];
 //
 //    bool movable;
+//    int movement;
 //
 //    int nextMoveIndex;
 //};

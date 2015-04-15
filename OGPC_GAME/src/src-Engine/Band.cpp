@@ -198,7 +198,6 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
  //   bandMenu->setInactive(); // start the update with this
 
     clickedData = getClickedData(mousePos, clicked, pressed);
-<<<<<<< HEAD
     findActions();
     if (movable == false or startup == true)
     {
@@ -206,10 +205,6 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
         startup = false;
     }
     //actionState = 0;
-=======
-    actionState = 0;
- //   findActions();
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
     if (actionState == 0) // normal
     {
        if(clickedData == 1 or clickedData == 2)

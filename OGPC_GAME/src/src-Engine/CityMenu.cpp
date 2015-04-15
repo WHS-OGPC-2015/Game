@@ -37,15 +37,15 @@ void createCityMenu(MenuManager* man, ofVec2f pos, ResourceManager* R)
     man->addFont("BMText", R->getFont("MySimpleFont"));
 
     //textures for next menu
-    man->addTexture("BMBackground", R->getTexture("BMBackground"));
+    man->addTexture("TMBackground", R->getTexture("TMBackground"));
     man->addTexture("turnButNormal", R->getTexture("turnButNormal"));
     man->addTexture("turnButHovered", R->getTexture("turnButHovered"));
-    man->addTexture("turnButHovered", R->getTexture("turnButHovered"));
+    man->addTexture("turnButPressed", R->getTexture("turnButPressed"));
 
     MenuEntity* citBG;
     citBG = new MenuBackground{
-                    pos,
-                    man->getTexturePointer("CMBackground"),
+                    ofVec2f(ofGetScreenWidth()/2, ofGetScreenHeight()-150),
+                    man->getTexturePointer("TMBackground"),
                     false
                      };
 

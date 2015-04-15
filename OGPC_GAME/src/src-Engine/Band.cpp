@@ -130,10 +130,11 @@ void Band::fillMenu()
 {
     ostringstream convert;
 
-    TextBox* bandName = bandMenu->getPointerToChildByName<TextBox>("BandName");
+    TextBox* bandName = bandMenu->getPointerToChildByName<TextBox>("IncarnationName");
     bandName->setText(incarnationName);
 
-    TextBox* disNum = bandMenu->getPointerToChildByName<TextBox>("BandNumber");
+discipleNum = 5;
+    TextBox* disNum = bandMenu->getPointerToChildByName<TextBox>("DiscipleNumber");
     convert << discipleNum;
     disNum->setText(convert.str());
 }
@@ -186,7 +187,7 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
  //   bandMenu->setInactive(); // start the update with this
     clickedData = getClickedData(mousePos, clicked, pressed);
-
+    fillMenu();
 
     if (actionState == 0) // normal
     {

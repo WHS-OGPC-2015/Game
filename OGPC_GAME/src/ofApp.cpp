@@ -8,6 +8,8 @@ void ofApp::setup(){
     currentState = LOADING;
     ofSetFrameRate(60); //set framerate
     ofSeedRandom();
+    mapDim = ofVec2f(100, 100);
+    tileDim = ofVec2f(32, 32);
 }
 
 //--------------------------------------------------------------
@@ -61,7 +63,7 @@ void ofApp::update(){
     {
         if(first == true)
         {
-            //gameEngine->mainThreadFunction();   //loads textures for the menus
+            //everything is allready loaded
             first = false;
         }
         loader->update(viewPos);
@@ -84,12 +86,13 @@ void ofApp::update(){
                 dif = mousePos - lastMousePos;
                 dif/=2; //scales the drag (2 would be half the distance the mouse was moved"
                 viewPos+=dif;
-                if(viewPos.x>0)
+                std::cout << viewPos.x << ", " << viewPos.y << std::endl;
+                if(viewPos.x>0 || viewPos.x-ofGetWindowWidth() < (-1*mapDim.x*tileDim.x))
                 {
                     viewPos.x-=dif.x;
                     dif.x = 0;
                 }
-                if(viewPos.y>0)
+                if(viewPos.y>0 || viewPos.y-ofGetWindowHeight() < (-1*mapDim.y*tileDim.y))
                 {
                     viewPos.y-=dif.y;
                     dif.y = 0;

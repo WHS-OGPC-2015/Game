@@ -19,6 +19,7 @@ public:
         {
             //M->generateMap();
             E->setup("tiles.xml", "game.xml", "objects.xml", viewPos, R);
+            Sleep(1000);
             stopThread();
         }
     }
@@ -58,6 +59,7 @@ class ofApp : public ofBaseApp{
 
 		ofVec2f mousePos, lastMousePos, dif, adjustedMousePos;
 		ofVec2f viewPos;
+		ofVec2f mapDim, tileDim;
 
         bool pressed;//true if mouse button has been pressed down
         bool clicked;//true if mouse button has been pushed down then released

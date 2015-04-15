@@ -120,7 +120,6 @@ void ObjectManager::saveToFile(std::string path)
 
 void ObjectManager::updateAll(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
-    std::cout << mousePos.x << ", " << mousePos.y << std::endl;
     for(int ii = 0; ii < objects.size(); ii++)
     {
         objects[ii]->updateAll(mousePos, clicked, pressed);

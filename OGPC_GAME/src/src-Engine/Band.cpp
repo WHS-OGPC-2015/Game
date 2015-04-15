@@ -87,7 +87,6 @@ void Band::draw() // draws the current texture at the bound tile
 //returns 0 if not on the city, 1 if hovering, 2 if pressing, and 3 if clicked (for 1 frame)
 int Band::getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
-
     if (mousePos.x < TLpos.x || mousePos.x > BRpos.x ||
         mousePos.y < TLpos.y || mousePos.y > BRpos.y)
     {
@@ -106,13 +105,11 @@ int Band::getClickedData(ofVec2f& mousePos, bool& clicked, bool& pressed)
         {
 
             return 2;
-
         }
         else
         {
 
             return 1;
-
         }
     }
 }
@@ -138,7 +135,7 @@ void Band::fillMenu()
     TextBox* bandName = bandMenu->getPointerToChildByName<TextBox>("IncarnationName");
     bandName->setText(incarnationName);
 
-discipleNum = 5;
+    discipleNum = 5;
     TextBox* disNum = bandMenu->getPointerToChildByName<TextBox>("DiscipleNumber");
     convert << discipleNum;
     disNum->setText(convert.str());
@@ -201,6 +198,7 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
  //   bandMenu->setInactive(); // start the update with this
 
     clickedData = getClickedData(mousePos, clicked, pressed);
+<<<<<<< HEAD
     findActions();
     if (movable == false or startup == true)
     {
@@ -208,6 +206,10 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
         startup = false;
     }
     //actionState = 0;
+=======
+    actionState = 0;
+ //   findActions();
+>>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
     if (actionState == 0) // normal
     {
        if(clickedData == 1 or clickedData == 2)

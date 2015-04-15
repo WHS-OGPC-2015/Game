@@ -10,7 +10,7 @@ void createNextTurnMenu(MenuManager* man, ofVec2f pos)
 
     MenuEntity* menuBG;
     menuBG = new MenuBackground(
-                    pos,
+                    ofVec2f(0, ofGetScreenHeight()),
                      man->getTexturePointer("TMBackground"),
                     false
                      );

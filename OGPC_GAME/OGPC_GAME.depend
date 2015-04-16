@@ -7,7 +7,9 @@
 
 1428962793 D
 
-1429214082 source:c:\openframeworks\apps\game\ogpc_game\src\main.cpp
+1429219686 source:c:\openframeworks\apps\game\ogpc_game\src\main.cpp
+	"ofMain.h"
+	"ofApp.h"
 
 1429125613 1245550813c7b0ad45be8146af95135ef82c8
 	"ofMain.h"
@@ -8182,7 +8184,8 @@
 	"ofMain.h"
 	"../src-MenuAPI/MenuInclude.h"
 
-1429214082 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\utilmenus.cpp
+1429219797 source:c:\openframeworks\apps\game\ogpc_game\src\src-engine\utilmenus.cpp
+	"UtilMenus.h"
 
 1428962793 .h"
 

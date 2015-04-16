@@ -25,12 +25,11 @@ Band::Band() // empty constructor
     movable = true;
     actionState = 0;
     startup = true;
-    HLdraw = false;
 
 }
 
 //you can change anything that would be have a possibility of being different at the start, including arbitrary things
-Band::Band(bool incog, bool incarn, int startnum, int mov, std::string incarnName, std::string TN[], std::string HLT, int index /*set as "" if incarn is false*/)
+Band::Band(bool incog, bool incarn, int startnum, int mov, std::string incarnName, std::string TN[], int index /*set as "" if incarn is false*/)
 {
     incognito = incog;
     incarnation = incarn;
@@ -43,13 +42,11 @@ Band::Band(bool incog, bool incarn, int startnum, int mov, std::string incarnNam
     actionState = 0;
     startup = true;
     boundTileIndex = index;
-    HLdraw = false;
 
     for (int i = 0; i < 4; i++)
     {
         TextureNames[i] = TN[i];
     }
-    HLTexName = HLT;
 }
 
 
@@ -87,13 +84,6 @@ void Band::draw() // draws the current texture at the bound tile
     if (boundTile->getCityoc() == false)
     {
         BandTextures[bandType]->draw(boundTile->getLocation());
-        if (HLdraw == true)
-        {
-            for (int i = 0; i < possibleMovesCoords.size(); i++)
-            {
-                HLTex->draw(tileWidth/2 + possibleMovesCoords.x * tileWidth, tileWidth/2 + possibleMovesCoords.y * tileWidth);
-            }
-        }
     }
 }
 
@@ -215,7 +205,6 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
  //   bandMenu->setInactive(); // start the update with this
 
     clickedData = getClickedData(mousePos, clicked, pressed);
-    HLdraw = true;
 
     findActions();
     if (movable == false or startup == true)
@@ -258,7 +247,6 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 //-------------------MOVING-----------------------------------------------------
     else if (actionState == 1)
     {
-        HLdraw = true;
 
         if (clicked == true)
         {
@@ -472,7 +460,6 @@ void Band::setTextures(ResourceManager* res)
     for (int i = 0; i < 4; i++)
     {
         BandTextures[i] = &res->getTextureReference(TextureNames[i]);
-        HLTex = &res->getTextureReference(HLTexName);
     }
     TLpos = ofVec2f(boundTile->getLocation().x, boundTile->getLocation().y);
     BRpos = ofVec2f(boundTile->getLocation().x + BandTextures[bandType]->getWidth(), boundTile->getLocation().y + BandTextures[bandType]->getHeight());

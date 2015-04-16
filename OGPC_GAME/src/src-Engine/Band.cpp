@@ -80,7 +80,10 @@ int Band::getBandType()
 
 void Band::draw() // draws the current texture at the bound tile
 {
-    BandTextures[bandType]->draw(boundTile->getLocation());
+    if (boundTile->getCityoc() == false)
+    {
+        BandTextures[bandType]->draw(boundTile->getLocation());
+    }
 }
 
 
@@ -252,8 +255,11 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
             {
                 if (temptile.x == possibleMovesCoords[i].x and temptile.y == possibleMovesCoords[i].y)// check every possible move if there is a match
                 {
+                    boundTile->setBandoc(0);
                     ofVec2f tm = ofVec2f(temptile.x, temptile.y);
                     boundTile = allTiles->getTileByCoords(tm);
+                    boundTile->setBandoc(discipleNum);
+
 
                     boundTileCoords = temptile;
                     boundTileIndex = allTiles->tileIndiceByArrayCoords(tm);
@@ -460,6 +466,7 @@ void Band::setTextures(ResourceManager* res)
 void Band::setTile(int t)
 {
     boundTile = allTiles->getTileByIndice(t);
+    boundTile->setBandoc(discipleNum);
     boundTileIndex = t;
     ofVec2f tmp = allTiles->tileArrayCoordsByIndice(t);
     boundTileCoords = ofVec2i(tmp.x, tmp.y);

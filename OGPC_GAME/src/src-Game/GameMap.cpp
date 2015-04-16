@@ -46,7 +46,7 @@ int roundforint(double i)
 
 GameMap::GameMap()
 {
-    numCities = 20;
+    numCities = 8;
 }
 
 void GameMap::generateMap()

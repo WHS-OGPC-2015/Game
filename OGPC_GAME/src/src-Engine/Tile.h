@@ -15,9 +15,20 @@ public:
 
     void setTexture(ofTexture&);    //sets tile texture
 
+    void switchCityoc();
+    void setBandoc(int i);
+    void switchEBandoc();
+
+    bool getCityoc();
+    int getBandoc();
+    bool getEBandoc();
+
 private:
     ofTexture* texture;
     ofVec2f location;
+    bool Cityoc;
+    int Bandoc;
+    bool EBandoc;
 
 };
 

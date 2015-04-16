@@ -538,7 +538,7 @@ void GameMap::genBand()
 //               proposedIndex = ofRandom(altitudes.size());
 //           }
         std::string name[4] = {"BandNormal", "BandIncog", "BandIncarn", "BandIncarnIncog"};
-        Band tmp(false, false, 10, 3, "", name, proposedIndex);
+        Band tmp(false, false, 10, 3, "", name, "selectTile", proposedIndex);
         tmp.saveObjectData(objectFile);
         objectFile.popTag();
 

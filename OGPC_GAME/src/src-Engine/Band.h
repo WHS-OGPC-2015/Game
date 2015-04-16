@@ -12,7 +12,7 @@ class Band
 public:
 
     Band();
-    Band(bool incog, bool incarn, int startnum, int mov, std::string incarnName, std::string TN[] /*set as "" if incarn is false*/);
+    Band(bool incog, bool incarn, int startnum, int mov, std::string incarnName, std::string TN[], int /*set as "" if incarn is false*/);
 
     void draw();
     int update(ofVec2f& mousePos, bool& clicked, bool& pressed);

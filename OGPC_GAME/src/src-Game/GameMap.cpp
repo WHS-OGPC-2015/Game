@@ -532,13 +532,13 @@ void GameMap::genBand()
     {
         objectFile.addTag("object");
         objectFile.pushTag("object", ii);
-        int proposedIndex = 10;
+        int proposedIndex = ofRandom(0, (mapSize.x*mapSize.y)-1);
 //           while(altitudes[proposedIndex] < 2 || altitudes[proposedIndex] > 5)
 //           {
 //               proposedIndex = ofRandom(altitudes.size());
 //           }
         std::string name[4] = {"BandNormal", "BandIncog", "BandIncarn", "BandIncarnIncog"};
-        Band tmp(false, false, 10, 3, "", name);
+        Band tmp(false, false, 10, 3, "", name, proposedIndex);
         tmp.saveObjectData(objectFile);
         objectFile.popTag();
 

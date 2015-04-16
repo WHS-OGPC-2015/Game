@@ -29,7 +29,7 @@ Band::Band() // empty constructor
 }
 
 //you can change anything that would be have a possibility of being different at the start, including arbitrary things
-Band::Band(bool incog, bool incarn, int startnum, int mov, std::string incarnName, std::string TN[] /*set as "" if incarn is false*/)
+Band::Band(bool incog, bool incarn, int startnum, int mov, std::string incarnName, std::string TN[], int index /*set as "" if incarn is false*/)
 {
     incognito = incog;
     incarnation = incarn;
@@ -41,6 +41,7 @@ Band::Band(bool incog, bool incarn, int startnum, int mov, std::string incarnNam
     incarnationName = incarnName;
     actionState = 0;
     startup = true;
+    boundTileIndex = index;
 
     for (int i = 0; i < 4; i++)
     {
@@ -468,6 +469,7 @@ void Band::setTile(int t)
     boundTile = allTiles->getTileByIndice(t);
     boundTile->setBandoc(discipleNum);
     boundTileIndex = t;
+
     ofVec2f tmp = allTiles->tileArrayCoordsByIndice(t);
     boundTileCoords = ofVec2i(tmp.x, tmp.y);
 }

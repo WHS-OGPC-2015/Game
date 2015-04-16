@@ -51,6 +51,8 @@ public:
 
     void setExtremeTiles(ofVec2i v1, ofVec2i v2);
 
+    void setHLTex(ofTexture& HLT);
+
     void resetBandType();
     int getBandType();
 
@@ -73,6 +75,8 @@ private:
 
     ofTexture* BandTextures[4]; // 0 = reg, 1 = incog, 2 = incarn, 3 = incog and incarn
     std::string TextureNames[4];
+    ofTexture* HLTex;
+    std::string HLTexName;
 
 
     int discipleNum;
@@ -110,4 +114,5 @@ private:
     TileManager* allTiles;
 
     bool startup;
+    bool HLdraw;
 };

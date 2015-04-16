@@ -33,6 +33,10 @@ void Tile::setTexture(ofTexture& tex)
     texture = &tex;
 }
 
+//void Tile::setHighlightTexture(ofTexture% HLTex)
+//{
+//    HLTexture = &HLTex;
+//}
 
 void Tile::switchCityoc()
 {
@@ -47,6 +51,11 @@ void Tile::setBandoc(int i)
 void Tile::switchEBandoc()
 {
     EBandoc = !EBandoc;
+}
+
+void Tile::switchHighlight()
+{
+    highlight = !highlight;
 }
 
 bool Tile::getCityoc()
@@ -64,3 +73,7 @@ bool Tile::getEBandoc()
     return EBandoc;
 }
 
+//bool Tile::getHighlight()
+//{
+//    return highlight;
+//}

@@ -14,21 +14,26 @@ public:
     void setLocation(ofVec2f);
 
     void setTexture(ofTexture&);    //sets tile texture
+    void setHighlightTexture(ofTexture&);
 
     void switchCityoc();
     void setBandoc(int i);
     void switchEBandoc();
+    void switchHighlight();
 
     bool getCityoc();
     int getBandoc();
     bool getEBandoc();
+    //bool getHighlight();
+
 
 private:
     ofTexture* texture;
-    ofVec2f location;
+    ofTexture* HLTexture;
     bool Cityoc;
     int Bandoc;
     bool EBandoc;
+   // bool highlight;
 
 };
 

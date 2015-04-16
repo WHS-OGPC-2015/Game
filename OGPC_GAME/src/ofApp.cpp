@@ -133,7 +133,7 @@ void ofApp::draw(){
         if(currentState == GAME)
         {
             ofSoundUpdate();
-            std::cout << mainSound.getIsPlaying() << ", " << mainSound.getVolume() << std::endl;
+           // std::cout << mainSound.getIsPlaying() << ", " << mainSound.getVolume() << std::endl;
             ofSetColor(255, 255, 255);
             ofPopMatrix();
             ofTranslate(viewPos.x, viewPos.y);

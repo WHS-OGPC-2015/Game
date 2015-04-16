@@ -256,8 +256,9 @@ void City::fillMenu()
     disNumber->setText(convert.str());
 //
     TextBox* difNumber = cityMenu->getPointerToChildByName<TextBox>("Difficulty");
-    convert << difficulty;
-    disNumber->setText(convert.str());
+    ostringstream converta;
+    converta << difficulty;
+    difNumber->setText(converta.str());
 //
     PieChart*  pChart = cityMenu->getPointerToChildByName<PieChart>("BelieverPie");
     pChart->setVariables(converted, population);

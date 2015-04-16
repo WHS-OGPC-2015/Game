@@ -4,365 +4,84 @@
 <tileSizeY>32</tileSizeY>
 <tileArray>
     <tile>
-<<<<<<< HEAD
-        <texture>8snowystone</texture>
-        <numSame>5</numSame>
-=======
-        <texture>9snow</texture>
-        <numSame>8</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>7</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>5grassforest</texture>
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-=======
-        <texture>7stone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>7</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>2sand</texture>
-=======
-        <texture>9snow</texture>
-        <numSame>7</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>8snowystone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-=======
-        <texture>9snow</texture>
-        <numSame>6</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>3</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>6forest</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-=======
-        <texture>9snow</texture>
-        <numSame>7</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>8</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>6</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
         <texture>9snow</texture>
         <numSame>11</numSame>
     </tile>
     <tile>
         <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>2sand</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>9snow</texture>
         <numSame>2</numSame>
-=======
-        <texture>7stone</texture>
-        <numSame>1</numSame>
     </tile>
     <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>7stone</texture>
-        <numSame>4</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
+        <texture>9snow</texture>
         <numSame>3</numSame>
     </tile>
     <tile>
-        <texture>5grassforest</texture>
-=======
+        <texture>8snowystone</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>10</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>4grass</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
         <texture>9snow</texture>
         <numSame>12</numSame>
     </tile>
     <tile>
-        <texture>8snowystone</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>9snow</texture>
-        <numSame>5</numSame>
-=======
-        <texture>6forest</texture>
-        <numSame>1</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
         <texture>7stone</texture>
         <numSame>1</numSame>
     </tile>
     <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>7stone</texture>
-        <numSame>2</numSame>
-=======
-        <texture>9snow</texture>
-        <numSame>6</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>2sand</texture>
-=======
         <texture>9snow</texture>
         <numSame>3</numSame>
     </tile>
     <tile>
-        <texture>8snowystone</texture>
-        <numSame>2</numSame>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
     </tile>
     <tile>
         <texture>6forest</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>2</numSame>
+        <numSame>1</numSame>
     </tile>
     <tile>
         <texture>5grassforest</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
         <numSame>1</numSame>
     </tile>
     <tile>
-        <texture>9snow</texture>
-        <numSame>4</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
+        <texture>6forest</texture>
         <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>4</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>2</numSame>
     </tile>
     <tile>
         <texture>9snow</texture>
@@ -371,613 +90,33 @@
     <tile>
         <texture>8snowystone</texture>
         <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>3sandgrass</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>6</numSame>
-=======
-        <texture>5grassforest</texture>
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>7stone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-=======
-        <texture>3sandgrass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>6</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-<<<<<<< HEAD
-        <numSame>6</numSame>
-=======
-        <numSame>4</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>7stone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-=======
-        <texture>3sandgrass</texture>
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>2sand</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>5</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>5</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>5grassforest</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>4</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-=======
-        <texture>7stone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-=======
-        <texture>4grass</texture>
-        <numSame>2</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>9snow</texture>
-        <numSame>3</numSame>
-=======
-        <texture>4grass</texture>
-        <numSame>1</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-=======
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>2sand</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>5</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-<<<<<<< HEAD
-        <numSame>3</numSame>
-=======
-        <numSame>1</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>3sandgrass</texture>
-=======
-        <texture>8snowystone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>5grassforest</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-=======
-        <texture>4grass</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>2sand</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>4</numSame>
-<<<<<<< HEAD
-=======
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>5grassforest</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-=======
-        <texture>4grass</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-        <texture>2sand</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>4</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>2</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>4</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-=======
-        <texture>6forest</texture>
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>4</numSame>
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>2sand</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-=======
-        <texture>9snow</texture>
-        <numSame>5</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-<<<<<<< HEAD
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>4</numSame>
-=======
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
-        <numSame>1</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-=======
-        <texture>5grassforest</texture>
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>2sand</texture>
-        <numSame>2</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
-        <numSame>2</numSame>
     </tile>
     <tile>
         <texture>9snow</texture>
         <numSame>8</numSame>
     </tile>
     <tile>
-<<<<<<< HEAD
-        <texture>6forest</texture>
-=======
-        <texture>7stone</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-=======
-        <texture>5grassforest</texture>
+        <texture>8snowystone</texture>
         <numSame>2</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
     </tile>
     <tile>
-        <texture>6forest</texture>
+        <texture>7stone</texture>
         <numSame>2</numSame>
     </tile>
     <tile>
         <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>2sand</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
         <numSame>4</numSame>
     </tile>
     <tile>
-        <texture>8snowystone</texture>
+        <texture>6forest</texture>
         <numSame>2</numSame>
     </tile>
     <tile>
-        <texture>6forest</texture>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
         <numSame>7</numSame>
     </tile>
     <tile>
@@ -985,88 +124,11 @@
         <numSame>1</numSame>
     </tile>
     <tile>
-        <texture>7stone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-=======
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
         <texture>9snow</texture>
         <numSame>2</numSame>
-    </tile>
-    <tile>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-<<<<<<< HEAD
-=======
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>9snow</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-=======
-        <texture>6forest</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-<<<<<<< HEAD
-        <numSame>1</numSame>
-=======
-        <numSame>3</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
     </tile>
     <tile>
         <texture>6forest</texture>
-        <numSame>4</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
         <numSame>1</numSame>
     </tile>
     <tile>
@@ -1074,13 +136,8 @@
         <numSame>1</numSame>
     </tile>
     <tile>
-        <texture>5grassforest</texture>
+        <texture>6forest</texture>
         <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>9snow</texture>
-        <numSame>2</numSame>
     </tile>
     <tile>
         <texture>8snowystone</texture>
@@ -1091,87 +148,19 @@
         <numSame>1</numSame>
     </tile>
     <tile>
-        <texture>8snowystone</texture>
-        <numSame>2</numSame>
-=======
-        <texture>4grass</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>3sandgrass</texture>
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>7</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
         <texture>6forest</texture>
         <numSame>2</numSame>
     </tile>
     <tile>
-<<<<<<< HEAD
-        <texture>7stone</texture>
-        <numSame>2</numSame>
-=======
-        <texture>4grass</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>8snowystone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
         <texture>8snowystone</texture>
         <numSame>1</numSame>
     </tile>
     <tile>
         <texture>9snow</texture>
-        <numSame>1</numSame>
+        <numSame>9</numSame>
     </tile>
     <tile>
         <texture>7stone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-=======
-        <texture>5grassforest</texture>
         <numSame>1</numSame>
     </tile>
     <tile>
@@ -1180,120 +169,123 @@
     </tile>
     <tile>
         <texture>5grassforest</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
         <numSame>1</numSame>
     </tile>
     <tile>
-        <texture>4grass</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
         <texture>6forest</texture>
-        <numSame>3</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
         <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>3</numSame>
-=======
-        <texture>2sand</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>7</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
     </tile>
     <tile>
         <texture>7stone</texture>
         <numSame>1</numSame>
     </tile>
     <tile>
-<<<<<<< HEAD
-        <texture>9snow</texture>
-        <numSame>1</numSame>
-=======
         <texture>6forest</texture>
-        <numSame>2</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>4grass</texture>
         <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>9snow</texture>
-        <numSame>1</numSame>
-=======
-        <texture>6forest</texture>
-        <numSame>3</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-<<<<<<< HEAD
-        <texture>9snow</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>5</numSame>
     </tile>
     <tile>
         <texture>7stone</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>6forest</texture>
-=======
-        <texture>6forest</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>4grass</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
         <numSame>1</numSame>
     </tile>
     <tile>
-        <texture>3sandgrass</texture>
-        <numSame>2</numSame>
+        <texture>4grass</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>5grassforest</texture>
+        <numSame>1</numSame>
     </tile>
     <tile>
         <texture>9snow</texture>
-<<<<<<< HEAD
         <numSame>8</numSame>
-=======
-        <numSame>7</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>4grass</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>5grassforest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>5grassforest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>6</numSame>
     </tile>
     <tile>
         <texture>8snowystone</texture>
         <numSame>1</numSame>
     </tile>
     <tile>
-<<<<<<< HEAD
         <texture>9snow</texture>
-        <numSame>5</numSame>
-=======
-        <texture>7stone</texture>
         <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
     </tile>
     <tile>
         <texture>6forest</texture>
         <numSame>4</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
+    </tile>
+    <tile>
+        <texture>4grass</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>5grassforest</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>3</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>6</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>2</numSame>
     </tile>
     <tile>
         <texture>7stone</texture>
@@ -1304,69 +296,59 @@
         <numSame>1</numSame>
     </tile>
     <tile>
-<<<<<<< HEAD
-        <texture>5grassforest</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-=======
         <texture>4grass</texture>
         <numSame>1</numSame>
     </tile>
     <tile>
         <texture>3sandgrass</texture>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
         <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>7</numSame>
-<<<<<<< HEAD
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>1</numSame>
-=======
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-<<<<<<< HEAD
-    </tile>
-    <tile>
-        <texture>9snow</texture>
-        <numSame>5</numSame>
-    </tile>
-    <tile>
-        <texture>8snowystone</texture>
-        <numSame>1</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
-        <numSame>2</numSame>
-=======
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
     </tile>
     <tile>
         <texture>5grassforest</texture>
         <numSame>1</numSame>
     </tile>
     <tile>
+        <texture>4grass</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>5grassforest</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>3</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>3</numSame>
+    </tile>
+    <tile>
         <texture>7stone</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>4grass</texture>
         <numSame>1</numSame>
     </tile>
     <tile>
         <texture>6forest</texture>
-        <numSame>2</numSame>
-    </tile>
-    <tile>
-        <texture>7stone</texture>
         <numSame>1</numSame>
     </tile>
     <tile>
@@ -1378,6 +360,22 @@
         <numSame>1</numSame>
     </tile>
     <tile>
+        <texture>4grass</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>5grassforest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>6</numSame>
+    </tile>
+    <tile>
         <texture>7stone</texture>
         <numSame>1</numSame>
     </tile>
@@ -1386,7 +384,310 @@
         <numSame>1</numSame>
     </tile>
     <tile>
-<<<<<<< HEAD
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>5grassforest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>4grass</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>4</numSame>
+    </tile>
+    <tile>
+        <texture>4grass</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>5grassforest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>3</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>4</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>5grassforest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>4grass</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>3</numSame>
+    </tile>
+    <tile>
+        <texture>4grass</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>4grass</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>3</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>5grassforest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>4grass</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>4grass</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>5</numSame>
+    </tile>
+    <tile>
+        <texture>5grassforest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>3</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>5grassforest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>4grass</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>3</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>3</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>4</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>5grassforest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>3</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>5</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
         <texture>9snow</texture>
         <numSame>5</numSame>
     </tile>
@@ -1396,23 +697,151 @@
     </tile>
     <tile>
         <texture>7stone</texture>
+        <numSame>3</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>4</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
         <numSame>2</numSame>
-=======
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>4</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>3</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
         <texture>5grassforest</texture>
+        <numSame>4</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>3</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>4</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>5grassforest</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>4grass</texture>
         <numSame>1</numSame>
     </tile>
     <tile>
         <texture>3sandgrass</texture>
         <numSame>3</numSame>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
     </tile>
     <tile>
-        <texture>5grassforest</texture>
+        <texture>4grass</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>8snowystone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>9snow</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>7stone</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>6forest</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>4grass</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>3sandgrass</texture>
+        <numSame>1</numSame>
+    </tile>
+    <tile>
+        <texture>2sand</texture>
+        <numSame>2</numSame>
+    </tile>
+    <tile>
+        <texture>3sandgrass</texture>
         <numSame>1</numSame>
     </tile>
 </tileArray>
-<<<<<<< HEAD
-<pushedTileCount>230</pushedTileCount>
-=======
-<pushedTileCount>193</pushedTileCount>
->>>>>>> fe5737aae86382498daf7df0cc7a29228268a522
+<pushedTileCount>210</pushedTileCount>

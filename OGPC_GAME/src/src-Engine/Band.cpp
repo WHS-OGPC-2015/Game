@@ -19,7 +19,7 @@ Band::Band() // empty constructor
     incarnation = false;
     selected = false;
     begDisNum = 10; // arbitrary
-    movement = 7; // arbitrary
+    movement = 3; // arbitrary
     discipleNum = begDisNum;
     incarnationName = "";
     movable = true;
@@ -126,6 +126,11 @@ void Band::setTileManager(TileManager* tilm)
 {
     allTiles = tilm;
     tileWidth = allTiles->getTileDim().x;
+    extremeTiles[0] = ofVec2i(0,0);
+    ofVec2f tmp = allTiles->tileArrayCoordsByIndice(allTiles->getTileAmt()-1);
+    extremeTiles[1] = ofVec2i(tmp.x, tmp.y);
+
+
 }
 // fills the menu
 void Band::fillMenu()
@@ -154,12 +159,10 @@ void Band::findActions()
 {
     if (selected == true and movable == true)
     {
-     //   std::cout << "here1" << std::endl;
         if (actionButtons[0]->getEventDataInt() > 2)
         {
-          //  std::cout << "here2" << std::endl;
             actionState = 1;
-            movable = false;
+
         }
         else if (actionButtons[1]->getEventDataInt() > 2)
         {
@@ -198,21 +201,14 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
  //   bandMenu->setInactive(); // start the update with this
 
     clickedData = getClickedData(mousePos, clicked, pressed);
-<<<<<<< HEAD
+
     findActions();
     if (movable == false or startup == true)
     {
         turnlyUpdate();
         startup = false;
     }
-    //actionState = 0;
-<<<<<<< HEAD
-=======
-    actionState = 0;
- //   findActions();
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
-=======
->>>>>>> 16d457278f7dfabb92be64f7ea185e0767def973
+
     if (actionState == 0) // normal
     {
        if(clickedData == 1 or clickedData == 2)
@@ -252,8 +248,6 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
         {
 //            // finds the 2d coord of your mose click, based on the tiles
             ofVec2i temptile = ofVec2i(turnToInt(mousePos.x / tileWidth), turnToInt(mousePos.y / tileWidth));
-            std::cout << tileWidth << std::endl;
-            std::cout << mousePos.x << std::endl;
             for (int i = 0; i < possibleMovesCoords.size(); i++)
             {
                 if (temptile.x == possibleMovesCoords[i].x and temptile.y == possibleMovesCoords[i].y)// check every possible move if there is a match
@@ -265,6 +259,7 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
                     boundTileIndex = allTiles->tileIndiceByArrayCoords(tm);
                     actionState  = 1;
                     actionButtons[0]->setClicked(false);
+                    movable = false;
                 }
             }
 
@@ -294,6 +289,7 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
                 {
                     int q = convertTo1dindex(temptila);
                     return q;
+                    movable = false;
                 }
             }
 
@@ -312,6 +308,7 @@ int Band::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 
 void Band::turnlyUpdate()
 {
+
     //reset the TL and BR positions for collisions
     TLpos = ofVec2f(boundTile->getLocation().x, boundTile->getLocation().y);
     BRpos = ofVec2f(boundTile->getLocation().x + BandTextures[bandType]->getWidth(), boundTile->getLocation().y + BandTextures[bandType]->getHeight());
@@ -327,7 +324,8 @@ void Band::turnlyUpdate()
     {
         for (int j = (fabs(i) - movement); j <= (movement - fabs(i)); j++)
         {
-            temp = ofVec2i(boundTileCoords.x - i, boundTileCoords.y - i);
+            temp = ofVec2i(boundTileCoords.x - i, boundTileCoords.y - j);
+
             if (temp.x < extremeTiles[0].x
                 or temp.x > extremeTiles[1].x
                 or temp.y < extremeTiles[0].y
@@ -446,6 +444,7 @@ void Band::setExtremeTiles(ofVec2i v1, ofVec2i v2)
     extremeTiles[1] = v2;
     int temp = fabs(extremeTiles[1].x - extremeTiles[0].x);
     boundTileCoords = ofVec2i(boundTileIndex % temp, boundTileIndex / temp);
+
 }
 
 //set ALL of the textures
@@ -458,9 +457,12 @@ void Band::setTextures(ResourceManager* res)
     TLpos = ofVec2f(boundTile->getLocation().x, boundTile->getLocation().y);
     BRpos = ofVec2f(boundTile->getLocation().x + BandTextures[bandType]->getWidth(), boundTile->getLocation().y + BandTextures[bandType]->getHeight());
 }
-void Band::setTile(Tile* T)
+void Band::setTile(int t)
 {
-    boundTile = T;
+    boundTile = allTiles->getTileByIndice(t);
+    boundTileIndex = t;
+    ofVec2f tmp = allTiles->tileArrayCoordsByIndice(t);
+    boundTileCoords = ofVec2i(tmp.x, tmp.y);
 }
 
 int Band::getIndex()

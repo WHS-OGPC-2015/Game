@@ -21,7 +21,7 @@ public:
 
 
     void setTextures(ResourceManager* res);
-    void setTile(Tile* T);
+    void setTile(int t);
     int getIndex();
     ofVec2i getCoords();
     vector<std::string> getTextureNames();

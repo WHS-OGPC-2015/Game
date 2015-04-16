@@ -140,3 +140,8 @@ Tile* TileManager::getTileByCoords(ofVec2f coords)
 {
     return getTileByIndice(tileIndiceByArrayCoords(coords));
 }
+
+int TileManager::getTileAmt()
+{
+    return tiles.size();
+}

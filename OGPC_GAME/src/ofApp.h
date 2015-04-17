@@ -74,6 +74,7 @@ class ofApp : public ofBaseApp{
         LoadingScreen* loading;
         ResourceManager* resources;
         PauseMenu* pause;
+        ofSoundPlayer mainSound;
 
         enum GameStates{MAINMENU, LOADING, GAME};
 

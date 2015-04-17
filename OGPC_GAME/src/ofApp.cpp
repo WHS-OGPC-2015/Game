@@ -10,6 +10,7 @@ void ofApp::setup(){
     ofSeedRandom();
     mapDim = ofVec2f(100, 100);
     tileDim = ofVec2f(32, 32);
+    mainSound.loadSound("MenuMusic.mp3");
 }
 
 //--------------------------------------------------------------
@@ -41,6 +42,7 @@ void ofApp::update(){
             resources->addFont("monterey/MontereyFLF-Bold.ttf", "CMFont", 12);
             resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\BandTextures");
             resources->loadFilesFromDirectory("C:\\OpenFrameworks\\apps\\Game\\OGPC_GAME\\bin\\data\\TurnMenuTextures");
+            resources->addSound("MainMenu.mp3", "MainMusic", true);
 
             gameEngine = new Engine;
             mapGenerator = new GameMap;
@@ -64,10 +66,14 @@ void ofApp::update(){
         if(first == true)
         {
             //everything is allready loaded
+            ofSoundSetVolume(.5f);
+            //mainSound = resources->getSound("MainMusic");
+            mainSound.setLoop(true);
+
             first = false;
         }
-        loader->update(viewPos);
-        if(pause->isActive())
+
+        else if(pause->isActive())
         {
             if(pause->update(mousePos, clicked, pressed) == 0)
             {
@@ -78,6 +84,12 @@ void ofApp::update(){
 
         else
         {
+            loader->update(viewPos);
+            if(!mainSound.getIsPlaying())
+            {
+                mainSound.play();
+                mainSound.setVolume(1.0f);
+            }
             adjustedMousePos = mousePos - viewPos;
             gameEngine->update(adjustedMousePos, clicked, pressed);
             gameEngine->updateNoTranslate(mousePos, clicked, pressed);
@@ -120,6 +132,8 @@ void ofApp::draw(){
     {
         if(currentState == GAME)
         {
+            ofSoundUpdate();
+            std::cout << mainSound.getIsPlaying() << ", " << mainSound.getVolume() << std::endl;
             ofSetColor(255, 255, 255);
             ofPopMatrix();
             ofTranslate(viewPos.x, viewPos.y);

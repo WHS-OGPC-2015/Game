@@ -12,7 +12,11 @@ class Band
 public:
 
     Band();
+<<<<<<< HEAD
     Band(bool incog, bool incarn, int startnum, int mov, std::string incarnName, std::string TN[], std::string HLTName, int /*set as "" if incarn is false*/);
+=======
+    Band(bool incog, bool incarn, int startnum, int mov, std::string incarnName, std::string TN[] /*set as "" if incarn is false*/);
+>>>>>>> parent of fe5737a... got music to work and fixed problem with band not setting coordinates
 
     void draw();
     int update(ofVec2f& mousePos, bool& clicked, bool& pressed);

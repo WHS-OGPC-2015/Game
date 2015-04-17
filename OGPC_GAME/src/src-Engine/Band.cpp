@@ -487,9 +487,9 @@ void Band::setTextures(ResourceManager* res)
 void Band::setTile(int t)
 {
     boundTile = allTiles->getTileByIndice(t);
+
     boundTile->setBandoc(discipleNum);
     boundTileIndex = t;
-
     ofVec2f tmp = allTiles->tileArrayCoordsByIndice(t);
     boundTileCoords = ofVec2i(tmp.x, tmp.y);
 }

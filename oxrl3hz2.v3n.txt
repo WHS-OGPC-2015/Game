@@ -1,0 +1,26 @@
+﻿Revert "new button textures"
+
+This reverts commit b3f1245550813c7b0ad45be8146af95135ef82c8.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch Engine
+# Your branch is up-to-date with 'origin/Engine'.
+#
+# Changes to be committed:
+#	modified:   OGPC_GAME/bin/data/BandTextures/BandIncarn.png
+#	modified:   OGPC_GAME/bin/data/BandTextures/BandIncarnIncog.png
+#	modified:   OGPC_GAME/bin/data/BandTextures/BandIncog.png
+#	modified:   OGPC_GAME/bin/data/BandTextures/BandNormal.png
+#	deleted:    OGPC_GAME/bin/data/BandTextures/BreakUpBut.xcf
+#	modified:   OGPC_GAME/bin/data/BandTextures/BreakUpButHovered.png
+#	modified:   OGPC_GAME/bin/data/BandTextures/BreakUpButNormal.png
+#	modified:   OGPC_GAME/bin/data/BandTextures/BreakUpButPressed.png
+#	modified:   OGPC_GAME/bin/data/BandTextures/IncogButHovered.png
+#	modified:   OGPC_GAME/bin/data/BandTextures/IncogButNormal.png
+#	modified:   OGPC_GAME/bin/data/BandTextures/IncogButPressed.png
+#	modified:   OGPC_GAME/bin/data/BandTextures/MoveButHovered.png
+#	modified:   OGPC_GAME/bin/data/BandTextures/MoveButNormal.png
+#	modified:   OGPC_GAME/bin/data/BandTextures/MoveButPressed.png
+#
+

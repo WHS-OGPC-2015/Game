@@ -25,7 +25,7 @@ void createBandMenu(MenuManager* man, ofVec2f pos)
     MenuEntity* incarnName;
     incarnName = new TextBox(
                         "BAND_NAME",
-                        ofVec2f(pos.x, pos.y - halfmenuHeight + borderWidth + man->getFontPointer("BMText").stringHeight("BAND_NAME")/2),
+                        ofVec2f((ofGetWindowWidth()/8)*5, pos.y - halfmenuHeight + borderWidth + man->getFontPointer("BMText").stringHeight("BAND_NAME")/2),
                         man->getFontPointer("BMText")
                             );
     MenuEntity* discBox;

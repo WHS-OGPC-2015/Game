@@ -3,6 +3,9 @@
 Tile::Tile()
 {
     //??
+    Cityoc = false;
+    Bandoc = 0;
+    EBandoc = false;
 }
 
 void Tile::update()
@@ -31,5 +34,33 @@ void Tile::setTexture(ofTexture& tex)
 }
 
 
+void Tile::switchCityoc()
+{
+    Cityoc = !Cityoc;
+}
 
+void Tile::setBandoc(int i)
+{
+    Bandoc = i;
+}
+
+void Tile::switchEBandoc()
+{
+    EBandoc = !EBandoc;
+}
+
+bool Tile::getCityoc()
+{
+    return Cityoc;
+}
+
+int Tile::getBandoc()
+{
+    return Bandoc;
+}
+
+bool Tile::getEBandoc()
+{
+    return EBandoc;
+}
 

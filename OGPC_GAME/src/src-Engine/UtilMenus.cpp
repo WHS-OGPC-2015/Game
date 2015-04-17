@@ -9,7 +9,7 @@ void createNextTurnMenu(MenuManager* man, ofVec2f pos)
     //---------------------------------------------------------------------------
     MenuEntity* nextTurnBut;
     nextTurnBut = new HoverButton(
-                        ofVec2f(100, 100),
+                        ofVec2f(ofGetScreenWidth()/8, ofGetScreenHeight()-150),
                         man->getTexturePointer("turnButNormal"),           // adding textures, we have done this before...
                         man->getTexturePointer("turnButHovered"),
                         man->getTexturePointer("turnButPressed"),

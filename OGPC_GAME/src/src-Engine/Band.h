@@ -12,7 +12,7 @@ class Band
 public:
 
     Band();
-    Band(bool incog, bool incarn, int startnum, int mov, std::string incarnName, std::string TN[], int /*set as "" if incarn is false*/);
+    Band(bool incog, bool incarn, int startnum, int mov, std::string incarnName, std::string TN[], std::string HLTName, int /*set as "" if incarn is false*/);
 
     void draw();
     int update(ofVec2f& mousePos, bool& clicked, bool& pressed);
@@ -73,6 +73,8 @@ private:
 
     ofTexture* BandTextures[4]; // 0 = reg, 1 = incog, 2 = incarn, 3 = incog and incarn
     std::string TextureNames[4];
+    ofTexture* HLTex;
+    std::string HLTexName;
 
 
     int discipleNum;
@@ -110,4 +112,5 @@ private:
     TileManager* allTiles;
 
     bool startup;
+    bool HLdraw;
 };

@@ -54,6 +54,7 @@ City::City(int dif, double fpopulation, std::string fcityName, int iTileIndex, s
 void City::setTile(Tile* T)
 {
     boundTile = T;
+    boundTile->switchCityoc();
 }
 
 int City::getTileIndex()
@@ -114,7 +115,7 @@ void City::update(ofVec2f& mousePos, bool& clicked, bool& pressed)
 {
     TLpos = ofVec2f(boundTile->getLocation().x, boundTile->getLocation().y);
     BRpos = ofVec2f(boundTile->getLocation().x + cityTexture->getWidth(), boundTile->getLocation().y + cityTexture->getHeight());
-
+    occupied = boundTile->getBandoc();
 
     clickedData = getClickedData(mousePos, clicked, pressed);
     if(clickedData == 3)
@@ -255,8 +256,9 @@ void City::fillMenu()
     disNumber->setText(convert.str());
 //
     TextBox* difNumber = cityMenu->getPointerToChildByName<TextBox>("Difficulty");
-    convert << difficulty;
-    disNumber->setText(convert.str());
+    ostringstream converta;
+    converta << difficulty;
+    difNumber->setText(converta.str());
 //
     PieChart*  pChart = cityMenu->getPointerToChildByName<PieChart>("BelieverPie");
     pChart->setVariables(converted, population);

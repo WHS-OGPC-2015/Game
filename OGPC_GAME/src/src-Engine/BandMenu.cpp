@@ -75,7 +75,7 @@ void createBandMenu(MenuManager* man, ofVec2f pos)
                         man->getTexturePointer("BMUnIncogButPressed")
                                 );
 
-    bandMenu.addEntity(*bandBG, "BandMenuBackground");
+    //bandMenu.addEntity(*bandBG, "BandMenuBackground");
     bandMenu.addEntity(*incarnName, "IncarnationName");
     bandMenu.addEntity(*discBox, "DiscipleBox");
     bandMenu.addEntity(*discNum, "DiscipleNumber");

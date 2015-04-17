@@ -7,21 +7,9 @@ void createNextTurnMenu(MenuManager* man, ofVec2f pos)
     double halfMenuHeight = man->getTexturePointer("TMBackground").getHeight()/2;
     double halfMenuWidth = man->getTexturePointer("TMBackground").getWidth()/2;
     //---------------------------------------------------------------------------
-
-    MenuEntity* menuBG;
-    menuBG = new MenuBackground(
-<<<<<<< HEAD
-                    ofVec2f(0, ofGetScreenHeight()),
-=======
-                    ofVec2f(ofGetScreenWidth()/2, ofGetScreenHeight()-150),
->>>>>>> 16d457278f7dfabb92be64f7ea185e0767def973
-                     man->getTexturePointer("TMBackground"),
-                    false
-                     );
-
     MenuEntity* nextTurnBut;
     nextTurnBut = new HoverButton(
-                        ofVec2f(pos.x + (halfMenuWidth)/2, pos.y+(halfMenuWidth)/2),
+                        ofVec2f(100, 100),
                         man->getTexturePointer("turnButNormal"),           // adding textures, we have done this before...
                         man->getTexturePointer("turnButHovered"),
                         man->getTexturePointer("turnButPressed"),
@@ -30,7 +18,6 @@ void createNextTurnMenu(MenuManager* man, ofVec2f pos)
                         man->getTexturePointer("turnButPressed")
                                 );
 
-    //turnMenu.addEntity(*menuBG, "TMBackground");
     turnMenu.addEntity(*nextTurnBut, "NextTurnButton");
 
    man->addMenu(turnMenu, "TurnMenu");

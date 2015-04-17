@@ -5,15 +5,9 @@
     <object>
         <cityTexture>City</cityTexture>
         <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Brushreach</cityName>
-        <tileIndex>106</tileIndex>
-        <population>14360.503906250</population>
-=======
-        <cityName>Brushglen</cityName>
-        <tileIndex>8167</tileIndex>
-        <population>25474.242187500</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
+        <cityName>Aberborough</cityName>
+        <tileIndex>334</tileIndex>
+        <population>12791.137695312</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -24,15 +18,9 @@
     <object>
         <cityTexture>City</cityTexture>
         <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Ashburn</cityName>
-        <tileIndex>19</tileIndex>
-        <population>27592.925781250</population>
-=======
-        <cityName>Aberborne</cityName>
-        <tileIndex>7613</tileIndex>
-        <population>10287.169921875</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
+        <cityName>Meadowburgh</cityName>
+        <tileIndex>264</tileIndex>
+        <population>17228.394531250</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -43,15 +31,9 @@
     <object>
         <cityTexture>City</cityTexture>
         <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Ashwood</cityName>
-        <tileIndex>253</tileIndex>
-        <population>27210.693359375</population>
-=======
-        <cityName>Portborne</cityName>
-        <tileIndex>9410</tileIndex>
-        <population>26366.882812500</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
+        <cityName>Bostchester</cityName>
+        <tileIndex>120</tileIndex>
+        <population>20875.244140625</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -62,15 +44,9 @@
     <object>
         <cityTexture>City</cityTexture>
         <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Ocking</cityName>
-        <tileIndex>135</tileIndex>
-        <population>17532.042968750</population>
-=======
-        <cityName>Portton</cityName>
-        <tileIndex>827</tileIndex>
-        <population>14681.701171875</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
+        <cityName>Dowborough</cityName>
+        <tileIndex>52</tileIndex>
+        <population>25780.181640625</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -81,15 +57,9 @@
     <object>
         <cityTexture>City</cityTexture>
         <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Oakmouth</cityName>
-        <tileIndex>322</tileIndex>
-        <population>14587.097656250</population>
-=======
-        <cityName>Oaking</cityName>
-        <tileIndex>68</tileIndex>
-        <population>29343.871093750</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
+        <cityName>Sylveborn</cityName>
+        <tileIndex>271</tileIndex>
+        <population>8303.527343750</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -100,53 +70,9 @@
     <object>
         <cityTexture>City</cityTexture>
         <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Bostville</cityName>
-        <tileIndex>51</tileIndex>
-        <population>8865.814453125</population>
-=======
-        <cityName>Finchester</cityName>
-        <tileIndex>9020</tileIndex>
-        <population>11671.905273438</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
-        <converted>4000.000000000</converted>
-        <velocity>0.000000000</velocity>
-        <accel>0.000000000</accel>
-        <difficulty>3</difficulty>
-        <occupied>0</occupied>
-        <entered>0</entered>
-    </object>
-    <object>
-        <cityTexture>City</cityTexture>
-        <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Dunville</cityName>
-        <tileIndex>173</tileIndex>
-        <population>10338.287109375</population>
-=======
-        <cityName>Ockchester</cityName>
-        <tileIndex>627</tileIndex>
-        <population>26800.232421875</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
-        <converted>4000.000000000</converted>
-        <velocity>0.000000000</velocity>
-        <accel>0.000000000</accel>
-        <difficulty>3</difficulty>
-        <occupied>0</occupied>
-        <entered>0</entered>
-    </object>
-    <object>
-        <cityTexture>City</cityTexture>
-        <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Sylvestead</cityName>
-        <tileIndex>245</tileIndex>
-        <population>7788.543945312</population>
-=======
         <cityName>Ockleigh</cityName>
-        <tileIndex>1203</tileIndex>
-        <population>16748.503906250</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
+        <tileIndex>188</tileIndex>
+        <population>21049.195312500</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -157,15 +83,9 @@
     <object>
         <cityTexture>City</cityTexture>
         <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Abering</cityName>
-        <tileIndex>134</tileIndex>
-        <population>11976.318359375</population>
-=======
-        <cityName>Finkirk</cityName>
-        <tileIndex>3006</tileIndex>
-        <population>11350.708007812</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
+        <cityName>Portwood</cityName>
+        <tileIndex>368</tileIndex>
+        <population>11835.174804688</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -176,15 +96,74 @@
     <object>
         <cityTexture>City</cityTexture>
         <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
+        <cityName>Dowburg</cityName>
+        <tileIndex>72</tileIndex>
+        <population>22991.638671875</population>
+        <converted>4000.000000000</converted>
+        <velocity>0.000000000</velocity>
+        <accel>0.000000000</accel>
+        <difficulty>3</difficulty>
+        <occupied>0</occupied>
+        <entered>0</entered>
+    </object>
+    <object>
+        <cityTexture>City</cityTexture>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Dowleigh</cityName>
+        <tileIndex>141</tileIndex>
+        <population>21757.964843750</population>
+        <converted>4000.000000000</converted>
+        <velocity>0.000000000</velocity>
+        <accel>0.000000000</accel>
+        <difficulty>3</difficulty>
+        <occupied>0</occupied>
+        <entered>0</entered>
+    </object>
+    <object>
+        <cityTexture>City</cityTexture>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Meadowley</cityName>
+        <tileIndex>384</tileIndex>
+        <population>25065.308593750</population>
+        <converted>4000.000000000</converted>
+        <velocity>0.000000000</velocity>
+        <accel>0.000000000</accel>
+        <difficulty>3</difficulty>
+        <occupied>0</occupied>
+        <entered>0</entered>
+    </object>
+    <object>
+        <cityTexture>City</cityTexture>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Ashstead</cityName>
+        <tileIndex>43</tileIndex>
+        <population>19488.982421875</population>
+        <converted>4000.000000000</converted>
+        <velocity>0.000000000</velocity>
+        <accel>0.000000000</accel>
+        <difficulty>3</difficulty>
+        <occupied>0</occupied>
+        <entered>0</entered>
+    </object>
+    <object>
+        <cityTexture>City</cityTexture>
+        <cityHoverTexture>CityHover</cityHoverTexture>
+        <cityName>Aberleigh</cityName>
+        <tileIndex>81</tileIndex>
+        <population>14640.502929688</population>
+        <converted>4000.000000000</converted>
+        <velocity>0.000000000</velocity>
+        <accel>0.000000000</accel>
+        <difficulty>3</difficulty>
+        <occupied>0</occupied>
+        <entered>0</entered>
+    </object>
+    <object>
+        <cityTexture>City</cityTexture>
+        <cityHoverTexture>CityHover</cityHoverTexture>
         <cityName>Portborn</cityName>
-        <tileIndex>389</tileIndex>
-        <population>14677.124023438</population>
-=======
-        <cityName>Ockleigh</cityName>
-        <tileIndex>7370</tileIndex>
-        <population>25947.265625000</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
+        <tileIndex>270</tileIndex>
+        <population>5796.508789062</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -195,15 +174,9 @@
     <object>
         <cityTexture>City</cityTexture>
         <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Brushville</cityName>
-        <tileIndex>263</tileIndex>
-        <population>8116.607421875</population>
-=======
-        <cityName>Dowville</cityName>
-        <tileIndex>3722</tileIndex>
-        <population>12259.369140625</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
+        <cityName>Bosting</cityName>
+        <tileIndex>239</tileIndex>
+        <population>9032.898437500</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -214,15 +187,9 @@
     <object>
         <cityTexture>City</cityTexture>
         <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Finreach</cityName>
-        <tileIndex>29</tileIndex>
-        <population>21839.599609375</population>
-=======
-        <cityName>Meadowborn</cityName>
-        <tileIndex>4787</tileIndex>
-        <population>16336.517578125</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
+        <cityName>Balborough</cityName>
+        <tileIndex>230</tileIndex>
+        <population>19649.201171875</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -233,15 +200,9 @@
     <object>
         <cityTexture>City</cityTexture>
         <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Finwick</cityName>
-        <tileIndex>57</tileIndex>
-        <population>21544.341796875</population>
-=======
-        <cityName>Brushley</cityName>
-        <tileIndex>3300</tileIndex>
-        <population>9991.913085938</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
+        <cityName>Oakborn</cityName>
+        <tileIndex>352</tileIndex>
+        <population>7166.748046875</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -252,15 +213,9 @@
     <object>
         <cityTexture>City</cityTexture>
         <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Aberglen</cityName>
-        <tileIndex>124</tileIndex>
-        <population>26900.939453125</population>
-=======
-        <cityName>Dowborne</cityName>
-        <tileIndex>530</tileIndex>
-        <population>24631.957031250</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
+        <cityName>Brushbury</cityName>
+        <tileIndex>63</tileIndex>
+        <population>22684.173828125</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -271,15 +226,9 @@
     <object>
         <cityTexture>City</cityTexture>
         <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Brushchester</cityName>
-        <tileIndex>206</tileIndex>
-        <population>17908.171875000</population>
-=======
-        <cityName>Sylveborne</cityName>
-        <tileIndex>1938</tileIndex>
-        <population>28885.345703125</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
+        <cityName>Oakreach</cityName>
+        <tileIndex>275</tileIndex>
+        <population>6857.757812500</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -290,14 +239,9 @@
     <object>
         <cityTexture>City</cityTexture>
         <cityHoverTexture>CityHover</cityHoverTexture>
-        <cityName>Bostmouth</cityName>
-<<<<<<< HEAD
-        <tileIndex>225</tileIndex>
-        <population>11798.553710938</population>
-=======
-        <tileIndex>273</tileIndex>
-        <population>28934.173828125</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
+        <cityName>Ockkirk</cityName>
+        <tileIndex>214</tileIndex>
+        <population>24309.234375000</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -308,72 +252,9 @@
     <object>
         <cityTexture>City</cityTexture>
         <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Moorfall</cityName>
-        <tileIndex>4</tileIndex>
-        <population>5034.332031250</population>
-=======
-        <cityName>Meadowchester</cityName>
-        <tileIndex>1424</tileIndex>
-        <population>7956.390625000</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
-        <converted>4000.000000000</converted>
-        <velocity>0.000000000</velocity>
-        <accel>0.000000000</accel>
-        <difficulty>3</difficulty>
-        <occupied>0</occupied>
-        <entered>0</entered>
-    </object>
-    <object>
-        <cityTexture>City</cityTexture>
-        <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Moorley</cityName>
-        <tileIndex>106</tileIndex>
-        <population>12419.585937500</population>
-=======
-        <cityName>Meadowwood</cityName>
-        <tileIndex>3334</tileIndex>
-        <population>8591.156250000</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
-        <converted>4000.000000000</converted>
-        <velocity>0.000000000</velocity>
-        <accel>0.000000000</accel>
-        <difficulty>3</difficulty>
-        <occupied>0</occupied>
-        <entered>0</entered>
-    </object>
-    <object>
-        <cityTexture>City</cityTexture>
-        <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Dunburn</cityName>
-        <tileIndex>4</tileIndex>
-        <population>22868.804687500</population>
-=======
-        <cityName>Brushleigh</cityName>
-        <tileIndex>3298</tileIndex>
-        <population>24820.404296875</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
-        <converted>4000.000000000</converted>
-        <velocity>0.000000000</velocity>
-        <accel>0.000000000</accel>
-        <difficulty>3</difficulty>
-        <occupied>0</occupied>
-        <entered>0</entered>
-    </object>
-    <object>
-        <cityTexture>City</cityTexture>
-        <cityHoverTexture>CityHover</cityHoverTexture>
-<<<<<<< HEAD
-        <cityName>Moorburg</cityName>
-        <tileIndex>253</tileIndex>
-        <population>28848.724609375</population>
-=======
-        <cityName>Oakfall</cityName>
-        <tileIndex>3953</tileIndex>
-        <population>7187.347656250</population>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
+        <cityName>Moorton</cityName>
+        <tileIndex>222</tileIndex>
+        <population>12723.999023438</population>
         <converted>4000.000000000</converted>
         <velocity>0.000000000</velocity>
         <accel>0.000000000</accel>
@@ -393,15 +274,9 @@
         <movable>1</movable>
         <actionState>0</actionState>
         <bandType>0</bandType>
-<<<<<<< HEAD
-        <boundTileCoordsx>87255248</boundTileCoordsx>
-        <boundTileCoordsy>173406804</boundTileCoordsy>
-        <boundTileIndex>253</boundTileIndex>
-=======
-        <boundTileCoordsx>58837624</boundTileCoordsx>
-        <boundTileCoordsy>58808016</boundTileCoordsy>
-        <boundTileIndex>3953</boundTileIndex>
->>>>>>> 6d5744754b833cac38f604317f387a99f7ad5622
+        <boundTileCoordsx>100151144</boundTileCoordsx>
+        <boundTileCoordsy>0</boundTileCoordsy>
+        <boundTileIndex>222</boundTileIndex>
         <discipleNumber>10</discipleNumber>
         <TextureName0>BandNormal</TextureName0>
         <TextureName1>BandIncog</TextureName1>

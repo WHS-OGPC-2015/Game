@@ -63,10 +63,11 @@ void ObjectManager::loadFromFile(std::string filePath)
                     {
                         Band* tmp = C->getObject(ii);
 
-                        tmp->setTile(tiles->getTileByIndice(tmp->getIndex()));
+                        tmp->setTileManager(tiles);
+                        tmp->setTile(tmp->getIndex());
                         tmp->setTextures(recMan);
                         tmp->setBandMenu(objectMenus->getMenuPointerByName("BandMenu"));
-                        tmp->setTileManager(tiles);
+
                     }
                 }
                 /*
